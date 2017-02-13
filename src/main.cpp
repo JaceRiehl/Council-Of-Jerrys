@@ -1,10 +1,10 @@
-#include <iostream>>
+#include <iostream>
 
 using std::cout;
 using std::endl;
 
 int main()
 {
-    cout << "Hello... Jerry" << endl;
+    cout << "Hello, world" << endl;
     return 0;
 }
