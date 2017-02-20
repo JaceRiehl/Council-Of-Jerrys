@@ -1,0 +1,23 @@
+# depslib dependency file v1.0
+1487568435 source:/home/tipn/Programming/cpsc2720/CofJ/src/Action.cpp
+	"Action.h"
+
+1487568450 /home/tipn/Programming/cpsc2720/CofJ/include/Action.h
+	<string>
+
+1486950355 source:/home/tipn/Programming/cpsc2720/CofJ/src/main.cpp
+	<iostream>
+
+1487568350 source:/home/tipn/Programming/cpsc2720/CofJ/src/Talk.cpp
+	"Talk.h"
+
+1487568523 /home/tipn/Programming/cpsc2720/CofJ/include/Talk.h
+	"Action.h"
+
+1487567435 source:/home/tipn/Programming/cpsc2720/CofJ/test/ActionTest.cpp
+	"ActionTest.h"
+
+1487568511 /home/tipn/Programming/cpsc2720/CofJ/test/ActionTest.h
+	<cppunit/extensions/HelperMacros.h>
+	"Action.h"
+
