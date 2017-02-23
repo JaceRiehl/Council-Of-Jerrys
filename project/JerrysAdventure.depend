@@ -21,3 +21,25 @@
 	<cppunit/extensions/HelperMacros.h>
 	"Action.h"
 
+1487802420 source:/home/vincent/Jerry/the-council-of-jerrys/src/Action.cpp
+	"Action.h"
+
+1487802420 /home/vincent/Jerry/the-council-of-jerrys/include/Action.h
+	<string>
+
+1486957671 source:/home/vincent/Jerry/the-council-of-jerrys/src/main.cpp
+	<iostream>
+
+1487802420 source:/home/vincent/Jerry/the-council-of-jerrys/src/Talk.cpp
+	"Talk.h"
+
+1487802420 /home/vincent/Jerry/the-council-of-jerrys/include/Talk.h
+	"Action.h"
+
+1487802420 source:/home/vincent/Jerry/the-council-of-jerrys/test/ActionTest.cpp
+	"ActionTest.h"
+
+1487802420 /home/vincent/Jerry/the-council-of-jerrys/test/ActionTest.h
+	<cppunit/extensions/HelperMacros.h>
+	"Action.h"
+
