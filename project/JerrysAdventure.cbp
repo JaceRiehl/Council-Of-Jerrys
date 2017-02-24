@@ -38,8 +38,10 @@
 			<Add directory="../include" />
 		</Compiler>
 		<Unit filename="../include/Action.h" />
+		<Unit filename="../include/Situation.h" />
 		<Unit filename="../include/Talk.h" />
 		<Unit filename="../src/Action.cpp" />
+		<Unit filename="../src/Situation.cpp" />
 		<Unit filename="../src/Talk.cpp" />
 		<Unit filename="../src/main.cpp" />
 		<Unit filename="../test/ActionTest.cpp" />
