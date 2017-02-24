@@ -69,25 +69,38 @@
 	<android/log.h>
 	<assert.h>
 
-1487811173 source:/home/tipn/Programming/cpsc2720/cofj/src/CouncilXMLParser.cpp
+1487907154 source:/home/tipn/Programming/cpsc2720/cofj/src/CouncilXMLParser.cpp
 	"CouncilXMLParser.h"
+	"Exceptions.h"
 	<iostream>
+	<stdio.h>
 
-1487821548 /home/tipn/Programming/cpsc2720/cofj/include/CouncilXMLParser.h
+1487901291 /home/tipn/Programming/cpsc2720/cofj/include/CouncilXMLParser.h
 	"tinyxml2.h"
 	<string>
 	<map>
+	<fstream>
 
-1487816436 source:/home/tipn/Programming/cpsc2720/cofj/src/CharacterDataParser.cpp
+1487909606 source:/home/tipn/Programming/cpsc2720/cofj/src/CharacterDataParser.cpp
 	"CharacterDataParser.h"
 
-1487817700 /home/tipn/Programming/cpsc2720/cofj/include/CharacterDataParser.h
+1487906805 /home/tipn/Programming/cpsc2720/cofj/include/CharacterDataParser.h
 	"CouncilXMLParser.h"
 	"CharacterData.h"
 	<string>
 
-1487816503 /home/tipn/Programming/cpsc2720/cofj/include/CharacterData.h
+1487839110 /home/tipn/Programming/cpsc2720/cofj/include/CharacterData.h
 	<string>
 	<vector>
 	<map>
+
+1487909106 source:/home/tipn/Programming/cpsc2720/cofj/test/CharacterDataParserTest.cpp
+	"CharacterDataParserTest.h"
+
+1487906990 /home/tipn/Programming/cpsc2720/cofj/test/CharacterDataParserTest.h
+	<cppunit/extensions/HelperMacros.h>
+	"CharacterDataParser.h"
+
+1487905754 /home/tipn/Programming/cpsc2720/cofj/include/Exceptions.h
+	<exception>
 

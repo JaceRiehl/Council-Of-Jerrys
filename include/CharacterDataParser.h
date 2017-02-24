@@ -38,6 +38,14 @@ class CharacterDataParser : public CouncilXMLParser
         */
         bool LoadData();
 
+        /**
+        *   @brief Accessor method for the data that has been parsed.
+        *   @pre The data has been extracted by using LoadData.
+        *   @post The data is returned.
+        *   @param None.
+        *   @return Extracted Data.
+        */
+        vector<CharacterData> getData() const;
     private:
         /**
         *   @brief Finds the name field and extracts it from the XML document.

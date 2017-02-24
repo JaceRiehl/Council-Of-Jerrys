@@ -8,7 +8,10 @@ bool CharacterDataParser::LoadData()
 
     XMLNode* characterNode = rootNode->FirstChild();
 
-    while(characterNode->NextSibling())
+    if(characterNode == nullptr)
+        return false;
+
+    do
     {
         CharacterData charData;
         if(!LoadName(characterNode, charData))
@@ -26,11 +29,15 @@ bool CharacterDataParser::LoadData()
 
         data.push_back(charData);
 
-        characterNode = characterNode->NextSibling();
-    }
+    } while(characterNode = characterNode->NextSiblingElement());
 
 
     return true;
+}
+
+vector<CharacterData> CharacterDataParser::getData() const
+{
+    return data;
 }
 
 bool CharacterDataParser::LoadName(XMLNode* node, CharacterData& data)
@@ -52,17 +59,15 @@ bool CharacterDataParser::LoadInventory(XMLNode* node, CharacterData& data)
     if(!invElem)
         return false;
 
-    XMLNode *itemNode = invElem->FirstChild();
+    XMLElement *keyNode = invElem->FirstChildElement();
 
-    if(!itemNode)
+    if(!keyNode)
         return false;
 
-    while(itemNode->NextSibling())
+    do
     {
-        data.inventory.push_back(itemNode->Value());
-
-        itemNode = itemNode->NextSibling();
-    }
+        data.inventory.push_back(keyNode->GetText());
+    } while(keyNode = keyNode->NextSiblingElement());
 
     return true;
 }
@@ -74,17 +79,16 @@ bool CharacterDataParser::LoadActions(XMLNode* node, CharacterData& data)
     if(!actionNode)
         return false;
 
-    XMLNode *nameNode = actionNode->FirstChild();
+    XMLElement *keyNode = actionNode->FirstChildElement();
 
-    if(!nameNode)
+    if(!keyNode)
         return false;
 
-    while(nameNode->NextSibling())
+    do
     {
-        data.actions.push_back(nameNode->Value());
+        data.actions.push_back(keyNode->GetText());
 
-        nameNode = nameNode->NextSibling();
-    }
+    } while(keyNode = keyNode->NextSiblingElement());
 
     return true;
 }

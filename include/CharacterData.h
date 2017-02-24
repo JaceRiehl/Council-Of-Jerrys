@@ -9,14 +9,20 @@ using std::string;
 using std::vector;
 using std::map;
 
+/**
+    @file CharacterData.h
+    @author Nathan Tipper
+    @date February 23, 2017
+    @brief A struct to contain all the data that make up a Character
+*/
+
 struct CharacterData
 {
-    public:
-        string name;
-        vector<string> inventory;
-        vector<string> actions;
-        vector<string> conditions;
-        int state;
+    string name;
+    vector<string> inventory;
+    vector<string> actions;
+    vector<string> conditions;
+    int state;
 };
 
 #endif // CHARACTERDATA_H
