@@ -4,9 +4,11 @@
 #include "tinyxml2.h"
 #include <string>
 #include <map>
+#include <fstream>
 
 using std::map;
 using std::string;
+using std::fstream;
 
 using tinyxml2::XMLDocument;
 using tinyxml2::XMLElement;
@@ -28,6 +30,7 @@ class CouncilXMLParser
         *   @pre It is given a valid filepath.
         *   @post The XMLParser can now load data from the given file path.
         *   @param The file path of the xml document to load from.
+        *   @throw runtime_error if file path cannot be found.
         *   @return None.
         */
         CouncilXMLParser(string);
