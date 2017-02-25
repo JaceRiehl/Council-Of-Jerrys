@@ -16,19 +16,16 @@ class Situation
         */
         Situation();
         /**
-        *Used to run the situation
+        *Used to take over execution of Level until the situation is over
         *@return String that can be used to represent the result of the situation
         */
         string run();
-        /**
-        *Initalization of the player into the situation
-        */
-        void init();
+
 
 
 
     private:
-         string jerry = "my name is jerry";
+         PlayableCharacter& jerry;
          /**
          *Holds the current characters in the situation
          */

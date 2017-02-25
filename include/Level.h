@@ -20,7 +20,7 @@ public:
     Level(string, map, vector);
 
     /**
-     *
+     *Takes over the execution from the main until the situation is over
      *@return result of running the level
      */
      string run();
@@ -58,4 +58,8 @@ private:
      */
     State state;
 
+    /**
+     *Reference to Jerry
+     */
+     PlayableCharacter& jerry;
 };
