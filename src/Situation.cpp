@@ -6,12 +6,8 @@ Situation:Situation()
 }
 string Situation::run()
 {
-   string returned;
+   string finished = ;
 
    return returned:
-
-}
-void Situation::init()
-{
 
 }

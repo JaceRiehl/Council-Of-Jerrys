@@ -9,9 +9,14 @@ Level::Level(string n, map<string,Action> sitRes, vector<Situation> sit)
 
 string Level::run()
 {
-    string returned;
+    string returned = "Situation over";
     state = RUNNING;
+    for(int i = 0; i < situations.size(); i++)
+    {
+        while(situations[i]->run() != )
 
+    }
+    state = Finished;
     return returned;
 }
 
