@@ -15,6 +15,7 @@
 					<Add option="-g" />
 					<Add directory="../include" />
 					<Add directory="../test" />
+					<Add directory="include" />
 				</Compiler>
 				<Linker>
 					<Add option="-lcppunit" />
@@ -27,6 +28,7 @@
 				<Option compiler="gcc" />
 				<Compiler>
 					<Add option="-O2" />
+					<Add directory="include" />
 				</Compiler>
 				<Linker>
 					<Add option="-s" />
@@ -38,8 +40,14 @@
 			<Add directory="../include" />
 		</Compiler>
 		<Unit filename="../include/Action.h" />
+		<Unit filename="../include/Character.h" />
+		<Unit filename="../include/Inventory.h" />
+		<Unit filename="../include/Item.h" />
 		<Unit filename="../include/Talk.h" />
 		<Unit filename="../src/Action.cpp" />
+		<Unit filename="../src/Character.cpp" />
+		<Unit filename="../src/Inventory.cpp" />
+		<Unit filename="../src/Item.cpp" />
 		<Unit filename="../src/Talk.cpp" />
 		<Unit filename="../src/main.cpp" />
 		<Unit filename="../test/ActionTest.cpp" />
