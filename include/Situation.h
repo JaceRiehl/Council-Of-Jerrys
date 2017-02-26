@@ -13,8 +13,10 @@ class Situation
     public:
         /**
         *Constructor for Situation
+        *@param vector of Characters
+        *@param map from string to Action
         */
-        Situation();
+        Situation(vector<Character>, map<string,Action>);
         /**
         *Used to take over execution of Level until the situation is over
         *@return String that can be used to represent the result of the situation
@@ -25,11 +27,14 @@ class Situation
 
 
     private:
+        /**
+         *Reference to the main character, Jerry
+         */
          PlayableCharacter& jerry;
          /**
          *Holds the current characters in the situation
          */
-         //vector<Character> characters;
+         vector<Character> characters;
          /**
          *Map of actions
          */

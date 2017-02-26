@@ -6,7 +6,13 @@ Situation:Situation()
 }
 string Situation::run()
 {
-   string finished = ;
+
+    for(int i = 0; i < situations.size(); i++)
+    {
+        string result;
+
+        situationResults[result]->executeAction();
+    }
 
    return returned:
 
