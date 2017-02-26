@@ -13,9 +13,14 @@ string Level::run()
     state = RUNNING;
     for(int i = 0; i < situations.size(); i++)
     {
-        while(situations[i]->run() != )
+        string result, sitRes;
+        result = situations[i]->run();
+        sitRes = situationResults[result];
 
     }
+
+
+
     state = Finished;
     return returned;
 }
