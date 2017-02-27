@@ -16,7 +16,7 @@ void CharacterDataParserTest::testLoadData()
 {
     CharacterDataParser *parser = new CharacterDataParser(testFilePath);
 
-    CPPUNIT_ASSERT(parser->LoadData());
+    CPPUNIT_ASSERT(parser->loadData());
 
     vector<CharacterData> data = parser->getData();
 
@@ -37,4 +37,6 @@ void CharacterDataParserTest::testLoadData()
     CPPUNIT_ASSERT_EQUAL(0, data[0].state);
 
     CPPUNIT_ASSERT("Jerry" == data[1].name);
+
+    delete parser;
 }

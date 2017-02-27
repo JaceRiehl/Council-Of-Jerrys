@@ -2,7 +2,7 @@
 
 CharacterDataParser::CharacterDataParser(string filePath) : CouncilXMLParser(filePath) {}
 
-bool CharacterDataParser::LoadData()
+bool CharacterDataParser::loadData()
 {
     XMLNode* rootNode = doc.FirstChild();
 
@@ -14,16 +14,16 @@ bool CharacterDataParser::LoadData()
     do
     {
         CharacterData charData;
-        if(!LoadName(characterNode, charData))
+        if(!loadName(characterNode, charData))
             return false;
 
-        if(!LoadInventory(characterNode, charData))
+        if(!loadInventory(characterNode, charData))
             return false;
 
-        if(!LoadActions(characterNode, charData))
+        if(!loadActions(characterNode, charData))
             return false;
 
-        if(!LoadState(characterNode, charData))
+        if(!loadState(characterNode, charData))
             return false;
 
 
@@ -40,7 +40,7 @@ vector<CharacterData> CharacterDataParser::getData() const
     return data;
 }
 
-bool CharacterDataParser::LoadName(XMLNode* node, CharacterData& data)
+bool CharacterDataParser::loadName(XMLNode* node, CharacterData& data)
 {
     XMLElement *nameElem = node->FirstChildElement(NAME_NODE.c_str());
 
@@ -52,7 +52,7 @@ bool CharacterDataParser::LoadName(XMLNode* node, CharacterData& data)
     return true;
 }
 
-bool CharacterDataParser::LoadInventory(XMLNode* node, CharacterData& data)
+bool CharacterDataParser::loadInventory(XMLNode* node, CharacterData& data)
 {
     XMLElement *invElem = node->FirstChildElement(INVENTORY_NODE.c_str());
 
@@ -72,7 +72,7 @@ bool CharacterDataParser::LoadInventory(XMLNode* node, CharacterData& data)
     return true;
 }
 
-bool CharacterDataParser::LoadActions(XMLNode* node, CharacterData& data)
+bool CharacterDataParser::loadActions(XMLNode* node, CharacterData& data)
 {
     XMLElement *actionNode = node->FirstChildElement(ACTIONS_NODE.c_str());
 
@@ -93,14 +93,14 @@ bool CharacterDataParser::LoadActions(XMLNode* node, CharacterData& data)
     return true;
 }
 
-bool CharacterDataParser::LoadState(XMLNode* node, CharacterData& data)
+bool CharacterDataParser::loadState(XMLNode* node, CharacterData& data)
 {
     XMLElement *stateNode = node->FirstChildElement(STATE_NODE.c_str());
 
     if(!stateNode)
         return false;
 
-    data.state = std::stoi(stateNode->GetText());
+    data.state = stoi(stateNode->GetText());
 
     return true;
 }
