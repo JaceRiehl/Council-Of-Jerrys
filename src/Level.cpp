@@ -1,25 +1,25 @@
 #include "Level.h"
 
-Level::Level(string n, map<string,Action> sitRes, vector<Situation> sit)
+Level::Level(string n, vector<Situation> sit, string openMes)
 {
+    openingMessage = openMes;
     situations = sit;
     name = n;
-    situationResults = sitRes;
 }
 
 string Level::run()
 {
     string returned = "Situation over";
     state = RUNNING;
+    cout << openingMessage << endl;
+
     for(int i = 0; i < situations.size(); i++)
     {
-        string result, sitRes;
-        result = situations[i]->run();
-        sitRes = situationResults[result];
+        //string result, sitRes;
+        //result = situations[i]->run();
+        situationResults.push_back(situations[i]->run());
 
     }
-
-
 
     state = Finished;
     return returned;
@@ -28,4 +28,9 @@ string Level::run()
 State Level::returnState()
 {
     return state;
+}
+
+string Level::getName()
+{
+    return name;
 }
