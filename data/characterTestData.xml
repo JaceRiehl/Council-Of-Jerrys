@@ -1,0 +1,31 @@
+<CHARACTERS>
+  <CHARACTER>
+    <NAME>Jerry</NAME>
+    <ACTIONS>
+      <KEY>talk</KEY>
+      <KEY>give_item</KEY>
+      <KEY>battle</KEY>
+    </ACTIONS>
+    <INVENTORY>
+      <KEY>portal_gun</KEY>
+      <KEY>meeseek_box</KEY>
+      <KEY>inception_earpiece</KEY>
+    </INVENTORY>
+    <STATE>0</STATE>
+  </CHARACTER>
+  <CHARACTER>
+    <NAME>Jerry</NAME>
+    <ACTIONS>
+      <KEY>talk</KEY>
+      <KEY>give_item</KEY>
+      <KEY>battle</KEY>
+    </ACTIONS>
+    <INVENTORY>
+      <KEY>portal_gun</KEY>
+      <KEY>meeseek_box</KEY>
+      <KEY>inception_earpiece</KEY>
+    </INVENTORY>
+    <STATE>0</STATE>
+  </CHARACTER>
+  
+</CHARACTERS>
