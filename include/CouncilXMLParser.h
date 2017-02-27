@@ -51,7 +51,7 @@ class CouncilXMLParser
         *   @param None.
         *   @return If successful, or not.
         */
-        virtual bool LoadData() = 0;
+        virtual bool loadData() = 0;
 
         /**
         *   @brief Loads the XMLDocument from the given file path.

@@ -6,6 +6,7 @@
 #include <string>
 
 using std::string;
+using std::stoi;
 
 /**
 *   @file CharacterDataParser.h
@@ -36,7 +37,7 @@ class CharacterDataParser : public CouncilXMLParser
         *   @param None.
         *   @return If successful, or not.
         */
-        bool LoadData();
+        bool loadData();
 
         /**
         *   @brief Accessor method for the data that has been parsed.
@@ -54,7 +55,7 @@ class CharacterDataParser : public CouncilXMLParser
         *   @param The CharacterData to which the name data is stored.
         *   @return If successful, or not.
         */
-        bool LoadName(XMLNode*, CharacterData&);
+        bool loadName(XMLNode*, CharacterData&);
 
         /**
         *   @brief Finds the Inventory field and extracts the names of the items
@@ -64,7 +65,7 @@ class CharacterDataParser : public CouncilXMLParser
         *   @param The CharacterData to which the inventory data is stored.
         *   @return If successful, or not.
         */
-        bool LoadInventory(XMLNode*, CharacterData&);
+        bool loadInventory(XMLNode*, CharacterData&);
 
         /**
         *   @brief Finds the Action field and extracts the names of the actions
@@ -74,7 +75,7 @@ class CharacterDataParser : public CouncilXMLParser
         *   @param The CharacterData to which the actions data is stored.
         *   @return If successful, or not.
         */
-        bool LoadActions(XMLNode*, CharacterData&);
+        bool loadActions(XMLNode*, CharacterData&);
 
         /**
         *   @brief Finds the State field and extracts the value of the state
@@ -84,9 +85,7 @@ class CharacterDataParser : public CouncilXMLParser
         *   @param The CharacterData to which the state data is stored.
         *   @return If successful, or not.
         */
-        bool LoadState(XMLNode*, CharacterData&);
-
-
+        bool loadState(XMLNode*, CharacterData&);
         const string ROOT_NODE = "CHARACTERS"; /// The root element of the document.
         const string NAME_NODE = "NAME";
         const string INVENTORY_NODE = "INVENTORY";
