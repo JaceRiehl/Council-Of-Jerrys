@@ -164,7 +164,7 @@
 	<map>
 	<fstream>
 
-1488235793 source:/home/tippern4/Classes/cpsc2720/CofJ/src/CharacterDataParser.cpp
+1488243756 source:/home/tippern4/Classes/cpsc2720/CofJ/src/CharacterDataParser.cpp
 	"CharacterDataParser.h"
 
 1488235874 /home/tippern4/Classes/cpsc2720/CofJ/include/CharacterDataParser.h
@@ -177,10 +177,27 @@
 	<vector>
 	<map>
 
-1488231247 source:/home/tippern4/Classes/cpsc2720/CofJ/test/CharacterDataParserTest.cpp
+1488239301 source:/home/tippern4/Classes/cpsc2720/CofJ/test/CharacterDataParserTest.cpp
 	"CharacterDataParserTest.h"
 
 1488227303 /home/tippern4/Classes/cpsc2720/CofJ/test/CharacterDataParserTest.h
 	<cppunit/extensions/HelperMacros.h>
 	"CharacterDataParser.h"
+
+1488244018 source:/home/tippern4/Classes/cpsc2720/CofJ/src/RoomXMLParser.cpp
+	"RoomXMLParser.h"
+
+1488243201 /home/tippern4/Classes/cpsc2720/CofJ/include/RoomXMLParser.h
+	"CouncilXMLParser.h"
+	"RoomData.h"
+
+1488239252 /home/tippern4/Classes/cpsc2720/CofJ/include/RoomData.h
+	<vector>
+
+1488243947 source:/home/tippern4/Classes/cpsc2720/CofJ/test/RoomXMLParserTest.cpp
+	"RoomXMLParserTest.h"
+
+1488242286 /home/tippern4/Classes/cpsc2720/CofJ/test/RoomXMLParserTest.h
+	<cppunit/extensions/HelperMacros.h>
+	"RoomXMLParser.h"
 

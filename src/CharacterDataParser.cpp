@@ -27,7 +27,7 @@ bool CharacterDataParser::loadData()
             return false;
 
 
-        data.push_back(charData);
+        this->data.push_back(charData);
 
     } while(characterNode = characterNode->NextSiblingElement());
 

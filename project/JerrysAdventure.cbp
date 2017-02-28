@@ -42,12 +42,14 @@
 		<Unit filename="../include/CharacterData.h" />
 		<Unit filename="../include/CharacterDataParser.h" />
 		<Unit filename="../include/CouncilXMLParser.h" />
-		<Unit filename="../include/Exceptions.h" />
+		<Unit filename="../include/RoomData.h" />
+		<Unit filename="../include/RoomXMLParser.h" />
 		<Unit filename="../include/Talk.h" />
 		<Unit filename="../include/tinyxml2.h" />
 		<Unit filename="../src/Action.cpp" />
 		<Unit filename="../src/CharacterDataParser.cpp" />
 		<Unit filename="../src/CouncilXMLParser.cpp" />
+		<Unit filename="../src/RoomXMLParser.cpp" />
 		<Unit filename="../src/Talk.cpp" />
 		<Unit filename="../src/main.cpp" />
 		<Unit filename="../src/tinyxml2.cpp" />
@@ -55,6 +57,8 @@
 		<Unit filename="../test/ActionTest.h" />
 		<Unit filename="../test/CharacterDataParserTest.cpp" />
 		<Unit filename="../test/CharacterDataParserTest.h" />
+		<Unit filename="../test/RoomXMLParserTest.cpp" />
+		<Unit filename="../test/RoomXMLParserTest.h" />
 		<Unit filename="../test/TalkTest.h" />
 		<Extensions>
 			<code_completion />
