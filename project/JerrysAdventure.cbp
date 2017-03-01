@@ -39,10 +39,13 @@
 		</Compiler>
 		<Unit filename="../include/Action.h" />
 		<Unit filename="../include/Level.h" />
+		<Unit filename="../include/Room.h" />
+		<Unit filename="../include/Room.h " />
 		<Unit filename="../include/Situation.h" />
 		<Unit filename="../include/Talk.h" />
 		<Unit filename="../src/Action.cpp" />
 		<Unit filename="../src/Level.cpp" />
+		<Unit filename="../src/Room.cpp" />
 		<Unit filename="../src/Situation.cpp" />
 		<Unit filename="../src/Talk.cpp" />
 		<Unit filename="../src/main.cpp" />
