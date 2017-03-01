@@ -27,8 +27,12 @@
 1487802420 /home/vincent/Jerry/the-council-of-jerrys/include/Action.h
 	<string>
 
-1486957671 source:/home/vincent/Jerry/the-council-of-jerrys/src/main.cpp
+1488347689 source:/home/vincent/Jerry/the-council-of-jerrys/src/main.cpp
+	"Window.h"
+	"PlayerChoice.h"
 	<iostream>
+	<string>
+	<vector>
 
 1487802420 source:/home/vincent/Jerry/the-council-of-jerrys/src/Talk.cpp
 	"Talk.h"
@@ -42,4 +46,29 @@
 1487802420 /home/vincent/Jerry/the-council-of-jerrys/test/ActionTest.h
 	<cppunit/extensions/HelperMacros.h>
 	"Action.h"
+
+1488347570 /home/vincent/Jerry/the-council-of-jerrys/include/Window.h
+	"TextBox.h"
+
+1488345134 /home/vincent/Jerry/the-council-of-jerrys/include/TextBox.h
+	<string>
+
+1488346580 /home/vincent/Jerry/the-council-of-jerrys/include/playerChoice.h
+	<vector>
+	<string>
+
+1488345753 source:/home/vincent/Jerry/the-council-of-jerrys/src/TextBox.cpp
+	"TextBox.h"
+	<string>
+	<iostream>
+
+1488347764 source:/home/vincent/Jerry/the-council-of-jerrys/src/PlayerChoice.cpp
+	"PlayerChoice.h"
+	<string>
+	<vector>
+	<iostream>
+
+1488346710 /home/vincent/Jerry/the-council-of-jerrys/include/PlayerChoice.h
+	<vector>
+	<string>
 

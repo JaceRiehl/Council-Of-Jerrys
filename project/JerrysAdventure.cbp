@@ -38,11 +38,13 @@
 			<Add directory="../include" />
 		</Compiler>
 		<Unit filename="../include/Action.h" />
+		<Unit filename="../include/PlayerChoice.h" />
 		<Unit filename="../include/Talk.h" />
-		<Unit filename="../include/UI.h" />
+		<Unit filename="../include/TextBox.h" />
 		<Unit filename="../src/Action.cpp" />
+		<Unit filename="../src/PlayerChoice.cpp" />
 		<Unit filename="../src/Talk.cpp" />
-		<Unit filename="../src/UI.cpp" />
+		<Unit filename="../src/TextBox.cpp" />
 		<Unit filename="../src/main.cpp" />
 		<Unit filename="../test/ActionTest.cpp" />
 		<Unit filename="../test/ActionTest.h" />
