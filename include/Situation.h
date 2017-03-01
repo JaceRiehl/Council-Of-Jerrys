@@ -16,7 +16,7 @@ class Situation
         *@param vector of Characters
         *@param map from string to Action
         */
-        Situation(vector<Character>, map<string,Action>);
+        Situation(vector<Character>, map<string,Action>, int);
         /**
         *Used to take over execution of Level until the situation is over
         *@return String that can be used to represent the result of the situation
@@ -39,6 +39,10 @@ class Situation
          *Map of actions
          */
          map<string, Action> actions;
+        /**
+         *Index for loading game
+         */
+         int index;
 
 
 
