@@ -18,22 +18,18 @@ class Character
 {
     public:
         Character(string name);
-        Character(string name, Inventory* inventory, map<string, Action*> actions);
+        Character(string name, vector<Item> charInv);
         string getName() const;
-        bool searchInventory(Item&)const;
-        Item getItem(string&) const;
+        bool searchInventory(Item&);
+        Item getItem(string&);
+        vector<Item> getInventory() const;
         void printItems() const;
-        bool executeAction(string&, Character&);
+        void operator=(Character& c);
         virtual ~Character(){};
-        enum state {dead, alive, running, hiding, frozen};
-
-    protected:
 
     private:
         string name;
-        Inventory* inventory;
-        map<string, Action*> actions;
-        state status;
+        vector<Item> inventory;
 };
 
 #endif // CHARACTER_H

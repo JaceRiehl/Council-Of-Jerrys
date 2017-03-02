@@ -8,13 +8,23 @@
 
 using namespace std;
 
-Item::Item(string name, map<string, int> mods, Action* action) : name(name), modifiers(mods){}
+Item::Item(string name) : name(name){}
 
 string Item::getName() const
 {
     return name;
 }
-bool Item::executeAction(Character &c)
+
+bool Item::operator!=(const Item& itm) const
 {
-    return true;
+    if (this->name != itm.name)
+        return true;
+    return false;
+}
+
+bool Item::operator==(const Item& itm) const
+{
+    if (this->name == itm.name)
+        return true;
+    return false;
 }

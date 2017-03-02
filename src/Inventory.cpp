@@ -32,5 +32,6 @@ bool Inventory::search(Item& item) const
 
 Item Inventory::getItem(string name) const
 {
-    return Item();
+    return Item(name);
 }
+
