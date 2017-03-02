@@ -14,16 +14,14 @@ class Character;
 class Item
 {
     public:
-        Item() {}
-        Item(string name, map<string, int> mods, Action* action);
+        Item(string name);
+        bool operator==(const Item& itm) const;
+        bool operator!=(const Item& itm) const;
         string getName() const;
-        bool executeAction(Character &c);
         virtual ~Item(){};
 
     private:
         string name;
-        map<string, int> modifiers;
-        Action* action;
 };
 
 #endif // ITEM_H

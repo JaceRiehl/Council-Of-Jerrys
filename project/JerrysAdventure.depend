@@ -27,7 +27,7 @@
 1487884191 /home/marm2720/the-council-of-jerrys/include/Action.h
 	<string>
 
-1488230869 source:/home/marm2720/the-council-of-jerrys/src/Character.cpp
+1488495649 source:/home/marm2720/the-council-of-jerrys/src/Character.cpp
 	"Character.h"
 	"Inventory.h"
 	"Item.h"
@@ -36,7 +36,7 @@
 	<vector>
 	<iostream>
 
-1488230886 /home/marm2720/the-council-of-jerrys/include/Character.h
+1488495219 /home/marm2720/the-council-of-jerrys/include/Character.h
 	"Inventory.h"
 	"Item.h"
 	"Action.h"
@@ -45,19 +45,19 @@
 	<vector>
 	<iostream>
 
-1488229109 /home/marm2720/the-council-of-jerrys/include/Inventory.h
+1488495617 /home/marm2720/the-council-of-jerrys/include/Inventory.h
 	<Item.h>
 	<string>
 	<vector>
 
-1488231292 /home/marm2720/the-council-of-jerrys/include/Item.h
+1488493139 /home/marm2720/the-council-of-jerrys/include/Item.h
 	"Character.h"
 	"Action.h"
 	<iostream>
 	<string>
 	<map>
 
-1488229070 source:/home/marm2720/the-council-of-jerrys/src/Inventory.cpp
+1488487766 source:/home/marm2720/the-council-of-jerrys/src/Inventory.cpp
 	"Inventory.h"
 	"Item.h"
 	<vector>
@@ -83,7 +83,7 @@
 	<cppunit/extensions/HelperMacros.h>
 	"Action.h"
 
-1488231230 source:/home/marm2720/the-council-of-jerrys/src/Item.cpp
+1488493160 source:/home/marm2720/the-council-of-jerrys/src/Item.cpp
 	"Inventory.h"
 	"Item.h"
 	"Character.h"
@@ -91,4 +91,15 @@
 	<string>
 	<map>
 	<iostream>
+
+1488491787 source:/home/marm2720/the-council-of-jerrys/test/CharacterTest.cpp
+	"CharacterTest.h"
+	"Character.h"
+	"Action.h"
+	<string>
+	<iostream>
+
+1488491066 /home/marm2720/the-council-of-jerrys/test/CharacterTest.h
+	<cppunit/extensions/HelperMacros.h>
+	"Character.h"
 
