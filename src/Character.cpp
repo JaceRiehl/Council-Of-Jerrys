@@ -5,22 +5,43 @@
 #include <map>
 #include <vector>
 #include <iostream>
+#include <Exceptions.h>
 
 using namespace std;
 
-Character::Character(string name) : name(name){}
-
-Character::Character(string name, vector<Item> charInv) : name(name)
+Character::Character(string name)
 {
-    for (unsigned i = 0; i < charInv.size(); i++)
+    if (name.length() > 30)
+        throw characterNameError("This is an English game. No one has a name that long!");
+
+    else if (name.length() == 0)
+        throw characterNameError("You gotta have a name; all the cool kids have one!");
+
+    else
+        charName = name;
+}
+
+Character::Character(string name, vector<Item> charInv)
+{
+    if (name.length() > 30)
+        throw characterNameError("This is an English game. No one has a name that long!");
+
+    else if (name.length() == 0)
+        throw characterNameError("You gotta have a name; all the cool kids have one!");
+
+    else
     {
-        inventory.push_back(charInv[i]);
+        charName = name;
+        for (unsigned i = 0; i < charInv.size(); i++)
+        {
+            inventory.push_back(charInv[i]);
+        }
     }
 }
 
 string Character::getName() const
 {
-    return name;
+    return charName;
 }
 
 bool Character::searchInventory(Item& itemSearch)
@@ -33,7 +54,7 @@ bool Character::searchInventory(Item& itemSearch)
     return false;
 }
 
-Item Character::getItem(string& n)
+Item Character::getItem(string n)
 {
 
     for (unsigned int i = 0; i < inventory.size(); i++)
@@ -41,7 +62,7 @@ Item Character::getItem(string& n)
         if (inventory[i].getName() == Item(n).getName())
             return inventory[i];
     }
-    throw runtime_error("This item does not exist");
+    throw itemDoesNotExist("This item does not exist");
 }
 
 vector<Item> Character::getInventory() const
@@ -59,7 +80,7 @@ void Character::printItems() const
 
 void Character::operator=(Character& c)
 {
-    name = c.name;
+    charName = c.charName;
     for (unsigned int i = 0; i < inventory.size(); i++)
     {
             inventory[i] = c.inventory[i];

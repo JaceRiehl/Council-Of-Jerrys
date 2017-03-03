@@ -15,6 +15,8 @@ class Inventory
         bool search(string name) const;
         bool search(Item& item) const;
         Item getItem(string name) const;
+        bool operator==(Inventory inv);
+        bool operator!=(Inventory inv);
 
     private:
         vector<Item> items;
