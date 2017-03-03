@@ -21,14 +21,14 @@ class Character
         Character(string name, vector<Item> charInv);
         string getName() const;
         bool searchInventory(Item&);
-        Item getItem(string&);
+        Item getItem(string);
         vector<Item> getInventory() const;
         void printItems() const;
         void operator=(Character& c);
         virtual ~Character(){};
 
     private:
-        string name;
+        string charName;
         vector<Item> inventory;
 };
 

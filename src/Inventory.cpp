@@ -35,3 +35,36 @@ Item Inventory::getItem(string name) const
     return Item(name);
 }
 
+bool Inventory::operator==(Inventory inv)
+{
+    unsigned int invSize = 0;
+    for (unsigned int i = 0; i < items.size(); i++)
+    {
+        for (unsigned int j = 0; j < items.size(); j++)
+        {
+            if (this->items[i] == inv.items[j])
+                invSize += 1;
+        }
+    }
+    if (invSize == items.size())
+        return true;
+    else
+        return false;
+}
+
+bool Inventory::operator!=(Inventory inv)
+{
+    unsigned int invSize = 0;
+    for (unsigned int i = 0; i < items.size(); i++)
+    {
+        for (unsigned int j = 0; j < items.size(); j++)
+        {
+            if (this->items[i] == inv.items[j])
+                invSize += 1;
+        }
+    }
+    if (invSize == items.size())
+        return false;
+    else
+        return true;
+}
