@@ -36,6 +36,33 @@ TextBox::~TextBox()
     for(int i = 0; i < rows; i++)
         delete [] textBody[i];
     delete [] textBody;
+    textBody = nullptr;
+}
+TextBox::TextBox(TextBox& tb)
+{
+    this->copy(tb);
+}
+void TextBox::copy(TextBox& c)
+{
+    this->rows = c.rows;
+    textBody = new char*[rows];
+    for(int i = 0; i < rows; i++)
+    {
+        textBody[i] = new char[COLUMN];
+        for(int j = 0; j < COLUMN; j++)
+            this->textBody[i][j] = c.textBody[i][j];
+    }
+}
+void TextBox::operator=(TextBox& t)
+{
+    if(this != &t)
+    {
+        for(int i = 0; i < rows; i++)
+        delete [] textBody[i];
+        delete [] textBody;
+        textBody = nullptr;
+            this->copy(t);
+    }
 }
 void TextBox::print()
 {

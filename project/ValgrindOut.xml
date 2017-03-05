@@ -12,8 +12,8 @@
   <line>Command: /home/vincent/Jerry/the-council-of-jerrys/project/bin/Debug/JerrysAdventure </line>
 </preamble>
 
-<pid>5538</pid>
-<ppid>4586</ppid>
+<pid>24470</pid>
+<ppid>1900</ppid>
 <tool>memcheck</tool>
 
 <args>
@@ -32,7 +32,7 @@
 
 <status>
   <state>RUNNING</state>
-  <time>00:00:00:00.107 </time>
+  <time>00:00:00:00.097 </time>
 </status>
 
 <error>
@@ -42,7 +42,7 @@
   <what>Invalid read of size 1</what>
   <stack>
     <frame>
-      <ip>0x403FD1</ip>
+      <ip>0x404CD9</ip>
       <obj>/home/vincent/Jerry/the-council-of-jerrys/project/bin/Debug/JerrysAdventure</obj>
       <fn>TextBox::TextBox(std::__cxx11::basic_string&lt;char, std::char_traits&lt;char&gt;, std::allocator&lt;char&gt; &gt;)</fn>
       <dir>/home/vincent/Jerry/the-council-of-jerrys/src</dir>
@@ -50,7 +50,7 @@
       <line>18</line>
     </frame>
     <frame>
-      <ip>0x402982</ip>
+      <ip>0x402A02</ip>
       <obj>/home/vincent/Jerry/the-council-of-jerrys/project/bin/Debug/JerrysAdventure</obj>
       <fn>main</fn>
       <dir>/home/vincent/Jerry/the-council-of-jerrys/src</dir>
@@ -76,7 +76,7 @@
       <fn>std::__cxx11::basic_string&lt;char, std::char_traits&lt;char&gt;, std::allocator&lt;char&gt; &gt;::basic_string(std::__cxx11::basic_string&lt;char, std::char_traits&lt;char&gt;, std::allocator&lt;char&gt; &gt; const&amp;)</fn>
     </frame>
     <frame>
-      <ip>0x40296C</ip>
+      <ip>0x4029EC</ip>
       <obj>/home/vincent/Jerry/the-council-of-jerrys/project/bin/Debug/JerrysAdventure</obj>
       <fn>main</fn>
       <dir>/home/vincent/Jerry/the-council-of-jerrys/src</dir>
@@ -89,7 +89,7 @@
 
 <status>
   <state>FINISHED</state>
-  <time>00:00:00:00.863 </time>
+  <time>00:00:00:00.868 </time>
 </status>
 
 <errorcounts>
