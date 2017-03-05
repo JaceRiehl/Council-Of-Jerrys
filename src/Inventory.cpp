@@ -2,7 +2,7 @@
 #include "Item.h"
 #include  <vector>
 #include <string>
-#include <exception>
+#include <Exceptions.h>
 #include <iostream>
 
 using namespace std;
@@ -21,18 +21,36 @@ void Inventory::addItem(Item item)
     items.push_back(item);
 }
 
-bool Inventory::search(string name) const
+bool Inventory::searchName(string name) const
 {
    return true;
 }
-bool Inventory::search(Item& item) const
+bool Inventory::searchItem(Item& item) const
 {
-    return true;
+    for (unsigned int i = 0; i < items.size(); i++)
+    {
+        if (items[i] == item)
+            return true;
+    }
+    return false;
 }
 
-Item Inventory::getItem(string name) const
+Item Inventory::getItem(string n) const
 {
-    return Item(name);
+    for (unsigned int i = 0; i < items.size(); i++)
+    {
+        if (items[i].getName() == Item(n).getName())
+            return items[i];
+    }
+    throw itemDoesNotExist("This item does not exist");
+}
+
+void Inventory::printItems() const
+{
+    for(unsigned int i = 0; i < items.size(); i++)
+    {
+        cout << items[i].getName() << endl;
+    }
 }
 
 bool Inventory::operator==(Inventory inv)

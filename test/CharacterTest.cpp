@@ -15,8 +15,9 @@ void CharacterTest::setUp()
 {
     c = new Character("Mr. Poopy Pants");
     c4 = new Character("Jerry",{Item("shovel"), Item("Used toothbrush")});
-    item = new Item("Used toothbrush");
-    itemDNE = new Item("portal gun");
+    c5 = new Character("Rick",{Item("portal gun"), Item("red crystal"), Item("lint"), Item("precious lint")});
+    c6 = new Character("Morty",{Item("nunchucks"), Item("medicine"), Item("dark matter recipe")});
+    c7 = new Character("Beth",{Item("mighty spatula"), Item("bottle of wine"), Item("keys"), Item("scalpel")});
     inventory = new Inventory({Item("shovel"), Item("Used toothbrush")});
     inventory2 = new Inventory({Item("Used toothbrush"), Item("shovel")});
     inventory3 = new Inventory({Item("Used toothbrush")});
@@ -26,8 +27,9 @@ void CharacterTest::tearDown()
 {
     delete c;
     delete c4;
-    delete item;
-    delete itemDNE;
+    delete c5;
+    delete c6;
+    delete c7;
     delete inventory;
     delete inventory2;
     delete inventory3;
@@ -60,22 +62,6 @@ void CharacterTest::testgetName()
     CPPUNIT_ASSERT_EQUAL(nameTest, c->getName());
 }
 
-void CharacterTest::testSearchInventory()
-{
-    CPPUNIT_ASSERT_EQUAL(true, c4->searchInventory(*item));
-    CPPUNIT_ASSERT_EQUAL(false, c4->searchInventory(*itemDNE));
-}
-
-void CharacterTest::testGetItem()
-{
-    CPPUNIT_ASSERT_EQUAL(true, *item == c4->getItem(item->getName()));
-}
-
-void CharacterTest::testGetItemExceptions()
-{
-    CPPUNIT_ASSERT_THROW(c4->getItem(itemDNE->getName()), itemDoesNotExist);
-}
-
 void CharacterTest::testGetInventory()
 {
     //Exact replica of inventory
@@ -86,6 +72,39 @@ void CharacterTest::testGetInventory()
 
     //inventory is not the same
     CPPUNIT_ASSERT_EQUAL(true, *inventory3 != c4->getInventory());
+}
+
+void CharacterTest::testAssign()
+{
+    //Test Equality When inventory LHS > RHS
+    *c4 = *c;
+    CPPUNIT_ASSERT_EQUAL(true, c->getName() == c4->getName());
+    CPPUNIT_ASSERT_EQUAL(true, c->getInventory() == c4->getInventory());
+
+    //Test Equality When inventory LHS > RHS
+    *c6 = *c5;
+    CPPUNIT_ASSERT_EQUAL(true, c6->getName() == c5->getName());
+    CPPUNIT_ASSERT_EQUAL(true, c6->getInventory() == c5->getInventory());
+
+    //Test Equality When inventory LHS == RHS
+    *c5 = *c7;
+    CPPUNIT_ASSERT_EQUAL(true, c5->getName() == c7->getName());
+    CPPUNIT_ASSERT_EQUAL(true, c5->getInventory() == c7->getInventory());
+
+    //Test Equality When inventory LHS = 0 && LHS < RHS
+    *c4 = *c7;
+    CPPUNIT_ASSERT_EQUAL(true, c4->getName() == c7->getName());
+    CPPUNIT_ASSERT_EQUAL(true, c4->getInventory() == c7->getInventory());
+
+    //Test Equality When inventory RHS = 0 && LHS > RHS
+    *c4 = *c;
+    CPPUNIT_ASSERT_EQUAL(true, c4->getName() == c->getName());
+    CPPUNIT_ASSERT_EQUAL(true, c4->getInventory() == c->getInventory());
+
+    //Test Equality When inventory RHS = 0 && LHS = 0
+    *c = *c4;
+    CPPUNIT_ASSERT_EQUAL(true, c->getName() == c4->getName());
+    CPPUNIT_ASSERT_EQUAL(true, c->getInventory() == c4->getInventory());
 }
 
 

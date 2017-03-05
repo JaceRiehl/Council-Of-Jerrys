@@ -20,10 +20,7 @@ class Character
         Character(string name);
         Character(string name, vector<Item> charInv);
         string getName() const;
-        bool searchInventory(Item&);
-        Item getItem(string);
         vector<Item> getInventory() const;
-        void printItems() const;
         void operator=(Character& c);
         virtual ~Character(){};
 
