@@ -9,7 +9,10 @@ class TextBox //: public Window
 {
 public:
     TextBox(std::string);
-    ~TextBox();
+    virtual ~TextBox();
+    TextBox(TextBox&);
+    void copy(TextBox&);
+    void operator=(TextBox&);
     void print();
     void fillChar(int, char);
 

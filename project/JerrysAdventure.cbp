@@ -41,10 +41,12 @@
 		<Unit filename="../include/PlayerChoice.h" />
 		<Unit filename="../include/Talk.h" />
 		<Unit filename="../include/TextBox.h" />
+		<Unit filename="../include/Window.h" />
 		<Unit filename="../src/Action.cpp" />
 		<Unit filename="../src/PlayerChoice.cpp" />
 		<Unit filename="../src/Talk.cpp" />
 		<Unit filename="../src/TextBox.cpp" />
+		<Unit filename="../src/Window.cpp" />
 		<Unit filename="../src/main.cpp" />
 		<Unit filename="../test/ActionTest.cpp" />
 		<Unit filename="../test/ActionTest.h" />
