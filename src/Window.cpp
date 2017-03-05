@@ -1,10 +1,10 @@
 #include "Window.h"
-#include "PlayerChoice.h"
 #include "TextBox.h"
+#include "PrintList.h"
 #include <iostream>
 
 Window::Window(TextBox body) : text(body) {}
-Window::Window(TextBox body, PlayerChoice c) : text(body), choice(c) {}
+Window::Window(TextBox body, PrintList pL) : text(body), pList(pL) {}
 Window::~Window(){}
 
 void Window::setTextBox(TextBox setText)
@@ -12,17 +12,17 @@ void Window::setTextBox(TextBox setText)
     text = setText;
 }
 
-void Window::setPlayerChoice(PlayerChoice setChoice)
+void Window::setPlayerChoice(PrintList setList)
 {
-    choice = setChoice;
+    pList = setList;
 }
 
 void Window::print()
 {
     text.print();
     std::cout<<std::endl;
-    choice.print();
-    if(choice.isEmpty())
+    pList.print();
+    if(pList.isEmpty())
         std::cout<<"Press ENTER to continue";
 }
 

@@ -1,5 +1,5 @@
 #include "Window.h"
-#include"PlayerChoice.h"
+#include "PrintList.h"
 #include <iostream>
 #include <string>
 #include <vector>
@@ -22,17 +22,17 @@ int main()
     actn.push_back(a);
     actn.push_back(b);
     actn.push_back(c);
+    map<char, string> ma;
+    ma['1'] = "Hello";
+    ma['b'] = "Bye";
+    PrintList listActions(ma);
     vector<string> subAction;
     subAction.push_back(aa);
     subAction.push_back(bb);
     TextBox testing(text);
-    PlayerChoice choices(actn);
-    Window winTest(testing);
-    winTest.setPlayerChoice(choices);
-    winTest.print();
-    cin>>d;
-    system("clear");
-    winTest.setPlayerChoice(subAction);
-    winTest.print();
+    Window window(testing);
+    window.setPlayerChoice(listActions);
+    window.print();
     return 0;
+
 }
