@@ -10,10 +10,8 @@ class CharacterTest : public CppUnit::TestFixture
     CPPUNIT_TEST(testConstructor);
     CPPUNIT_TEST(testConstructorExceptions);
     CPPUNIT_TEST(testgetName);
-    CPPUNIT_TEST(testSearchInventory);
-    CPPUNIT_TEST(testGetItem);
-    CPPUNIT_TEST(testGetItemExceptions);
     CPPUNIT_TEST(testGetInventory);
+    CPPUNIT_TEST(testAssign);
     CPPUNIT_TEST_SUITE_END();
 
     public:
@@ -24,15 +22,12 @@ class CharacterTest : public CppUnit::TestFixture
         void testConstructor();
         void testConstructorExceptions();
         void testgetName();
-        void testSearchInventory();
-        void testGetItem();
-        void testGetItemExceptions();
         void testGetInventory();
+        void testAssign();
 
     private:
-        Character *c, *c2, *c3, *c4, *cEmpty, *cTooLong;
+        Character *c, *c2, *c3, *c4, *c5, *c6, *c7, *cEmpty, *cTooLong;
         Inventory *inventory, *inventory2, *inventory3;
-        Item *item, *itemDNE;
 };
 
 #endif // CHARACTERTEST_H

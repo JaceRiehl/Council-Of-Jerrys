@@ -12,9 +12,10 @@ class Inventory
         Inventory(vector<Item> items);
         virtual ~Inventory(){};
         void addItem(Item);
-        bool search(string name) const;
-        bool search(Item& item) const;
+        bool searchName(string name) const;
+        bool searchItem(Item& item) const;
         Item getItem(string name) const;
+        void printItems() const;
         bool operator==(Inventory inv);
         bool operator!=(Inventory inv);
 
