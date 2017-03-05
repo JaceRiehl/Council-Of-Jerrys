@@ -27,9 +27,10 @@
 1487802420 /home/vincent/Jerry/the-council-of-jerrys/include/Action.h
 	<string>
 
-1488748399 source:/home/vincent/Jerry/the-council-of-jerrys/src/main.cpp
+1488757051 source:/home/vincent/Jerry/the-council-of-jerrys/src/main.cpp
 	"Window.h"
 	"PlayerChoice.h"
+	"PrintList.h"
 	<iostream>
 	<string>
 	<vector>
@@ -47,9 +48,10 @@
 	<cppunit/extensions/HelperMacros.h>
 	"Action.h"
 
-1488743611 /home/vincent/Jerry/the-council-of-jerrys/include/Window.h
+1488755693 /home/vincent/Jerry/the-council-of-jerrys/include/Window.h
 	"TextBox.h"
 	"PlayerChoice.h"
+	"PrintList.h"
 
 1488740978 /home/vincent/Jerry/the-council-of-jerrys/include/TextBox.h
 	<string>
@@ -74,9 +76,21 @@
 	<vector>
 	<string>
 
-1488751604 source:/home/vincent/Jerry/the-council-of-jerrys/src/Window.cpp
+1488757062 source:/home/vincent/Jerry/the-council-of-jerrys/src/Window.cpp
 	"Window.h"
 	"PlayerChoice.h"
 	"TextBox.h"
+	"PrintList.h"
+	<iostream>
+
+1488756989 source:/home/vincent/Jerry/the-council-of-jerrys/src/PrintList.cpp
+	"PrintList.h"
+	<string>
+	<sstream>
+
+1488756390 /home/vincent/Jerry/the-council-of-jerrys/include/PrintList.h
+	<map>
+	<string>
+	<vector>
 	<iostream>
 
