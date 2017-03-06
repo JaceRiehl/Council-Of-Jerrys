@@ -104,10 +104,10 @@
 1487905754 /home/tipn/Programming/cpsc2720/cofj/include/Exceptions.h
 	<exception>
 
-1487883785 source:/home/tippern4/Classes/cpsc2720/CofJ/src/Action.cpp
+1488770048 source:/home/tippern4/Classes/cpsc2720/CofJ/src/Action.cpp
 	"Action.h"
 
-1487883785 /home/tippern4/Classes/cpsc2720/CofJ/include/Action.h
+1488769972 /home/tippern4/Classes/cpsc2720/CofJ/include/Action.h
 	<string>
 
 1487883797 source:/home/tippern4/Classes/cpsc2720/CofJ/src/main.cpp
@@ -115,11 +115,12 @@
 	<cppunit/extensions/TestFactoryRegistry.h>
 	<cppunit/ui/text/TestRunner.h>
 
-1487883785 source:/home/tippern4/Classes/cpsc2720/CofJ/src/Talk.cpp
+1488769499 source:/home/tippern4/Classes/cpsc2720/CofJ/src/Talk.cpp
 	"Talk.h"
+	<iostream>
 
-1487883785 /home/tippern4/Classes/cpsc2720/CofJ/include/Talk.h
-	"Action.h"
+1488769192 /home/tippern4/Classes/cpsc2720/CofJ/include/Talk.h
+	"CharacterAction.h"
 
 1487883797 source:/home/tippern4/Classes/cpsc2720/CofJ/src/tinyxml2.cpp
 	"tinyxml2.h"
@@ -200,4 +201,16 @@
 1488242286 /home/tippern4/Classes/cpsc2720/CofJ/test/RoomXMLParserTest.h
 	<cppunit/extensions/HelperMacros.h>
 	"RoomXMLParser.h"
+
+1488770257 source:/home/tippern4/Classes/cpsc2720/CofJ/src/CharacterAction.cpp
+	"CharacterAction.h"
+
+1488770075 /home/tippern4/Classes/cpsc2720/CofJ/include/CharacterAction.h
+	"Action.h"
+
+1488768060 source:/home/tippern4/Classes/cpsc2720/CofJ/src/Search.cpp
+	"Search.h"
+
+1488768468 /home/tippern4/Classes/cpsc2720/CofJ/include/Search.h
+	"CharacterAction.h"
 

@@ -1,5 +1,5 @@
-#ifndef _ACTION_H
-#define _ACTION_H
+#ifndef ACTION_H
+#define ACTION_H
 
 #include <string>
 
@@ -8,13 +8,19 @@ using std::string;
 class Action
 {
     public:
+        Action();
         Action(string);
+        Action(string, string);
         virtual ~Action() {};
-        virtual bool executeAction(string) = 0;
+        virtual bool execute() = 0;
+
+    protected:
+        string owner;
+        //Character* owner;
 
     private:
         string name;
 
 };
 
-#endif // _ACTION_H
+#endif // ACTION_H

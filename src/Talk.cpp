@@ -1,8 +1,21 @@
 #include "Talk.h"
 
-Talk::Talk(string name) : Action(name) {}
+#include <iostream>
 
-bool Talk::executeAction(string charName)
+using std::cout;
+using std::endl;
+
+Talk::Talk() : CharacterAction() {}
+
+Talk::Talk(string name) : CharacterAction(name) {}
+
+Talk::Talk(string name, string subject) : CharacterAction(name, subject) {}
+
+Talk::Talk(string name, string subject, string agent) : CharacterAction(name, subject, agent) {}
+
+Talk::~Talk() {}
+
+bool Talk::execute()
 {
 
 }
