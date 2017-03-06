@@ -1,55 +1,84 @@
 #include "Room.h"
 
 
-    Room::Room(PlayableCharacter j, string n, UI& u, string i, vector<string> charKey, vector<Character> charMap, vector<string> itemKeys,
-               vector<Item> itemMap)
+    Room::Room(PlayableCharacter& j)
+               //vector<string> charKey, vector<Character> charMap, vector<string> itemKeys, vector<Item> itemMap)
     {
         jerry = j;
-        intro = i;
-        name = n;
-        userInterface = u;
-        charKeys = charKey;
-        itemKeys = items;
-        charMap = characterMap;
-        itemMap = itemsMap;
-
-        //Choices = {displayItems}
-
-       for(int i = 0; i < charKeys; i++)
-         {
-             characters[charKeys[i]] = charMap[i];
-         }
-
-        //for(int i = 0; i < actionKeys; i++)
-      //  {
-      //      actions[actionKeys[i]] = actionMap[i];
-      //  }
+        choices['1'] = "Talk: ";
+        choices['2'] = "Search: ";
+        choices['3'] = "Exit Room: ";
+        choices['4'] = "Print inventory: ";
+        PrintList Main(choices);
+        MainWindow.setPlayerChoice(choices);
 
 
-        for(int i = 0; i < itemKeys; i++)
-        {
-            availableItems[itemKeys[i]] = itemMap[i];
-        }
+        map<char, string> submenu;
+        submenu['1'] = "Talk to Rick";
+        submenu['2'] = "Talk to Summer";
+
+        submenuChoices["Talk: "] = submenu;
+
+        characters["Talk to Rick"] = Character* Rick = new NPC();
 
     }
 
-    string Room::run()
+    int Room::run()
     {
-        vector<string> introChoice = {};
-        //void confirmation =
-        userInterface.display(intro);
+
+    string finishedScenario = "continue";
 
         do{
-        //returns a, b, c, or d
-        char userInput = userInterface.displayChoices(introChoices);
-        //call the switch
-        string finishedSenario inputSwitch(userInput);
-        }while(finishedSenario == "continue");
+        //clear the screen and put a new template up
+        MainWindow.print();
+        //call vinces input to find out the char chosen
+        char input = Inputting.getChar();
+        if(submenuChoices.find(choices[firstInput]) == submenuChoices.end())
+
+
+        finishedScenario = inputSwitch(input);
+
+        }while(finishedScenario == "continue");
+        //test value
+        int room = 1;
+        return room;
     }
 
-    string Room::inputSwitch(char input)
+    string Room::inputExecution(char input)
     {
-            switch(input)
+        firstInput = input;
+        if(submenuChoices.find(choices[firstInput]) == submenuChoices.end())
+        {
+            jerry.takeAction(choices[firstInput]);
+            //not sure about the return statement for exit room
+            return "continue";
+        }
+        else
+        {
+            string subChoice = choices[firstInput];
+            map<char,string> sub = submenuChoices[subChoice];
+            PrintList Sub(sub);
+            MainWindow.setPlayerChoice(Sub);
+            MainWindow.print();
+
+            char secInput = Inputting.getChar();
+            if(submenuChoices.find(choices[firstInput]) == submenuChoices.end())
+                Action* action = jerry.getAction(choices[input]);
+
+            if(typeid(CharacterAction) == typeid(action))
+            {
+            CharacterAction* charAction = dynamic_cast<CharacterAction>(action);
+            charAction->setCharacter(characters[secondInput]);
+            }
+
+            jerry.takeAction(action);
+            return "Continue";
+
+        }
+    }
+
+
+           /* switch(input)
             {
             //case for talking to character
             case 'a':
@@ -61,6 +90,7 @@
                         //first character in vector(linear)
                     case 'a':
                         {
+                            /*
                             if(characters[charKeys[0]].getRiddle() != " ")
                             {
                                 string ans = characters[charKeys[0]].getRiddleAnswer();
@@ -75,11 +105,12 @@
                                 }
                             }
 
+
                         }
                         //talking to second character (linear)
                     case 'b':
                         {
-                            characters[charKeys[1]].getDialog();
+                            //characters[charKeys[1]].getDialog();
                         }
 
                     }
@@ -96,18 +127,7 @@
                 jerry.printItems();
 
             }
-            /*
-        case "talk":
-            action["talk"]-> exectute
-            break;
-        case "pickup":
-            jerry.addItem
-        }
-        */
+     */
 
 
-    }
-    vector<string> Room::displayChoices(vector<string> input)
-    {
 
-    }

@@ -1,24 +1,23 @@
 #include "Level.h"
 
-Level::Level(string n, vector<Situation> sit, string openMes)
+Level::Level(PlayableCharacter &jerry, string n, vector<Room> room)
 {
     openingMessage = openMes;
-    situations = sit;
+    roomResults = r;
+    rooms = room;
     name = n;
 }
 
 string Level::run()
 {
-    string returned = "Situation over";
+    string returned = "Level finished";
     state = RUNNING;
-    cout << openingMessage << endl;
 
-    for(int i = 0; i < situations.size(); i++)
+
+    int result = rooms[0]->run();
+    while(result != -1)
     {
-        //string result, sitRes;
-        //result = situations[i]->run();
-        situationResults.push_back(situations[i]->run());
-
+       result = rooms[result];
     }
 
     state = Finished;

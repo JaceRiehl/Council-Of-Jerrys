@@ -4,6 +4,7 @@
 #include<string>
 #include<vector>
 #include<map>
+#include "Room.h"
 
 /**
 *This is for buildiing each of the levels and enacting on situations
@@ -14,10 +15,10 @@ public:
     /**
      *Constructor for level
      *@param string name of the level
-     *@param map results of situation
-     *@param vector of the situations in the level
+     *@param map results of Rooms
+     *@param vector of the Rooms in the level
      */
-    Level(string, vector, string);
+    Level(PlayableCharacter&, string, map<int, string> vector<Room>);
 
     /**
      *Takes over the execution from the main until the situation is over
@@ -49,22 +50,12 @@ private:
     /**
      *Vector of the situations that will be contained within the level
      */
-     vector<Situation> situations;
-
-    /**
-     *Vector of the situations that will be contained within the level
-     */
-     vector<string> situationResults;
+     vector<Room> rooms;
 
     /**
      *Name of the level
      */
     string name;
-
-     /**
-     *Opening message displayed to user when the level starts
-     */
-    string openingMessage;
 
     /**
      *State of the level
