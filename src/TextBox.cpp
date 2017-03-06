@@ -64,33 +64,39 @@ void TextBox::operator=(TextBox& t)
             this->copy(t);
     }
 }
-void TextBox::print()
+void TextBox::print(ostream& os) const
 {
-    fillChar(80, '|');
-    cout<<endl<<'|';
-    fillChar(78, ' ');
-    cout<<'|'<<endl<<'|';
-    fillChar(78, ' ');
-    cout<<'|'<<endl;
+    fillChar(80, '|', os);
+    os<<endl<<'|';
+    fillChar(78, ' ', os);
+    os<<'|'<<endl<<'|';
+    fillChar(78, ' ', os);
+    os<<'|'<<endl;
     for(int i = 0; i < rows; i++)
     {
-        cout<<'|';
-        fillChar(9, ' ');
+        os<<'|';
+        fillChar(9, ' ', os);
         for(int j = 0; j < COLUMN; j++)
-            cout<<textBody[i][j];
-        fillChar(9, ' ');
-        cout<<'|'<<endl;
+            os<<textBody[i][j];
+        fillChar(9, ' ', os);
+        os<<'|'<<endl;
     }
-    cout<<'|';
-    fillChar(78, ' ');
-    cout<<'|'<<endl<<'|';
-    fillChar(78, ' ');
-    cout<<'|'<<endl;
-    fillChar(80, '|');
-    cout<<endl;
+    os<<'|';
+    fillChar(78, ' ', os);
+    os<<'|'<<endl<<'|';
+    fillChar(78, ' ', os);
+    os<<'|'<<endl;
+    fillChar(80, '|', os);
+    os<<endl;
 }
-void TextBox::fillChar(int howMany, char ch)
+void TextBox::fillChar(int howMany, char ch, ostream& os) const
 {
     for(int i = 0; i < howMany; i++)
-        cout<<ch;
+        os<<ch;
+}
+
+ostream& operator<<(ostream& os, const TextBox& x)
+{
+    x.print(os);
+    return os;
 }

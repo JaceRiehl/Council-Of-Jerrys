@@ -20,7 +20,7 @@ void Window::setPlayerChoice(PrintList setList)
 void Window::print()
 {
     system("clear");
-    text.print();
+    cout<<text;
     std::cout<<std::endl;
     pList.print();
     if(pList.isEmpty())

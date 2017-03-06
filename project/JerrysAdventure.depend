@@ -27,7 +27,10 @@
 1487802420 /home/vincent/Jerry/the-council-of-jerrys/include/Action.h
 	<string>
 
-1488760172 source:/home/vincent/Jerry/the-council-of-jerrys/src/main.cpp
+1488823178 source:/home/vincent/Jerry/the-council-of-jerrys/src/main.cpp
+	<cppunit/CompilerOutputter.h>
+	<cppunit/extensions/TestFactoryRegistry.h>
+	<cppunit/ui/text/TestRunner.h>
 	"Window.h"
 	"PrintList.h"
 	"ConsoleInterface.h"
@@ -52,14 +55,16 @@
 	"TextBox.h"
 	"PrintList.h"
 
-1488740978 /home/vincent/Jerry/the-council-of-jerrys/include/TextBox.h
+1488837962 /home/vincent/Jerry/the-council-of-jerrys/include/TextBox.h
 	<string>
+	<iostream>
+	<ostream>
 
 1488346580 /home/vincent/Jerry/the-council-of-jerrys/include/playerChoice.h
 	<vector>
 	<string>
 
-1488741384 source:/home/vincent/Jerry/the-council-of-jerrys/src/TextBox.cpp
+1488837975 source:/home/vincent/Jerry/the-council-of-jerrys/src/TextBox.cpp
 	"TextBox.h"
 	<string>
 	<iostream>
@@ -75,7 +80,7 @@
 	<vector>
 	<string>
 
-1488759995 source:/home/vincent/Jerry/the-council-of-jerrys/src/Window.cpp
+1488837058 source:/home/vincent/Jerry/the-council-of-jerrys/src/Window.cpp
 	"Window.h"
 	"TextBox.h"
 	"PrintList.h"
@@ -98,5 +103,17 @@
 	<string>
 
 1488759995 /home/vincent/Jerry/the-council-of-jerrys/include/ConsoleInterface.h
+	<string>
+
+1488837839 source:/home/vincent/Jerry/the-council-of-jerrys/test/TextBoxTest.cpp
+	"TextBoxTest.h"
+	"TextBox.h"
+	<string>
+	<sstream>
+	<iomanip>
+
+1488837621 /home/vincent/Jerry/the-council-of-jerrys/test/TextBoxTest.h
+	<cppunit/extensions/HelperMacros.h>
+	"TextBox.h"
 	<string>
 

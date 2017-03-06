@@ -16,6 +16,7 @@
 					<Add directory="../include" />
 					<Add directory="../test" />
 					<Add directory="include" />
+					<Add directory="test" />
 				</Compiler>
 				<Linker>
 					<Add option="-lcppunit" />
@@ -29,6 +30,7 @@
 				<Compiler>
 					<Add option="-O2" />
 					<Add directory="include" />
+					<Add directory="test" />
 				</Compiler>
 				<Linker>
 					<Add option="-s" />
@@ -37,8 +39,13 @@
 		</Build>
 		<Compiler>
 			<Add option="-Wall" />
+			<Add option="-std=c++11" />
 			<Add directory="../include" />
+			<Add directory="../test" />
 		</Compiler>
+		<Linker>
+			<Add option="-lcppunit" />
+		</Linker>
 		<Unit filename="../include/Action.h" />
 		<Unit filename="../include/ConsoleInterface.h" />
 		<Unit filename="../include/PrintList.h" />
@@ -55,6 +62,8 @@
 		<Unit filename="../test/ActionTest.cpp" />
 		<Unit filename="../test/ActionTest.h" />
 		<Unit filename="../test/TalkTest.h" />
+		<Unit filename="../test/TextBoxTest.cpp" />
+		<Unit filename="../test/TextBoxTest.h" />
 		<Extensions>
 			<code_completion />
 			<envvars />
