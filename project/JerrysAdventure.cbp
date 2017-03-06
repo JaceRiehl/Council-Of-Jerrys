@@ -16,6 +16,7 @@
 					<Add directory="../test" />
 					<Add directory="../include" />
 					<Add directory="include" />
+					<Add directory="test" />
 				</Compiler>
 				<Linker>
 					<Add option="-lcppunit" />
@@ -29,6 +30,7 @@
 				<Compiler>
 					<Add option="-O2" />
 					<Add directory="include" />
+					<Add directory="test" />
 				</Compiler>
 				<Linker>
 					<Add option="-s" />
@@ -50,13 +52,17 @@
 		<Unit filename="../src/Action.cpp" />
 		<Unit filename="../src/Character.cpp" />
 		<Unit filename="../src/Inventory.cpp" />
+		<Unit filename="../src/InventoryTest.cpp" />
 		<Unit filename="../src/Item.cpp" />
+		<Unit filename="../src/ItemTest.cpp" />
 		<Unit filename="../src/NPC.cpp" />
 		<Unit filename="../src/Talk.cpp" />
 		<Unit filename="../src/main.cpp" />
 		<Unit filename="../test/ActionTest.h" />
 		<Unit filename="../test/CharacterTest.cpp" />
 		<Unit filename="../test/CharacterTest.h" />
+		<Unit filename="../test/InventoryTest.h" />
+		<Unit filename="../test/ItemTest.h" />
 		<Unit filename="../test/TalkTest.h" />
 		<Extensions>
 			<code_completion />

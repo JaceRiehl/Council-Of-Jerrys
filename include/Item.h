@@ -14,7 +14,7 @@ class Character;
 class Item
 {
     public:
-        Item(string name);
+        Item(string itemName);
         bool operator==(const Item& itm) const;
         bool operator!=(const Item& itm) const;
         string getName() const;
