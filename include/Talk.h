@@ -1,15 +1,21 @@
 #ifndef TALK_H
 #define TALK_H
 
-#include "Action.h"
+#include "CharacterAction.h"
 
-class Talk : public Action
+class Talk : public CharacterAction
 {
     public:
+        Talk();
         Talk(string);
-        virtual ~Talk() {}
+        Talk(string, string);
+        Talk(string, string, string);
+        virtual ~Talk();
 
-        bool executeAction(string);
+        bool execute();
+
+    private:
+        //Item* item;
 };
 
 #endif // TALK_H
