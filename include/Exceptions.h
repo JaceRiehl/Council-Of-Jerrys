@@ -23,4 +23,12 @@ public:
     inventoryEmpty(const char* errMessage) :
         std::runtime_error(errMessage){}
 };
+
+class itemNameError: public std::runtime_error
+{
+public:
+    itemNameError(const char* errMessage) :
+        std::runtime_error(errMessage){}
+};
+
 #endif // EXCEPTIONS_H_INCLUDED

@@ -62,41 +62,6 @@ void Character::operator=(Character& c)
         delete inventory;
         inventory = new Inventory(c.inventory->getInventory());
     }
-
-    /*
-    if (inventory->getInventory().size() > c.inventory->getInventory().size())
-    {
-        //for (unsigned int i = 0; i < c.inventory->getInventory().size(); i++)
-        //{
-            inventory = c.inventory;
-        //}
-
-
-         inventory->getInventory().erase(inventory->getInventory().begin() + c.inventory->getInventory().size(), inventory->getInventory().end());
-    }
-    else if (inventory->getInventory().size() < c.inventory->getInventory().size())
-    {
-        //for (unsigned int i = 0; i < inventory->getInventory().size(); i++)
-        //{
-            inventory = c.inventory;
-        //}
-        for (unsigned int i = inventory->getInventory().size(); i < c.inventory->getInventory().size(); i++)
-        {
-            inventory->getInventory().push_back(c.inventory->getInventory()[i]);
-        }
-    }
-    else if (inventory->getInventory().size() == c.inventory->getInventory().size())
-    {
-        for (unsigned int i = 0; i < inventory->getInventory().size(); i++)
-        {
-            inventory = c.inventory;
-        }
-    }
-    else if (c.inventory == nullptr)
-    {
-        inventory = nullptr;
-    }
-    */
 }
 
 
