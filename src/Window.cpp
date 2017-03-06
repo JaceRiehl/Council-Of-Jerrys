@@ -19,6 +19,7 @@ void Window::setPlayerChoice(PrintList setList)
 
 void Window::print()
 {
+    system("clear");
     text.print();
     std::cout<<std::endl;
     pList.print();
