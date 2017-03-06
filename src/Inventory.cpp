@@ -7,7 +7,18 @@
 
 using namespace std;
 
-Inventory::Inventory(vector<Item> items) : items(items){}
+Inventory::Inventory(vector<Item> invItems)
+{
+    if (invItems.size() > 0)
+    {
+         for (unsigned i = 0; i < invItems.size(); i++)
+            {
+                items.push_back(invItems[i]);
+            }
+    }
+    else
+        throw inventoryEmpty("Your inventory is lonely without any items. Add some items.");
+}
 
 void Inventory::addItem(Item item)
 {
@@ -15,7 +26,8 @@ void Inventory::addItem(Item item)
     {
         if (items[i].getName() == item.getName())
        {
-            throw runtime_error("This item already exists");
+            items.insert(items.begin() + i, item);
+            return;
        }
     }
     items.push_back(item);
@@ -23,7 +35,12 @@ void Inventory::addItem(Item item)
 
 bool Inventory::searchName(string name) const
 {
-   return true;
+   for (unsigned int i = 0; i < items.size(); i++)
+    {
+        if (items[i].getName() == name)
+            return true;
+    }
+    return false;
 }
 bool Inventory::searchItem(Item& item) const
 {
@@ -45,6 +62,11 @@ Item Inventory::getItem(string n) const
     throw itemDoesNotExist("This item does not exist");
 }
 
+vector <Item> Inventory::getInventory() const
+{
+    return items;
+}
+
 void Inventory::printItems() const
 {
     for(unsigned int i = 0; i < items.size(); i++)
@@ -56,16 +78,26 @@ void Inventory::printItems() const
 bool Inventory::operator==(Inventory inv)
 {
     unsigned int invSize = 0;
-    for (unsigned int i = 0; i < items.size(); i++)
+    unsigned int k = 0;
+    if (inv.items.size() == items.size())
     {
-        for (unsigned int j = 0; j < items.size(); j++)
+        for (unsigned int i = 0; i < items.size(); i++)
         {
-            if (this->items[i] == inv.items[j])
-                invSize += 1;
+            for (unsigned int j = k; j < items.size(); j++)
+            {
+                if (this->items[i] == inv.items[j])
+                {
+                        invSize += 1;
+                        k = 0;
+                        break;
+                }
+                else
+                    k += 1;
+            }
         }
+        if (invSize == items.size())
+            return true;
     }
-    if (invSize == items.size())
-        return true;
     else
         return false;
 }
@@ -73,16 +105,22 @@ bool Inventory::operator==(Inventory inv)
 bool Inventory::operator!=(Inventory inv)
 {
     unsigned int invSize = 0;
-    for (unsigned int i = 0; i < items.size(); i++)
+    if (inv.items.size() == items.size())
     {
-        for (unsigned int j = 0; j < items.size(); j++)
+        for (unsigned int i = 0; i < items.size(); i++)
         {
-            if (this->items[i] == inv.items[j])
-                invSize += 1;
+            for (unsigned int j = invSize; j < items.size(); j++)
+            {
+                if (this->items[i] == inv.items[j])
+                {
+                        invSize += 1;
+                        break;
+                }
+            }
         }
+        if (invSize == items.size())
+            return false;
     }
-    if (invSize == items.size())
-        return false;
     else
         return true;
 }
