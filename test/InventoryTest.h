@@ -8,6 +8,7 @@ class InventoryTest: public CppUnit::TestFixture
 {
     CPPUNIT_TEST_SUITE(InventoryTest);
     CPPUNIT_TEST(testConstructor);
+    CPPUNIT_TEST(testConstructorExceptions);
     CPPUNIT_TEST(testAddItem);
     CPPUNIT_TEST(testSearchName);
     CPPUNIT_TEST(testSearchItem);
@@ -21,6 +22,7 @@ class InventoryTest: public CppUnit::TestFixture
         void tearDown();
 
         void testConstructor();
+        void testConstructorExceptions();
         void testAddItem();
         void testSearchName();
         void testSearchItem();
@@ -29,7 +31,7 @@ class InventoryTest: public CppUnit::TestFixture
         void testOperatorEquals();
 
     private:
-        Inventory *inventory;
+        Inventory *inventory, *inventory2, *inventory3, *inventory4;
         Item *item, *itemDNE;
 };
 

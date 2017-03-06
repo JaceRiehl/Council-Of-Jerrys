@@ -8,13 +8,13 @@
 class Inventory
 {
     public:
-        Inventory(){};
-        Inventory(vector<Item> items);
+        Inventory(vector<Item> invItems);
         virtual ~Inventory(){};
         void addItem(Item);
         bool searchName(string name) const;
         bool searchItem(Item& item) const;
         Item getItem(string name) const;
+        vector <Item> getInventory() const;
         void printItems() const;
         bool operator==(Inventory inv);
         bool operator!=(Inventory inv);

@@ -20,13 +20,13 @@ class Character
         Character(string name);
         Character(string name, vector<Item> charInv);
         string getName() const;
-        vector<Item> getInventory() const;
+        Inventory getInventory() const;
         void operator=(Character& c);
-        virtual ~Character(){};
+        virtual ~Character();
 
     private:
         string charName;
-        vector<Item> inventory;
+        Inventory *inventory;
 };
 
 #endif // CHARACTER_H
