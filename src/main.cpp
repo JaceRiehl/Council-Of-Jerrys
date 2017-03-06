@@ -1,5 +1,6 @@
 #include "Window.h"
 #include "PrintList.h"
+#include "ConsoleInterface.h"
 #include <iostream>
 #include <string>
 #include <vector>
@@ -11,7 +12,9 @@ using std::endl;
 
 int main()
 {
-    string text, a, b, c, d, aa, bb;
+    ConsoleInterface user;
+    string text, a, b, c, d, aa, bb, st;
+    char z;
     text = "Hello this is some text to try out how this thing will work i have no Idea what I am doing. this is getting weird Jerry!!!!!! oh well we will keep writing text to see what happends blah blah blassda. What if i keep adding text and more text and keep on writing text, IM FREAKING OUT!!!! holy crap what is going on??";
     a = "talk";
     b = "Search";
@@ -25,14 +28,20 @@ int main()
     map<char, string> ma;
     ma['1'] = "Hello";
     ma['b'] = "Bye";
-    PrintList listActions(ma);
+    PrintList listActions(actn);
     vector<string> subAction;
     subAction.push_back(aa);
     subAction.push_back(bb);
     TextBox testing(text);
-    Window window(testing);
-    window.setPlayerChoice(listActions);
+    TextBox tt(a);
+    Window window(testing, listActions);
+    //window.setPlayerChoice(listActions);
     window.print();
+    user.getEnterKey();
+    window.setTextBox(tt);
+    window.print();
+     user.getEnterKey();
+    //st = user.getString();
     return 0;
 
 }
