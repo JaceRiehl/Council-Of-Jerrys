@@ -168,10 +168,10 @@
 	<string>
 	<map>
 
-1488822516 /home/icanhazskillz/the-council-of-jerrys/include/Exceptions.h
+1488855610 /home/icanhazskillz/the-council-of-jerrys/include/Exceptions.h
 	<stdexcept>
 
-1488854355 source:/home/icanhazskillz/the-council-of-jerrys/src/Inventory.cpp
+1488855399 source:/home/icanhazskillz/the-council-of-jerrys/src/Inventory.cpp
 	"Inventory.h"
 	"Item.h"
 	<Exceptions.h>
@@ -196,12 +196,12 @@
 	<cppunit/extensions/TestFactoryRegistry.h>
 	<cppunit/ui/text/TestRunner.h>
 
-1488815157 source:/home/icanhazskillz/the-council-of-jerrys/src/NPC.cpp
+1488855610 source:/home/icanhazskillz/the-council-of-jerrys/src/NPC.cpp
 	"NPC.h"
 	"Character.h"
-	<string>
+	"Exceptions.h"
 
-1488815157 /home/icanhazskillz/the-council-of-jerrys/include/NPC.h
+1488855610 /home/icanhazskillz/the-council-of-jerrys/include/NPC.h
 	<Character.h>
 	<string>
 
@@ -362,6 +362,14 @@
 	"Exceptions.h"
 
 1488853389 /home/tipn/Programming/cpsc2720/cofj/test/NPCTest.h
+	<cppunit/extensions/HelperMacros.h>
+	"NPC.h"
+
+1488855610 source:/home/icanhazskillz/the-council-of-jerrys/test/NPCTest.cpp
+	"NPCTest.h"
+	"Exceptions.h"
+
+1488855610 /home/icanhazskillz/the-council-of-jerrys/test/NPCTest.h
 	<cppunit/extensions/HelperMacros.h>
 	"NPC.h"
 
