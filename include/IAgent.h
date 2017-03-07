@@ -7,7 +7,12 @@
 #include <iostream>
 
 using namespace std;
-
+/**
+    @file IAgent.h
+    @author Michel Martel
+    @date March 4, 2017
+    @brief IAgent acts as a container for future derivative character classes to take actions.
+*/
 class IAgent
 {
     public:
