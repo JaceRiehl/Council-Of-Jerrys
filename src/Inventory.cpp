@@ -76,7 +76,7 @@ void Inventory::printItems() const
     unsigned int k = 0;
     unsigned int m = 1;
     unsigned int counter = 1;
-    do//for(unsigned int i = k; i < items.size(); i++)
+    do
     {
         for(unsigned int j = m; j < items.size(); j++)
         {

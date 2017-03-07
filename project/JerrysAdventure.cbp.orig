@@ -54,7 +54,10 @@
 		<Unit filename="../src/Inventory.cpp" />
 		<Unit filename="../src/InventoryTest.cpp" />
 		<Unit filename="../src/Item.cpp" />
+<<<<<<< working copy
 		<Unit filename="../src/ItemsTest.cpp" />
+=======
+>>>>>>> destination
 		<Unit filename="../src/NPC.cpp" />
 		<Unit filename="../src/Talk.cpp" />
 		<Unit filename="../src/main.cpp" />
@@ -62,9 +65,12 @@
 		<Unit filename="../test/CharacterTest.cpp" />
 		<Unit filename="../test/CharacterTest.h" />
 		<Unit filename="../test/InventoryTest.h" />
+<<<<<<< working copy
 		<Unit filename="../test/ItemsTest.h" />
+=======
 		<Unit filename="../test/NPCTest.cpp" />
 		<Unit filename="../test/NPCTest.h" />
+>>>>>>> destination
 		<Unit filename="../test/TalkTest.h" />
 		<Extensions>
 			<code_completion />
