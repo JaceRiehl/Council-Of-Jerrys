@@ -31,4 +31,12 @@ public:
         std::runtime_error(errMessage){}
 };
 
+class keyDoesNotExist: public std::runtime_error
+{
+public:
+    keyDoesNotExist(const char* errMessage) :
+        std::runtime_error(errMessage){}
+};
+
+
 #endif // EXCEPTIONS_H_INCLUDED
