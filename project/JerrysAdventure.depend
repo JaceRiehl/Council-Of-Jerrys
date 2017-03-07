@@ -156,12 +156,12 @@
 	<vector>
 	<iostream>
 
-1488820570 /home/icanhazskillz/the-council-of-jerrys/include/Inventory.h
+1488848487 /home/icanhazskillz/the-council-of-jerrys/include/Inventory.h
 	<Item.h>
 	<string>
 	<vector>
 
-1488835235 /home/icanhazskillz/the-council-of-jerrys/include/Item.h
+1488848703 /home/icanhazskillz/the-council-of-jerrys/include/Item.h
 	"Character.h"
 	"Action.h"
 	<iostream>
@@ -171,21 +171,23 @@
 1488822516 /home/icanhazskillz/the-council-of-jerrys/include/Exceptions.h
 	<stdexcept>
 
-1488815157 source:/home/icanhazskillz/the-council-of-jerrys/src/Inventory.cpp
+1488854355 source:/home/icanhazskillz/the-council-of-jerrys/src/Inventory.cpp
 	"Inventory.h"
 	"Item.h"
+	<Exceptions.h>
+	<algorithm>
 	<vector>
 	<string>
-	<Exceptions.h>
 	<iostream>
 
-1488835226 source:/home/icanhazskillz/the-council-of-jerrys/src/Item.cpp
+1488854189 source:/home/icanhazskillz/the-council-of-jerrys/src/Item.cpp
 	"Inventory.h"
 	"Item.h"
 	"Character.h"
 	"Action.h"
 	"Exceptions.h"
 	<string>
+	<algorithm>
 	<map>
 	<iostream>
 
@@ -223,7 +225,7 @@
 	<cppunit/extensions/HelperMacros.h>
 	"Character.h"
 
-1488815157 source:/home/icanhazskillz/the-council-of-jerrys/src/InventoryTest.cpp
+1488854855 source:/home/icanhazskillz/the-council-of-jerrys/src/InventoryTest.cpp
 	"InventoryTest.h"
 	"Inventory.h"
 	"Item.h"
@@ -231,7 +233,7 @@
 	<string>
 	<iostream>
 
-1488820951 /home/icanhazskillz/the-council-of-jerrys/test/InventoryTest.h
+1488850563 /home/icanhazskillz/the-council-of-jerrys/test/InventoryTest.h
 	<cppunit/extensions/HelperMacros.h>
 	"Inventory.h"
 
@@ -242,11 +244,11 @@
 	<cppunit/extensions/HelperMacros.h>
 	"Item.h"
 
-1488834354 source:/home/icanhazskillz/the-council-of-jerrys/src/ItemsTest.cpp
+1488835356 source:/home/icanhazskillz/the-council-of-jerrys/src/ItemsTest.cpp
 	"ItemsTest.h"
 	"Exceptions.h"
 
-1488834149 /home/icanhazskillz/the-council-of-jerrys/test/ItemsTest.h
+1488835266 /home/icanhazskillz/the-council-of-jerrys/test/ItemsTest.h
 	<cppunit/extensions/HelperMacros.h>
 	"Inventory.h"
 	"Item.h"

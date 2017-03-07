@@ -17,12 +17,19 @@ void InventoryTest::setUp()
     inventory = new Inventory({Item("shovel"), Item("Used toothbrush")});
     inventory3 = new Inventory({Item("shovel"),Item("shovel"),Item("shovel"),Item("shovel")});
     inventory4 = new Inventory({Item("shovel"),Item("shovel"),Item("shovel"),Item("shovel")});
+    inventory5 = new Inventory({Item("used toothbrush"),Item("shovel"), Item("portal gun"),
+    Item("shovel"),Item("shovel"),Item("portal gun"),Item("shovel"),Item("used toothbrush"),
+    Item("mittens")});
 }
 
 void InventoryTest::tearDown()
 {
     delete item;
     delete itemDNE;
+    delete inventory;
+    delete inventory3;
+    delete inventory4;
+    delete inventory5;
 }
 
 void InventoryTest::testConstructor()
@@ -39,12 +46,13 @@ void InventoryTest::testConstructorExceptions()
 
 void InventoryTest::testAddItem()
 {
-    //test push_back
+    //test vector push_back
     inventory->addItem(Item ("Ultra Sonic Range Finder"));
-    CPPUNIT_ASSERT_EQUAL(true, inventory->getInventory()[2] == Item ("Ultra Sonic Range Finder"));
+    CPPUNIT_ASSERT_EQUAL(true, inventory->searchName("Ultra Sonic Range Finder"));
 
-    //test insert
+    //test vector insert
     inventory->addItem(Item ("shovel"));
+    CPPUNIT_ASSERT_EQUAL(true, inventory->getInventory()[0] == Item ("shovel"));
     CPPUNIT_ASSERT_EQUAL(true, inventory->getInventory()[1] == Item ("shovel"));
 }
 
@@ -75,6 +83,7 @@ void InventoryTest::testGetItemExceptions()
     //trying to return an item from the items vector which does not exist
     CPPUNIT_ASSERT_THROW(inventory->getItem(itemDNE->getName()), itemDoesNotExist);
 }
+
 void InventoryTest::testOperatorEquals()
 {
     //testing equallity with identical objects
@@ -86,6 +95,11 @@ void InventoryTest::testOperatorEquals()
     //testing same size vector with identical repeat objects
     CPPUNIT_ASSERT_EQUAL(true, *inventory3 == *inventory4);
     delete inventory2;
-    delete inventory3;
-    delete inventory4;
+}
+
+void InventoryTest::testPrint()
+{
+    //test for sorting and itemization of item vector
+    cout << endl;
+    inventory5->printItems();
 }
