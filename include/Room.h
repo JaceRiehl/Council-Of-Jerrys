@@ -55,6 +55,10 @@ private:
     /**
     *The map of the inital choices the user can make, maps from the char chosen to string displayed
     */
+    map<char,string> output;
+    /**
+    *The map of the inital choices the user can make, maps from the char chosen to string displayed
+    */
     map<char,string> choices;
     /**
     *Map for the submenus, maps from the choices string to the map of the submenu
@@ -63,7 +67,7 @@ private:
     /**
     *Map for the menu displayed after the main menus choice
     */
-    map<char, string> submenu;
+    map<char, string> submenuOutput;
     /**
     *An instance of the ConsoleInterface used to input from the user
     */
