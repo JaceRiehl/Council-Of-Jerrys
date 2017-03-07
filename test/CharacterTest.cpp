@@ -82,6 +82,7 @@ void CharacterTest::testGetInventory()
 
 void CharacterTest::testAssign()
 {
+
     //Test Equality When inventory LHS > RHS
     *c7 = *c4;
     CPPUNIT_ASSERT_EQUAL(true, c7->getName() == c4->getName());
@@ -94,7 +95,6 @@ void CharacterTest::testAssign()
     *c5 = *c7;
     CPPUNIT_ASSERT_EQUAL(true, c5->getName() == c7->getName());
     CPPUNIT_ASSERT_EQUAL(true, c5->getInventory() == c7->getInventory());
-
     //Test Equality When inventory LHS = 0 && LHS < RHS
     *c4 = *c7;
     CPPUNIT_ASSERT_EQUAL(true, c4->getName() == c7->getName());
@@ -103,15 +103,16 @@ void CharacterTest::testAssign()
     //Test Equality When inventory RHS = 0 && LHS > RHS
     *c4 = *c;
     CPPUNIT_ASSERT_EQUAL(true, c4->getName() == c->getName());
-    ///Can't be tested since pointer getInventory cannot return a nullptr.
-    ///Assign function does it's work as it should though
-    //CPPUNIT_ASSERT(c4->getInventory() == c->getInventory());
+    //Can't be tested since pointer getInventory cannot return a nullptr.
+    //Assign function does it's work as it should though
+    //CPPUNIT_ASSERT_EQUAL(true, c->getInventory() == c4->getInventory());
 
     //Test Equality When inventory RHS = 0 && LHS = 0
     *c = *c4;
     CPPUNIT_ASSERT_EQUAL(true, c->getName() == c4->getName());
-    ///Can't be tested since pointer getInventory cannot return a nullptr.
-    ///Assign function does it's work as it should though
+
+    //Can't be tested since pointer getInventory cannot return a nullptr.
+    //Assign function does it's work as it should though
     //CPPUNIT_ASSERT_EQUAL(true, c->getInventory() == c4->getInventory());
 }
 
