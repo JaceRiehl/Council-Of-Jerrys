@@ -17,6 +17,7 @@ class Item
         Item(string itemName);
         bool operator==(const Item& itm) const;
         bool operator!=(const Item& itm) const;
+        bool operator<(const Item& rhs) const;
         string getName() const;
         virtual ~Item(){};
 

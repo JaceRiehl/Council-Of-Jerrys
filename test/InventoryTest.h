@@ -15,6 +15,7 @@ class InventoryTest: public CppUnit::TestFixture
     CPPUNIT_TEST(testGetItem);
     CPPUNIT_TEST(testGetItemExceptions);
     CPPUNIT_TEST(testOperatorEquals);
+    CPPUNIT_TEST(testPrint);
     CPPUNIT_TEST_SUITE_END();
 
     public:
@@ -29,9 +30,10 @@ class InventoryTest: public CppUnit::TestFixture
         void testGetItem();
         void testGetItemExceptions();
         void testOperatorEquals();
+        void testPrint();
 
     private:
-        Inventory *inventory, *inventory2, *inventory3, *inventory4;
+        Inventory *inventory, *inventory2, *inventory3, *inventory4, *inventory5;
         Item *item, *itemDNE;
 };
 
