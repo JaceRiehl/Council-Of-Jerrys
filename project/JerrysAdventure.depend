@@ -21,13 +21,13 @@
 	<cppunit/extensions/HelperMacros.h>
 	"Action.h"
 
-1487884191 source:/home/marm2720/the-council-of-jerrys/src/Action.cpp
+1488909311 source:/home/marm2720/the-council-of-jerrys/src/Action.cpp
 	"Action.h"
 
-1487884191 /home/marm2720/the-council-of-jerrys/include/Action.h
+1488909311 /home/marm2720/the-council-of-jerrys/include/Action.h
 	<string>
 
-1488765818 source:/home/marm2720/the-council-of-jerrys/src/Character.cpp
+1488909334 source:/home/marm2720/the-council-of-jerrys/src/Character.cpp
 	"Character.h"
 	"Inventory.h"
 	"Item.h"
@@ -37,7 +37,7 @@
 	<iostream>
 	<Exceptions.h>
 
-1488756456 /home/marm2720/the-council-of-jerrys/include/Character.h
+1488912007 /home/marm2720/the-council-of-jerrys/include/Character.h
 	"Inventory.h"
 	"Item.h"
 	"Action.h"
@@ -46,35 +46,36 @@
 	<vector>
 	<iostream>
 
-1488766193 /home/marm2720/the-council-of-jerrys/include/Inventory.h
+1488909334 /home/marm2720/the-council-of-jerrys/include/Inventory.h
 	<Item.h>
 	<string>
 	<vector>
 
-1488493139 /home/marm2720/the-council-of-jerrys/include/Item.h
+1488909334 /home/marm2720/the-council-of-jerrys/include/Item.h
 	"Character.h"
 	"Action.h"
 	<iostream>
 	<string>
 	<map>
 
-1488774293 source:/home/marm2720/the-council-of-jerrys/src/Inventory.cpp
+1488909334 source:/home/marm2720/the-council-of-jerrys/src/Inventory.cpp
 	"Inventory.h"
 	"Item.h"
+	<Exceptions.h>
+	<algorithm>
 	<vector>
 	<string>
-	<Exceptions.h>
 	<iostream>
 
-1488130007 source:/home/marm2720/the-council-of-jerrys/src/main.cpp
+1488909311 source:/home/marm2720/the-council-of-jerrys/src/main.cpp
 	<cppunit/CompilerOutputter.h>
 	<cppunit/extensions/TestFactoryRegistry.h>
 	<cppunit/ui/text/TestRunner.h>
 
-1487884191 source:/home/marm2720/the-council-of-jerrys/src/Talk.cpp
+1488909311 source:/home/marm2720/the-council-of-jerrys/src/Talk.cpp
 	"Talk.h"
 
-1487884191 /home/marm2720/the-council-of-jerrys/include/Talk.h
+1488909311 /home/marm2720/the-council-of-jerrys/include/Talk.h
 	"Action.h"
 
 1487884191 source:/home/marm2720/the-council-of-jerrys/test/ActionTest.cpp
@@ -84,16 +85,18 @@
 	<cppunit/extensions/HelperMacros.h>
 	"Action.h"
 
-1488493160 source:/home/marm2720/the-council-of-jerrys/src/Item.cpp
+1488909334 source:/home/marm2720/the-council-of-jerrys/src/Item.cpp
 	"Inventory.h"
 	"Item.h"
 	"Character.h"
 	"Action.h"
+	"Exceptions.h"
 	<string>
+	<algorithm>
 	<map>
 	<iostream>
 
-1488773791 source:/home/marm2720/the-council-of-jerrys/test/CharacterTest.cpp
+1488909334 source:/home/marm2720/the-council-of-jerrys/test/CharacterTest.cpp
 	"CharacterTest.h"
 	"Character.h"
 	"Item.h"
@@ -103,23 +106,23 @@
 	<vector>
 	<iostream>
 
-1488758179 /home/marm2720/the-council-of-jerrys/test/CharacterTest.h
+1488909334 /home/marm2720/the-council-of-jerrys/test/CharacterTest.h
 	<cppunit/extensions/HelperMacros.h>
 	"Character.h"
 
-1488767340 /home/marm2720/the-council-of-jerrys/include/Exceptions.h
+1488909334 /home/marm2720/the-council-of-jerrys/include/Exceptions.h
 	<stdexcept>
 
-1488567491 source:/home/marm2720/the-council-of-jerrys/src/NPC.cpp
+1488909334 source:/home/marm2720/the-council-of-jerrys/src/NPC.cpp
 	"NPC.h"
 	"Character.h"
-	<string>
+	"Exceptions.h"
 
-1488567491 /home/marm2720/the-council-of-jerrys/include/NPC.h
+1488909334 /home/marm2720/the-council-of-jerrys/include/NPC.h
 	<Character.h>
 	<string>
 
-1488773312 source:/home/marm2720/the-council-of-jerrys/src/InventoryTest.cpp
+1488909334 source:/home/marm2720/the-council-of-jerrys/src/InventoryTest.cpp
 	"InventoryTest.h"
 	"Inventory.h"
 	"Item.h"
@@ -127,7 +130,7 @@
 	<string>
 	<iostream>
 
-1488773043 /home/marm2720/the-council-of-jerrys/test/InventoryTest.h
+1488909334 /home/marm2720/the-council-of-jerrys/test/InventoryTest.h
 	<cppunit/extensions/HelperMacros.h>
 	"Inventory.h"
 
@@ -370,6 +373,23 @@
 	"Exceptions.h"
 
 1488855610 /home/icanhazskillz/the-council-of-jerrys/test/NPCTest.h
+	<cppunit/extensions/HelperMacros.h>
+	"NPC.h"
+
+1488909334 source:/home/marm2720/the-council-of-jerrys/src/ItemsTest.cpp
+	"ItemsTest.h"
+	"Exceptions.h"
+
+1488909334 /home/marm2720/the-council-of-jerrys/test/ItemsTest.h
+	<cppunit/extensions/HelperMacros.h>
+	"Inventory.h"
+	"Item.h"
+
+1488909334 source:/home/marm2720/the-council-of-jerrys/test/NPCTest.cpp
+	"NPCTest.h"
+	"Exceptions.h"
+
+1488909334 /home/marm2720/the-council-of-jerrys/test/NPCTest.h
 	<cppunit/extensions/HelperMacros.h>
 	"NPC.h"
 

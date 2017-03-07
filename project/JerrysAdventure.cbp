@@ -45,9 +45,11 @@
 		<Unit filename="../include/Action.h" />
 		<Unit filename="../include/Character.h" />
 		<Unit filename="../include/Exceptions.h" />
+		<Unit filename="../include/IAgent.h" />
 		<Unit filename="../include/Inventory.h" />
 		<Unit filename="../include/Item.h" />
 		<Unit filename="../include/NPC.h" />
+		<Unit filename="../include/PlayableCharacter.h" />
 		<Unit filename="../include/Talk.h" />
 		<Unit filename="../src/Action.cpp" />
 		<Unit filename="../src/Character.cpp" />
@@ -56,6 +58,7 @@
 		<Unit filename="../src/Item.cpp" />
 		<Unit filename="../src/ItemsTest.cpp" />
 		<Unit filename="../src/NPC.cpp" />
+		<Unit filename="../src/PlayableCharacter.cpp" />
 		<Unit filename="../src/Talk.cpp" />
 		<Unit filename="../src/main.cpp" />
 		<Unit filename="../test/ActionTest.h" />
