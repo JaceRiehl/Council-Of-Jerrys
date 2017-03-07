@@ -5,21 +5,25 @@
                //vector<string> charKey, vector<Character> charMap, vector<string> itemKeys, vector<Item> itemMap)
     {
         jerry = j;
-        choices['1'] = "Talk: ";
-        choices['2'] = "Search: ";
-        choices['3'] = "Exit Room: ";
-        choices['4'] = "Print inventory: ";
-        PrintList Main(choices);
-        MainWindow.setPlayerChoice(choices);
+        output['1'] = "Talk: ";
+        output['2'] = "Search: ";
+        output['3'] = "Exit Room: ";
+        output['4'] = "Print inventory: ";
+        PrintList Main(output);
+        MainWindow.setPlayerChoice(Main);
 
+        choices['1'] = "talk";
+        choices['2'] = "search";
+        choices['3'] = "search";
+        choices['4'] = "print";
 
-        map<char, string> submenu;
-        submenu['1'] = "Talk to Rick";
-        submenu['2'] = "Talk to Summer";
+        submenuOutput['1'] = "Rick";
+        submenuOutput['2'] = "Summer";
 
-        submenuChoices["Talk: "] = submenu;
+        submenuChoices["talk"] = submenu;
 
-        characters["Talk to Rick"] = Character* Rick = new NPC();
+        characters["Rick"] = Character* Rick = new NPC();
+        characters["Summer"] = Character* Summer = new NPC();
 
     }
 
@@ -33,7 +37,7 @@
         MainWindow.print();
         //call vinces input to find out the char chosen
         char input = Inputting.getChar();
-        if(submenuChoices.find(choices[firstInput]) == submenuChoices.end())
+        //if(submenuChoices.find(choices[firstInput]) == submenuChoices.end())
 
 
         finishedScenario = inputSwitch(input);
@@ -57,7 +61,7 @@
         {
             string subChoice = choices[firstInput];
             map<char,string> sub = submenuChoices[subChoice];
-            PrintList Sub(sub);
+            PrintList Sub(submenuOutput);
             MainWindow.setPlayerChoice(Sub);
             MainWindow.print();
 
@@ -68,10 +72,10 @@
             if(typeid(CharacterAction) == typeid(action))
             {
             CharacterAction* charAction = dynamic_cast<CharacterAction>(action);
-            charAction->setCharacter(characters[secondInput]);
+            charAction->setCharacter(characters[submenuOutput[secInput]]);
             }
 
-            jerry.takeAction(action);
+            jerry.takeAction(choices[firstInput]);
             return "Continue";
 
         }
