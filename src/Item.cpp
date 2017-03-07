@@ -4,6 +4,7 @@
 #include "Action.h"
 #include "Exceptions.h"
 #include <string>
+#include <algorithm>
 #include <map>
 #include <iostream>
 
@@ -17,7 +18,11 @@ Item::Item(string itemName)
     else if (itemName.length() == 0)
         throw itemNameError("Do you really want your item to be the only one without a name?");
     else
+    {
+        transform(itemName.begin(), itemName.end(), itemName.begin(), ::tolower);
         name = itemName;
+    }
+
 }
 
 string Item::getName() const
@@ -37,4 +42,9 @@ bool Item::operator==(const Item& itm) const
     if (name == itm.name)
         return true;
     return false;
+}
+
+bool Item::operator<(const Item& rhs) const
+{
+    return this->name < rhs.name;
 }

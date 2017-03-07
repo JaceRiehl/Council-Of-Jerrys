@@ -1,8 +1,9 @@
 #include "Inventory.h"
 #include "Item.h"
-#include  <vector>
-#include <string>
 #include <Exceptions.h>
+#include <algorithm>
+#include <vector>
+#include <string>
 #include <iostream>
 
 using namespace std;
@@ -11,10 +12,11 @@ Inventory::Inventory(vector<Item> invItems)
 {
     if (invItems.size() > 0)
     {
-         for (unsigned i = 0; i < invItems.size(); i++)
-            {
-                items.push_back(invItems[i]);
-            }
+        for (unsigned i = 0; i < invItems.size(); i++)
+        {
+            items.push_back(invItems[i]);
+        }
+        sort(items.begin(), items.end());
     }
     else
         throw inventoryEmpty("Your inventory is lonely without any items. Add some items.");
@@ -31,11 +33,13 @@ void Inventory::addItem(Item item)
        }
     }
     items.push_back(item);
+    sort(items.begin(), items.end());
 }
 
 bool Inventory::searchName(string name) const
 {
-   for (unsigned int i = 0; i < items.size(); i++)
+    transform(name.begin(), name.end(), name.begin(), ::tolower);
+    for (unsigned int i = 0; i < items.size(); i++)
     {
         if (items[i].getName() == name)
             return true;
@@ -69,10 +73,27 @@ vector <Item> Inventory::getInventory() const
 
 void Inventory::printItems() const
 {
-    for(unsigned int i = 0; i < items.size(); i++)
+    unsigned int k = 0;
+    unsigned int m = 1;
+    unsigned int counter = 1;
+    do//for(unsigned int i = k; i < items.size(); i++)
     {
-        cout << items[i].getName() << endl;
-    }
+        for(unsigned int j = m; j < items.size(); j++)
+        {
+            if (items[k] == items[j])
+                counter += 1;
+        }
+        cout << counter << "X " << items[k].getName() << endl;
+        k = k + counter;
+        m = m + counter;
+        if(m > items.size() && k < items.size())
+        {
+            counter = 1;
+            cout << counter << "X " << items[k].getName() << endl;
+            break;
+        }
+        counter = 1;
+    }while(k < items.size());
 }
 
 bool Inventory::operator==(Inventory inv)
