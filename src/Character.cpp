@@ -37,8 +37,11 @@ Character::Character(string name, vector<Item> charInv)
 }
 Character::~Character()
 {
+    /*
     if (inventory == nullptr)
         delete inventory;
+        */
+    delete inventory;
 }
 
 
@@ -55,8 +58,12 @@ Inventory Character::getInventory() const
 void Character::operator=(Character& c)
 {
     charName = c.charName;
-    if (c.inventory == nullptr)
+
+    if (c.inventory == false)
+    {
+        delete inventory;
         inventory = nullptr;
+    }
     else
     {
         delete inventory;
