@@ -12,8 +12,8 @@
   <line>Command: /home/vincent/Jerry/the-council-of-jerrys/project/bin/Debug/JerrysAdventure </line>
 </preamble>
 
-<pid>24470</pid>
-<ppid>1900</ppid>
+<pid>5202</pid>
+<ppid>3633</ppid>
 <tool>memcheck</tool>
 
 <args>
@@ -32,7 +32,7 @@
 
 <status>
   <state>RUNNING</state>
-  <time>00:00:00:00.097 </time>
+  <time>00:00:00:00.157 </time>
 </status>
 
 <error>
@@ -42,7 +42,7 @@
   <what>Invalid read of size 1</what>
   <stack>
     <frame>
-      <ip>0x404CD9</ip>
+      <ip>0x405F55</ip>
       <obj>/home/vincent/Jerry/the-council-of-jerrys/project/bin/Debug/JerrysAdventure</obj>
       <fn>TextBox::TextBox(std::__cxx11::basic_string&lt;char, std::char_traits&lt;char&gt;, std::allocator&lt;char&gt; &gt;)</fn>
       <dir>/home/vincent/Jerry/the-council-of-jerrys/src</dir>
@@ -50,15 +50,68 @@
       <line>18</line>
     </frame>
     <frame>
-      <ip>0x402A02</ip>
+      <ip>0x40C0E3</ip>
       <obj>/home/vincent/Jerry/the-council-of-jerrys/project/bin/Debug/JerrysAdventure</obj>
-      <fn>main</fn>
-      <dir>/home/vincent/Jerry/the-council-of-jerrys/src</dir>
-      <file>main.cpp</file>
-      <line>25</line>
+      <fn>TextBoxTest::setUp()</fn>
+      <dir>/home/vincent/Jerry/the-council-of-jerrys/test</dir>
+      <file>TextBoxTest.cpp</file>
+      <line>12</line>
+    </frame>
+    <frame>
+      <ip>0x40D6BE</ip>
+      <obj>/home/vincent/Jerry/the-council-of-jerrys/project/bin/Debug/JerrysAdventure</obj>
+      <fn>CppUnit::TestCaller&lt;TextBoxTest&gt;::setUp()</fn>
+      <dir>/usr/include/cppunit</dir>
+      <file>TestCaller.h</file>
+      <line>177</line>
+    </frame>
+    <frame>
+      <ip>0x4E5B291</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/libcppunit-1.13.so.0.0.2</obj>
+      <fn>CppUnit::TestCaseMethodFunctor::operator()() const</fn>
+    </frame>
+    <frame>
+      <ip>0x4E51B92</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/libcppunit-1.13.so.0.0.2</obj>
+      <fn>CppUnit::DefaultProtector::protect(CppUnit::Functor const&amp;, CppUnit::ProtectorContext const&amp;)</fn>
+    </frame>
+    <frame>
+      <ip>0x4E584C1</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/libcppunit-1.13.so.0.0.2</obj>
+      <fn>CppUnit::ProtectorChain::protect(CppUnit::Functor const&amp;, CppUnit::ProtectorContext const&amp;)</fn>
+    </frame>
+    <frame>
+      <ip>0x4E60B2F</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/libcppunit-1.13.so.0.0.2</obj>
+      <fn>CppUnit::TestResult::protect(CppUnit::Functor const&amp;, CppUnit::Test*, std::__cxx11::basic_string&lt;char, std::char_traits&lt;char&gt;, std::allocator&lt;char&gt; &gt; const&amp;)</fn>
+    </frame>
+    <frame>
+      <ip>0x4E5AFF3</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/libcppunit-1.13.so.0.0.2</obj>
+      <fn>CppUnit::TestCase::run(CppUnit::TestResult*)</fn>
+    </frame>
+    <frame>
+      <ip>0x4E5B5C2</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/libcppunit-1.13.so.0.0.2</obj>
+      <fn>CppUnit::TestComposite::doRunChildTests(CppUnit::TestResult*)</fn>
+    </frame>
+    <frame>
+      <ip>0x4E5B4DD</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/libcppunit-1.13.so.0.0.2</obj>
+      <fn>CppUnit::TestComposite::run(CppUnit::TestResult*)</fn>
+    </frame>
+    <frame>
+      <ip>0x4E5B5C2</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/libcppunit-1.13.so.0.0.2</obj>
+      <fn>CppUnit::TestComposite::doRunChildTests(CppUnit::TestResult*)</fn>
+    </frame>
+    <frame>
+      <ip>0x4E5B4DD</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/libcppunit-1.13.so.0.0.2</obj>
+      <fn>CppUnit::TestComposite::run(CppUnit::TestResult*)</fn>
     </frame>
   </stack>
-  <auxwhat>Address 0x5ef757c is 0 bytes after a block of size 316 alloc'd</auxwhat>
+  <auxwhat>Address 0x5f07408 is 0 bytes after a block of size 24 alloc'd</auxwhat>
   <stack>
     <frame>
       <ip>0x4C2E0EF</ip>
@@ -76,12 +129,469 @@
       <fn>std::__cxx11::basic_string&lt;char, std::char_traits&lt;char&gt;, std::allocator&lt;char&gt; &gt;::basic_string(std::__cxx11::basic_string&lt;char, std::char_traits&lt;char&gt;, std::allocator&lt;char&gt; &gt; const&amp;)</fn>
     </frame>
     <frame>
-      <ip>0x4029EC</ip>
+      <ip>0x40C0C7</ip>
       <obj>/home/vincent/Jerry/the-council-of-jerrys/project/bin/Debug/JerrysAdventure</obj>
-      <fn>main</fn>
+      <fn>TextBoxTest::setUp()</fn>
+      <dir>/home/vincent/Jerry/the-council-of-jerrys/test</dir>
+      <file>TextBoxTest.cpp</file>
+      <line>12</line>
+    </frame>
+    <frame>
+      <ip>0x40D6BE</ip>
+      <obj>/home/vincent/Jerry/the-council-of-jerrys/project/bin/Debug/JerrysAdventure</obj>
+      <fn>CppUnit::TestCaller&lt;TextBoxTest&gt;::setUp()</fn>
+      <dir>/usr/include/cppunit</dir>
+      <file>TestCaller.h</file>
+      <line>177</line>
+    </frame>
+    <frame>
+      <ip>0x4E5B291</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/libcppunit-1.13.so.0.0.2</obj>
+      <fn>CppUnit::TestCaseMethodFunctor::operator()() const</fn>
+    </frame>
+    <frame>
+      <ip>0x4E51B92</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/libcppunit-1.13.so.0.0.2</obj>
+      <fn>CppUnit::DefaultProtector::protect(CppUnit::Functor const&amp;, CppUnit::ProtectorContext const&amp;)</fn>
+    </frame>
+    <frame>
+      <ip>0x4E584C1</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/libcppunit-1.13.so.0.0.2</obj>
+      <fn>CppUnit::ProtectorChain::protect(CppUnit::Functor const&amp;, CppUnit::ProtectorContext const&amp;)</fn>
+    </frame>
+    <frame>
+      <ip>0x4E60B2F</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/libcppunit-1.13.so.0.0.2</obj>
+      <fn>CppUnit::TestResult::protect(CppUnit::Functor const&amp;, CppUnit::Test*, std::__cxx11::basic_string&lt;char, std::char_traits&lt;char&gt;, std::allocator&lt;char&gt; &gt; const&amp;)</fn>
+    </frame>
+    <frame>
+      <ip>0x4E5AFF3</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/libcppunit-1.13.so.0.0.2</obj>
+      <fn>CppUnit::TestCase::run(CppUnit::TestResult*)</fn>
+    </frame>
+    <frame>
+      <ip>0x4E5B5C2</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/libcppunit-1.13.so.0.0.2</obj>
+      <fn>CppUnit::TestComposite::doRunChildTests(CppUnit::TestResult*)</fn>
+    </frame>
+    <frame>
+      <ip>0x4E5B4DD</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/libcppunit-1.13.so.0.0.2</obj>
+      <fn>CppUnit::TestComposite::run(CppUnit::TestResult*)</fn>
+    </frame>
+  </stack>
+</error>
+
+<error>
+  <unique>0x24</unique>
+  <tid>1</tid>
+  <kind>InvalidRead</kind>
+  <what>Invalid read of size 1</what>
+  <stack>
+    <frame>
+      <ip>0x405F55</ip>
+      <obj>/home/vincent/Jerry/the-council-of-jerrys/project/bin/Debug/JerrysAdventure</obj>
+      <fn>TextBox::TextBox(std::__cxx11::basic_string&lt;char, std::char_traits&lt;char&gt;, std::allocator&lt;char&gt; &gt;)</fn>
       <dir>/home/vincent/Jerry/the-council-of-jerrys/src</dir>
-      <file>main.cpp</file>
-      <line>25</line>
+      <file>TextBox.cpp</file>
+      <line>18</line>
+    </frame>
+    <frame>
+      <ip>0x40C12A</ip>
+      <obj>/home/vincent/Jerry/the-council-of-jerrys/project/bin/Debug/JerrysAdventure</obj>
+      <fn>TextBoxTest::setUp()</fn>
+      <dir>/home/vincent/Jerry/the-council-of-jerrys/test</dir>
+      <file>TextBoxTest.cpp</file>
+      <line>13</line>
+    </frame>
+    <frame>
+      <ip>0x40D6BE</ip>
+      <obj>/home/vincent/Jerry/the-council-of-jerrys/project/bin/Debug/JerrysAdventure</obj>
+      <fn>CppUnit::TestCaller&lt;TextBoxTest&gt;::setUp()</fn>
+      <dir>/usr/include/cppunit</dir>
+      <file>TestCaller.h</file>
+      <line>177</line>
+    </frame>
+    <frame>
+      <ip>0x4E5B291</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/libcppunit-1.13.so.0.0.2</obj>
+      <fn>CppUnit::TestCaseMethodFunctor::operator()() const</fn>
+    </frame>
+    <frame>
+      <ip>0x4E51B92</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/libcppunit-1.13.so.0.0.2</obj>
+      <fn>CppUnit::DefaultProtector::protect(CppUnit::Functor const&amp;, CppUnit::ProtectorContext const&amp;)</fn>
+    </frame>
+    <frame>
+      <ip>0x4E584C1</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/libcppunit-1.13.so.0.0.2</obj>
+      <fn>CppUnit::ProtectorChain::protect(CppUnit::Functor const&amp;, CppUnit::ProtectorContext const&amp;)</fn>
+    </frame>
+    <frame>
+      <ip>0x4E60B2F</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/libcppunit-1.13.so.0.0.2</obj>
+      <fn>CppUnit::TestResult::protect(CppUnit::Functor const&amp;, CppUnit::Test*, std::__cxx11::basic_string&lt;char, std::char_traits&lt;char&gt;, std::allocator&lt;char&gt; &gt; const&amp;)</fn>
+    </frame>
+    <frame>
+      <ip>0x4E5AFF3</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/libcppunit-1.13.so.0.0.2</obj>
+      <fn>CppUnit::TestCase::run(CppUnit::TestResult*)</fn>
+    </frame>
+    <frame>
+      <ip>0x4E5B5C2</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/libcppunit-1.13.so.0.0.2</obj>
+      <fn>CppUnit::TestComposite::doRunChildTests(CppUnit::TestResult*)</fn>
+    </frame>
+    <frame>
+      <ip>0x4E5B4DD</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/libcppunit-1.13.so.0.0.2</obj>
+      <fn>CppUnit::TestComposite::run(CppUnit::TestResult*)</fn>
+    </frame>
+    <frame>
+      <ip>0x4E5B5C2</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/libcppunit-1.13.so.0.0.2</obj>
+      <fn>CppUnit::TestComposite::doRunChildTests(CppUnit::TestResult*)</fn>
+    </frame>
+    <frame>
+      <ip>0x4E5B4DD</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/libcppunit-1.13.so.0.0.2</obj>
+      <fn>CppUnit::TestComposite::run(CppUnit::TestResult*)</fn>
+    </frame>
+  </stack>
+  <auxwhat>Address 0x5f07598 is 0 bytes after a block of size 24 alloc'd</auxwhat>
+  <stack>
+    <frame>
+      <ip>0x4C2E0EF</ip>
+      <obj>/usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so</obj>
+      <fn>operator new(unsigned long)</fn>
+    </frame>
+    <frame>
+      <ip>0x519896C</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.21</obj>
+      <fn>void std::__cxx11::basic_string&lt;char, std::char_traits&lt;char&gt;, std::allocator&lt;char&gt; &gt;::_M_construct&lt;char*&gt;(char*, char*, std::forward_iterator_tag)</fn>
+    </frame>
+    <frame>
+      <ip>0x51989CE</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.21</obj>
+      <fn>std::__cxx11::basic_string&lt;char, std::char_traits&lt;char&gt;, std::allocator&lt;char&gt; &gt;::basic_string(std::__cxx11::basic_string&lt;char, std::char_traits&lt;char&gt;, std::allocator&lt;char&gt; &gt; const&amp;)</fn>
+    </frame>
+    <frame>
+      <ip>0x40C10E</ip>
+      <obj>/home/vincent/Jerry/the-council-of-jerrys/project/bin/Debug/JerrysAdventure</obj>
+      <fn>TextBoxTest::setUp()</fn>
+      <dir>/home/vincent/Jerry/the-council-of-jerrys/test</dir>
+      <file>TextBoxTest.cpp</file>
+      <line>13</line>
+    </frame>
+    <frame>
+      <ip>0x40D6BE</ip>
+      <obj>/home/vincent/Jerry/the-council-of-jerrys/project/bin/Debug/JerrysAdventure</obj>
+      <fn>CppUnit::TestCaller&lt;TextBoxTest&gt;::setUp()</fn>
+      <dir>/usr/include/cppunit</dir>
+      <file>TestCaller.h</file>
+      <line>177</line>
+    </frame>
+    <frame>
+      <ip>0x4E5B291</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/libcppunit-1.13.so.0.0.2</obj>
+      <fn>CppUnit::TestCaseMethodFunctor::operator()() const</fn>
+    </frame>
+    <frame>
+      <ip>0x4E51B92</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/libcppunit-1.13.so.0.0.2</obj>
+      <fn>CppUnit::DefaultProtector::protect(CppUnit::Functor const&amp;, CppUnit::ProtectorContext const&amp;)</fn>
+    </frame>
+    <frame>
+      <ip>0x4E584C1</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/libcppunit-1.13.so.0.0.2</obj>
+      <fn>CppUnit::ProtectorChain::protect(CppUnit::Functor const&amp;, CppUnit::ProtectorContext const&amp;)</fn>
+    </frame>
+    <frame>
+      <ip>0x4E60B2F</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/libcppunit-1.13.so.0.0.2</obj>
+      <fn>CppUnit::TestResult::protect(CppUnit::Functor const&amp;, CppUnit::Test*, std::__cxx11::basic_string&lt;char, std::char_traits&lt;char&gt;, std::allocator&lt;char&gt; &gt; const&amp;)</fn>
+    </frame>
+    <frame>
+      <ip>0x4E5AFF3</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/libcppunit-1.13.so.0.0.2</obj>
+      <fn>CppUnit::TestCase::run(CppUnit::TestResult*)</fn>
+    </frame>
+    <frame>
+      <ip>0x4E5B5C2</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/libcppunit-1.13.so.0.0.2</obj>
+      <fn>CppUnit::TestComposite::doRunChildTests(CppUnit::TestResult*)</fn>
+    </frame>
+    <frame>
+      <ip>0x4E5B4DD</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/libcppunit-1.13.so.0.0.2</obj>
+      <fn>CppUnit::TestComposite::run(CppUnit::TestResult*)</fn>
+    </frame>
+  </stack>
+</error>
+
+<error>
+  <unique>0x48</unique>
+  <tid>1</tid>
+  <kind>UninitCondition</kind>
+  <what>Conditional jump or move depends on uninitialised value(s)</what>
+  <stack>
+    <frame>
+      <ip>0x405F5F</ip>
+      <obj>/home/vincent/Jerry/the-council-of-jerrys/project/bin/Debug/JerrysAdventure</obj>
+      <fn>TextBox::TextBox(std::__cxx11::basic_string&lt;char, std::char_traits&lt;char&gt;, std::allocator&lt;char&gt; &gt;)</fn>
+      <dir>/home/vincent/Jerry/the-council-of-jerrys/src</dir>
+      <file>TextBox.cpp</file>
+      <line>18</line>
+    </frame>
+    <frame>
+      <ip>0x40C17B</ip>
+      <obj>/home/vincent/Jerry/the-council-of-jerrys/project/bin/Debug/JerrysAdventure</obj>
+      <fn>TextBoxTest::setUp()</fn>
+      <dir>/home/vincent/Jerry/the-council-of-jerrys/test</dir>
+      <file>TextBoxTest.cpp</file>
+      <line>14</line>
+    </frame>
+    <frame>
+      <ip>0x40D6BE</ip>
+      <obj>/home/vincent/Jerry/the-council-of-jerrys/project/bin/Debug/JerrysAdventure</obj>
+      <fn>CppUnit::TestCaller&lt;TextBoxTest&gt;::setUp()</fn>
+      <dir>/usr/include/cppunit</dir>
+      <file>TestCaller.h</file>
+      <line>177</line>
+    </frame>
+    <frame>
+      <ip>0x4E5B291</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/libcppunit-1.13.so.0.0.2</obj>
+      <fn>CppUnit::TestCaseMethodFunctor::operator()() const</fn>
+    </frame>
+    <frame>
+      <ip>0x4E51B92</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/libcppunit-1.13.so.0.0.2</obj>
+      <fn>CppUnit::DefaultProtector::protect(CppUnit::Functor const&amp;, CppUnit::ProtectorContext const&amp;)</fn>
+    </frame>
+    <frame>
+      <ip>0x4E584C1</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/libcppunit-1.13.so.0.0.2</obj>
+      <fn>CppUnit::ProtectorChain::protect(CppUnit::Functor const&amp;, CppUnit::ProtectorContext const&amp;)</fn>
+    </frame>
+    <frame>
+      <ip>0x4E60B2F</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/libcppunit-1.13.so.0.0.2</obj>
+      <fn>CppUnit::TestResult::protect(CppUnit::Functor const&amp;, CppUnit::Test*, std::__cxx11::basic_string&lt;char, std::char_traits&lt;char&gt;, std::allocator&lt;char&gt; &gt; const&amp;)</fn>
+    </frame>
+    <frame>
+      <ip>0x4E5AFF3</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/libcppunit-1.13.so.0.0.2</obj>
+      <fn>CppUnit::TestCase::run(CppUnit::TestResult*)</fn>
+    </frame>
+    <frame>
+      <ip>0x4E5B5C2</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/libcppunit-1.13.so.0.0.2</obj>
+      <fn>CppUnit::TestComposite::doRunChildTests(CppUnit::TestResult*)</fn>
+    </frame>
+    <frame>
+      <ip>0x4E5B4DD</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/libcppunit-1.13.so.0.0.2</obj>
+      <fn>CppUnit::TestComposite::run(CppUnit::TestResult*)</fn>
+    </frame>
+    <frame>
+      <ip>0x4E5B5C2</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/libcppunit-1.13.so.0.0.2</obj>
+      <fn>CppUnit::TestComposite::doRunChildTests(CppUnit::TestResult*)</fn>
+    </frame>
+    <frame>
+      <ip>0x4E5B4DD</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/libcppunit-1.13.so.0.0.2</obj>
+      <fn>CppUnit::TestComposite::run(CppUnit::TestResult*)</fn>
+    </frame>
+  </stack>
+  <auxwhat>Uninitialised value was created by a stack allocation</auxwhat>
+  <stack>
+    <frame>
+      <ip>0x40C07E</ip>
+      <obj>/home/vincent/Jerry/the-council-of-jerrys/project/bin/Debug/JerrysAdventure</obj>
+      <fn>TextBoxTest::setUp()</fn>
+      <dir>/home/vincent/Jerry/the-council-of-jerrys/test</dir>
+      <file>TextBoxTest.cpp</file>
+      <line>10</line>
+    </frame>
+  </stack>
+</error>
+
+<error>
+  <unique>0x108</unique>
+  <tid>1</tid>
+  <kind>UninitCondition</kind>
+  <what>Conditional jump or move depends on uninitialised value(s)</what>
+  <stack>
+    <frame>
+      <ip>0x405F5F</ip>
+      <obj>/home/vincent/Jerry/the-council-of-jerrys/project/bin/Debug/JerrysAdventure</obj>
+      <fn>TextBox::TextBox(std::__cxx11::basic_string&lt;char, std::char_traits&lt;char&gt;, std::allocator&lt;char&gt; &gt;)</fn>
+      <dir>/home/vincent/Jerry/the-council-of-jerrys/src</dir>
+      <file>TextBox.cpp</file>
+      <line>18</line>
+    </frame>
+    <frame>
+      <ip>0x40D810</ip>
+      <obj>/home/vincent/Jerry/the-council-of-jerrys/project/bin/Debug/JerrysAdventure</obj>
+      <fn>WindowTest::setUp()</fn>
+      <dir>/home/vincent/Jerry/the-council-of-jerrys/test</dir>
+      <file>WindowTest.cpp</file>
+      <line>14</line>
+    </frame>
+    <frame>
+      <ip>0x40F624</ip>
+      <obj>/home/vincent/Jerry/the-council-of-jerrys/project/bin/Debug/JerrysAdventure</obj>
+      <fn>CppUnit::TestCaller&lt;WindowTest&gt;::setUp()</fn>
+      <dir>/usr/include/cppunit</dir>
+      <file>TestCaller.h</file>
+      <line>177</line>
+    </frame>
+    <frame>
+      <ip>0x4E5B291</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/libcppunit-1.13.so.0.0.2</obj>
+      <fn>CppUnit::TestCaseMethodFunctor::operator()() const</fn>
+    </frame>
+    <frame>
+      <ip>0x4E51B92</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/libcppunit-1.13.so.0.0.2</obj>
+      <fn>CppUnit::DefaultProtector::protect(CppUnit::Functor const&amp;, CppUnit::ProtectorContext const&amp;)</fn>
+    </frame>
+    <frame>
+      <ip>0x4E584C1</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/libcppunit-1.13.so.0.0.2</obj>
+      <fn>CppUnit::ProtectorChain::protect(CppUnit::Functor const&amp;, CppUnit::ProtectorContext const&amp;)</fn>
+    </frame>
+    <frame>
+      <ip>0x4E60B2F</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/libcppunit-1.13.so.0.0.2</obj>
+      <fn>CppUnit::TestResult::protect(CppUnit::Functor const&amp;, CppUnit::Test*, std::__cxx11::basic_string&lt;char, std::char_traits&lt;char&gt;, std::allocator&lt;char&gt; &gt; const&amp;)</fn>
+    </frame>
+    <frame>
+      <ip>0x4E5AFF3</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/libcppunit-1.13.so.0.0.2</obj>
+      <fn>CppUnit::TestCase::run(CppUnit::TestResult*)</fn>
+    </frame>
+    <frame>
+      <ip>0x4E5B5C2</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/libcppunit-1.13.so.0.0.2</obj>
+      <fn>CppUnit::TestComposite::doRunChildTests(CppUnit::TestResult*)</fn>
+    </frame>
+    <frame>
+      <ip>0x4E5B4DD</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/libcppunit-1.13.so.0.0.2</obj>
+      <fn>CppUnit::TestComposite::run(CppUnit::TestResult*)</fn>
+    </frame>
+    <frame>
+      <ip>0x4E5B5C2</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/libcppunit-1.13.so.0.0.2</obj>
+      <fn>CppUnit::TestComposite::doRunChildTests(CppUnit::TestResult*)</fn>
+    </frame>
+    <frame>
+      <ip>0x4E5B4DD</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/libcppunit-1.13.so.0.0.2</obj>
+      <fn>CppUnit::TestComposite::run(CppUnit::TestResult*)</fn>
+    </frame>
+  </stack>
+  <auxwhat>Uninitialised value was created by a stack allocation</auxwhat>
+  <stack>
+    <frame>
+      <ip>0x40D73E</ip>
+      <obj>/home/vincent/Jerry/the-council-of-jerrys/project/bin/Debug/JerrysAdventure</obj>
+      <fn>WindowTest::setUp()</fn>
+      <dir>/home/vincent/Jerry/the-council-of-jerrys/test</dir>
+      <file>WindowTest.cpp</file>
+      <line>11</line>
+    </frame>
+  </stack>
+</error>
+
+<error>
+  <unique>0x134</unique>
+  <tid>1</tid>
+  <kind>UninitCondition</kind>
+  <what>Conditional jump or move depends on uninitialised value(s)</what>
+  <stack>
+    <frame>
+      <ip>0x405F5F</ip>
+      <obj>/home/vincent/Jerry/the-council-of-jerrys/project/bin/Debug/JerrysAdventure</obj>
+      <fn>TextBox::TextBox(std::__cxx11::basic_string&lt;char, std::char_traits&lt;char&gt;, std::allocator&lt;char&gt; &gt;)</fn>
+      <dir>/home/vincent/Jerry/the-council-of-jerrys/src</dir>
+      <file>TextBox.cpp</file>
+      <line>18</line>
+    </frame>
+    <frame>
+      <ip>0x40D879</ip>
+      <obj>/home/vincent/Jerry/the-council-of-jerrys/project/bin/Debug/JerrysAdventure</obj>
+      <fn>WindowTest::setUp()</fn>
+      <dir>/home/vincent/Jerry/the-council-of-jerrys/test</dir>
+      <file>WindowTest.cpp</file>
+      <line>15</line>
+    </frame>
+    <frame>
+      <ip>0x40F624</ip>
+      <obj>/home/vincent/Jerry/the-council-of-jerrys/project/bin/Debug/JerrysAdventure</obj>
+      <fn>CppUnit::TestCaller&lt;WindowTest&gt;::setUp()</fn>
+      <dir>/usr/include/cppunit</dir>
+      <file>TestCaller.h</file>
+      <line>177</line>
+    </frame>
+    <frame>
+      <ip>0x4E5B291</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/libcppunit-1.13.so.0.0.2</obj>
+      <fn>CppUnit::TestCaseMethodFunctor::operator()() const</fn>
+    </frame>
+    <frame>
+      <ip>0x4E51B92</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/libcppunit-1.13.so.0.0.2</obj>
+      <fn>CppUnit::DefaultProtector::protect(CppUnit::Functor const&amp;, CppUnit::ProtectorContext const&amp;)</fn>
+    </frame>
+    <frame>
+      <ip>0x4E584C1</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/libcppunit-1.13.so.0.0.2</obj>
+      <fn>CppUnit::ProtectorChain::protect(CppUnit::Functor const&amp;, CppUnit::ProtectorContext const&amp;)</fn>
+    </frame>
+    <frame>
+      <ip>0x4E60B2F</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/libcppunit-1.13.so.0.0.2</obj>
+      <fn>CppUnit::TestResult::protect(CppUnit::Functor const&amp;, CppUnit::Test*, std::__cxx11::basic_string&lt;char, std::char_traits&lt;char&gt;, std::allocator&lt;char&gt; &gt; const&amp;)</fn>
+    </frame>
+    <frame>
+      <ip>0x4E5AFF3</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/libcppunit-1.13.so.0.0.2</obj>
+      <fn>CppUnit::TestCase::run(CppUnit::TestResult*)</fn>
+    </frame>
+    <frame>
+      <ip>0x4E5B5C2</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/libcppunit-1.13.so.0.0.2</obj>
+      <fn>CppUnit::TestComposite::doRunChildTests(CppUnit::TestResult*)</fn>
+    </frame>
+    <frame>
+      <ip>0x4E5B4DD</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/libcppunit-1.13.so.0.0.2</obj>
+      <fn>CppUnit::TestComposite::run(CppUnit::TestResult*)</fn>
+    </frame>
+    <frame>
+      <ip>0x4E5B5C2</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/libcppunit-1.13.so.0.0.2</obj>
+      <fn>CppUnit::TestComposite::doRunChildTests(CppUnit::TestResult*)</fn>
+    </frame>
+    <frame>
+      <ip>0x4E5B4DD</ip>
+      <obj>/usr/lib/x86_64-linux-gnu/libcppunit-1.13.so.0.0.2</obj>
+      <fn>CppUnit::TestComposite::run(CppUnit::TestResult*)</fn>
+    </frame>
+  </stack>
+  <auxwhat>Uninitialised value was created by a stack allocation</auxwhat>
+  <stack>
+    <frame>
+      <ip>0x40D73E</ip>
+      <obj>/home/vincent/Jerry/the-council-of-jerrys/project/bin/Debug/JerrysAdventure</obj>
+      <fn>WindowTest::setUp()</fn>
+      <dir>/home/vincent/Jerry/the-council-of-jerrys/test</dir>
+      <file>WindowTest.cpp</file>
+      <line>11</line>
     </frame>
   </stack>
 </error>
@@ -89,12 +599,28 @@
 
 <status>
   <state>FINISHED</state>
-  <time>00:00:00:00.868 </time>
+  <time>00:00:00:01.068 </time>
 </status>
 
 <errorcounts>
   <pair>
-    <count>30</count>
+    <count>132</count>
+    <unique>0x134</unique>
+  </pair>
+  <pair>
+    <count>132</count>
+    <unique>0x108</unique>
+  </pair>
+  <pair>
+    <count>48</count>
+    <unique>0x48</unique>
+  </pair>
+  <pair>
+    <count>108</count>
+    <unique>0x24</unique>
+  </pair>
+  <pair>
+    <count>108</count>
     <unique>0x0</unique>
   </pair>
 </errorcounts>

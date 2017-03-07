@@ -17,10 +17,10 @@ public:
     void copy(TextBox&);
     void operator=(TextBox&);
     void print(ostream&) const;
-    void fillChar(int, char, ostream&) const;
     friend ostream& operator<<(ostream&, const TextBox&);
 
 private:
+    void fillChar(int, char, ostream&) const;
 
     char ** textBody;
     int rows;
