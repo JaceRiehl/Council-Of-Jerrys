@@ -51,11 +51,12 @@
 	<cppunit/extensions/HelperMacros.h>
 	"Action.h"
 
-1488757263 /home/vincent/Jerry/the-council-of-jerrys/include/Window.h
+1488915618 /home/vincent/Jerry/the-council-of-jerrys/include/Window.h
 	"TextBox.h"
 	"PrintList.h"
+	<ostream>
 
-1488837962 /home/vincent/Jerry/the-council-of-jerrys/include/TextBox.h
+1488910336 /home/vincent/Jerry/the-council-of-jerrys/include/TextBox.h
 	<string>
 	<iostream>
 	<ostream>
@@ -80,22 +81,24 @@
 	<vector>
 	<string>
 
-1488837058 source:/home/vincent/Jerry/the-council-of-jerrys/src/Window.cpp
+1488916375 source:/home/vincent/Jerry/the-council-of-jerrys/src/Window.cpp
 	"Window.h"
 	"TextBox.h"
 	"PrintList.h"
 	<iostream>
+	<ostream>
 
-1488756989 source:/home/vincent/Jerry/the-council-of-jerrys/src/PrintList.cpp
+1488914021 source:/home/vincent/Jerry/the-council-of-jerrys/src/PrintList.cpp
 	"PrintList.h"
 	<string>
 	<sstream>
 
-1488756390 /home/vincent/Jerry/the-council-of-jerrys/include/PrintList.h
+1488911182 /home/vincent/Jerry/the-council-of-jerrys/include/PrintList.h
 	<map>
 	<string>
 	<vector>
 	<iostream>
+	<ostream>
 
 1488759995 source:/home/vincent/Jerry/the-council-of-jerrys/src/ConsoleInterface.cpp
 	"ConsoleInterface.h"
@@ -105,15 +108,39 @@
 1488759995 /home/vincent/Jerry/the-council-of-jerrys/include/ConsoleInterface.h
 	<string>
 
-1488837839 source:/home/vincent/Jerry/the-council-of-jerrys/test/TextBoxTest.cpp
+1488910373 source:/home/vincent/Jerry/the-council-of-jerrys/test/TextBoxTest.cpp
 	"TextBoxTest.h"
 	"TextBox.h"
 	<string>
 	<sstream>
 	<iomanip>
 
-1488837621 /home/vincent/Jerry/the-council-of-jerrys/test/TextBoxTest.h
+1488915000 /home/vincent/Jerry/the-council-of-jerrys/test/TextBoxTest.h
 	<cppunit/extensions/HelperMacros.h>
 	"TextBox.h"
+	<string>
+
+1488914351 source:/home/vincent/Jerry/the-council-of-jerrys/test/PrintListTest.cpp
+	"PrintListTest.h"
+	"PrintList.h"
+	<iostream>
+	<vector>
+	<map>
+	<sstream>
+
+1488914990 /home/vincent/Jerry/the-council-of-jerrys/test/PrintListTest.h
+	<cppunit/extensions/HelperMacros.h>
+	"PrintList.h"
+	<string>
+
+1488915021 source:/home/vincent/Jerry/the-council-of-jerrys/test/WindowTest.cpp
+	"WindowTest.h"
+	"Window.h"
+	<iostream>
+	<sstream>
+
+1488915000 /home/vincent/Jerry/the-council-of-jerrys/test/WindowTest.h
+	<cppunit/extensions/HelperMacros.h>
+	"Window.h"
 	<string>
 

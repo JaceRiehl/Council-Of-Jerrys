@@ -61,9 +61,13 @@
 		<Unit filename="../src/main.cpp" />
 		<Unit filename="../test/ActionTest.cpp" />
 		<Unit filename="../test/ActionTest.h" />
+		<Unit filename="../test/PrintListTest.cpp" />
+		<Unit filename="../test/PrintListTest.h" />
 		<Unit filename="../test/TalkTest.h" />
 		<Unit filename="../test/TextBoxTest.cpp" />
 		<Unit filename="../test/TextBoxTest.h" />
+		<Unit filename="../test/WindowTest.cpp" />
+		<Unit filename="../test/WindowTest.h" />
 		<Extensions>
 			<code_completion />
 			<envvars />
