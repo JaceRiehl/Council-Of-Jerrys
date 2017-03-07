@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="JerrysAdventure" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Debug">
+				<Option output="bin/Debug/JerrysAdventure" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Debug/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-g" />
+					<Add directory="../test" />
+					<Add directory="../include" />
+					<Add directory="include" />
+					<Add directory="test" />
+				</Compiler>
+				<Linker>
+					<Add option="-lcppunit" />
+				</Linker>
+			</Target>
+			<Target title="Release">
+				<Option output="bin/Release/JerrysAdventure" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Release/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-O2" />
+					<Add directory="include" />
+					<Add directory="test" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+				</Linker>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-Wall" />
+			<Add directory="../include" />
+			<Add directory="../test" />
+		</Compiler>
+		<Unit filename="../include/Action.h" />
+		<Unit filename="../include/Character.h" />
+		<Unit filename="../include/Exceptions.h" />
+		<Unit filename="../include/Inventory.h" />
+		<Unit filename="../include/Item.h" />
+		<Unit filename="../include/NPC.h" />
+		<Unit filename="../include/Talk.h" />
+		<Unit filename="../src/Action.cpp" />
+		<Unit filename="../src/Character.cpp" />
+		<Unit filename="../src/Inventory.cpp" />
+		<Unit filename="../src/InventoryTest.cpp" />
+		<Unit filename="../src/Item.cpp" />
+		<Unit filename="../src/NPC.cpp" />
+		<Unit filename="../src/Talk.cpp" />
+		<Unit filename="../src/main.cpp" />
+		<Unit filename="../test/ActionTest.h" />
+		<Unit filename="../test/CharacterTest.cpp" />
+		<Unit filename="../test/CharacterTest.h" />
+		<Unit filename="../test/InventoryTest.h" />
+		<Unit filename="../test/NPCTest.cpp" />
+		<Unit filename="../test/NPCTest.h" />
+		<Unit filename="../test/TalkTest.h" />
+		<Extensions>
+			<code_completion />
+			<envvars />
+			<debugger />
+			<lib_finder disable_auto="1" />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>

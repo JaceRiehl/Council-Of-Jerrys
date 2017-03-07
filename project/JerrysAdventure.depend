@@ -1,0 +1,365 @@
+# depslib dependency file v1.0
+1487568435 source:/home/tipn/Programming/cpsc2720/CofJ/src/Action.cpp
+	"Action.h"
+
+1487568450 /home/tipn/Programming/cpsc2720/CofJ/include/Action.h
+	<string>
+
+1486950355 source:/home/tipn/Programming/cpsc2720/CofJ/src/main.cpp
+	<iostream>
+
+1487568350 source:/home/tipn/Programming/cpsc2720/CofJ/src/Talk.cpp
+	"Talk.h"
+
+1487568523 /home/tipn/Programming/cpsc2720/CofJ/include/Talk.h
+	"Action.h"
+
+1487567435 source:/home/tipn/Programming/cpsc2720/CofJ/test/ActionTest.cpp
+	"ActionTest.h"
+
+1487568511 /home/tipn/Programming/cpsc2720/CofJ/test/ActionTest.h
+	<cppunit/extensions/HelperMacros.h>
+	"Action.h"
+
+1487884191 source:/home/marm2720/the-council-of-jerrys/src/Action.cpp
+	"Action.h"
+
+1487884191 /home/marm2720/the-council-of-jerrys/include/Action.h
+	<string>
+
+1488765818 source:/home/marm2720/the-council-of-jerrys/src/Character.cpp
+	"Character.h"
+	"Inventory.h"
+	"Item.h"
+	<string>
+	<map>
+	<vector>
+	<iostream>
+	<Exceptions.h>
+
+1488756456 /home/marm2720/the-council-of-jerrys/include/Character.h
+	"Inventory.h"
+	"Item.h"
+	"Action.h"
+	<string>
+	<map>
+	<vector>
+	<iostream>
+
+1488766193 /home/marm2720/the-council-of-jerrys/include/Inventory.h
+	<Item.h>
+	<string>
+	<vector>
+
+1488493139 /home/marm2720/the-council-of-jerrys/include/Item.h
+	"Character.h"
+	"Action.h"
+	<iostream>
+	<string>
+	<map>
+
+1488774293 source:/home/marm2720/the-council-of-jerrys/src/Inventory.cpp
+	"Inventory.h"
+	"Item.h"
+	<vector>
+	<string>
+	<Exceptions.h>
+	<iostream>
+
+1488130007 source:/home/marm2720/the-council-of-jerrys/src/main.cpp
+	<cppunit/CompilerOutputter.h>
+	<cppunit/extensions/TestFactoryRegistry.h>
+	<cppunit/ui/text/TestRunner.h>
+
+1487884191 source:/home/marm2720/the-council-of-jerrys/src/Talk.cpp
+	"Talk.h"
+
+1487884191 /home/marm2720/the-council-of-jerrys/include/Talk.h
+	"Action.h"
+
+1487884191 source:/home/marm2720/the-council-of-jerrys/test/ActionTest.cpp
+	"ActionTest.h"
+
+1487884191 /home/marm2720/the-council-of-jerrys/test/ActionTest.h
+	<cppunit/extensions/HelperMacros.h>
+	"Action.h"
+
+1488493160 source:/home/marm2720/the-council-of-jerrys/src/Item.cpp
+	"Inventory.h"
+	"Item.h"
+	"Character.h"
+	"Action.h"
+	<string>
+	<map>
+	<iostream>
+
+1488773791 source:/home/marm2720/the-council-of-jerrys/test/CharacterTest.cpp
+	"CharacterTest.h"
+	"Character.h"
+	"Item.h"
+	"Inventory.h"
+	"Exceptions.h"
+	<string>
+	<vector>
+	<iostream>
+
+1488758179 /home/marm2720/the-council-of-jerrys/test/CharacterTest.h
+	<cppunit/extensions/HelperMacros.h>
+	"Character.h"
+
+1488767340 /home/marm2720/the-council-of-jerrys/include/Exceptions.h
+	<stdexcept>
+
+1488567491 source:/home/marm2720/the-council-of-jerrys/src/NPC.cpp
+	"NPC.h"
+	"Character.h"
+	<string>
+
+1488567491 /home/marm2720/the-council-of-jerrys/include/NPC.h
+	<Character.h>
+	<string>
+
+1488773312 source:/home/marm2720/the-council-of-jerrys/src/InventoryTest.cpp
+	"InventoryTest.h"
+	"Inventory.h"
+	"Item.h"
+	"Exceptions.h"
+	<string>
+	<iostream>
+
+1488773043 /home/marm2720/the-council-of-jerrys/test/InventoryTest.h
+	<cppunit/extensions/HelperMacros.h>
+	"Inventory.h"
+
+1488815157 source:/home/icanhazskillz/the-council-of-jerrys/src/Action.cpp
+	"Action.h"
+
+1488815157 /home/icanhazskillz/the-council-of-jerrys/include/Action.h
+	<string>
+
+1488818152 source:/home/icanhazskillz/the-council-of-jerrys/src/Character.cpp
+	"Character.h"
+	"Inventory.h"
+	"Item.h"
+	<string>
+	<map>
+	<vector>
+	<iostream>
+	<Exceptions.h>
+
+1488815157 /home/icanhazskillz/the-council-of-jerrys/include/Character.h
+	"Inventory.h"
+	"Item.h"
+	"Action.h"
+	<string>
+	<map>
+	<vector>
+	<iostream>
+
+1488820570 /home/icanhazskillz/the-council-of-jerrys/include/Inventory.h
+	<Item.h>
+	<string>
+	<vector>
+
+1488835235 /home/icanhazskillz/the-council-of-jerrys/include/Item.h
+	"Character.h"
+	"Action.h"
+	<iostream>
+	<string>
+	<map>
+
+1488822516 /home/icanhazskillz/the-council-of-jerrys/include/Exceptions.h
+	<stdexcept>
+
+1488815157 source:/home/icanhazskillz/the-council-of-jerrys/src/Inventory.cpp
+	"Inventory.h"
+	"Item.h"
+	<vector>
+	<string>
+	<Exceptions.h>
+	<iostream>
+
+1488835226 source:/home/icanhazskillz/the-council-of-jerrys/src/Item.cpp
+	"Inventory.h"
+	"Item.h"
+	"Character.h"
+	"Action.h"
+	"Exceptions.h"
+	<string>
+	<map>
+	<iostream>
+
+1488815157 source:/home/icanhazskillz/the-council-of-jerrys/src/main.cpp
+	<cppunit/CompilerOutputter.h>
+	<cppunit/extensions/TestFactoryRegistry.h>
+	<cppunit/ui/text/TestRunner.h>
+
+1488815157 source:/home/icanhazskillz/the-council-of-jerrys/src/NPC.cpp
+	"NPC.h"
+	"Character.h"
+	<string>
+
+1488815157 /home/icanhazskillz/the-council-of-jerrys/include/NPC.h
+	<Character.h>
+	<string>
+
+1488815157 source:/home/icanhazskillz/the-council-of-jerrys/src/Talk.cpp
+	"Talk.h"
+
+1488815157 /home/icanhazskillz/the-council-of-jerrys/include/Talk.h
+	"Action.h"
+
+1488815157 source:/home/icanhazskillz/the-council-of-jerrys/test/CharacterTest.cpp
+	"CharacterTest.h"
+	"Character.h"
+	"Item.h"
+	"Inventory.h"
+	"Exceptions.h"
+	<string>
+	<vector>
+	<iostream>
+
+1488820666 /home/icanhazskillz/the-council-of-jerrys/test/CharacterTest.h
+	<cppunit/extensions/HelperMacros.h>
+	"Character.h"
+
+1488815157 source:/home/icanhazskillz/the-council-of-jerrys/src/InventoryTest.cpp
+	"InventoryTest.h"
+	"Inventory.h"
+	"Item.h"
+	"Exceptions.h"
+	<string>
+	<iostream>
+
+1488820951 /home/icanhazskillz/the-council-of-jerrys/test/InventoryTest.h
+	<cppunit/extensions/HelperMacros.h>
+	"Inventory.h"
+
+1488820125 source:/home/icanhazskillz/the-council-of-jerrys/src/ItemTest.cpp
+	"ItemTest.h"
+
+1488820209 /home/icanhazskillz/the-council-of-jerrys/test/ItemTest.h
+	<cppunit/extensions/HelperMacros.h>
+	"Item.h"
+
+1488834354 source:/home/icanhazskillz/the-council-of-jerrys/src/ItemsTest.cpp
+	"ItemsTest.h"
+	"Exceptions.h"
+
+1488834149 /home/icanhazskillz/the-council-of-jerrys/test/ItemsTest.h
+	<cppunit/extensions/HelperMacros.h>
+	"Inventory.h"
+	"Item.h"
+
+1487799802 source:/home/tipn/Programming/cpsc2720/cofj/src/Action.cpp
+	"Action.h"
+
+1487799802 /home/tipn/Programming/cpsc2720/cofj/include/Action.h
+	<string>
+
+1487799802 source:/home/tipn/Programming/cpsc2720/cofj/src/Talk.cpp
+	"Talk.h"
+
+1487799802 /home/tipn/Programming/cpsc2720/cofj/include/Talk.h
+	"Action.h"
+
+1488849239 source:/home/tipn/Programming/cpsc2720/cofj/src/Character.cpp
+	"Character.h"
+	"Inventory.h"
+	"Item.h"
+	<string>
+	<map>
+	<vector>
+	<iostream>
+	<Exceptions.h>
+
+1488849239 /home/tipn/Programming/cpsc2720/cofj/include/Character.h
+	"Inventory.h"
+	"Item.h"
+	"Action.h"
+	<string>
+	<map>
+	<vector>
+	<iostream>
+
+1488849239 /home/tipn/Programming/cpsc2720/cofj/include/Inventory.h
+	<Item.h>
+	<string>
+	<vector>
+
+1488849239 /home/tipn/Programming/cpsc2720/cofj/include/Item.h
+	"Character.h"
+	"Action.h"
+	<iostream>
+	<string>
+	<map>
+
+1488850172 /home/tipn/Programming/cpsc2720/cofj/include/Exceptions.h
+	<stdexcept>
+
+1488849239 source:/home/tipn/Programming/cpsc2720/cofj/src/Inventory.cpp
+	"Inventory.h"
+	"Item.h"
+	<vector>
+	<string>
+	<Exceptions.h>
+	<iostream>
+
+1488849239 source:/home/tipn/Programming/cpsc2720/cofj/src/InventoryTest.cpp
+	"InventoryTest.h"
+	"Inventory.h"
+	"Item.h"
+	"Exceptions.h"
+	<string>
+	<iostream>
+
+1488849239 /home/tipn/Programming/cpsc2720/cofj/test/InventoryTest.h
+	<cppunit/extensions/HelperMacros.h>
+	"Inventory.h"
+
+1488849239 source:/home/tipn/Programming/cpsc2720/cofj/src/Item.cpp
+	"Inventory.h"
+	"Item.h"
+	"Character.h"
+	"Action.h"
+	"Exceptions.h"
+	<string>
+	<map>
+	<iostream>
+
+1488009608 source:/home/tipn/Programming/cpsc2720/cofj/src/main.cpp
+	<cppunit/CompilerOutputter.h>
+	<cppunit/extensions/TestFactoryRegistry.h>
+	<cppunit/ui/text/TestRunner.h>
+
+1488852504 source:/home/tipn/Programming/cpsc2720/cofj/src/NPC.cpp
+	"NPC.h"
+	"Character.h"
+	"Exceptions.h"
+
+1488854798 /home/tipn/Programming/cpsc2720/cofj/include/NPC.h
+	<Character.h>
+	<string>
+
+1488849239 source:/home/tipn/Programming/cpsc2720/cofj/test/CharacterTest.cpp
+	"CharacterTest.h"
+	"Character.h"
+	"Item.h"
+	"Inventory.h"
+	"Exceptions.h"
+	<string>
+	<vector>
+	<iostream>
+
+1488852532 /home/tipn/Programming/cpsc2720/cofj/test/CharacterTest.h
+	<cppunit/extensions/HelperMacros.h>
+	"Character.h"
+
+1488853728 source:/home/tipn/Programming/cpsc2720/cofj/test/NPCTest.cpp
+	"NPCTest.h"
+	"Exceptions.h"
+
+1488853389 /home/tipn/Programming/cpsc2720/cofj/test/NPCTest.h
+	<cppunit/extensions/HelperMacros.h>
+	"NPC.h"
+
