@@ -2,5 +2,8 @@
 syntax: glob
 ./project/obj/
 ./project/bin/
+*.orig
+*.layout
+*.depend
 *~
 *.o
