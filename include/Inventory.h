@@ -37,6 +37,14 @@ class Inventory
         void addItem(Item);
 
         /**
+            @brief removeItem searches the vector and removes the item at its found index.
+            @pre An Item object that exists in the vector is given.
+            @post The given item is removed from the vector of items.
+            @param An item.
+            @return None.
+        */
+        void removeItem(Item);
+        /**
             @brief searchName takes a string and searches the item vector for the given string.
             @pre The string of an object's name.
             @post Returns true if item name is present in vector; false otherwise.
