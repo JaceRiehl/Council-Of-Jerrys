@@ -15,3 +15,8 @@ CharacterAction::CharacterAction(string name, string owner, string subject) : Ac
 }
 
 CharacterAction::~CharacterAction() {}
+
+void CharacterAction::setSubject(string name)
+{
+    subject = name;
+}
