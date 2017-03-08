@@ -1,22 +1,15 @@
 #include "CharacterAction.h"
 
-CharacterAction::CharacterAction() : Action()
+CharacterAction::CharacterAction(Character* actionOwner) : Action(actionOwner), subject(nullptr) {}
+
+CharacterAction::CharacterAction(Character* actionOwner, Character* actionSubject) : Action(actionOwner), subject(actionSubject) {}
+CharacterAction::~CharacterAction()
 {
-    subject = "";
+    if(subject != nullptr)
+        delete subject;
 }
 
-CharacterAction::CharacterAction(string name) : Action(name) {}
-
-CharacterAction::CharacterAction(string name, string owner) : Action(name, owner) {}
-
-CharacterAction::CharacterAction(string name, string owner, string subject) : Action(name, owner)
+void CharacterAction::setSubject(Character* actionSubject)
 {
-    this->subject = subject;
-}
-
-CharacterAction::~CharacterAction() {}
-
-void CharacterAction::setSubject(string name)
-{
-    subject = name;
+    subject = actionSubject;
 }
