@@ -4,13 +4,20 @@
 #include "CharacterAction.h"
 #include "NPC.h"
 #include "Exceptions.h"
-#include <typeinfo>
-
+/**
+    @file Talk.h
+    @author Nathan Tipper
+    @date March 7, 2017
+    @brief An action which talks to the subject.
+*/
 class Talk : public CharacterAction
 {
     public:
+        /**
+            @brief A constructor for the talk class that takes a Character*.
+        /*
         Talk(Character*);
-        Talk(Character*, Character*, Item* = nullptr);
+        Talk(Character*, NPC*, Item* = nullptr);
         virtual ~Talk();
 
         bool execute();

@@ -10,11 +10,13 @@ class TalkTest : public CppUnit::TestFixture
     CPPUNIT_TEST_SUITE(TalkTest);
     CPPUNIT_TEST(testConstructor);
     CPPUNIT_TEST(testExecute);
+    CPPUNIT_TEST(testExecuteException);
     CPPUNIT_TEST_SUITE_END();
 
     public:
         void testConstructor();
         void testExecute();
+        void testExecuteException();
 
 };
 

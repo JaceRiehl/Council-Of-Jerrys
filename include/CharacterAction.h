@@ -2,18 +2,19 @@
 #define CHARACTERACTION_H
 
 #include "Action.h"
+#include "NPC.h"
 
 class CharacterAction : public Action
 {
     public:
         CharacterAction(Character*);
-        CharacterAction(Character*, Character*);
+        CharacterAction(Character*, NPC*);
         virtual ~CharacterAction();
 
         virtual bool execute() = 0;
-        void setSubject(Character*);
+        void setSubject(NPC*);
     protected:
-        Character* subject;
+        NPC* subject;
 };
 
 #endif // CHARACTERACTION_H
