@@ -15,6 +15,7 @@
 class Inventory
 {
     public:
+        Inventory();
         /**
             @brief Constructor for the Inventory class which creates a sorted vector of items.
             @pre a non-empty list of Item objects is given.
@@ -85,7 +86,7 @@ class Inventory
             @param An inventory object.
             @return bool.
         */
-        bool operator==(Inventory inv);
+        bool operator==(const Inventory inv) const;
 
         /**
             @brief operator!= checks to see if two given inventories are different.
@@ -96,7 +97,10 @@ class Inventory
         */
         bool operator!=(Inventory inv);
 
+        unsigned int getSize() const;
+
     private:
+        unsigned int numberOfItems;
         vector<Item> items;
 };
 

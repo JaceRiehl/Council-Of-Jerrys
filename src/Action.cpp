@@ -1,10 +1,13 @@
 #include "Action.h"
 
-Action::Action()
+Action::Action(Character* actionOwner) : owner(actionOwner) {}
+
+Action::~Action()
 {
-    name = "";
+    delete owner;
 }
 
-Action::Action(string name) : name(name) {}
-
-Action::Action(string name, string owner) : name(name), owner(owner) {}
+const Character* Action::getOwner() const
+{
+    return owner;
+}

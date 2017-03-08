@@ -79,5 +79,18 @@ public:
         std::runtime_error(errMessage){}
 };
 
+class invalid_action : public std::runtime_error
+{
+public:
+    /**
+        @brief runtime_error used for when an action is used that cannot be run.
+        @pre a pointer to an error message
+        @post the given message is displayed as a runtime_error.
+        @param Pointer to an error message.
+        @return runtime_error with given message.
+    */
+    invalid_action(const char* errMessage) :
+        std::runtime_error(errMessage){}
+};
 
 #endif // EXCEPTIONS_H_INCLUDED

@@ -2,7 +2,6 @@
 #define ITEM_H
 
 #include "Character.h"
-#include "Action.h"
 #include <iostream>
 #include <string>
 #include <map>

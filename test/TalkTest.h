@@ -2,17 +2,19 @@
 #define TALKTEST_H
 
 #include <cppunit/extensions/HelperMacros.h>
-#include "Action.h"
+#include "Talk.h"
+#include "Exceptions.h"
 
-class TalkTest : CppUnit::TestFixture
+class TalkTest : public CppUnit::TestFixture
 {
     CPPUNIT_TEST_SUITE(TalkTest);
-
+    CPPUNIT_TEST(testConstructor);
+    CPPUNIT_TEST(testExecute);
     CPPUNIT_TEST_SUITE_END();
 
     public:
-        TalkTest(string);
-        bool executeAction(string);
+        void testConstructor();
+        void testExecute();
 
 };
 
