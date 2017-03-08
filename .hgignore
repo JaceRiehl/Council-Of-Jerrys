@@ -2,6 +2,8 @@
 syntax: glob
 ./project/obj/
 ./project/bin/
+./project/latex
+./project/html
 ./project/JerrysAdventure.depend
 ./project/JerrysAdventure.layout
 *.layout
