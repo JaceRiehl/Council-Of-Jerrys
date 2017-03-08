@@ -2,9 +2,17 @@
 syntax: glob
 ./project/obj/
 ./project/bin/
+<<<<<<< local
 ./project/JerrysAdventure.depend
 ./project/JerrysAdventure.layout
-*.layout
+=======
 *.orig
+>>>>>>> other
+*.layout
+<<<<<<< local
+*.orig
+=======
+*.depend
+>>>>>>> other
 *~
 *.o
