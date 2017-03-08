@@ -11,7 +11,7 @@ Talk::Talk(string name) : CharacterAction(name) {}
 
 Talk::Talk(string name, string subject) : CharacterAction(name, subject) {}
 
-Talk::Talk(string name, string subject, string agent) : CharacterAction(name, subject, agent) {}
+Talk::Talk(string name, string owner, string subject) : CharacterAction(name, owner, subject) {}
 
 Talk::~Talk() {}
 
