@@ -10,6 +10,7 @@ class InventoryTest: public CppUnit::TestFixture
     CPPUNIT_TEST(testConstructor);
     CPPUNIT_TEST(testConstructorExceptions);
     CPPUNIT_TEST(testAddItem);
+    CPPUNIT_TEST(testRemoveItem);
     CPPUNIT_TEST(testSearchName);
     CPPUNIT_TEST(testSearchItem);
     CPPUNIT_TEST(testGetItem);
@@ -25,6 +26,7 @@ class InventoryTest: public CppUnit::TestFixture
         void testConstructor();
         void testConstructorExceptions();
         void testAddItem();
+        void testRemoveItem();
         void testSearchName();
         void testSearchItem();
         void testGetItem();

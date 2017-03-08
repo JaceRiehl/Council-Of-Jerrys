@@ -44,6 +44,20 @@ void Inventory::addItem(Item item)
     numberOfItems++;
 }
 
+void Inventory::removeItem(Item item)
+{
+    for(unsigned int i = 0; i < items.size(); i++)
+    {
+        if (items[i].getName() == item.getName())
+        {
+              items.erase(items.begin()+i);
+              numberOfItems--;
+              return;
+        }
+    }
+    throw itemDoesNotExist("This item does not exist");
+}
+
 bool Inventory::searchName(string name) const
 {
     transform(name.begin(), name.end(), name.begin(), ::tolower);

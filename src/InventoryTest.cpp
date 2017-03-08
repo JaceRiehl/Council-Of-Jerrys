@@ -57,6 +57,16 @@ void InventoryTest::testAddItem()
     CPPUNIT_ASSERT_EQUAL(true, inventory->getInventory()[1] == Item ("shovel"));
 }
 
+void InventoryTest::testRemoveItem()
+{
+    //test remove item
+    inventory->removeItem(Item ("used toothbrush"));
+    CPPUNIT_ASSERT_EQUAL(false, inventory->searchName("used toothbrush"));
+
+    //test remove item that doesn't exist
+    CPPUNIT_ASSERT_THROW(inventory->removeItem(Item ("sandwhich")), itemDoesNotExist);
+}
+
 void InventoryTest::testSearchName()
 {
     //test if name exists in inventory
