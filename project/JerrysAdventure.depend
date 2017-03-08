@@ -51,12 +51,12 @@
 	<cppunit/extensions/HelperMacros.h>
 	"Action.h"
 
-1488915618 /home/vincent/Jerry/the-council-of-jerrys/include/Window.h
+1488931754 /home/vincent/Jerry/the-council-of-jerrys/include/Window.h
 	"TextBox.h"
 	"PrintList.h"
 	<ostream>
 
-1488910336 /home/vincent/Jerry/the-council-of-jerrys/include/TextBox.h
+1488931408 /home/vincent/Jerry/the-council-of-jerrys/include/TextBox.h
 	<string>
 	<iostream>
 	<ostream>
@@ -93,20 +93,21 @@
 	<string>
 	<sstream>
 
-1488911182 /home/vincent/Jerry/the-council-of-jerrys/include/PrintList.h
+1488930991 /home/vincent/Jerry/the-council-of-jerrys/include/PrintList.h
 	<map>
 	<string>
 	<vector>
 	<iostream>
 	<ostream>
 
-1488759995 source:/home/vincent/Jerry/the-council-of-jerrys/src/ConsoleInterface.cpp
+1488937227 source:/home/vincent/Jerry/the-council-of-jerrys/src/ConsoleInterface.cpp
 	"ConsoleInterface.h"
 	<iostream>
 	<string>
 
-1488759995 /home/vincent/Jerry/the-council-of-jerrys/include/ConsoleInterface.h
+1488937238 /home/vincent/Jerry/the-council-of-jerrys/include/ConsoleInterface.h
 	<string>
+	<istream>
 
 1488910373 source:/home/vincent/Jerry/the-council-of-jerrys/test/TextBoxTest.cpp
 	"TextBoxTest.h"
@@ -133,14 +134,29 @@
 	"PrintList.h"
 	<string>
 
-1488915021 source:/home/vincent/Jerry/the-council-of-jerrys/test/WindowTest.cpp
+1488917075 source:/home/vincent/Jerry/the-council-of-jerrys/test/WindowTest.cpp
 	"WindowTest.h"
 	"Window.h"
 	<iostream>
 	<sstream>
+	<vector>
+	<map>
 
-1488915000 /home/vincent/Jerry/the-council-of-jerrys/test/WindowTest.h
+1488917044 /home/vincent/Jerry/the-council-of-jerrys/test/WindowTest.h
 	<cppunit/extensions/HelperMacros.h>
 	"Window.h"
 	<string>
+	<map>
+
+1488937125 source:/home/vincent/Jerry/the-council-of-jerrys/test/ConsoleInterfaceTest.cpp
+	"ConsoleInterfaceTest.h"
+	"ConsoleInterface.h"
+	<iostream>
+	<sstream>
+
+1488929737 /home/vincent/Jerry/the-council-of-jerrys/test/ConsoleInterfaceTest.h
+	<cppunit/extensions/HelperMacros.h>
+	"ConsoleInterface.h"
+	<string>
+	<sstream>
 

@@ -7,21 +7,21 @@ ConsoleInterface::ConsoleInterface() {}
 
 ConsoleInterface::~ConsoleInterface() {}
 
-char ConsoleInterface::getChar()
+char ConsoleInterface::getChar(istream& is)
 {
-    cout<<"Enter your choice: ";
-    cin>>userChar;
+    //cout<<"Enter your choice: ";
+    is>>userChar;
     return userChar;
 }
 
-void ConsoleInterface::getEnterKey()
+void ConsoleInterface::getEnterKey(istream & is)
 {
-    cin.get();
+    is.get();
 }
 
-string ConsoleInterface::getString()
+string ConsoleInterface::getString(istream& is)
 {
-    cout<<"Enter your answer: ";
-    getline(cin,userString);
+    //cout<<"Enter your answer: ";
+    getline(is,userString);
     return userString;
 }
