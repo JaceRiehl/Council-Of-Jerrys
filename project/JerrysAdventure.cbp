@@ -39,6 +39,7 @@
 			<Add directory="../include" />
 		</Compiler>
 		<Unit filename="../include/Action.h" />
+		<Unit filename="../include/CharacterAction.h" />
 		<Unit filename="../include/CharacterData.h" />
 		<Unit filename="../include/CharacterDataParser.h" />
 		<Unit filename="../include/CouncilXMLParser.h" />
@@ -47,6 +48,7 @@
 		<Unit filename="../include/Talk.h" />
 		<Unit filename="../include/tinyxml2.h" />
 		<Unit filename="../src/Action.cpp" />
+		<Unit filename="../src/CharacterAction.cpp" />
 		<Unit filename="../src/CharacterDataParser.cpp" />
 		<Unit filename="../src/CouncilXMLParser.cpp" />
 		<Unit filename="../src/RoomXMLParser.cpp" />
