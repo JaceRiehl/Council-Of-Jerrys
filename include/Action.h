@@ -1,25 +1,18 @@
 #ifndef ACTION_H
 #define ACTION_H
-
-#include <string>
-
-using std::string;
+#include "Character.h"
 
 class Action
 {
     public:
-        Action();
-        Action(string);
-        Action(string, string);
-        virtual ~Action() {};
+        Action(Character*);
+        virtual ~Action();
         virtual bool execute() = 0;
 
-    protected:
-        string owner;
-        //Character* owner;
+        const Character* getOwner() const;
 
-    private:
-        string name;
+    protected:
+        Character* owner;
 
 };
 

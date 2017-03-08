@@ -7,6 +7,6 @@ syntax: glob
 ./project/JerrysAdventure.depend
 ./project/JerrysAdventure.layout
 *.layout
-*.orig
+*.depend
 *~
 *.o
