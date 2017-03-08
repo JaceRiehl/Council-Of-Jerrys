@@ -5,6 +5,7 @@ syntax: glob
 ./project/doxygen
 ./project/JerrysAdventure.depend
 ./project/JerrysAdventure.layout
+./project/ValgrindOut.xml
 *.layout
 *.depend
 *~
