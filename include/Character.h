@@ -3,7 +3,6 @@
 
 #include "Inventory.h"
 #include "Item.h"
-#include "Action.h"
 #include <string>
 #include <map>
 #include <vector>
@@ -59,7 +58,9 @@ class Character
             @post The Character's pointer to its inventory is returned.
             @return The pointer to the inventory.
         */
-        Inventory getInventory() const;
+        const Inventory* getInventory() const;
+
+        void addItem(Item);
 
         /**
             @brief operator= assigns a character's attributes to another.

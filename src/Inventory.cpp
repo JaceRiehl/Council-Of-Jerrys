@@ -8,6 +8,11 @@
 
 using namespace std;
 
+Inventory::Inventory()
+{
+    numberOfItems = 0;
+}
+
 Inventory::Inventory(vector<Item> invItems)
 {
     if (invItems.size() > 0)
@@ -15,6 +20,7 @@ Inventory::Inventory(vector<Item> invItems)
         for (unsigned i = 0; i < invItems.size(); i++)
         {
             items.push_back(invItems[i]);
+            numberOfItems++;
         }
         sort(items.begin(), items.end());
     }
@@ -29,11 +35,13 @@ void Inventory::addItem(Item item)
         if (items[i].getName() == item.getName())
        {
             items.insert(items.begin() + i, item);
+            numberOfItems++;
             return;
        }
     }
     items.push_back(item);
     sort(items.begin(), items.end());
+    numberOfItems++;
 }
 
 bool Inventory::searchName(string name) const
@@ -96,7 +104,7 @@ void Inventory::printItems() const
     }while(k < items.size());
 }
 
-bool Inventory::operator==(Inventory inv)
+bool Inventory::operator==(const Inventory inv) const
 {
     unsigned int invSize = 0;
     unsigned int k = 0;
@@ -144,4 +152,9 @@ bool Inventory::operator!=(Inventory inv)
     }
     else
         return true;
+}
+
+unsigned int Inventory::getSize() const
+{
+    return numberOfItems;
 }

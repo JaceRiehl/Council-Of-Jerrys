@@ -98,6 +98,7 @@
 		<Unit filename="../test/PrintListTest.h" />
 		<Unit filename="../test/RoomXMLParserTest.cpp" />
 		<Unit filename="../test/RoomXMLParserTest.h" />
+		<Unit filename="../test/TalkTest.cpp" />
 		<Unit filename="../test/TalkTest.h" />
 		<Unit filename="../test/TextBoxTest.cpp" />
 		<Unit filename="../test/TextBoxTest.h" />

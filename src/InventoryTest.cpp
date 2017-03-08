@@ -40,7 +40,8 @@ void InventoryTest::testConstructor()
 
 void InventoryTest::testConstructorExceptions()
 {
-    CPPUNIT_ASSERT_THROW(inventory2 = new Inventory({}), inventoryEmpty);
+    vector<Item> items;
+    CPPUNIT_ASSERT_THROW(inventory2 = new Inventory(items), inventoryEmpty);
     delete inventory2;
 }
 

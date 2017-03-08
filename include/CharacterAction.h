@@ -6,16 +6,14 @@
 class CharacterAction : public Action
 {
     public:
-        CharacterAction();
-        CharacterAction(string);
-        CharacterAction(string, string);
-        CharacterAction(string, string, string);
+        CharacterAction(Character*);
+        CharacterAction(Character*, Character*);
         virtual ~CharacterAction();
 
         virtual bool execute() = 0;
-        void setSubject(string);
+        void setSubject(Character*);
     protected:
-        string subject;
+        Character* subject;
 };
 
 #endif // CHARACTERACTION_H
