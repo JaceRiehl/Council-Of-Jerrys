@@ -103,17 +103,12 @@ void CharacterTest::testAssign()
     //Test Equality When inventory RHS = 0 && LHS > RHS
     *c4 = *c;
     CPPUNIT_ASSERT_EQUAL(true, c4->getName() == c->getName());
-    //Can't be tested since pointer getInventory cannot return a nullptr.
-    //Assign function does it's work as it should though
-    //CPPUNIT_ASSERT_EQUAL(true, c->getInventory() == c4->getInventory());
+    CPPUNIT_ASSERT_EQUAL(true, c->getInventory() == c4->getInventory());
 
     //Test Equality When inventory RHS = 0 && LHS = 0
     *c = *c4;
     CPPUNIT_ASSERT_EQUAL(true, c->getName() == c4->getName());
-
-    //Can't be tested since pointer getInventory cannot return a nullptr.
-    //Assign function does it's work as it should though
-    //CPPUNIT_ASSERT_EQUAL(true, c->getInventory() == c4->getInventory());
+    CPPUNIT_ASSERT_EQUAL(true, c->getInventory() == c4->getInventory());
 }
 
 
