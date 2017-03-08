@@ -1,5 +1,6 @@
 #include "WindowTest.h"
 #include "Window.h"
+#include "ConsoleInterface.h"
 #include <iostream>
 #include <sstream>
 #include <vector>
@@ -50,4 +51,13 @@ void WindowTest::setPlayerChoiceTest()
 void WindowTest::visualTest()
 {
     cout<<endl<<*win3;
+}
+
+void WindowTest::concept()
+{
+    string intro = "Intro", first = "First", sec = "Sec";
+    Window window(TextBox(intro));
+    ConsoleInterface user;
+    cout<<window;
+
 }

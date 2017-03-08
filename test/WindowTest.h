@@ -15,7 +15,7 @@ class WindowTest : public CppUnit::TestFixture
     CPPUNIT_TEST(setTextBoxTest);
     CPPUNIT_TEST(setPlayerChoiceTest);
     CPPUNIT_TEST(visualTest);
-
+    CPPUNIT_TEST(concept);
     CPPUNIT_TEST_SUITE_END();
 
 public:
@@ -25,6 +25,7 @@ public:
     void setTextBoxTest();
     void setPlayerChoiceTest();
     void visualTest();
+    void concept();
 
 private:
     Window *win1, *win2, *win3;
