@@ -3,9 +3,11 @@
 
 #include "Character.h"
 #include "IAgent.h"
+#include "Exceptions.h"
 #include "Action.h"
 #include <map>
 #include <string>
+#include <cstring>
 #include <iostream>
 
 using namespace std;
@@ -16,7 +18,7 @@ using namespace std;
     @date March 4, 2017
     @brief PlayableCharacter derives from the Character class and represents playable characters who can take actions.
 */
-class PlayableCharacter : public Character
+class PlayableCharacter : public Character, IAgent
 {
     public:
         /**
@@ -37,11 +39,27 @@ class PlayableCharacter : public Character
         */
         PlayableCharacter(string, vector<Item>);
         virtual ~PlayableCharacter(){};
-        //void setActions(map<string, Action> actions);
-        //void takeAction(string action, Character* character);
+
+        /**
+            @brief setActions assigns the actions of the PlayableCharacter.
+            @pre A map of string->Action* is given.
+            @post The map is stored within the PlayableCharacter.
+            @param The map that the players actions will be assigned to.
+            @return None.
+        */
+        void setActions(map<string, Action*> actions);
+
+        /**
+            @brief takeAction activates an action given the key of the action.
+            @pre The key of an action is given.
+            @post The action has run its execute command.
+            @param The key of the action.
+            @return None.
+        */
+        void takeAction(string action);
 
     private:
-        //map<string, Action> actions;
+        map<string, Action*> actions;
 };
 
 #endif // PLAYABLECHARACTER_H

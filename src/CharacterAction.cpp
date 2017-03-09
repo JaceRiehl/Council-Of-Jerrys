@@ -2,14 +2,14 @@
 
 CharacterAction::CharacterAction(Character* actionOwner) : Action(actionOwner), subject(nullptr) {}
 
-CharacterAction::CharacterAction(Character* actionOwner, Character* actionSubject) : Action(actionOwner), subject(actionSubject) {}
+CharacterAction::CharacterAction(Character* actionOwner, NPC* actionSubject) : Action(actionOwner), subject(actionSubject){}
 CharacterAction::~CharacterAction()
 {
     if(subject != nullptr)
         delete subject;
 }
 
-void CharacterAction::setSubject(Character* actionSubject)
+void CharacterAction::setSubject(NPC* actionSubject)
 {
     subject = actionSubject;
 }

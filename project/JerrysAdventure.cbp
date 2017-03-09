@@ -94,6 +94,8 @@
 		<Unit filename="../test/ItemsTest.h" />
 		<Unit filename="../test/NPCTest.cpp" />
 		<Unit filename="../test/NPCTest.h" />
+		<Unit filename="../test/PlayableCharacterTest.cpp" />
+		<Unit filename="../test/PlayableCharacterTest.h" />
 		<Unit filename="../test/PrintListTest.cpp" />
 		<Unit filename="../test/PrintListTest.h" />
 		<Unit filename="../test/RoomXMLParserTest.cpp" />

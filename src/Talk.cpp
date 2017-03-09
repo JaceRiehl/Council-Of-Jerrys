@@ -5,9 +5,7 @@
 using std::cout;
 using std::endl;
 
-Talk::Talk(Character* actionOwner) : CharacterAction(actionOwner) {}
-
-Talk::Talk(Character* actionOwner, Character* actionSubject, Item* item) : CharacterAction(actionOwner, actionSubject), item(item) {}
+Talk::Talk(Character* actionOwner, NPC* actionSubject, Item* item) : CharacterAction(actionOwner, actionSubject), item(item) {}
 
 Talk::~Talk()
 {
@@ -20,11 +18,7 @@ bool Talk::execute()
     if(subject == nullptr)
         throw invalid_action("** Subject has not been set **");
 
-    if(typeid(subject) == typeid(NPC))
-    {
-        NPC* npc = dynamic_cast<NPC*>(subject);
-        cout << npc->getDialog(dialogKey) << endl;
-    }
+    cout << subject->getDialog(dialogKey) << endl;
 
     if(item != nullptr)
         owner->addItem(*item);
