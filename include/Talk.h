@@ -14,12 +14,27 @@ class Talk : public CharacterAction
 {
     public:
         /**
-            @brief A constructor for the talk class that takes a Character*.
-        /*
-        Talk(Character*);
-        Talk(Character*, NPC*, Item* = nullptr);
+            @brief A constructor for the Talk class that can specify the subject
+            and an item.
+            @pre A Character* is given.
+            @post The owner is set to the Character* and subject and item are also
+            set, if given.
+            @param Owner of the Action.
+            @param Subject of the Action.
+            @param Item to give to the owner.
+            @return None.
+        */
+        Talk(Character*, NPC* = nullptr, Item* = nullptr);
         virtual ~Talk();
 
+        /**
+            @brief Gets the dialog that relates to the Talk action and
+            gives the Item to the owner if it exists.
+            @pre Subject has been set.
+            @post Subject's dialog is displayed and item is given, if it exists.
+            @param None.
+            @return If successful.
+        */
         bool execute();
 
     private:
