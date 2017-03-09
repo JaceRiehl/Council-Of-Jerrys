@@ -38,6 +38,16 @@ class PlayableCharacter : public Character, IAgent
             @return None.
         */
         PlayableCharacter(string, vector<Item>);
+
+        /**
+            @brief Copy constructor for PlayableCharacter.
+            @pre A PlayableCharacter is given.
+            @post The newly constructed PlayableCharacter is a "deep copy"
+            of the parameter.
+            @param The PlayableCharacter to copy.
+            @return None.
+        */
+        PlayableCharacter(PlayableCharacter& pc);
         virtual ~PlayableCharacter(){};
 
         /**
@@ -57,6 +67,15 @@ class PlayableCharacter : public Character, IAgent
             @return None.
         */
         void takeAction(string action);
+
+        /**
+            @brief getActions gets the actions of the PlayableCharacter.
+            @pre None.
+            @post PlayableCharacter's actions are returned.
+            @param None.
+            @return The PlayableCharacter's actions.
+        */
+        map<string, Action*> getActions() const;
 
     private:
         map<string, Action*> actions;

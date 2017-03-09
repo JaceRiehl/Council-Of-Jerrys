@@ -18,6 +18,7 @@ class IAgent
     public:
         virtual void takeAction(string) = 0;
         virtual void setActions(map<string, Action*>) = 0;
+        virtual map<string, Action*> getActions() const = 0;
 
 };
 
