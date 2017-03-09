@@ -5,8 +5,6 @@
 using std::cout;
 using std::endl;
 
-Talk::Talk(Character* actionOwner) : CharacterAction(actionOwner) {}
-
 Talk::Talk(Character* actionOwner, NPC* actionSubject, Item* item) : CharacterAction(actionOwner, actionSubject), item(item) {}
 
 Talk::~Talk()
