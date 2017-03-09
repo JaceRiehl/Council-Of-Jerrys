@@ -35,6 +35,22 @@ Character::Character(string name, vector<Item> charInv)
         inventory = new Inventory(charInv);
     }
 }
+
+Character::Character(Character& c)
+{
+    this->charName = c.getName();
+
+    const Inventory* inv = c.getInventory();
+
+    if(inv == nullptr)
+        this->inventory = nullptr;
+
+    else
+    {
+        this->inventory = new Inventory(inv->getInventory());
+    }
+}
+
 Character::~Character()
 {
     delete inventory;

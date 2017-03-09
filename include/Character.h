@@ -42,6 +42,15 @@ class Character
         */
         Character(string name, vector<Item> charInv);
 
+        /**
+            @brief Copy constructor for the Character class.
+            @pre None.
+            @post Character is a copy of the parameter given.
+            @param The Character to copy.
+            @return None.
+        */
+        Character(Character&);
+
         virtual ~Character();
 
         /**
