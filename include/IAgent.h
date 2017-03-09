@@ -11,14 +11,14 @@ using namespace std;
     @file IAgent.h
     @author Michel Martel
     @date March 4, 2017
-    @brief IAgent acts as a container for future derivative character classes to take actions.
+    @brief IAgent is an interface for classes that use actions.
 */
 class IAgent
 {
     public:
-        IAgent(){};
-        virtual ~IAgent(){};
-        virtual void takeAction(string action, Character* character) = 0;
+        virtual void takeAction(string) = 0;
+        virtual void setActions(map<string, Action*>) = 0;
+
 };
 
 #endif // IAGENT_H
