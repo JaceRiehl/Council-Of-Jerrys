@@ -20,7 +20,7 @@ TextBox::TextBox(TextBox& tb)
 {
     this->copy(tb);
 }
-void TextBox::copy(TextBox& c)
+void TextBox::copy(const TextBox& c)
 {
     this->rows = c.rows;
     textBody = new char*[rows];
@@ -31,7 +31,7 @@ void TextBox::copy(TextBox& c)
             this->textBody[i][j] = c.textBody[i][j];
     }
 }
-void TextBox::operator=(TextBox& t)
+void TextBox::operator=(const TextBox& t)
 {
     if(this != &t)
     {
@@ -83,13 +83,13 @@ void TextBox::assignText(string body)
     for(int i = 0; i < rows; i++)
     {
         textBody[i] = new char[COLUMN];
-           /* for(int s = counter; s < counter+COLUMN; s++)
+            for(int s = counter; s < counter+COLUMN; s++)
                 {
                     if(body[s] == ' ')
                         lastSpace = s;
                     if(i == rows-1)
                         lastSpace = body.size();
-                }*/
+                }
         for(int j = 0; j < COLUMN; j++)
         {
             if(j == 0 && body[counter] == ' ')
