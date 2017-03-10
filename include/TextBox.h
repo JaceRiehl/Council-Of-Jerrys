@@ -17,7 +17,7 @@ public:
     *Default constructor
     *@param a string to be in the text box
     */
-    TextBox(std::string);
+    TextBox(std::string = "");
     /**
     *Deconstructor for TextBox
     */
@@ -30,16 +30,17 @@ public:
     *Helper function to make a deep copy
     *@param a TextBox to be copied
     */
-    void copy(TextBox&);
+    void copy(const TextBox&);
     /**
     *Overloaded assignment operator
     */
-    void operator=(TextBox&);
+    void operator=(const TextBox&);
     /**
     *Prints the formated TextBox
     *@param an ostream to print the TextBox
     */
     void print(ostream&) const;
+    void assignText(string);
     /**
     *Overloaded insertion operator, uses print for format
     */

@@ -3,7 +3,77 @@
 #include <iostream>
 using namespace std;
 
+const char ch = '*';
+
 TextBox::TextBox(std::string body)
+{
+    this->assignText(body);
+}
+TextBox::~TextBox()
+{
+    for(int i = 0; i < rows; i++)
+        delete [] textBody[i];
+    delete [] textBody;
+    textBody = nullptr;
+}
+TextBox::TextBox(TextBox& tb)
+{
+    this->copy(tb);
+}
+void TextBox::copy(const TextBox& c)
+{
+    this->rows = c.rows;
+    textBody = new char*[rows];
+    for(int i = 0; i < rows; i++)
+    {
+        textBody[i] = new char[COLUMN];
+        for(int j = 0; j < COLUMN; j++)
+            this->textBody[i][j] = c.textBody[i][j];
+    }
+}
+void TextBox::operator=(const TextBox& t)
+{
+    if(this != &t)
+    {
+        for(int i = 0; i < rows; i++)
+        delete [] textBody[i];
+        delete [] textBody;
+        textBody = nullptr;
+            this->copy(t);
+    }
+}
+void TextBox::print(ostream& os) const
+{
+    fillChar(80, ch, os);
+    os<<endl<<ch;
+    fillChar(78, ' ', os);
+    os<<ch<<endl<<ch;
+    fillChar(78, ' ', os);
+    os<<ch<<endl;
+    for(int i = 0; i < rows; i++)
+    {
+        os<<ch;
+        fillChar(9, ' ', os);
+        for(int j = 0; j < COLUMN; j++)
+            os<<textBody[i][j];
+        fillChar(9, ' ', os);
+        os<<ch<<endl;
+    }
+    os<<ch;
+    fillChar(78, ' ', os);
+    os<<ch<<endl<<ch;
+    fillChar(78, ' ', os);
+    os<<ch<<endl;
+    fillChar(80, ch, os);
+    os<<endl;
+}
+void TextBox::fillChar(int howMany, char ch, ostream& os) const
+{
+    for(int i = 0; i < howMany; i++)
+        os<<ch;
+}
+
+void TextBox::assignText(string body)
 {
     rows = static_cast<int>(body.size()/COLUMN)+1;
     textBody = new char*[rows];
@@ -30,69 +100,6 @@ TextBox::TextBox(std::string body)
                 textBody[i][j] = body[counter++];
         }
     }
-}
-TextBox::~TextBox()
-{
-    for(int i = 0; i < rows; i++)
-        delete [] textBody[i];
-    delete [] textBody;
-    textBody = nullptr;
-}
-TextBox::TextBox(TextBox& tb)
-{
-    this->copy(tb);
-}
-void TextBox::copy(TextBox& c)
-{
-    this->rows = c.rows;
-    textBody = new char*[rows];
-    for(int i = 0; i < rows; i++)
-    {
-        textBody[i] = new char[COLUMN];
-        for(int j = 0; j < COLUMN; j++)
-            this->textBody[i][j] = c.textBody[i][j];
-    }
-}
-void TextBox::operator=(TextBox& t)
-{
-    if(this != &t)
-    {
-        for(int i = 0; i < rows; i++)
-        delete [] textBody[i];
-        delete [] textBody;
-        textBody = nullptr;
-            this->copy(t);
-    }
-}
-void TextBox::print(ostream& os) const
-{
-    fillChar(80, '|', os);
-    os<<endl<<'|';
-    fillChar(78, ' ', os);
-    os<<'|'<<endl<<'|';
-    fillChar(78, ' ', os);
-    os<<'|'<<endl;
-    for(int i = 0; i < rows; i++)
-    {
-        os<<'|';
-        fillChar(9, ' ', os);
-        for(int j = 0; j < COLUMN; j++)
-            os<<textBody[i][j];
-        fillChar(9, ' ', os);
-        os<<'|'<<endl;
-    }
-    os<<'|';
-    fillChar(78, ' ', os);
-    os<<'|'<<endl<<'|';
-    fillChar(78, ' ', os);
-    os<<'|'<<endl;
-    fillChar(80, '|', os);
-    os<<endl;
-}
-void TextBox::fillChar(int howMany, char ch, ostream& os) const
-{
-    for(int i = 0; i < howMany; i++)
-        os<<ch;
 }
 
 ostream& operator<<(ostream& os, const TextBox& x)

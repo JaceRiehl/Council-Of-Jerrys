@@ -71,3 +71,13 @@ string PrintList::convert(map<char, string> m)
     stringToPrint = str.str();
     return stringToPrint;
 }
+
+void PrintList::setList(vector<string> vec)
+{
+    stringToPrint = convert(vec);
+}
+
+void PrintList::setList(map<char, string> ma)
+{
+    stringToPrint = convert(ma);
+}

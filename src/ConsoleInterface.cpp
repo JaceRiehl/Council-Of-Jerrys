@@ -9,7 +9,7 @@ ConsoleInterface::~ConsoleInterface() {}
 
 char ConsoleInterface::getChar(istream& is)
 {
-    //cout<<"Enter your choice: ";
+    cout<<"Enter your choice: ";
     is>>userChar;
     return userChar;
 }
@@ -21,7 +21,7 @@ void ConsoleInterface::getEnterKey(istream & is)
 
 string ConsoleInterface::getString(istream& is)
 {
-    //cout<<"Enter your answer: ";
+    cout<<"Enter your answer: ";
     getline(is,userString);
     return userString;
 }

@@ -7,783 +7,47 @@
 
 <preamble>
   <line>Memcheck, a memory error detector</line>
-  <line>Copyright (C) 2002-2012, and GNU GPL'd, by Julian Seward et al.</line>
-  <line>Using Valgrind-3.8.1 and LibVEX; rerun with -h for copyright info</line>
-  <line>Command: /home/marm2720/the-council-of-jerrys/project/bin/Debug/JerrysAdventure </line>
+  <line>Copyright (C) 2002-2015, and GNU GPL'd, by Julian Seward et al.</line>
+  <line>Using Valgrind-3.11.0 and LibVEX; rerun with -h for copyright info</line>
+  <line>Command: /home/vincent/Jerry/the-council-of-jerrys/project/bin/Debug/JerrysAdventure </line>
 </preamble>
 
-<pid>18636</pid>
-<ppid>14680</ppid>
+<pid>19097</pid>
+<ppid>2300</ppid>
 <tool>memcheck</tool>
 
 <args>
   <vargv>
-    <exe>/usr/bin/valgrind</exe>
+    <exe>/usr/bin/valgrind.bin</exe>
     <arg>--leak-check=full</arg>
     <arg>--track-origins=yes</arg>
     <arg>--xml=yes</arg>
-    <arg>--xml-file=/home/marm2720/the-council-of-jerrys/project/ValgrindOut.xml</arg>
+    <arg>--xml-file=/home/vincent/Jerry/the-council-of-jerrys/project/ValgrindOut.xml</arg>
   </vargv>
   <argv>
-    <exe>/home/marm2720/the-council-of-jerrys/project/bin/Debug/JerrysAdventure</exe>
+    <exe>/home/vincent/Jerry/the-council-of-jerrys/project/bin/Debug/JerrysAdventure</exe>
     <arg></arg>
   </argv>
 </args>
 
 <status>
   <state>RUNNING</state>
-  <time>00:00:00:00.104 </time>
+  <time>00:00:00:00.150 </time>
 </status>
 
 <error>
-  <unique>0x6</unique>
+  <unique>0x0</unique>
   <tid>1</tid>
-  <kind>InvalidRead</kind>
-  <what>Invalid read of size 1</what>
+  <kind>UninitCondition</kind>
+  <what>Conditional jump or move depends on uninitialised value(s)</what>
   <stack>
     <frame>
-      <ip>0x422D11</ip>
-      <obj>/home/marm2720/the-council-of-jerrys/project/bin/Debug/JerrysAdventure</obj>
-      <fn>TextBox::TextBox(std::string)</fn>
-      <dir>/home/marm2720/the-council-of-jerrys/src</dir>
+      <ip>0x41E8C1</ip>
+      <obj>/home/vincent/Jerry/the-council-of-jerrys/project/bin/Debug/JerrysAdventure</obj>
+      <fn>TextBox::assignText(std::__cxx11::basic_string&lt;char, std::char_traits&lt;char&gt;, std::allocator&lt;char&gt; &gt;)</fn>
+      <dir>/home/vincent/Jerry/the-council-of-jerrys/src</dir>
       <file>TextBox.cpp</file>
-      <line>18</line>
-    </frame>
-    <frame>
-      <ip>0x43EF86</ip>
-      <obj>/home/marm2720/the-council-of-jerrys/project/bin/Debug/JerrysAdventure</obj>
-      <fn>TextBoxTest::setUp()</fn>
-      <dir>/home/marm2720/the-council-of-jerrys/test</dir>
-      <file>TextBoxTest.cpp</file>
-      <line>12</line>
-    </frame>
-    <frame>
-      <ip>0x440328</ip>
-      <obj>/home/marm2720/the-council-of-jerrys/project/bin/Debug/JerrysAdventure</obj>
-      <fn>CppUnit::TestCaller&lt;TextBoxTest&gt;::setUp()</fn>
-      <dir>/usr/include/cppunit</dir>
-      <file>TestCaller.h</file>
-      <line>177</line>
-    </frame>
-    <frame>
-      <ip>0x35D8224D39</ip>
-      <obj>/usr/lib64/libcppunit-1.12.so.1.0.0</obj>
-      <fn>CppUnit::TestCaseMethodFunctor::operator()() const</fn>
-    </frame>
-    <frame>
-      <ip>0x35D821A063</ip>
-      <obj>/usr/lib64/libcppunit-1.12.so.1.0.0</obj>
-      <fn>CppUnit::DefaultProtector::protect(CppUnit::Functor const&amp;, CppUnit::ProtectorContext const&amp;)</fn>
-    </frame>
-    <frame>
-      <ip>0x35D8221646</ip>
-      <obj>/usr/lib64/libcppunit-1.12.so.1.0.0</obj>
-      <fn>CppUnit::ProtectorChain::protect(CppUnit::Functor const&amp;, CppUnit::ProtectorContext const&amp;)</fn>
-    </frame>
-    <frame>
-      <ip>0x35D822A853</ip>
-      <obj>/usr/lib64/libcppunit-1.12.so.1.0.0</obj>
-      <fn>CppUnit::TestResult::protect(CppUnit::Functor const&amp;, CppUnit::Test*, std::string const&amp;)</fn>
-    </frame>
-    <frame>
-      <ip>0x35D8224988</ip>
-      <obj>/usr/lib64/libcppunit-1.12.so.1.0.0</obj>
-      <fn>CppUnit::TestCase::run(CppUnit::TestResult*)</fn>
-    </frame>
-    <frame>
-      <ip>0x35D82250C2</ip>
-      <obj>/usr/lib64/libcppunit-1.12.so.1.0.0</obj>
-      <fn>CppUnit::TestComposite::doRunChildTests(CppUnit::TestResult*)</fn>
-    </frame>
-    <frame>
-      <ip>0x35D8224FE5</ip>
-      <obj>/usr/lib64/libcppunit-1.12.so.1.0.0</obj>
-      <fn>CppUnit::TestComposite::run(CppUnit::TestResult*)</fn>
-    </frame>
-    <frame>
-      <ip>0x35D82250C2</ip>
-      <obj>/usr/lib64/libcppunit-1.12.so.1.0.0</obj>
-      <fn>CppUnit::TestComposite::doRunChildTests(CppUnit::TestResult*)</fn>
-    </frame>
-    <frame>
-      <ip>0x35D8224FE5</ip>
-      <obj>/usr/lib64/libcppunit-1.12.so.1.0.0</obj>
-      <fn>CppUnit::TestComposite::run(CppUnit::TestResult*)</fn>
-    </frame>
-  </stack>
-  <auxwhat>Address 0x4c9f0e0 is 0 bytes after a block of size 48 alloc'd</auxwhat>
-  <stack>
-    <frame>
-      <ip>0x4A075FC</ip>
-      <obj>/usr/lib64/valgrind/vgpreload_memcheck-amd64-linux.so</obj>
-      <fn>operator new(unsigned long)</fn>
-      <dir>/builddir/build/BUILD/valgrind-3.8.1/coregrind/m_replacemalloc</dir>
-      <file>vg_replace_malloc.c</file>
-      <line>298</line>
-    </frame>
-    <frame>
-      <ip>0x35DE69C3C8</ip>
-      <obj>/usr/lib64/libstdc++.so.6.0.13</obj>
-      <fn>std::string::_Rep::_S_create(unsigned long, unsigned long, std::allocator&lt;char&gt; const&amp;)</fn>
-    </frame>
-    <frame>
-      <ip>0x35DE69DDA9</ip>
-      <obj>/usr/lib64/libstdc++.so.6.0.13</obj>
-      <fn>std::string::_M_mutate(unsigned long, unsigned long, unsigned long)</fn>
-    </frame>
-    <frame>
-      <ip>0x35DE69E6A8</ip>
-      <obj>/usr/lib64/libstdc++.so.6.0.13</obj>
-      <fn>std::string::_M_leak_hard()</fn>
-    </frame>
-    <frame>
-      <ip>0x35DE69E754</ip>
-      <obj>/usr/lib64/libstdc++.so.6.0.13</obj>
-      <fn>std::string::operator[](unsigned long)</fn>
-    </frame>
-    <frame>
-      <ip>0x422D10</ip>
-      <obj>/home/marm2720/the-council-of-jerrys/project/bin/Debug/JerrysAdventure</obj>
-      <fn>TextBox::TextBox(std::string)</fn>
-      <dir>/home/marm2720/the-council-of-jerrys/src</dir>
-      <file>TextBox.cpp</file>
-      <line>18</line>
-    </frame>
-    <frame>
-      <ip>0x43EF86</ip>
-      <obj>/home/marm2720/the-council-of-jerrys/project/bin/Debug/JerrysAdventure</obj>
-      <fn>TextBoxTest::setUp()</fn>
-      <dir>/home/marm2720/the-council-of-jerrys/test</dir>
-      <file>TextBoxTest.cpp</file>
-      <line>12</line>
-    </frame>
-    <frame>
-      <ip>0x440328</ip>
-      <obj>/home/marm2720/the-council-of-jerrys/project/bin/Debug/JerrysAdventure</obj>
-      <fn>CppUnit::TestCaller&lt;TextBoxTest&gt;::setUp()</fn>
-      <dir>/usr/include/cppunit</dir>
-      <file>TestCaller.h</file>
-      <line>177</line>
-    </frame>
-    <frame>
-      <ip>0x35D8224D39</ip>
-      <obj>/usr/lib64/libcppunit-1.12.so.1.0.0</obj>
-      <fn>CppUnit::TestCaseMethodFunctor::operator()() const</fn>
-    </frame>
-    <frame>
-      <ip>0x35D821A063</ip>
-      <obj>/usr/lib64/libcppunit-1.12.so.1.0.0</obj>
-      <fn>CppUnit::DefaultProtector::protect(CppUnit::Functor const&amp;, CppUnit::ProtectorContext const&amp;)</fn>
-    </frame>
-    <frame>
-      <ip>0x35D8221646</ip>
-      <obj>/usr/lib64/libcppunit-1.12.so.1.0.0</obj>
-      <fn>CppUnit::ProtectorChain::protect(CppUnit::Functor const&amp;, CppUnit::ProtectorContext const&amp;)</fn>
-    </frame>
-    <frame>
-      <ip>0x35D822A853</ip>
-      <obj>/usr/lib64/libcppunit-1.12.so.1.0.0</obj>
-      <fn>CppUnit::TestResult::protect(CppUnit::Functor const&amp;, CppUnit::Test*, std::string const&amp;)</fn>
-    </frame>
-  </stack>
-</error>
-
-<error>
-  <unique>0x2a</unique>
-  <tid>1</tid>
-  <kind>InvalidRead</kind>
-  <what>Invalid read of size 1</what>
-  <stack>
-    <frame>
-      <ip>0x422D11</ip>
-      <obj>/home/marm2720/the-council-of-jerrys/project/bin/Debug/JerrysAdventure</obj>
-      <fn>TextBox::TextBox(std::string)</fn>
-      <dir>/home/marm2720/the-council-of-jerrys/src</dir>
-      <file>TextBox.cpp</file>
-      <line>18</line>
-    </frame>
-    <frame>
-      <ip>0x43EFCD</ip>
-      <obj>/home/marm2720/the-council-of-jerrys/project/bin/Debug/JerrysAdventure</obj>
-      <fn>TextBoxTest::setUp()</fn>
-      <dir>/home/marm2720/the-council-of-jerrys/test</dir>
-      <file>TextBoxTest.cpp</file>
-      <line>13</line>
-    </frame>
-    <frame>
-      <ip>0x440328</ip>
-      <obj>/home/marm2720/the-council-of-jerrys/project/bin/Debug/JerrysAdventure</obj>
-      <fn>CppUnit::TestCaller&lt;TextBoxTest&gt;::setUp()</fn>
-      <dir>/usr/include/cppunit</dir>
-      <file>TestCaller.h</file>
-      <line>177</line>
-    </frame>
-    <frame>
-      <ip>0x35D8224D39</ip>
-      <obj>/usr/lib64/libcppunit-1.12.so.1.0.0</obj>
-      <fn>CppUnit::TestCaseMethodFunctor::operator()() const</fn>
-    </frame>
-    <frame>
-      <ip>0x35D821A063</ip>
-      <obj>/usr/lib64/libcppunit-1.12.so.1.0.0</obj>
-      <fn>CppUnit::DefaultProtector::protect(CppUnit::Functor const&amp;, CppUnit::ProtectorContext const&amp;)</fn>
-    </frame>
-    <frame>
-      <ip>0x35D8221646</ip>
-      <obj>/usr/lib64/libcppunit-1.12.so.1.0.0</obj>
-      <fn>CppUnit::ProtectorChain::protect(CppUnit::Functor const&amp;, CppUnit::ProtectorContext const&amp;)</fn>
-    </frame>
-    <frame>
-      <ip>0x35D822A853</ip>
-      <obj>/usr/lib64/libcppunit-1.12.so.1.0.0</obj>
-      <fn>CppUnit::TestResult::protect(CppUnit::Functor const&amp;, CppUnit::Test*, std::string const&amp;)</fn>
-    </frame>
-    <frame>
-      <ip>0x35D8224988</ip>
-      <obj>/usr/lib64/libcppunit-1.12.so.1.0.0</obj>
-      <fn>CppUnit::TestCase::run(CppUnit::TestResult*)</fn>
-    </frame>
-    <frame>
-      <ip>0x35D82250C2</ip>
-      <obj>/usr/lib64/libcppunit-1.12.so.1.0.0</obj>
-      <fn>CppUnit::TestComposite::doRunChildTests(CppUnit::TestResult*)</fn>
-    </frame>
-    <frame>
-      <ip>0x35D8224FE5</ip>
-      <obj>/usr/lib64/libcppunit-1.12.so.1.0.0</obj>
-      <fn>CppUnit::TestComposite::run(CppUnit::TestResult*)</fn>
-    </frame>
-    <frame>
-      <ip>0x35D82250C2</ip>
-      <obj>/usr/lib64/libcppunit-1.12.so.1.0.0</obj>
-      <fn>CppUnit::TestComposite::doRunChildTests(CppUnit::TestResult*)</fn>
-    </frame>
-    <frame>
-      <ip>0x35D8224FE5</ip>
-      <obj>/usr/lib64/libcppunit-1.12.so.1.0.0</obj>
-      <fn>CppUnit::TestComposite::run(CppUnit::TestResult*)</fn>
-    </frame>
-  </stack>
-  <auxwhat>Address 0x4c9f280 is 0 bytes after a block of size 48 alloc'd</auxwhat>
-  <stack>
-    <frame>
-      <ip>0x4A075FC</ip>
-      <obj>/usr/lib64/valgrind/vgpreload_memcheck-amd64-linux.so</obj>
-      <fn>operator new(unsigned long)</fn>
-      <dir>/builddir/build/BUILD/valgrind-3.8.1/coregrind/m_replacemalloc</dir>
-      <file>vg_replace_malloc.c</file>
-      <line>298</line>
-    </frame>
-    <frame>
-      <ip>0x35DE69C3C8</ip>
-      <obj>/usr/lib64/libstdc++.so.6.0.13</obj>
-      <fn>std::string::_Rep::_S_create(unsigned long, unsigned long, std::allocator&lt;char&gt; const&amp;)</fn>
-    </frame>
-    <frame>
-      <ip>0x35DE69DDA9</ip>
-      <obj>/usr/lib64/libstdc++.so.6.0.13</obj>
-      <fn>std::string::_M_mutate(unsigned long, unsigned long, unsigned long)</fn>
-    </frame>
-    <frame>
-      <ip>0x35DE69E6A8</ip>
-      <obj>/usr/lib64/libstdc++.so.6.0.13</obj>
-      <fn>std::string::_M_leak_hard()</fn>
-    </frame>
-    <frame>
-      <ip>0x35DE69E754</ip>
-      <obj>/usr/lib64/libstdc++.so.6.0.13</obj>
-      <fn>std::string::operator[](unsigned long)</fn>
-    </frame>
-    <frame>
-      <ip>0x422D10</ip>
-      <obj>/home/marm2720/the-council-of-jerrys/project/bin/Debug/JerrysAdventure</obj>
-      <fn>TextBox::TextBox(std::string)</fn>
-      <dir>/home/marm2720/the-council-of-jerrys/src</dir>
-      <file>TextBox.cpp</file>
-      <line>18</line>
-    </frame>
-    <frame>
-      <ip>0x43EFCD</ip>
-      <obj>/home/marm2720/the-council-of-jerrys/project/bin/Debug/JerrysAdventure</obj>
-      <fn>TextBoxTest::setUp()</fn>
-      <dir>/home/marm2720/the-council-of-jerrys/test</dir>
-      <file>TextBoxTest.cpp</file>
-      <line>13</line>
-    </frame>
-    <frame>
-      <ip>0x440328</ip>
-      <obj>/home/marm2720/the-council-of-jerrys/project/bin/Debug/JerrysAdventure</obj>
-      <fn>CppUnit::TestCaller&lt;TextBoxTest&gt;::setUp()</fn>
-      <dir>/usr/include/cppunit</dir>
-      <file>TestCaller.h</file>
-      <line>177</line>
-    </frame>
-    <frame>
-      <ip>0x35D8224D39</ip>
-      <obj>/usr/lib64/libcppunit-1.12.so.1.0.0</obj>
-      <fn>CppUnit::TestCaseMethodFunctor::operator()() const</fn>
-    </frame>
-    <frame>
-      <ip>0x35D821A063</ip>
-      <obj>/usr/lib64/libcppunit-1.12.so.1.0.0</obj>
-      <fn>CppUnit::DefaultProtector::protect(CppUnit::Functor const&amp;, CppUnit::ProtectorContext const&amp;)</fn>
-    </frame>
-    <frame>
-      <ip>0x35D8221646</ip>
-      <obj>/usr/lib64/libcppunit-1.12.so.1.0.0</obj>
-      <fn>CppUnit::ProtectorChain::protect(CppUnit::Functor const&amp;, CppUnit::ProtectorContext const&amp;)</fn>
-    </frame>
-    <frame>
-      <ip>0x35D822A853</ip>
-      <obj>/usr/lib64/libcppunit-1.12.so.1.0.0</obj>
-      <fn>CppUnit::TestResult::protect(CppUnit::Functor const&amp;, CppUnit::Test*, std::string const&amp;)</fn>
-    </frame>
-  </stack>
-</error>
-
-<error>
-  <unique>0x4e</unique>
-  <tid>1</tid>
-  <kind>InvalidRead</kind>
-  <what>Invalid read of size 1</what>
-  <stack>
-    <frame>
-      <ip>0x422D11</ip>
-      <obj>/home/marm2720/the-council-of-jerrys/project/bin/Debug/JerrysAdventure</obj>
-      <fn>TextBox::TextBox(std::string)</fn>
-      <dir>/home/marm2720/the-council-of-jerrys/src</dir>
-      <file>TextBox.cpp</file>
-      <line>18</line>
-    </frame>
-    <frame>
-      <ip>0x43F01E</ip>
-      <obj>/home/marm2720/the-council-of-jerrys/project/bin/Debug/JerrysAdventure</obj>
-      <fn>TextBoxTest::setUp()</fn>
-      <dir>/home/marm2720/the-council-of-jerrys/test</dir>
-      <file>TextBoxTest.cpp</file>
-      <line>14</line>
-    </frame>
-    <frame>
-      <ip>0x440328</ip>
-      <obj>/home/marm2720/the-council-of-jerrys/project/bin/Debug/JerrysAdventure</obj>
-      <fn>CppUnit::TestCaller&lt;TextBoxTest&gt;::setUp()</fn>
-      <dir>/usr/include/cppunit</dir>
-      <file>TestCaller.h</file>
-      <line>177</line>
-    </frame>
-    <frame>
-      <ip>0x35D8224D39</ip>
-      <obj>/usr/lib64/libcppunit-1.12.so.1.0.0</obj>
-      <fn>CppUnit::TestCaseMethodFunctor::operator()() const</fn>
-    </frame>
-    <frame>
-      <ip>0x35D821A063</ip>
-      <obj>/usr/lib64/libcppunit-1.12.so.1.0.0</obj>
-      <fn>CppUnit::DefaultProtector::protect(CppUnit::Functor const&amp;, CppUnit::ProtectorContext const&amp;)</fn>
-    </frame>
-    <frame>
-      <ip>0x35D8221646</ip>
-      <obj>/usr/lib64/libcppunit-1.12.so.1.0.0</obj>
-      <fn>CppUnit::ProtectorChain::protect(CppUnit::Functor const&amp;, CppUnit::ProtectorContext const&amp;)</fn>
-    </frame>
-    <frame>
-      <ip>0x35D822A853</ip>
-      <obj>/usr/lib64/libcppunit-1.12.so.1.0.0</obj>
-      <fn>CppUnit::TestResult::protect(CppUnit::Functor const&amp;, CppUnit::Test*, std::string const&amp;)</fn>
-    </frame>
-    <frame>
-      <ip>0x35D8224988</ip>
-      <obj>/usr/lib64/libcppunit-1.12.so.1.0.0</obj>
-      <fn>CppUnit::TestCase::run(CppUnit::TestResult*)</fn>
-    </frame>
-    <frame>
-      <ip>0x35D82250C2</ip>
-      <obj>/usr/lib64/libcppunit-1.12.so.1.0.0</obj>
-      <fn>CppUnit::TestComposite::doRunChildTests(CppUnit::TestResult*)</fn>
-    </frame>
-    <frame>
-      <ip>0x35D8224FE5</ip>
-      <obj>/usr/lib64/libcppunit-1.12.so.1.0.0</obj>
-      <fn>CppUnit::TestComposite::run(CppUnit::TestResult*)</fn>
-    </frame>
-    <frame>
-      <ip>0x35D82250C2</ip>
-      <obj>/usr/lib64/libcppunit-1.12.so.1.0.0</obj>
-      <fn>CppUnit::TestComposite::doRunChildTests(CppUnit::TestResult*)</fn>
-    </frame>
-    <frame>
-      <ip>0x35D8224FE5</ip>
-      <obj>/usr/lib64/libcppunit-1.12.so.1.0.0</obj>
-      <fn>CppUnit::TestComposite::run(CppUnit::TestResult*)</fn>
-    </frame>
-  </stack>
-  <auxwhat>Address 0x4c9f2de is 0 bytes after a block of size 30 alloc'd</auxwhat>
-  <stack>
-    <frame>
-      <ip>0x4A075FC</ip>
-      <obj>/usr/lib64/valgrind/vgpreload_memcheck-amd64-linux.so</obj>
-      <fn>operator new(unsigned long)</fn>
-      <dir>/builddir/build/BUILD/valgrind-3.8.1/coregrind/m_replacemalloc</dir>
-      <file>vg_replace_malloc.c</file>
-      <line>298</line>
-    </frame>
-    <frame>
-      <ip>0x35DE69C3C8</ip>
-      <obj>/usr/lib64/libstdc++.so.6.0.13</obj>
-      <fn>std::string::_Rep::_S_create(unsigned long, unsigned long, std::allocator&lt;char&gt; const&amp;)</fn>
-    </frame>
-    <frame>
-      <ip>0x35DE69CDE4</ip>
-      <obj>/usr/lib64/libstdc++.so.6.0.13</obj>
-    </frame>
-    <frame>
-      <ip>0x35DE69CF32</ip>
-      <obj>/usr/lib64/libstdc++.so.6.0.13</obj>
-      <fn>std::basic_string&lt;char, std::char_traits&lt;char&gt;, std::allocator&lt;char&gt; &gt;::basic_string(char const*, std::allocator&lt;char&gt; const&amp;)</fn>
-    </frame>
-    <frame>
-      <ip>0x43F002</ip>
-      <obj>/home/marm2720/the-council-of-jerrys/project/bin/Debug/JerrysAdventure</obj>
-      <fn>TextBoxTest::setUp()</fn>
-      <dir>/home/marm2720/the-council-of-jerrys/test</dir>
-      <file>TextBoxTest.cpp</file>
-      <line>14</line>
-    </frame>
-    <frame>
-      <ip>0x440328</ip>
-      <obj>/home/marm2720/the-council-of-jerrys/project/bin/Debug/JerrysAdventure</obj>
-      <fn>CppUnit::TestCaller&lt;TextBoxTest&gt;::setUp()</fn>
-      <dir>/usr/include/cppunit</dir>
-      <file>TestCaller.h</file>
-      <line>177</line>
-    </frame>
-    <frame>
-      <ip>0x35D8224D39</ip>
-      <obj>/usr/lib64/libcppunit-1.12.so.1.0.0</obj>
-      <fn>CppUnit::TestCaseMethodFunctor::operator()() const</fn>
-    </frame>
-    <frame>
-      <ip>0x35D821A063</ip>
-      <obj>/usr/lib64/libcppunit-1.12.so.1.0.0</obj>
-      <fn>CppUnit::DefaultProtector::protect(CppUnit::Functor const&amp;, CppUnit::ProtectorContext const&amp;)</fn>
-    </frame>
-    <frame>
-      <ip>0x35D8221646</ip>
-      <obj>/usr/lib64/libcppunit-1.12.so.1.0.0</obj>
-      <fn>CppUnit::ProtectorChain::protect(CppUnit::Functor const&amp;, CppUnit::ProtectorContext const&amp;)</fn>
-    </frame>
-    <frame>
-      <ip>0x35D822A853</ip>
-      <obj>/usr/lib64/libcppunit-1.12.so.1.0.0</obj>
-      <fn>CppUnit::TestResult::protect(CppUnit::Functor const&amp;, CppUnit::Test*, std::string const&amp;)</fn>
-    </frame>
-    <frame>
-      <ip>0x35D8224988</ip>
-      <obj>/usr/lib64/libcppunit-1.12.so.1.0.0</obj>
-      <fn>CppUnit::TestCase::run(CppUnit::TestResult*)</fn>
-    </frame>
-    <frame>
-      <ip>0x35D82250C2</ip>
-      <obj>/usr/lib64/libcppunit-1.12.so.1.0.0</obj>
-      <fn>CppUnit::TestComposite::doRunChildTests(CppUnit::TestResult*)</fn>
-    </frame>
-  </stack>
-</error>
-
-<error>
-  <unique>0x180</unique>
-  <tid>1</tid>
-  <kind>InvalidRead</kind>
-  <what>Invalid read of size 1</what>
-  <stack>
-    <frame>
-      <ip>0x422D11</ip>
-      <obj>/home/marm2720/the-council-of-jerrys/project/bin/Debug/JerrysAdventure</obj>
-      <fn>TextBox::TextBox(std::string)</fn>
-      <dir>/home/marm2720/the-council-of-jerrys/src</dir>
-      <file>TextBox.cpp</file>
-      <line>18</line>
-    </frame>
-    <frame>
-      <ip>0x440471</ip>
-      <obj>/home/marm2720/the-council-of-jerrys/project/bin/Debug/JerrysAdventure</obj>
-      <fn>WindowTest::setUp()</fn>
-      <dir>/home/marm2720/the-council-of-jerrys/test</dir>
-      <file>WindowTest.cpp</file>
-      <line>14</line>
-    </frame>
-    <frame>
-      <ip>0x441FC8</ip>
-      <obj>/home/marm2720/the-council-of-jerrys/project/bin/Debug/JerrysAdventure</obj>
-      <fn>CppUnit::TestCaller&lt;WindowTest&gt;::setUp()</fn>
-      <dir>/usr/include/cppunit</dir>
-      <file>TestCaller.h</file>
-      <line>177</line>
-    </frame>
-    <frame>
-      <ip>0x35D8224D39</ip>
-      <obj>/usr/lib64/libcppunit-1.12.so.1.0.0</obj>
-      <fn>CppUnit::TestCaseMethodFunctor::operator()() const</fn>
-    </frame>
-    <frame>
-      <ip>0x35D821A063</ip>
-      <obj>/usr/lib64/libcppunit-1.12.so.1.0.0</obj>
-      <fn>CppUnit::DefaultProtector::protect(CppUnit::Functor const&amp;, CppUnit::ProtectorContext const&amp;)</fn>
-    </frame>
-    <frame>
-      <ip>0x35D8221646</ip>
-      <obj>/usr/lib64/libcppunit-1.12.so.1.0.0</obj>
-      <fn>CppUnit::ProtectorChain::protect(CppUnit::Functor const&amp;, CppUnit::ProtectorContext const&amp;)</fn>
-    </frame>
-    <frame>
-      <ip>0x35D822A853</ip>
-      <obj>/usr/lib64/libcppunit-1.12.so.1.0.0</obj>
-      <fn>CppUnit::TestResult::protect(CppUnit::Functor const&amp;, CppUnit::Test*, std::string const&amp;)</fn>
-    </frame>
-    <frame>
-      <ip>0x35D8224988</ip>
-      <obj>/usr/lib64/libcppunit-1.12.so.1.0.0</obj>
-      <fn>CppUnit::TestCase::run(CppUnit::TestResult*)</fn>
-    </frame>
-    <frame>
-      <ip>0x35D82250C2</ip>
-      <obj>/usr/lib64/libcppunit-1.12.so.1.0.0</obj>
-      <fn>CppUnit::TestComposite::doRunChildTests(CppUnit::TestResult*)</fn>
-    </frame>
-    <frame>
-      <ip>0x35D8224FE5</ip>
-      <obj>/usr/lib64/libcppunit-1.12.so.1.0.0</obj>
-      <fn>CppUnit::TestComposite::run(CppUnit::TestResult*)</fn>
-    </frame>
-    <frame>
-      <ip>0x35D82250C2</ip>
-      <obj>/usr/lib64/libcppunit-1.12.so.1.0.0</obj>
-      <fn>CppUnit::TestComposite::doRunChildTests(CppUnit::TestResult*)</fn>
-    </frame>
-    <frame>
-      <ip>0x35D8224FE5</ip>
-      <obj>/usr/lib64/libcppunit-1.12.so.1.0.0</obj>
-      <fn>CppUnit::TestComposite::run(CppUnit::TestResult*)</fn>
-    </frame>
-  </stack>
-  <auxwhat>Address 0x4ca4f44 is 0 bytes after a block of size 36 alloc'd</auxwhat>
-  <stack>
-    <frame>
-      <ip>0x4A075FC</ip>
-      <obj>/usr/lib64/valgrind/vgpreload_memcheck-amd64-linux.so</obj>
-      <fn>operator new(unsigned long)</fn>
-      <dir>/builddir/build/BUILD/valgrind-3.8.1/coregrind/m_replacemalloc</dir>
-      <file>vg_replace_malloc.c</file>
-      <line>298</line>
-    </frame>
-    <frame>
-      <ip>0x35DE69C3C8</ip>
-      <obj>/usr/lib64/libstdc++.so.6.0.13</obj>
-      <fn>std::string::_Rep::_S_create(unsigned long, unsigned long, std::allocator&lt;char&gt; const&amp;)</fn>
-    </frame>
-    <frame>
-      <ip>0x35DE69CDE4</ip>
-      <obj>/usr/lib64/libstdc++.so.6.0.13</obj>
-    </frame>
-    <frame>
-      <ip>0x35DE69CF32</ip>
-      <obj>/usr/lib64/libstdc++.so.6.0.13</obj>
-      <fn>std::basic_string&lt;char, std::char_traits&lt;char&gt;, std::allocator&lt;char&gt; &gt;::basic_string(char const*, std::allocator&lt;char&gt; const&amp;)</fn>
-    </frame>
-    <frame>
-      <ip>0x440452</ip>
-      <obj>/home/marm2720/the-council-of-jerrys/project/bin/Debug/JerrysAdventure</obj>
-      <fn>WindowTest::setUp()</fn>
-      <dir>/home/marm2720/the-council-of-jerrys/test</dir>
-      <file>WindowTest.cpp</file>
-      <line>14</line>
-    </frame>
-    <frame>
-      <ip>0x441FC8</ip>
-      <obj>/home/marm2720/the-council-of-jerrys/project/bin/Debug/JerrysAdventure</obj>
-      <fn>CppUnit::TestCaller&lt;WindowTest&gt;::setUp()</fn>
-      <dir>/usr/include/cppunit</dir>
-      <file>TestCaller.h</file>
-      <line>177</line>
-    </frame>
-    <frame>
-      <ip>0x35D8224D39</ip>
-      <obj>/usr/lib64/libcppunit-1.12.so.1.0.0</obj>
-      <fn>CppUnit::TestCaseMethodFunctor::operator()() const</fn>
-    </frame>
-    <frame>
-      <ip>0x35D821A063</ip>
-      <obj>/usr/lib64/libcppunit-1.12.so.1.0.0</obj>
-      <fn>CppUnit::DefaultProtector::protect(CppUnit::Functor const&amp;, CppUnit::ProtectorContext const&amp;)</fn>
-    </frame>
-    <frame>
-      <ip>0x35D8221646</ip>
-      <obj>/usr/lib64/libcppunit-1.12.so.1.0.0</obj>
-      <fn>CppUnit::ProtectorChain::protect(CppUnit::Functor const&amp;, CppUnit::ProtectorContext const&amp;)</fn>
-    </frame>
-    <frame>
-      <ip>0x35D822A853</ip>
-      <obj>/usr/lib64/libcppunit-1.12.so.1.0.0</obj>
-      <fn>CppUnit::TestResult::protect(CppUnit::Functor const&amp;, CppUnit::Test*, std::string const&amp;)</fn>
-    </frame>
-    <frame>
-      <ip>0x35D8224988</ip>
-      <obj>/usr/lib64/libcppunit-1.12.so.1.0.0</obj>
-      <fn>CppUnit::TestCase::run(CppUnit::TestResult*)</fn>
-    </frame>
-    <frame>
-      <ip>0x35D82250C2</ip>
-      <obj>/usr/lib64/libcppunit-1.12.so.1.0.0</obj>
-      <fn>CppUnit::TestComposite::doRunChildTests(CppUnit::TestResult*)</fn>
-    </frame>
-  </stack>
-</error>
-
-<error>
-  <unique>0x1b0</unique>
-  <tid>1</tid>
-  <kind>InvalidRead</kind>
-  <what>Invalid read of size 1</what>
-  <stack>
-    <frame>
-      <ip>0x422D11</ip>
-      <obj>/home/marm2720/the-council-of-jerrys/project/bin/Debug/JerrysAdventure</obj>
-      <fn>TextBox::TextBox(std::string)</fn>
-      <dir>/home/marm2720/the-council-of-jerrys/src</dir>
-      <file>TextBox.cpp</file>
-      <line>18</line>
-    </frame>
-    <frame>
-      <ip>0x4404E3</ip>
-      <obj>/home/marm2720/the-council-of-jerrys/project/bin/Debug/JerrysAdventure</obj>
-      <fn>WindowTest::setUp()</fn>
-      <dir>/home/marm2720/the-council-of-jerrys/test</dir>
-      <file>WindowTest.cpp</file>
-      <line>15</line>
-    </frame>
-    <frame>
-      <ip>0x441FC8</ip>
-      <obj>/home/marm2720/the-council-of-jerrys/project/bin/Debug/JerrysAdventure</obj>
-      <fn>CppUnit::TestCaller&lt;WindowTest&gt;::setUp()</fn>
-      <dir>/usr/include/cppunit</dir>
-      <file>TestCaller.h</file>
-      <line>177</line>
-    </frame>
-    <frame>
-      <ip>0x35D8224D39</ip>
-      <obj>/usr/lib64/libcppunit-1.12.so.1.0.0</obj>
-      <fn>CppUnit::TestCaseMethodFunctor::operator()() const</fn>
-    </frame>
-    <frame>
-      <ip>0x35D821A063</ip>
-      <obj>/usr/lib64/libcppunit-1.12.so.1.0.0</obj>
-      <fn>CppUnit::DefaultProtector::protect(CppUnit::Functor const&amp;, CppUnit::ProtectorContext const&amp;)</fn>
-    </frame>
-    <frame>
-      <ip>0x35D8221646</ip>
-      <obj>/usr/lib64/libcppunit-1.12.so.1.0.0</obj>
-      <fn>CppUnit::ProtectorChain::protect(CppUnit::Functor const&amp;, CppUnit::ProtectorContext const&amp;)</fn>
-    </frame>
-    <frame>
-      <ip>0x35D822A853</ip>
-      <obj>/usr/lib64/libcppunit-1.12.so.1.0.0</obj>
-      <fn>CppUnit::TestResult::protect(CppUnit::Functor const&amp;, CppUnit::Test*, std::string const&amp;)</fn>
-    </frame>
-    <frame>
-      <ip>0x35D8224988</ip>
-      <obj>/usr/lib64/libcppunit-1.12.so.1.0.0</obj>
-      <fn>CppUnit::TestCase::run(CppUnit::TestResult*)</fn>
-    </frame>
-    <frame>
-      <ip>0x35D82250C2</ip>
-      <obj>/usr/lib64/libcppunit-1.12.so.1.0.0</obj>
-      <fn>CppUnit::TestComposite::doRunChildTests(CppUnit::TestResult*)</fn>
-    </frame>
-    <frame>
-      <ip>0x35D8224FE5</ip>
-      <obj>/usr/lib64/libcppunit-1.12.so.1.0.0</obj>
-      <fn>CppUnit::TestComposite::run(CppUnit::TestResult*)</fn>
-    </frame>
-    <frame>
-      <ip>0x35D82250C2</ip>
-      <obj>/usr/lib64/libcppunit-1.12.so.1.0.0</obj>
-      <fn>CppUnit::TestComposite::doRunChildTests(CppUnit::TestResult*)</fn>
-    </frame>
-    <frame>
-      <ip>0x35D8224FE5</ip>
-      <obj>/usr/lib64/libcppunit-1.12.so.1.0.0</obj>
-      <fn>CppUnit::TestComposite::run(CppUnit::TestResult*)</fn>
-    </frame>
-  </stack>
-  <auxwhat>Address 0x4ca50e3 is 0 bytes after a block of size 35 alloc'd</auxwhat>
-  <stack>
-    <frame>
-      <ip>0x4A075FC</ip>
-      <obj>/usr/lib64/valgrind/vgpreload_memcheck-amd64-linux.so</obj>
-      <fn>operator new(unsigned long)</fn>
-      <dir>/builddir/build/BUILD/valgrind-3.8.1/coregrind/m_replacemalloc</dir>
-      <file>vg_replace_malloc.c</file>
-      <line>298</line>
-    </frame>
-    <frame>
-      <ip>0x35DE69C3C8</ip>
-      <obj>/usr/lib64/libstdc++.so.6.0.13</obj>
-      <fn>std::string::_Rep::_S_create(unsigned long, unsigned long, std::allocator&lt;char&gt; const&amp;)</fn>
-    </frame>
-    <frame>
-      <ip>0x35DE69CDE4</ip>
-      <obj>/usr/lib64/libstdc++.so.6.0.13</obj>
-    </frame>
-    <frame>
-      <ip>0x35DE69CF32</ip>
-      <obj>/usr/lib64/libstdc++.so.6.0.13</obj>
-      <fn>std::basic_string&lt;char, std::char_traits&lt;char&gt;, std::allocator&lt;char&gt; &gt;::basic_string(char const*, std::allocator&lt;char&gt; const&amp;)</fn>
-    </frame>
-    <frame>
-      <ip>0x4404C4</ip>
-      <obj>/home/marm2720/the-council-of-jerrys/project/bin/Debug/JerrysAdventure</obj>
-      <fn>WindowTest::setUp()</fn>
-      <dir>/home/marm2720/the-council-of-jerrys/test</dir>
-      <file>WindowTest.cpp</file>
-      <line>15</line>
-    </frame>
-    <frame>
-      <ip>0x441FC8</ip>
-      <obj>/home/marm2720/the-council-of-jerrys/project/bin/Debug/JerrysAdventure</obj>
-      <fn>CppUnit::TestCaller&lt;WindowTest&gt;::setUp()</fn>
-      <dir>/usr/include/cppunit</dir>
-      <file>TestCaller.h</file>
-      <line>177</line>
-    </frame>
-    <frame>
-      <ip>0x35D8224D39</ip>
-      <obj>/usr/lib64/libcppunit-1.12.so.1.0.0</obj>
-      <fn>CppUnit::TestCaseMethodFunctor::operator()() const</fn>
-    </frame>
-    <frame>
-      <ip>0x35D821A063</ip>
-      <obj>/usr/lib64/libcppunit-1.12.so.1.0.0</obj>
-      <fn>CppUnit::DefaultProtector::protect(CppUnit::Functor const&amp;, CppUnit::ProtectorContext const&amp;)</fn>
-    </frame>
-    <frame>
-      <ip>0x35D8221646</ip>
-      <obj>/usr/lib64/libcppunit-1.12.so.1.0.0</obj>
-      <fn>CppUnit::ProtectorChain::protect(CppUnit::Functor const&amp;, CppUnit::ProtectorContext const&amp;)</fn>
-    </frame>
-    <frame>
-      <ip>0x35D822A853</ip>
-      <obj>/usr/lib64/libcppunit-1.12.so.1.0.0</obj>
-      <fn>CppUnit::TestResult::protect(CppUnit::Functor const&amp;, CppUnit::Test*, std::string const&amp;)</fn>
-    </frame>
-    <frame>
-      <ip>0x35D8224988</ip>
-      <obj>/usr/lib64/libcppunit-1.12.so.1.0.0</obj>
-      <fn>CppUnit::TestCase::run(CppUnit::TestResult*)</fn>
-    </frame>
-    <frame>
-      <ip>0x35D82250C2</ip>
-      <obj>/usr/lib64/libcppunit-1.12.so.1.0.0</obj>
-      <fn>CppUnit::TestComposite::doRunChildTests(CppUnit::TestResult*)</fn>
+      <line>88</line>
     </frame>
   </stack>
 </error>
@@ -805,19 +69,19 @@
   </xwhat>
   <stack>
     <frame>
-      <ip>0x4A075FC</ip>
-      <obj>/usr/lib64/valgrind/vgpreload_memcheck-amd64-linux.so</obj>
-      <fn>operator new(unsigned long)</fn>
-      <dir>/builddir/build/BUILD/valgrind-3.8.1/coregrind/m_replacemalloc</dir>
-      <file>vg_replace_malloc.c</file>
-      <line>298</line>
+      <ip>0x41E23B</ip>
+      <obj>/home/vincent/Jerry/the-council-of-jerrys/project/bin/Debug/JerrysAdventure</obj>
+      <fn>TextBox::TextBox(std::__cxx11::basic_string&lt;char, std::char_traits&lt;char&gt;, std::allocator&lt;char&gt; &gt;)</fn>
+      <dir>/home/vincent/Jerry/the-council-of-jerrys/src</dir>
+      <file>TextBox.cpp</file>
+      <line>10</line>
     </frame>
     <frame>
-      <ip>0x42C238</ip>
-      <obj>/home/marm2720/the-council-of-jerrys/project/bin/Debug/JerrysAdventure</obj>
-      <fn>CharacterTest::setUp()</fn>
-      <dir>/home/marm2720/the-council-of-jerrys/test</dir>
-      <file>CharacterTest.cpp</file>
+      <ip>0x416AA8</ip>
+      <obj>/home/vincent/Jerry/the-council-of-jerrys/project/bin/Debug/JerrysAdventure</obj>
+      <fn>main</fn>
+      <dir>/home/vincent/Jerry/the-council-of-jerrys/src</dir>
+      <file>main.cpp</file>
       <line>17</line>
     </frame>
     <frame>
@@ -956,250 +220,59 @@
       <fn>CppUnit::TestComposite::run(CppUnit::TestResult*)</fn>
     </frame>
   </stack>
-</error>
-
-<error>
-  <unique>0x2d4</unique>
-  <tid>1</tid>
-  <kind>Leak_DefinitelyLost</kind>
-  <xwhat>
-    <text>174 (40 direct, 134 indirect) bytes in 1 blocks are definitely lost in loss record 50 of 55</text>
-    <leakedbytes>174</leakedbytes>
-    <leakedblocks>1</leakedblocks>
-  </xwhat>
+  <auxwhat>Uninitialised value was created by a stack allocation</auxwhat>
   <stack>
     <frame>
-      <ip>0x4A075FC</ip>
-      <obj>/usr/lib64/valgrind/vgpreload_memcheck-amd64-linux.so</obj>
-      <fn>operator new(unsigned long)</fn>
-      <dir>/builddir/build/BUILD/valgrind-3.8.1/coregrind/m_replacemalloc</dir>
-      <file>vg_replace_malloc.c</file>
-      <line>298</line>
-    </frame>
-    <frame>
-      <ip>0x43DE78</ip>
-      <obj>/home/marm2720/the-council-of-jerrys/project/bin/Debug/JerrysAdventure</obj>
-      <fn>TalkTest::testExecuteException()</fn>
-      <dir>/home/marm2720/the-council-of-jerrys/test</dir>
-      <file>TalkTest.cpp</file>
-      <line>46</line>
-    </frame>
-    <frame>
-      <ip>0x43EE83</ip>
-      <obj>/home/marm2720/the-council-of-jerrys/project/bin/Debug/JerrysAdventure</obj>
-      <fn>CppUnit::TestCaller&lt;TalkTest&gt;::runTest()</fn>
-      <dir>/usr/include/cppunit</dir>
-      <file>TestCaller.h</file>
-      <line>166</line>
-    </frame>
-    <frame>
-      <ip>0x35D8224D39</ip>
-      <obj>/usr/lib64/libcppunit-1.12.so.1.0.0</obj>
-      <fn>CppUnit::TestCaseMethodFunctor::operator()() const</fn>
-    </frame>
-    <frame>
-      <ip>0x35D821A063</ip>
-      <obj>/usr/lib64/libcppunit-1.12.so.1.0.0</obj>
-      <fn>CppUnit::DefaultProtector::protect(CppUnit::Functor const&amp;, CppUnit::ProtectorContext const&amp;)</fn>
-    </frame>
-    <frame>
-      <ip>0x35D8221646</ip>
-      <obj>/usr/lib64/libcppunit-1.12.so.1.0.0</obj>
-      <fn>CppUnit::ProtectorChain::protect(CppUnit::Functor const&amp;, CppUnit::ProtectorContext const&amp;)</fn>
-    </frame>
-    <frame>
-      <ip>0x35D822A853</ip>
-      <obj>/usr/lib64/libcppunit-1.12.so.1.0.0</obj>
-      <fn>CppUnit::TestResult::protect(CppUnit::Functor const&amp;, CppUnit::Test*, std::string const&amp;)</fn>
-    </frame>
-    <frame>
-      <ip>0x35D8224A17</ip>
-      <obj>/usr/lib64/libcppunit-1.12.so.1.0.0</obj>
-      <fn>CppUnit::TestCase::run(CppUnit::TestResult*)</fn>
-    </frame>
-    <frame>
-      <ip>0x35D82250C2</ip>
-      <obj>/usr/lib64/libcppunit-1.12.so.1.0.0</obj>
-      <fn>CppUnit::TestComposite::doRunChildTests(CppUnit::TestResult*)</fn>
-    </frame>
-    <frame>
-      <ip>0x35D8224FE5</ip>
-      <obj>/usr/lib64/libcppunit-1.12.so.1.0.0</obj>
-      <fn>CppUnit::TestComposite::run(CppUnit::TestResult*)</fn>
-    </frame>
-    <frame>
-      <ip>0x35D82250C2</ip>
-      <obj>/usr/lib64/libcppunit-1.12.so.1.0.0</obj>
-      <fn>CppUnit::TestComposite::doRunChildTests(CppUnit::TestResult*)</fn>
-    </frame>
-    <frame>
-      <ip>0x35D8224FE5</ip>
-      <obj>/usr/lib64/libcppunit-1.12.so.1.0.0</obj>
-      <fn>CppUnit::TestComposite::run(CppUnit::TestResult*)</fn>
+      <ip>0x41E1EA</ip>
+      <obj>/home/vincent/Jerry/the-council-of-jerrys/project/bin/Debug/JerrysAdventure</obj>
+      <fn>TextBox::TextBox(std::__cxx11::basic_string&lt;char, std::char_traits&lt;char&gt;, std::allocator&lt;char&gt; &gt;)</fn>
+      <dir>/home/vincent/Jerry/the-council-of-jerrys/src</dir>
+      <file>TextBox.cpp</file>
+      <line>8</line>
     </frame>
   </stack>
 </error>
 
 <error>
-  <unique>0x2d5</unique>
+  <unique>0x19</unique>
   <tid>1</tid>
-  <kind>Leak_DefinitelyLost</kind>
-  <xwhat>
-    <text>197 (24 direct, 173 indirect) bytes in 1 blocks are definitely lost in loss record 51 of 55</text>
-    <leakedbytes>197</leakedbytes>
-    <leakedblocks>1</leakedblocks>
-  </xwhat>
+  <kind>UninitCondition</kind>
+  <what>Conditional jump or move depends on uninitialised value(s)</what>
   <stack>
     <frame>
-      <ip>0x4A075FC</ip>
-      <obj>/usr/lib64/valgrind/vgpreload_memcheck-amd64-linux.so</obj>
-      <fn>operator new(unsigned long)</fn>
-      <dir>/builddir/build/BUILD/valgrind-3.8.1/coregrind/m_replacemalloc</dir>
-      <file>vg_replace_malloc.c</file>
-      <line>298</line>
+      <ip>0x41E8C1</ip>
+      <obj>/home/vincent/Jerry/the-council-of-jerrys/project/bin/Debug/JerrysAdventure</obj>
+      <fn>TextBox::assignText(std::__cxx11::basic_string&lt;char, std::char_traits&lt;char&gt;, std::allocator&lt;char&gt; &gt;)</fn>
+      <dir>/home/vincent/Jerry/the-council-of-jerrys/src</dir>
+      <file>TextBox.cpp</file>
+      <line>88</line>
     </frame>
     <frame>
-      <ip>0x42C38B</ip>
-      <obj>/home/marm2720/the-council-of-jerrys/project/bin/Debug/JerrysAdventure</obj>
-      <fn>CharacterTest::setUp()</fn>
-      <dir>/home/marm2720/the-council-of-jerrys/test</dir>
-      <file>CharacterTest.cpp</file>
-      <line>18</line>
+      <ip>0x4276D6</ip>
+      <obj>/home/vincent/Jerry/the-council-of-jerrys/project/bin/Debug/JerrysAdventure</obj>
+      <fn>Window::display(std::__cxx11::basic_string&lt;char, std::char_traits&lt;char&gt;, std::allocator&lt;char&gt; &gt;, std::map&lt;char, std::__cxx11::basic_string&lt;char, std::char_traits&lt;char&gt;, std::allocator&lt;char&gt; &gt;, std::less&lt;char&gt;, std::allocator&lt;std::pair&lt;char const, std::__cxx11::basic_string&lt;char, std::char_traits&lt;char&gt;, std::allocator&lt;char&gt; &gt; &gt; &gt; &gt;, std::ostream&amp;)</fn>
+      <dir>/home/vincent/Jerry/the-council-of-jerrys/src</dir>
+      <file>Window.cpp</file>
+      <line>57</line>
     </frame>
     <frame>
-      <ip>0x43383C</ip>
-      <obj>/home/marm2720/the-council-of-jerrys/project/bin/Debug/JerrysAdventure</obj>
-      <fn>CppUnit::TestCaller&lt;CharacterTest&gt;::setUp()</fn>
-      <dir>/usr/include/cppunit</dir>
-      <file>TestCaller.h</file>
-      <line>177</line>
-    </frame>
-    <frame>
-      <ip>0x35D8224D39</ip>
-      <obj>/usr/lib64/libcppunit-1.12.so.1.0.0</obj>
-      <fn>CppUnit::TestCaseMethodFunctor::operator()() const</fn>
-    </frame>
-    <frame>
-      <ip>0x35D821A063</ip>
-      <obj>/usr/lib64/libcppunit-1.12.so.1.0.0</obj>
-      <fn>CppUnit::DefaultProtector::protect(CppUnit::Functor const&amp;, CppUnit::ProtectorContext const&amp;)</fn>
-    </frame>
-    <frame>
-      <ip>0x35D8221646</ip>
-      <obj>/usr/lib64/libcppunit-1.12.so.1.0.0</obj>
-      <fn>CppUnit::ProtectorChain::protect(CppUnit::Functor const&amp;, CppUnit::ProtectorContext const&amp;)</fn>
-    </frame>
-    <frame>
-      <ip>0x35D822A853</ip>
-      <obj>/usr/lib64/libcppunit-1.12.so.1.0.0</obj>
-      <fn>CppUnit::TestResult::protect(CppUnit::Functor const&amp;, CppUnit::Test*, std::string const&amp;)</fn>
-    </frame>
-    <frame>
-      <ip>0x35D8224988</ip>
-      <obj>/usr/lib64/libcppunit-1.12.so.1.0.0</obj>
-      <fn>CppUnit::TestCase::run(CppUnit::TestResult*)</fn>
-    </frame>
-    <frame>
-      <ip>0x35D82250C2</ip>
-      <obj>/usr/lib64/libcppunit-1.12.so.1.0.0</obj>
-      <fn>CppUnit::TestComposite::doRunChildTests(CppUnit::TestResult*)</fn>
-    </frame>
-    <frame>
-      <ip>0x35D8224FE5</ip>
-      <obj>/usr/lib64/libcppunit-1.12.so.1.0.0</obj>
-      <fn>CppUnit::TestComposite::run(CppUnit::TestResult*)</fn>
-    </frame>
-    <frame>
-      <ip>0x35D82250C2</ip>
-      <obj>/usr/lib64/libcppunit-1.12.so.1.0.0</obj>
-      <fn>CppUnit::TestComposite::doRunChildTests(CppUnit::TestResult*)</fn>
-    </frame>
-    <frame>
-      <ip>0x35D8224FE5</ip>
-      <obj>/usr/lib64/libcppunit-1.12.so.1.0.0</obj>
-      <fn>CppUnit::TestComposite::run(CppUnit::TestResult*)</fn>
+      <ip>0x416B5B</ip>
+      <obj>/home/vincent/Jerry/the-council-of-jerrys/project/bin/Debug/JerrysAdventure</obj>
+      <fn>main</fn>
+      <dir>/home/vincent/Jerry/the-council-of-jerrys/src</dir>
+      <file>main.cpp</file>
+      <line>19</line>
     </frame>
   </stack>
-</error>
-
-<error>
-  <unique>0x2d6</unique>
-  <tid>1</tid>
-  <kind>Leak_DefinitelyLost</kind>
-  <xwhat>
-    <text>268 (24 direct, 244 indirect) bytes in 1 blocks are definitely lost in loss record 52 of 55</text>
-    <leakedbytes>268</leakedbytes>
-    <leakedblocks>1</leakedblocks>
-  </xwhat>
+  <auxwhat>Uninitialised value was created by a stack allocation</auxwhat>
   <stack>
     <frame>
-      <ip>0x4A075FC</ip>
-      <obj>/usr/lib64/valgrind/vgpreload_memcheck-amd64-linux.so</obj>
-      <fn>operator new(unsigned long)</fn>
-      <dir>/builddir/build/BUILD/valgrind-3.8.1/coregrind/m_replacemalloc</dir>
-      <file>vg_replace_malloc.c</file>
-      <line>298</line>
-    </frame>
-    <frame>
-      <ip>0x42C881</ip>
-      <obj>/home/marm2720/the-council-of-jerrys/project/bin/Debug/JerrysAdventure</obj>
-      <fn>CharacterTest::setUp()</fn>
-      <dir>/home/marm2720/the-council-of-jerrys/test</dir>
-      <file>CharacterTest.cpp</file>
-      <line>20</line>
-    </frame>
-    <frame>
-      <ip>0x43383C</ip>
-      <obj>/home/marm2720/the-council-of-jerrys/project/bin/Debug/JerrysAdventure</obj>
-      <fn>CppUnit::TestCaller&lt;CharacterTest&gt;::setUp()</fn>
-      <dir>/usr/include/cppunit</dir>
-      <file>TestCaller.h</file>
-      <line>177</line>
-    </frame>
-    <frame>
-      <ip>0x35D8224D39</ip>
-      <obj>/usr/lib64/libcppunit-1.12.so.1.0.0</obj>
-      <fn>CppUnit::TestCaseMethodFunctor::operator()() const</fn>
-    </frame>
-    <frame>
-      <ip>0x35D821A063</ip>
-      <obj>/usr/lib64/libcppunit-1.12.so.1.0.0</obj>
-      <fn>CppUnit::DefaultProtector::protect(CppUnit::Functor const&amp;, CppUnit::ProtectorContext const&amp;)</fn>
-    </frame>
-    <frame>
-      <ip>0x35D8221646</ip>
-      <obj>/usr/lib64/libcppunit-1.12.so.1.0.0</obj>
-      <fn>CppUnit::ProtectorChain::protect(CppUnit::Functor const&amp;, CppUnit::ProtectorContext const&amp;)</fn>
-    </frame>
-    <frame>
-      <ip>0x35D822A853</ip>
-      <obj>/usr/lib64/libcppunit-1.12.so.1.0.0</obj>
-      <fn>CppUnit::TestResult::protect(CppUnit::Functor const&amp;, CppUnit::Test*, std::string const&amp;)</fn>
-    </frame>
-    <frame>
-      <ip>0x35D8224988</ip>
-      <obj>/usr/lib64/libcppunit-1.12.so.1.0.0</obj>
-      <fn>CppUnit::TestCase::run(CppUnit::TestResult*)</fn>
-    </frame>
-    <frame>
-      <ip>0x35D82250C2</ip>
-      <obj>/usr/lib64/libcppunit-1.12.so.1.0.0</obj>
-      <fn>CppUnit::TestComposite::doRunChildTests(CppUnit::TestResult*)</fn>
-    </frame>
-    <frame>
-      <ip>0x35D8224FE5</ip>
-      <obj>/usr/lib64/libcppunit-1.12.so.1.0.0</obj>
-      <fn>CppUnit::TestComposite::run(CppUnit::TestResult*)</fn>
-    </frame>
-    <frame>
-      <ip>0x35D82250C2</ip>
-      <obj>/usr/lib64/libcppunit-1.12.so.1.0.0</obj>
-      <fn>CppUnit::TestComposite::doRunChildTests(CppUnit::TestResult*)</fn>
-    </frame>
-    <frame>
-      <ip>0x35D8224FE5</ip>
-      <obj>/usr/lib64/libcppunit-1.12.so.1.0.0</obj>
-      <fn>CppUnit::TestComposite::run(CppUnit::TestResult*)</fn>
+      <ip>0x42767C</ip>
+      <obj>/home/vincent/Jerry/the-council-of-jerrys/project/bin/Debug/JerrysAdventure</obj>
+      <fn>Window::display(std::__cxx11::basic_string&lt;char, std::char_traits&lt;char&gt;, std::allocator&lt;char&gt; &gt;, std::map&lt;char, std::__cxx11::basic_string&lt;char, std::char_traits&lt;char&gt;, std::allocator&lt;char&gt; &gt;, std::less&lt;char&gt;, std::allocator&lt;std::pair&lt;char const, std::__cxx11::basic_string&lt;char, std::char_traits&lt;char&gt;, std::allocator&lt;char&gt; &gt; &gt; &gt; &gt;, std::ostream&amp;)</fn>
+      <dir>/home/vincent/Jerry/the-council-of-jerrys/src</dir>
+      <file>Window.cpp</file>
+      <line>56</line>
     </frame>
   </stack>
 </error>
@@ -1286,202 +359,73 @@
   </stack>
 </error>
 
+<status>
+  <state>FINISHED</state>
+  <time>00:00:00:00.847 </time>
+</status>
+
 <error>
-  <unique>0x2d8</unique>
+  <unique>0x34</unique>
   <tid>1</tid>
   <kind>Leak_DefinitelyLost</kind>
   <xwhat>
-    <text>296 (24 direct, 272 indirect) bytes in 1 blocks are definitely lost in loss record 54 of 55</text>
-    <leakedbytes>296</leakedbytes>
+    <text>68 (8 direct, 60 indirect) bytes in 1 blocks are definitely lost in loss record 2 of 3</text>
+    <leakedbytes>68</leakedbytes>
     <leakedblocks>1</leakedblocks>
   </xwhat>
   <stack>
     <frame>
-      <ip>0x4A075FC</ip>
-      <obj>/usr/lib64/valgrind/vgpreload_memcheck-amd64-linux.so</obj>
-      <fn>operator new(unsigned long)</fn>
-      <dir>/builddir/build/BUILD/valgrind-3.8.1/coregrind/m_replacemalloc</dir>
-      <file>vg_replace_malloc.c</file>
-      <line>298</line>
+      <ip>0x4C2E80F</ip>
+      <obj>/usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so</obj>
+      <fn>operator new[](unsigned long)</fn>
     </frame>
     <frame>
-      <ip>0x42CB15</ip>
-      <obj>/home/marm2720/the-council-of-jerrys/project/bin/Debug/JerrysAdventure</obj>
-      <fn>CharacterTest::setUp()</fn>
-      <dir>/home/marm2720/the-council-of-jerrys/test</dir>
-      <file>CharacterTest.cpp</file>
+      <ip>0x41E3C8</ip>
+      <obj>/home/vincent/Jerry/the-council-of-jerrys/project/bin/Debug/JerrysAdventure</obj>
+      <fn>TextBox::copy(TextBox&amp;)</fn>
+      <dir>/home/vincent/Jerry/the-council-of-jerrys/src</dir>
+      <file>TextBox.cpp</file>
+      <line>26</line>
+    </frame>
+    <frame>
+      <ip>0x41E382</ip>
+      <obj>/home/vincent/Jerry/the-council-of-jerrys/project/bin/Debug/JerrysAdventure</obj>
+      <fn>TextBox::TextBox(TextBox&amp;)</fn>
+      <dir>/home/vincent/Jerry/the-council-of-jerrys/src</dir>
+      <file>TextBox.cpp</file>
       <line>21</line>
     </frame>
     <frame>
-      <ip>0x43383C</ip>
-      <obj>/home/marm2720/the-council-of-jerrys/project/bin/Debug/JerrysAdventure</obj>
-      <fn>CppUnit::TestCaller&lt;CharacterTest&gt;::setUp()</fn>
-      <dir>/usr/include/cppunit</dir>
-      <file>TestCaller.h</file>
-      <line>177</line>
+      <ip>0x427245</ip>
+      <obj>/home/vincent/Jerry/the-council-of-jerrys/project/bin/Debug/JerrysAdventure</obj>
+      <fn>Window::Window(TextBox)</fn>
+      <dir>/home/vincent/Jerry/the-council-of-jerrys/src</dir>
+      <file>Window.cpp</file>
+      <line>9</line>
     </frame>
     <frame>
-      <ip>0x35D8224D39</ip>
-      <obj>/usr/lib64/libcppunit-1.12.so.1.0.0</obj>
-      <fn>CppUnit::TestCaseMethodFunctor::operator()() const</fn>
-    </frame>
-    <frame>
-      <ip>0x35D821A063</ip>
-      <obj>/usr/lib64/libcppunit-1.12.so.1.0.0</obj>
-      <fn>CppUnit::DefaultProtector::protect(CppUnit::Functor const&amp;, CppUnit::ProtectorContext const&amp;)</fn>
-    </frame>
-    <frame>
-      <ip>0x35D8221646</ip>
-      <obj>/usr/lib64/libcppunit-1.12.so.1.0.0</obj>
-      <fn>CppUnit::ProtectorChain::protect(CppUnit::Functor const&amp;, CppUnit::ProtectorContext const&amp;)</fn>
-    </frame>
-    <frame>
-      <ip>0x35D822A853</ip>
-      <obj>/usr/lib64/libcppunit-1.12.so.1.0.0</obj>
-      <fn>CppUnit::TestResult::protect(CppUnit::Functor const&amp;, CppUnit::Test*, std::string const&amp;)</fn>
-    </frame>
-    <frame>
-      <ip>0x35D8224988</ip>
-      <obj>/usr/lib64/libcppunit-1.12.so.1.0.0</obj>
-      <fn>CppUnit::TestCase::run(CppUnit::TestResult*)</fn>
-    </frame>
-    <frame>
-      <ip>0x35D82250C2</ip>
-      <obj>/usr/lib64/libcppunit-1.12.so.1.0.0</obj>
-      <fn>CppUnit::TestComposite::doRunChildTests(CppUnit::TestResult*)</fn>
-    </frame>
-    <frame>
-      <ip>0x35D8224FE5</ip>
-      <obj>/usr/lib64/libcppunit-1.12.so.1.0.0</obj>
-      <fn>CppUnit::TestComposite::run(CppUnit::TestResult*)</fn>
-    </frame>
-    <frame>
-      <ip>0x35D82250C2</ip>
-      <obj>/usr/lib64/libcppunit-1.12.so.1.0.0</obj>
-      <fn>CppUnit::TestComposite::doRunChildTests(CppUnit::TestResult*)</fn>
-    </frame>
-    <frame>
-      <ip>0x35D8224FE5</ip>
-      <obj>/usr/lib64/libcppunit-1.12.so.1.0.0</obj>
-      <fn>CppUnit::TestComposite::run(CppUnit::TestResult*)</fn>
-    </frame>
-  </stack>
-</error>
-
-<error>
-  <unique>0x2d9</unique>
-  <tid>1</tid>
-  <kind>Leak_DefinitelyLost</kind>
-  <xwhat>
-    <text>581 (80 direct, 501 indirect) bytes in 1 blocks are definitely lost in loss record 55 of 55</text>
-    <leakedbytes>581</leakedbytes>
-    <leakedblocks>1</leakedblocks>
-  </xwhat>
-  <stack>
-    <frame>
-      <ip>0x4A075FC</ip>
-      <obj>/usr/lib64/valgrind/vgpreload_memcheck-amd64-linux.so</obj>
-      <fn>operator new(unsigned long)</fn>
-      <dir>/builddir/build/BUILD/valgrind-3.8.1/coregrind/m_replacemalloc</dir>
-      <file>vg_replace_malloc.c</file>
-      <line>298</line>
-    </frame>
-    <frame>
-      <ip>0x43715B</ip>
-      <obj>/home/marm2720/the-council-of-jerrys/project/bin/Debug/JerrysAdventure</obj>
-      <fn>PlayableCharacterTest::testTakeAction()</fn>
-      <dir>/home/marm2720/the-council-of-jerrys/test</dir>
-      <file>PlayableCharacterTest.cpp</file>
-      <line>7</line>
-    </frame>
-    <frame>
-      <ip>0x43865B</ip>
-      <obj>/home/marm2720/the-council-of-jerrys/project/bin/Debug/JerrysAdventure</obj>
-      <fn>CppUnit::TestCaller&lt;PlayableCharacterTest&gt;::runTest()</fn>
-      <dir>/usr/include/cppunit</dir>
-      <file>TestCaller.h</file>
-      <line>166</line>
-    </frame>
-    <frame>
-      <ip>0x35D8224D39</ip>
-      <obj>/usr/lib64/libcppunit-1.12.so.1.0.0</obj>
-      <fn>CppUnit::TestCaseMethodFunctor::operator()() const</fn>
-    </frame>
-    <frame>
-      <ip>0x35D821A063</ip>
-      <obj>/usr/lib64/libcppunit-1.12.so.1.0.0</obj>
-      <fn>CppUnit::DefaultProtector::protect(CppUnit::Functor const&amp;, CppUnit::ProtectorContext const&amp;)</fn>
-    </frame>
-    <frame>
-      <ip>0x35D8221646</ip>
-      <obj>/usr/lib64/libcppunit-1.12.so.1.0.0</obj>
-      <fn>CppUnit::ProtectorChain::protect(CppUnit::Functor const&amp;, CppUnit::ProtectorContext const&amp;)</fn>
-    </frame>
-    <frame>
-      <ip>0x35D822A853</ip>
-      <obj>/usr/lib64/libcppunit-1.12.so.1.0.0</obj>
-      <fn>CppUnit::TestResult::protect(CppUnit::Functor const&amp;, CppUnit::Test*, std::string const&amp;)</fn>
-    </frame>
-    <frame>
-      <ip>0x35D8224A17</ip>
-      <obj>/usr/lib64/libcppunit-1.12.so.1.0.0</obj>
-      <fn>CppUnit::TestCase::run(CppUnit::TestResult*)</fn>
-    </frame>
-    <frame>
-      <ip>0x35D82250C2</ip>
-      <obj>/usr/lib64/libcppunit-1.12.so.1.0.0</obj>
-      <fn>CppUnit::TestComposite::doRunChildTests(CppUnit::TestResult*)</fn>
-    </frame>
-    <frame>
-      <ip>0x35D8224FE5</ip>
-      <obj>/usr/lib64/libcppunit-1.12.so.1.0.0</obj>
-      <fn>CppUnit::TestComposite::run(CppUnit::TestResult*)</fn>
-    </frame>
-    <frame>
-      <ip>0x35D82250C2</ip>
-      <obj>/usr/lib64/libcppunit-1.12.so.1.0.0</obj>
-      <fn>CppUnit::TestComposite::doRunChildTests(CppUnit::TestResult*)</fn>
-    </frame>
-    <frame>
-      <ip>0x35D8224FE5</ip>
-      <obj>/usr/lib64/libcppunit-1.12.so.1.0.0</obj>
-      <fn>CppUnit::TestComposite::run(CppUnit::TestResult*)</fn>
+      <ip>0x416AF8</ip>
+      <obj>/home/vincent/Jerry/the-council-of-jerrys/project/bin/Debug/JerrysAdventure</obj>
+      <fn>main</fn>
+      <dir>/home/vincent/Jerry/the-council-of-jerrys/src</dir>
+      <file>main.cpp</file>
+      <line>18</line>
     </frame>
   </stack>
 </error>
 
 <errorcounts>
   <pair>
-    <count>147</count>
-    <unique>0x1b0</unique>
+    <count>26</count>
+    <unique>0x19</unique>
   </pair>
   <pair>
-    <count>144</count>
-    <unique>0x180</unique>
-  </pair>
-  <pair>
-    <count>162</count>
-    <unique>0x4e</unique>
-  </pair>
-  <pair>
-    <count>108</count>
-    <unique>0x2a</unique>
-  </pair>
-  <pair>
-    <count>108</count>
-    <unique>0x6</unique>
+    <count>25</count>
+    <unique>0x0</unique>
   </pair>
 </errorcounts>
 
 <suppcounts>
-  <pair>
-    <count>4</count>
-    <name>U1004-ARM-_dl_relocate_object</name>
-  </pair>
-  <pair>
-    <count>2</count>
-    <name>glibc-2.5.x-on-SUSE-10.2-(PPC)-2a</name>
-  </pair>
 </suppcounts>
 
 </valgrindoutput>
