@@ -49,7 +49,7 @@ class Character
             @param The Character to copy.
             @return None.
         */
-        Character(Character&);
+        Character(const Character&);
 
         virtual ~Character();
 
@@ -69,10 +69,24 @@ class Character
         */
         const Inventory* getInventory() const;
 
+        /**
+            @brief addItem() adds an Item to the character's inventory or creates an inventory if it doesn't exists and then adds the item.
+            @pre An item to be added.
+            @post An item is added to the character's inventory.
+            @return None.
+        */
         void addItem(Item);
 
         /**
-            @brief operator= assigns a character's attributes to another.
+            @brief removeItem() removes an item from the character's inventory and deletes the inventory if inventory is empty.
+            @pre an existing item to be removed.
+            @post An item is removed from the character's inventory.
+            @return None.
+        */
+        void removeItem(Item);
+
+        /**
+            @brief operator= assigns a character's attributes to another (NPC or Playable).
             @pre a referece to a Character object.
             @post The LHS Character's is assigned the attributes of the RHS Character.
             @return None.

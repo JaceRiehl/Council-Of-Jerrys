@@ -82,7 +82,6 @@ void CharacterTest::testGetInventory()
 
 void CharacterTest::testAssign()
 {
-
     //Test Equality When inventory LHS > RHS
     *c7 = *c4;
     CPPUNIT_ASSERT_EQUAL(true, c7->getName() == c4->getName());
@@ -111,4 +110,33 @@ void CharacterTest::testAssign()
     CPPUNIT_ASSERT_EQUAL(true, c->getInventory() == c4->getInventory());
 }
 
+ void CharacterTest::testCopy()
+ {
 
+    //Test Equality When inventory LHS > RHS
+    c7 = new Character(*c4);
+    CPPUNIT_ASSERT_EQUAL(true, c7->getName() == c4->getName());
+    CPPUNIT_ASSERT_EQUAL(true, *(c7->getInventory()) == *(c4->getInventory()));
+    //Test Equality When inventory LHS < RHS
+    c6 = new Character(*c5);
+    CPPUNIT_ASSERT_EQUAL(true, c6->getName() == c5->getName());
+    CPPUNIT_ASSERT_EQUAL(true, *(c6->getInventory()) == *(c5->getInventory()));
+    //Test Equality When inventory LHS == RHS
+    c5 = new Character(*c7);
+    CPPUNIT_ASSERT_EQUAL(true, c5->getName() == c7->getName());
+    CPPUNIT_ASSERT_EQUAL(true, *(c5->getInventory()) == *(c7->getInventory()));
+    //Test Equality When inventory LHS = 0 && LHS < RHS
+    c4 = new Character(*c7);
+    CPPUNIT_ASSERT_EQUAL(true, c4->getName() == c7->getName());
+    CPPUNIT_ASSERT_EQUAL(true, *(c4->getInventory()) == *(c7->getInventory()));
+
+    //Test Equality When inventory RHS = 0 && LHS > RHS
+    c4 = new Character(*c);
+    CPPUNIT_ASSERT_EQUAL(true, c4->getName() == c->getName());
+    CPPUNIT_ASSERT_EQUAL(true, c->getInventory() == c4->getInventory());
+
+    //Test Equality When inventory RHS = 0 && LHS = 0
+    c = new Character(*c4);
+    CPPUNIT_ASSERT_EQUAL(true, c->getName() == c4->getName());
+    CPPUNIT_ASSERT_EQUAL(true, c->getInventory() == c4->getInventory());
+ }

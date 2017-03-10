@@ -56,8 +56,6 @@ class NPC : public Character
         */
         void setDialog(map<string, string>);
 
-    protected:
-
     private:
         map<string, string> dialog;
 };

@@ -36,7 +36,7 @@ Character::Character(string name, vector<Item> charInv)
     }
 }
 
-Character::Character(Character& c)
+Character::Character(const Character& c)
 {
     this->charName = c.getName();
 
@@ -56,7 +56,6 @@ Character::~Character()
     delete inventory;
 }
 
-
 string Character::getName() const
 {
     return charName;
@@ -75,6 +74,16 @@ void Character::addItem(Item item)
     inventory->addItem(item);
 }
 
+void Character::removeItem(Item item)
+{
+    if(inventory->getInventory().size() == 1)
+    {
+        delete inventory;
+        return;
+    }
+    inventory->removeItem(item);
+}
+
 void Character::operator=(Character& c)
 {
     charName = c.charName;
@@ -90,8 +99,3 @@ void Character::operator=(Character& c)
         inventory = new Inventory(c.inventory->getInventory());
     }
 }
-
-
-
-
-
