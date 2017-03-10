@@ -41,6 +41,7 @@ public:
     */
     void print(ostream&) const;
     void assignText(string);
+    void deallocateMem();
     /**
     *Overloaded insertion operator, uses print for format
     */
@@ -55,7 +56,7 @@ private:
     */
     void fillChar(int, char, ostream&) const;
 
-    char ** textBody;
+    char ** textBody = nullptr;
     int rows;
 };
 
