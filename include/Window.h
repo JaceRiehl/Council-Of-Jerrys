@@ -44,10 +44,17 @@ public:
     */
     friend ostream& operator<<(ostream&, Window&);
 
+    void display(string, ostream&);
+
+    void display(string, vector<string>, ostream&);
+
+    void display(string, map<char,string>, ostream&);
+
 
 private:
     TextBox text;
     PrintList pList;
+    PrintList emptyList;
 };
 
 #endif

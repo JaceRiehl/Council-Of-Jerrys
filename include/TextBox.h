@@ -40,6 +40,7 @@ public:
     *@param an ostream to print the TextBox
     */
     void print(ostream&) const;
+    void assignText(string);
     /**
     *Overloaded insertion operator, uses print for format
     */
