@@ -12,6 +12,7 @@ class CharacterTest : public CppUnit::TestFixture
     CPPUNIT_TEST(testgetName);
     CPPUNIT_TEST(testGetInventory);
     CPPUNIT_TEST(testAssign);
+    CPPUNIT_TEST(testCopy);
     CPPUNIT_TEST_SUITE_END();
 
     public:
@@ -24,6 +25,7 @@ class CharacterTest : public CppUnit::TestFixture
         void testgetName();
         void testGetInventory();
         void testAssign();
+        void testCopy();
 
     private:
         Character *c, *c2, *c3, *c4, *c5, *c6, *c7, *cEmpty, *cTooLong;
