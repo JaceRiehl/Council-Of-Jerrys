@@ -49,6 +49,8 @@ public:
     *Overloaded assignment operator
     */
     void operator=(PrintList&);
+    void setList(vector<string>);
+    void setList(map<char,string>);
     /**
     *Overloaded insertion operator, uses the print function
     */
