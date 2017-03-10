@@ -9,15 +9,16 @@
 class Window
 {
 public:
+    Window() {}
     /**
     *Default constructor for Window
-    *@param a TextBox to print
+    *@param None
     */
     Window(TextBox);
     /**
     *Default constructor for Windows
-    *@param a TextBox to print
-    *@param a PrintList to print
+    *@param TextBox to print
+    *@param PrintList to print
     */
     Window(TextBox, PrintList);
     /**
@@ -26,17 +27,17 @@ public:
     virtual ~Window();
     /**
     *Reassigns the TextBox
-    *@param a TextBox
+    *@param TextBox
     */
     void setTextBox(TextBox);
     /**
     *Reassigns the PrintList
-    *@param a PrintList
+    *@param PrintList
     */
     void setPlayerChoice(PrintList);
     /**
     *Prints the TextBox and PrintList(if any)
-    *@param an ostream to print
+    *@param ostream to print
     */
     void print(ostream&);
     /**

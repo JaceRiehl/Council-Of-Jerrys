@@ -15,8 +15,8 @@ int main()
     ma['2'] = "that choice";
     ma['3'] = "or that";
     TextBox in("Intro2");
-    Window window(in);
-    window.display(a,ma, cout);
+    Window window;
+    window.display("a",ma, cout);
     /*
     PrintList noActions;
     PrintList actionOne({"talk", "attack", "leave"});
