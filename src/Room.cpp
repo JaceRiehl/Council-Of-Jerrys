@@ -2,8 +2,9 @@
 
 
     Room::Room(PlayableCharacter& j) : jerry(j)
-               //vector<string> charKey, vector<Character> charMap, vector<string> itemKeys, vector<Item> itemMap)
     {
+        GameWindow.display(intro, cout);
+
         output['1'] = "Talk: ";
         output['2'] = "Search: ";
         output['3'] = "Exit Room: ";
@@ -35,7 +36,9 @@
         //call vinces input to find out the char chosen
 
         //if(submenuChoices.find(choices[firstInput]) == submenuChoices.end())
-
+        GameWindow.display(intro, output, cout);
+        char input = Inputting.getChar(cin);
+        finishedScenario = inputExecution(input);
 
 
 
@@ -56,26 +59,29 @@
         }
         else
         {
-            string subChoice = choices[firstInput];
-            map<char,string> sub = submenuChoices[subChoice];
-            PrintList Sub(submenuOutput);
-            //MainWindow.setPlayerChoice(Sub);
-            //MainWindow.print();
+            //string subChoice = choices[firstInput];
+            //map<char,string> sub = submenuChoices[subChoice];
+            //PrintList Sub(submenuOutput);
 
-            //char secInput = Inputting.getChar();
-            //if(submenuChoices.find(choices[firstInput]) == submenuChoices.end())
-                //Action* action = jerry.getAction(choices[input]);
+            //gameWindow.setPlayerChoice(Sub);
+            GameWindow.display(choices[firstInput], submenuOutput, cout);
+            Action* action;
 
-            /*
+            char secInput = Inputting.getChar(cin);
+            if(submenuChoices.find(choices[firstInput]) == submenuChoices.end())
+            {
+                map<string,Action*> actions = jerry.getActions();
+                action = actions[choices[firstInput]];
+            }
+
             if(typeid(CharacterAction) == typeid(action))
             {
-            CharacterAction* charAction = dynamic_cast<CharacterAction>(action);
-            charAction->setCharacter(characters[submenuOutput[secInput]]);
+            CharacterAction* charAction = dynamic_cast<CharacterAction*>(action);
+            charAction->setSubject(characters[submenuOutput[secInput]]);
             }
 
             jerry.takeAction(choices[firstInput]);
 
-            */
             return "Continue";
 
         }
