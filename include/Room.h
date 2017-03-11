@@ -25,12 +25,15 @@ public:
     */
     Room(PlayableCharacter&);
 
-    /**merge branches
+    /**
     *Used to take over until the level is complete
-    *@return int that corresponds to the next level to deploy
+    *@return string nextRoom that corresponds to the next level to deploy
     */
     string run();
-
+    /**
+    *Called by RoomAction when the character wants to change rooms
+    *@param string - the string used to set nextRoom
+    */
     void exit(string);
 
 
@@ -72,36 +75,42 @@ private:
     *The introduction string used for Textbox
     */
     string intro = "Welcome to our game, do stuff and things in here";
+    /**
+    *Records the input for the main menu
+    */
     char firstInput;
+    /**
+    *Window object instance used to display on the terminal
+    */
     Window GameWindow;
+    /**
+    *Getter for PlayableCharacters name
+    *@return string of their name
+    */
     string getCharacterName();
+    /**
+    *Getter for Jerry's inventory
+    *@return the Inventory of the playable character in the level
+    */
     const Inventory* getCharacterInv();
+    /**
+    *Tests that user input is within the parameters
+    *@param the characters input
+    *@return true if the input is correct, false if the input is wrong
+    */
     bool checkStatus(char input);
+    /**
+    *Variable returned by run
+    */
     string nextRoom;
+    /**
+    *Declaring the possible states of the room
+    */
     enum State {done, running};
+    /**
+    *The state object
+    */
     State state;
-
-
-
-    //vector<string> charKeys; //= {"Rick", "Mrmeeseek", "MrSlipperyStair", "BirdPerson"};//birdPerson, schwanch, unity, evil, beth, kingJelly, jessica, mortyJr, summer, personalSpaceDude,
-    //realFakeDoorsSalesman, EvilRick};
-    //vector<string> actionKeys = {talk, giveItem};
-
-    //vector<string> availItemKeys = {meeseekBox, wrench, key};
-    //vector<Action*> actionMap = {};
-
-    //vector<Character*> charMap = {new NPC = Rick("Rick"), new NPC = Mrmeeseek("Mrmeeseek"), new NPC = MrSlipperyStair("MrSlipperStair"),
-    //new NPC = BirdPerson("BirdPerson"};
-    //vector<Item> itemMap = {MeeseekBox("MeeseekBox"), Wrench("Wrench"), Key("Key")};
-    //map<string,string> dialog = ["Rick"]
-    //vector<Action*> actionMap;
-
-    //enum State = {garage, bar, house};
-    //vector<string> houseChoices = {"Rick", "Evil Rick"};
-    //vector<string> barChoices = {"mrmeeseek", "BirdPerson"};
-    //string name;
-
-
 
 };
 
