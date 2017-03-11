@@ -14,18 +14,40 @@ class WindowTest : public CppUnit::TestFixture
 
     CPPUNIT_TEST(setTextBoxTest);
     CPPUNIT_TEST(setPlayerChoiceTest);
+    CPPUNIT_TEST(displayStringTest);
+    CPPUNIT_TEST(displayWithVectorTest);
+    CPPUNIT_TEST(displayWithMapTest);
     CPPUNIT_TEST(visualTest);
-    CPPUNIT_TEST(concept);
     CPPUNIT_TEST_SUITE_END();
 
 public:
     void setUp();
     void tearDown();
 
+    /**
+    *Testing the setTextBox function
+    */
     void setTextBoxTest();
+    /**
+    *Testing the setPlayerChoice function
+    */
     void setPlayerChoiceTest();
+    /**
+    *Testing the display(string, ostream) function
+    */
+    void displayStringTest();
+    /**
+    *Testing the display(string, vector, ostream) function
+    */
+    void displayWithVectorTest();
+    /**
+    *Testing the display(string, map, ostream) function
+    */
+    void displayWithMapTest();
+    /**
+    *Not an actual test, used to manualy inspect the output to console
+    */
     void visualTest();
-    void concept();
 
 private:
     Window *win1, *win2, *win3;

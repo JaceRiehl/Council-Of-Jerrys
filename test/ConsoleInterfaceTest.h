@@ -21,7 +21,13 @@ public:
     void setUp();
     void tearDown();
 
+    /**
+    *Testing the getChar function
+    */
     void getCharTest();
+    /**
+    *Testing the getString function
+    */
     void getStringTest();
 
 private:

@@ -23,10 +23,25 @@ class PrintListTest : public CppUnit::TestFixture
         void setUp();
         void tearDown();
 
+        /**
+        *Test the empty constructor
+        */
         void emptyConstructorTest();
+        /**
+        *Test the constructor using a vector list of strings
+        */
         void vectorConstructorTest();
+        /**
+        *Test the constructor using a map list of strings
+        */
         void mapConstructorTest();
+        /**
+        *Test the isEmpty function
+        */
         void isEmptyTest();
+        /**
+        *Test the = operator
+        */
         void assignmentOpTest();
 
     private:

@@ -13,7 +13,7 @@ void WindowTest::setUp()
     ma['a'] = "three";
     ma['b'] = "four";
     tb1 = new TextBox("TextBox one");
-    tb2 = new TextBox("TexBox two");
+    tb2 = new TextBox("TextBox two");
     pl1 = new PrintList(vector<string>{"one", "two"});
     pl2 = new PrintList(ma);
     win1 = new Window(*tb1);
@@ -53,11 +53,25 @@ void WindowTest::visualTest()
     cout<<endl<<*win3;
 }
 
-void WindowTest::concept()
+void WindowTest::displayStringTest()
 {
-    string intro = "Intro", first = "First", sec = "Sec";
-    Window window(TextBox(intro));
-    ConsoleInterface user;
-    cout<<window;
+    win1->display("TextBox two", str1);
+    str2 << *win2;
+    CPPUNIT_ASSERT(str1.str() == str2.str());
+}
 
+void WindowTest::displayWithVectorTest()
+{
+    win1->display("TextBox two", vector<string>{"one", "two"}, str1);
+    win2->setPlayerChoice(*pl1);
+    str2 << *win2;
+    CPPUNIT_ASSERT(str1.str() == str2.str());
+}
+
+void WindowTest::displayWithMapTest()
+{
+    win1->display("TextBox two", ma, str1);
+    win2->setPlayerChoice(*pl2);
+    str2 << *win2;
+    CPPUNIT_ASSERT(str1.str() == str2.str());
 }
