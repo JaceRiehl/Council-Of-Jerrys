@@ -4,7 +4,7 @@
     Room::Room(PlayableCharacter& j) : jerry(j)
     {
         GameWindow.display(intro, cout);
-
+        state = running;
         output['1'] = "Talk: ";
         output['2'] = "Search: ";
         output['3'] = "Exit Room: ";
@@ -20,12 +20,20 @@
 
         submenuChoices["talk"] = submenuOutput;
 
+        map<string, string> rickDialog;
+        rickDialog["talk"] = "FUCK YOU JERRY!";
+
+        map<string, string> summerDialog;
+        summerDialog["talk"] = "Get a job!";
+
         characters["Rick"] = new NPC("Rick");
+        characters["Rick"]->setDialog(rickDialog);
         characters["Summer"] =  new NPC("Summer");
+        characters["Summer"]->setDialog(summerDialog);
 
     }
 
-    int Room::run()
+    string Room::run()
     {
 
     string finishedScenario = "continue";
@@ -38,14 +46,15 @@
         //if(submenuChoices.find(choices[firstInput]) == submenuChoices.end())
         GameWindow.display(intro, output, cout);
         char input = Inputting.getChar(cin);
+        if(!checkStatus(input))
+            break;
+
         finishedScenario = inputExecution(input);
 
 
 
         }while(finishedScenario == "continue");
-        //test value
-        int room = 1;
-        return room;
+        return nextRoom;
     }
 
     string Room::inputExecution(char input)
@@ -68,23 +77,36 @@
             Action* action;
 
             char secInput = Inputting.getChar(cin);
-            if(submenuChoices.find(choices[firstInput]) == submenuChoices.end())
+            if(submenuChoices.find(choices[firstInput]) != submenuChoices.end())
             {
                 map<string,Action*> actions = jerry.getActions();
                 action = actions[choices[firstInput]];
             }
 
-            if(typeid(CharacterAction) == typeid(action))
-            {
-            CharacterAction* charAction = dynamic_cast<CharacterAction*>(action);
-            charAction->setSubject(characters[submenuOutput[secInput]]);
-            }
+            //cout << "CharacterAction*: " << typeid(CharacterAction*).name() << endl;
+            //cout << "action: " << typeid(action).name() << endl;
+
+            CharacterAction* charAction;
+
+            if(charAction = dynamic_cast<CharacterAction*>(action))
+                charAction->setSubject(characters[submenuOutput[secInput]]);
 
             jerry.takeAction(choices[firstInput]);
+            char c = Inputting.getChar(cin);
 
-            return "Continue";
+            return "continue";
 
         }
+    }
+
+    bool Room::checkStatus(char input)
+    {
+        if(choices.find(input) == choices.end())
+            {
+                if(input == 'q')
+                    return false;
+            }
+        return true;
     }
 
 
@@ -138,6 +160,20 @@
 
             }
      */
+string Room::getCharacterName()
+{
+    return jerry.getName();
+}
 
+const Inventory* Room::getCharacterInv()
+{
+    return jerry.getInventory();
+}
 
+void Room::exit(string destination)
+{
+    nextRoom = destination;
+    //change state to done
+
+}
 
