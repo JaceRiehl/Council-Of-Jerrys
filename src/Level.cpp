@@ -1,10 +1,6 @@
 #include "Level.h"
 
-Level::Level(PlayableCharacter& pc, string n, vector<Room> room)
-{
-    *jerry = pc;
-    name = n;
-}
+Level::Level(string n, PlayableCharacter& pc, map<string, Room*> levelRooms, string openingText) : name(n), jerry(pc), rooms(levelRooms), openingMessage(openingText){}
 
 string Level::run()
 {
@@ -12,10 +8,10 @@ string Level::run()
     state = RUNNING;
 
 
-    int result = 0;
-    while(result != -1)
+    while(nextRoom != "exit")
     {
-       result = rooms[result].run();
+        Room* currentRoom = rooms[nextRoom];
+        nextRoom = currentRoom->run();
     }
 
     state = FINISHED;
