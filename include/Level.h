@@ -12,6 +12,8 @@
 class Level
 {
 public:
+    Level();
+
     /**
      *Constructor for level
      *@param string name of the level
@@ -69,6 +71,7 @@ private:
 
     string openingMessage;
     string nextRoom;
+    const string terminatingString = "exit_level";
 };
 
 #endif
