@@ -108,6 +108,8 @@
 		<Unit filename="../test/PlayableCharacterTest.h" />
 		<Unit filename="../test/PrintListTest.cpp" />
 		<Unit filename="../test/PrintListTest.h" />
+		<Unit filename="../test/RoomTest.cpp" />
+		<Unit filename="../test/RoomTest.h" />
 		<Unit filename="../test/RoomXMLParserTest.cpp" />
 		<Unit filename="../test/RoomXMLParserTest.h" />
 		<Unit filename="../test/TalkTest.cpp" />

@@ -25,26 +25,25 @@ public:
     */
     Room(PlayableCharacter&);
 
-    /**
+    /**merge branches
     *Used to take over until the level is complete
     *@return int that corresponds to the next level to deploy
     */
-    int run();
+    string run();
 
+    void exit(string);
+
+
+private:
     /**
     *Takes over run until the execution of the menus has reached the end
     *@return string that determines whether or not to continue the
     */
     string inputExecution(char);
-
-
-
-
-private:
     /**
     *The jerry that room will make adjustments to
     */
-    PlayableCharacter jerry;
+    PlayableCharacter& jerry;
     /**
     *The map of NPC characters, maps the string with the characters name to the instance of the object for that character
     */
@@ -68,12 +67,20 @@ private:
     /**
     *An instance of the ConsoleInterface used to input from the user
     */
-    ConsoleInterface Inputting();
+    ConsoleInterface Inputting;
     /**
     *The introduction string used for Textbox
     */
     string intro = "Welcome to our game, do stuff and things in here";
     char firstInput;
+    Window GameWindow;
+    string getCharacterName();
+    const Inventory* getCharacterInv();
+    bool checkStatus(char input);
+    string nextRoom;
+    enum State {done, running};
+    State state;
+
 
 
     //vector<string> charKeys; //= {"Rick", "Mrmeeseek", "MrSlipperyStair", "BirdPerson"};//birdPerson, schwanch, unity, evil, beth, kingJelly, jessica, mortyJr, summer, personalSpaceDude,

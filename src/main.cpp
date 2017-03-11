@@ -4,6 +4,7 @@
 #include "Window.h"
 using namespace std;
 
+/*
 int main()
 {
     string a = "hello", b = "Bye";
@@ -39,12 +40,12 @@ int main()
     win.setPlayerChoice(noActions);
     cout<<win;
     user.getEnterKey(cin);
-*/
+
 
     return 0;
 }
+*/
 
-/*
 #include <cppunit/CompilerOutputter.h>
 #include <cppunit/extensions/TestFactoryRegistry.h>
 #include <cppunit/ui/text/TestRunner.h>
@@ -69,4 +70,4 @@ int main()
   // Return error code 1 if the one of test failed.
   return wasSucessful ? 0 : 1;
 }
-*/
+
