@@ -40,7 +40,15 @@ public:
     *@param an ostream to print the TextBox
     */
     void print(ostream&) const;
+    /**
+    *Reassigns the string of the TextBox
+    *@param string
+    */
     void assignText(string);
+    /**
+    *Helper function to deallocate any leftover memory, used in the deconstructor
+    *@param None
+    */
     void deallocateMem();
     /**
     *Overloaded insertion operator, uses print for format
