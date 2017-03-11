@@ -47,6 +47,7 @@
 			<Add option="-lcppunit" />
 		</Linker>
 		<Unit filename="../include/Action.h" />
+		<Unit filename="../include/ChangeRoom.h" />
 		<Unit filename="../include/Character.h" />
 		<Unit filename="../include/CharacterAction.h" />
 		<Unit filename="../include/CharacterData.h" />
@@ -62,13 +63,14 @@
 		<Unit filename="../include/PlayableCharacter.h" />
 		<Unit filename="../include/PrintList.h" />
 		<Unit filename="../include/Room.h" />
-		<Unit filename="../include/Room.h " />
+		<Unit filename="../include/RoomAction.h" />
 		<Unit filename="../include/RoomData.h" />
 		<Unit filename="../include/RoomXMLParser.h" />
 		<Unit filename="../include/Talk.h" />
 		<Unit filename="../include/TextBox.h" />
 		<Unit filename="../include/Window.h" />
 		<Unit filename="../src/Action.cpp" />
+		<Unit filename="../src/ChangeRoom.cpp" />
 		<Unit filename="../src/Character.cpp" />
 		<Unit filename="../src/CharacterAction.cpp" />
 		<Unit filename="../src/CharacterDataParser.cpp" />
@@ -83,6 +85,7 @@
 		<Unit filename="../src/PlayableCharacter.cpp" />
 		<Unit filename="../src/PrintList.cpp" />
 		<Unit filename="../src/Room.cpp" />
+		<Unit filename="../src/RoomAction.cpp" />
 		<Unit filename="../src/RoomXMLParser.cpp" />
 		<Unit filename="../src/Talk.cpp" />
 		<Unit filename="../src/TextBox.cpp" />
@@ -97,6 +100,8 @@
 		<Unit filename="../test/ConsoleInterfaceTest.h" />
 		<Unit filename="../test/InventoryTest.h" />
 		<Unit filename="../test/ItemsTest.h" />
+		<Unit filename="../test/LevelTest.cpp" />
+		<Unit filename="../test/LevelTest.h" />
 		<Unit filename="../test/NPCTest.cpp" />
 		<Unit filename="../test/NPCTest.h" />
 		<Unit filename="../test/PlayableCharacterTest.cpp" />
