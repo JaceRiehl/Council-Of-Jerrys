@@ -11,13 +11,6 @@ string Level::run()
     string returned = "Level finished";
     state = RUNNING;
 
-
-    int result = 0;
-    while(result != -1)
-    {
-       result = rooms[result].run();
-    }
-
     state = FINISHED;
     return returned;
 }
