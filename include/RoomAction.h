@@ -15,9 +15,6 @@ class RoomAction : public Action
         string getContext() const;
         void setContext(string);
 
-        const Room* getSubject() const;
-        void setSubject(Room*);
-
     protected:
         string context;
         Room* subject;
