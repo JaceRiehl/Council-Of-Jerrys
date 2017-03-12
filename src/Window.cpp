@@ -24,7 +24,7 @@ void Window::setPlayerChoice(PrintList setList)
 
 void Window::print(ostream& os)
 {
-    system("clear");
+    //system("clear");
     os<<text;
     os<<endl;
     os<<pList;
