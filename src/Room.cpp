@@ -30,7 +30,6 @@
         characters["Rick"]->setDialog(rickDialog);
         characters["Summer"] =  new NPC("Summer");
         characters["Summer"]->setDialog(summerDialog);
-
     }
 
     string Room::run()
@@ -88,7 +87,7 @@
 
             CharacterAction* charAction;
 
-            if(charAction = dynamic_cast<CharacterAction*>(action))
+            if((charAction = dynamic_cast<CharacterAction*>(action)))
                 charAction->setSubject(characters[submenuOutput[secInput]]);
 
             jerry.takeAction(choices[firstInput]);

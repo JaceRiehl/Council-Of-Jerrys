@@ -94,6 +94,8 @@
 		<Unit filename="../src/tinyxml2.cpp" />
 		<Unit filename="../test/ActionTest.cpp" />
 		<Unit filename="../test/ActionTest.h" />
+		<Unit filename="../test/ChangeRoomTest.cpp" />
+		<Unit filename="../test/ChangeRoomTest.h" />
 		<Unit filename="../test/CharacterTest.cpp" />
 		<Unit filename="../test/CharacterTest.h" />
 		<Unit filename="../test/ConsoleInterfaceTest.cpp" />
@@ -108,8 +110,6 @@
 		<Unit filename="../test/PlayableCharacterTest.h" />
 		<Unit filename="../test/PrintListTest.cpp" />
 		<Unit filename="../test/PrintListTest.h" />
-		<Unit filename="../test/RoomTest.cpp" />
-		<Unit filename="../test/RoomTest.h" />
 		<Unit filename="../test/RoomXMLParserTest.cpp" />
 		<Unit filename="../test/RoomXMLParserTest.h" />
 		<Unit filename="../test/TalkTest.cpp" />
