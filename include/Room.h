@@ -123,6 +123,10 @@ private:
     *Map of menus
     */
     map<string,Menu*> menus;
+    /**
+    *Map of room actions
+    */
+    map<string,Action*> roomActions;
 
 
 };
