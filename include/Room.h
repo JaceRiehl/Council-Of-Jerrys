@@ -80,6 +80,7 @@ private:
     string nextRoom;
     enum State {done, running};
     State state;
+    map<string, Action*> actions;
 
 
 

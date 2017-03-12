@@ -8,7 +8,8 @@ RoomAction::RoomAction(Character* charOwner, Room* actionSubject, string actionC
 
 RoomAction::~RoomAction()
 {
-    delete subject;
+    if(subject)
+        delete subject;
 }
 
 string RoomAction::getContext() const
@@ -21,12 +22,3 @@ void RoomAction::setContext(string actionContext)
     context = actionContext;
 }
 
-const Room* RoomAction::getSubject() const
-{
-    return subject;
-}
-
-void RoomAction::setSubject(Room* actionSubject)
-{
-    subject = actionSubject;
-}
