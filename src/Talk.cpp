@@ -18,7 +18,8 @@ bool Talk::execute()
     if(subject == nullptr)
         throw invalid_action("** Subject has not been set **");
 
-    cout << subject->getDialog(dialogKey) << endl;
+    Window window;
+    window.display(subject->getDialog(dialogKey), cout);
 
     if(item != nullptr)
         owner->addItem(*item);
