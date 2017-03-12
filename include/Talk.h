@@ -24,7 +24,7 @@ class Talk : public CharacterAction
             @param Item to give to the owner.
             @return None.
         */
-        Talk(Character*, NPC* = nullptr, Item* = nullptr);
+        Talk(Character*, NPC*, Item* = nullptr);
         virtual ~Talk();
 
         /**
