@@ -4,14 +4,14 @@
 #include<string>
 #include<vector>
 #include<map>
-#include "CharacterAction.h"
-#include "TextBox.h"
+#include "Exceptions.h"
 #include <typeinfo>
 #include "ConsoleInterface.h"
 #include "Window.h"
-#include "PrintList.h"
 #include "PlayableCharacter.h"
 #include "NPC.h"
+#include "Menu.h"
+#include "Talk.h"
 
 /**
 *Used to run the different rooms that the user will encounter
@@ -62,11 +62,15 @@ private:
     /**
     *Map for the submenus, maps from the choices string to the map of the submenu
     */
-    map<string, map<char,string>> submenuChoices;
+    map<string, map<char,string>> substring;
     /**
     *Map for the menu displayed after the main menus choice
     */
-    map<char, string> submenuOutput;
+    map<char, string> submenuTalkOutput;
+    /**
+    *Map for the talk inputs
+    */
+    map<char, string> submenuTalkInput;
     /**
     *An instance of the ConsoleInterface used to input from the user
     */
@@ -111,6 +115,9 @@ private:
     *The state object
     */
     State state;
+    string choice;
+    map<string,Menu*> menus;
+
 
 };
 

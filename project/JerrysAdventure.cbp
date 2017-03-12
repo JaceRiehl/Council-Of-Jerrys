@@ -58,6 +58,7 @@
 		<Unit filename="../include/Inventory.h" />
 		<Unit filename="../include/Item.h" />
 		<Unit filename="../include/Level.h" />
+		<Unit filename="../include/Menu.h" />
 		<Unit filename="../include/NPC.h" />
 		<Unit filename="../include/PlayableCharacter.h" />
 		<Unit filename="../include/PrintList.h" />
@@ -79,6 +80,7 @@
 		<Unit filename="../src/Item.cpp" />
 		<Unit filename="../src/ItemsTest.cpp" />
 		<Unit filename="../src/Level.cpp" />
+		<Unit filename="../src/Menu.cpp" />
 		<Unit filename="../src/NPC.cpp" />
 		<Unit filename="../src/PlayableCharacter.cpp" />
 		<Unit filename="../src/PrintList.cpp" />
