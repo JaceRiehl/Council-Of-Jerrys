@@ -96,6 +96,8 @@
 		<Unit filename="../src/tinyxml2.cpp" />
 		<Unit filename="../test/ActionTest.cpp" />
 		<Unit filename="../test/ActionTest.h" />
+		<Unit filename="../test/ChangeRoomTest.cpp" />
+		<Unit filename="../test/ChangeRoomTest.h" />
 		<Unit filename="../test/CharacterTest.cpp" />
 		<Unit filename="../test/CharacterTest.h" />
 		<Unit filename="../test/ConsoleInterfaceTest.cpp" />

@@ -7,7 +7,7 @@
 #include "Room.h"
 
 /**
-*This is for buildiing each of the levels and enacting on situations
+*This is for building each of the levels and enacting on situations
 */
 class Level
 {

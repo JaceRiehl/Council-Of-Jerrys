@@ -77,6 +77,10 @@ class PlayableCharacter : public Character, IAgent
         */
         map<string, Action*> getActions() const;
 
+        void addAction(string, Action*);
+
+        void addAction(map<string, Action*>);
+
     private:
         map<string, Action*> actions;
 };

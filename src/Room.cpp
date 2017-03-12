@@ -37,17 +37,6 @@
         characters["Rick"]->setDialog(rickDialog);
         characters["Summer"] =  new NPC("Summer");
         characters["Summer"]->setDialog(summerDialog);
-
-        map<string,Action*> actions;
-        Action* rickTalkAction = new Talk(&jerry, characters["Rick"]);
-        actions["talk_rick"] = rickTalkAction;
-
-        Action* summerTalkAction = new Talk(&jerry, characters["Summer"]);
-        actions["talk_summer"] = summerTalkAction;
-        jerry.setActions(actions);
-
-
-
     }
 
     string Room::run()
@@ -152,8 +141,8 @@ void Room::exit(string destination)
 
             //CharacterAction* charAction;
 
-            //if(charAction = dynamic_cast<CharacterAction*>(action))
-            //    charAction->setSubject(characters[submenuOutput[secInput]]);
+            if((charAction = dynamic_cast<CharacterAction*>(action)))
+                charAction->setSubject(characters[submenuOutput[secInput]]);
 
             jerry.takeAction(choices[firstInput]);
             char c = Inputting.getChar(cin);
