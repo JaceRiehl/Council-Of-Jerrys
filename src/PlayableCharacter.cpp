@@ -22,7 +22,10 @@ map<string, Action*> PlayableCharacter::getActions() const
 void PlayableCharacter::takeAction(string action)
 {
     if(actions.find(action) == actions.end())
-        throw keyDoesNotExist(strcat("Playable Character does not have action with key: ", action.c_str()));
+    {
+        string errorMessage = "Playable Character does not have action with key: " + action;
+        throw keyDoesNotExist(errorMessage.c_str());
+    }
 
     actions[action]->execute();
 }
