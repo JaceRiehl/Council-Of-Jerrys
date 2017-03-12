@@ -1,9 +1,8 @@
 #include "Level.h"
 
-Level::Level(PlayableCharacter& pc, string n, vector<Room> room)
+Level::Level(string n, PlayableCharacter& pc, map<string, Room*> levelRooms, string openingText) : name(n), jerry(pc), rooms(levelRooms), openingMessage(openingText)
 {
-    *jerry = pc;
-    name = n;
+    nextRoom = "Jerry's Garage";
 }
 
 string Level::run()
@@ -11,7 +10,13 @@ string Level::run()
     string returned = "Level finished";
     state = RUNNING;
 
-    state = FINISHED;
+
+    while(nextRoom != terminatingString)
+    {
+        Room* currentRoom = rooms[nextRoom];
+        nextRoom = currentRoom->run();
+    }
+
     return returned;
 }
 

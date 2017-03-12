@@ -12,13 +12,16 @@
 class Level
 {
 public:
+    Level();
+
     /**
      *Constructor for level
      *@param string name of the level
      *@param map results of Rooms
      *@param vector of the Rooms in the level
+     *@param opening message for the level
      */
-    Level(PlayableCharacter&, string, vector<Room>);
+    Level(string, PlayableCharacter&, map<string,Room*>, string = "");
 
     /**
      *Takes over the execution from the main until the situation is over
@@ -48,26 +51,27 @@ public:
 private:
 
     /**
-     *Vector of the situations that will be contained within the level
-     */
-     vector<Room> rooms;
-
-    /**
      *Name of the level
      */
     string name;
+    /**
+     *Reference to Jerry
+     */
+     PlayableCharacter& jerry;
+    /**
+     *Vector of the situations that will be contained within the level
+     */
+     map<string, Room*> rooms;
 
     /**
      *State of the level
      */
     State state;
 
-    /**
-     *Reference to Jerry
-     */
-     PlayableCharacter* jerry;
 
-     string openingMessage;
+    string openingMessage;
+    string nextRoom;
+    const string terminatingString = "exit_level";
 };
 
 #endif
