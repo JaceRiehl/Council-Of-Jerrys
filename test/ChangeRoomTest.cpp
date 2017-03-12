@@ -14,7 +14,7 @@ void ChangeRoomTest::testExecute()
     Room* testRoom = new Room(*playChar);
     Action* changeRoom = new ChangeRoom(playChar, testRoom, "exit");
 
-    playChar->addAction("exit_room", changeRoom);
+    playChar->addAction("change_room_exit_level", changeRoom);
 
     string roomOutput = testRoom->run();
 
