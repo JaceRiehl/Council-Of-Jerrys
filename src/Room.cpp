@@ -1,7 +1,7 @@
 #include "Room.h"
 
 
-    Room::Room(PlayableCharacter& j) : jerry(j)
+    Room::Room()
     {
         GameWindow.display(intro, cout);
         state = running;
@@ -47,7 +47,7 @@
         jerry.setActions(actions);
     }
 
-    string Room::run()
+    string Room::run(PlayableCharacter& j) : jerry = j;
     {
         string finishedScenario = "continue";
 
@@ -123,40 +123,3 @@ void Room::exit(string destination)
     state = done;
 }
 
-/*        firstInput = input;
-        if(submenuChoices.find(choices[firstInput]) == submenuChoices.end())
-        {
-            jerry.takeAction(choices[firstInput]);
-            return "continue";
-        }
-        else
-        {
-            //string subChoice = choices[firstInput];
-            //map<char,string> sub = submenuChoices[subChoice];
-            //PrintList Sub(submenuOutput);
-
-            //gameWindow.setPlayerChoice(Sub);
-            GameWindow.display(choices[firstInput], submenuOutput, cout);
-            Action* action;
-
-            char secInput = Inputting.getChar(cin);
-            if(submenuChoices.find(choices[firstInput]) != submenuChoices.end())
-            {
-                map<string,Action*> actions = jerry.getActions();
-                action = actions[choices[firstInput]];
-            }
-
-
-            //CharacterAction* charAction;
-
-            if((charAction = dynamic_cast<CharacterAction*>(action)))
-                charAction->setSubject(characters[submenuOutput[secInput]]);
-
-            jerry.takeAction(choices[firstInput]);
-            char c = Inputting.getChar(cin);
-            //Inputting.getEnterKey(cin);
-
-            return "continue";
-
-        }
-        */
