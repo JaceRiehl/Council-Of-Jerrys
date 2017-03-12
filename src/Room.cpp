@@ -3,7 +3,6 @@
 
     Room::Room(PlayableCharacter& j) : jerry(j)
     {
-        GameWindow.display(intro, cout);
         state = running;
 
         output['1'] = "Talk: ";
@@ -13,7 +12,7 @@
 
         choices['1'] = "talk";
         choices['2'] = "search";
-        choices['3'] = "exit_room";
+        choices['3'] = "change_room";
         choices['4'] = "print";
         Menu* topMenu = new Menu(intro, output, choices);
 
@@ -26,6 +25,21 @@
         Menu* talkSubMenu = new Menu(talkMenuText, submenuTalkOutput, submenuTalkInput);
         menus["top"] = topMenu;
         menus["talk"] = talkSubMenu;
+
+        string changeRoomText = "Which room would you like to go to?: ";
+        map<char, string> changeRoomOutput;
+        changeRoomOutput['1'] = "Town";
+        changeRoomOutput['2'] = "Bar";
+        changeRoomOutput['3'] = "Exit Level";
+
+        map<char,string> changeRoomInput;
+        changeRoomInput['1'] = "town";
+        changeRoomInput['2'] = "bar";
+        changeRoomInput['3'] = "exit_level";
+
+        Menu* changeRoomSubMenu = new Menu(changeRoomText, changeRoomOutput, changeRoomInput);
+        menus["change_room"] = changeRoomSubMenu;
+
 
         map<string, string> rickDialog;
         rickDialog["talk"] = "FUCK YOU JERRY!";
@@ -63,6 +77,11 @@
 
                 if(!currentMenu->validInput(input))
                     {
+                        if(input == 'q')
+                        {
+                            state = done;
+                            break;
+                        }
                         GameWindow.display("Invalid Input! Please try again!", cout);
                         continue;
                     }
@@ -87,6 +106,7 @@
                 GameWindow.display(e.what(), cout);
             }
         }while(state == running);
+        cout << "RETURNING: " + nextRoom << endl;
         return nextRoom;
     }
 
