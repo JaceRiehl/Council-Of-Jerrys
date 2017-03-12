@@ -115,28 +115,14 @@ private:
     *The state object
     */
     State state;
-    map<string, Action*> actions;
-
-
-
-    //vector<string> charKeys; //= {"Rick", "Mrmeeseek", "MrSlipperyStair", "BirdPerson"};//birdPerson, schwanch, unity, evil, beth, kingJelly, jessica, mortyJr, summer, personalSpaceDude,
-    //realFakeDoorsSalesman, EvilRick};
-    //vector<string> actionKeys = {talk, giveItem};
-
-    //vector<string> availItemKeys = {meeseekBox, wrench, key};
-    //vector<Action*> actionMap = {};
-
-    //vector<Character*> charMap = {new NPC = Rick("Rick"), new NPC = Mrmeeseek("Mrmeeseek"), new NPC = MrSlipperyStair("MrSlipperStair"),
-    //new NPC = BirdPerson("BirdPerson"};
-    //vector<Item> itemMap = {MeeseekBox("MeeseekBox"), Wrench("Wrench"), Key("Key")};
-    //map<string,string> dialog = ["Rick"]
-    //vector<Action*> actionMap;
-
-    //enum State = {garage, bar, house};
-    //vector<string> houseChoices = {"Rick", "Evil Rick"};
-    //vector<string> barChoices = {"mrmeeseek", "BirdPerson"};
-    //string name;
-
+    /**
+    *Adds the inputted values from the user to determine that action to take
+    */
+    string choice;
+    /**
+    *Map of menus
+    */
+    map<string,Menu*> menus;
 
 
 };

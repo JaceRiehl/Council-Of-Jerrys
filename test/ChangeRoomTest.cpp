@@ -8,7 +8,7 @@ void ChangeRoomTest::testExecute()
     Room* testRoom = new Room(*playChar);
     Action* changeRoom = new ChangeRoom(playChar, testRoom, "exit");
 
-    playChar.addAction("exit_room", changeRoom);
+    playChar->addAction("exit_room", changeRoom);
 
     string roomOutput = testRoom->run();
 
