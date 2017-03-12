@@ -5,5 +5,7 @@ ChangeRoom::ChangeRoom(Character* charOwner, Room* actionSubject, string actionC
 bool ChangeRoom::execute()
 {
     if(!subject)
-        throw invalid_action("Subject of the action is not valid!");
+        throw invalid_action("Subject is null!");
+
+    subject->exit(context);
 }

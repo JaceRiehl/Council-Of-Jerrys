@@ -29,3 +29,16 @@ void PlayableCharacter::takeAction(string action)
 
     actions[action]->execute();
 }
+
+void PlayableCharacter::addAction(string key, Action* value)
+{
+    actions[key] = value;
+}
+
+void PlayableCharacter::addAction(map<string, Action*> actionsToAdd)
+{
+    for(const auto& kv : actionsToAdd)
+    {
+        actions[kv.first] = kv.second;
+    }
+}
