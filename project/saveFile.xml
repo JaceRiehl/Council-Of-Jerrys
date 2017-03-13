@@ -1,0 +1,13 @@
+<SAVEDATA>
+    <INVENTORY>
+        <KEY>axe</KEY>
+        <KEY>sword</KEY>
+        <KEY>book</KEY>
+    </INVENTORY>
+    <LEVEL>01</LEVEL>
+    <ROOM>garage</ROOM>
+    <PLAYER_ACTIONS>
+        <KEY>talked to...</KEY>
+        <KEY>Searched...</KEY>
+    </PLAYER_ACTIONS>
+</SAVEDATA>
