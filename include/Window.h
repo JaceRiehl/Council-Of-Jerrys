@@ -9,10 +9,14 @@
 class Window
 {
 public:
-    Window() {}
     /**
     *Default constructor for Window
     *@param None
+    */
+    Window() {}
+    /**
+    *Default constructor for Window
+    *@param TextBox
     */
     Window(TextBox);
     /**
@@ -44,11 +48,25 @@ public:
     *Overloaded insertion operator, uses the print function
     */
     friend ostream& operator<<(ostream&, Window&);
-
+    /**
+    *Displayes the string as a TextBox to the desired ostream
+    *@param string to display in TextBox
+    *@param desired ostream
+    */
     void display(string, ostream&);
-
+    /**
+    *Displayes the string as a TextBox and a vector list of string to the desired ostream
+    *@param string to display in TextBox
+    *@param vector list of strings
+    *@param desired ostream
+    */
     void display(string, vector<string>, ostream&);
-
+    /**
+    *Displayes the string as a TextBox and a map list of string to the desired ostream
+    *@param string to display in TextBox
+    *@param map list of strings
+    *@param desired ostream
+    */
     void display(string, map<char,string>, ostream&);
 
 

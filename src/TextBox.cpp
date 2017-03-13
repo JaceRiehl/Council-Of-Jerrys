@@ -11,10 +11,7 @@ TextBox::TextBox(std::string body)
 }
 TextBox::~TextBox()
 {
-    for(int i = 0; i < rows; i++)
-        delete [] textBody[i];
-    delete [] textBody;
-    textBody = nullptr;
+    this->deallocateMem();
 }
 TextBox::TextBox(TextBox& tb)
 {
@@ -35,10 +32,7 @@ void TextBox::operator=(const TextBox& t)
 {
     if(this != &t)
     {
-        for(int i = 0; i < rows; i++)
-        delete [] textBody[i];
-        delete [] textBody;
-        textBody = nullptr;
+        this->deallocateMem();
             this->copy(t);
     }
 }
@@ -75,6 +69,7 @@ void TextBox::fillChar(int howMany, char ch, ostream& os) const
 
 void TextBox::assignText(string body)
 {
+    this->deallocateMem();
     rows = static_cast<int>(body.size()/COLUMN)+1;
     textBody = new char*[rows];
     int lastSpace = 0;
@@ -85,10 +80,10 @@ void TextBox::assignText(string body)
         textBody[i] = new char[COLUMN];
             for(int s = counter; s < counter+COLUMN; s++)
                 {
-                    if(body[s] == ' ')
-                        lastSpace = s;
                     if(i == rows-1)
                         lastSpace = body.size();
+                    else if(body[s] == ' ')
+                        lastSpace = s;
                 }
         for(int j = 0; j < COLUMN; j++)
         {
@@ -99,6 +94,17 @@ void TextBox::assignText(string body)
             else
                 textBody[i][j] = body[counter++];
         }
+    }
+}
+
+void TextBox::deallocateMem()
+{
+    if(textBody != nullptr)
+    {
+        for(int i = 0; i < rows; i++)
+            delete [] textBody[i];
+        delete [] textBody;
+        textBody = nullptr;
     }
 }
 
