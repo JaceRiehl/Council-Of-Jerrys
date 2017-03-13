@@ -9,8 +9,6 @@ class XMLSaveData
 public:
     static bool saveData(SaveData);
 
-private:
-
 };
 
 #endif // XMLSAVEDATA_H
