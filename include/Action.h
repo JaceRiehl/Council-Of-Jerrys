@@ -45,8 +45,9 @@ class Action
         const string getKey() const;
 
     protected:
-        bool conditionsMet(vector<string>);
+        bool conditionsMet(vector<string>) const;
         void giveItems(vector<string>);
+        bool beenTaken(vector<string>) const;
 
         Character* owner;
         vector<string> conditions;

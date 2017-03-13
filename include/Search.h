@@ -6,7 +6,7 @@
 class Search : public RoomAction
 {
     public:
-        Search(Character*, string, Room*, string = "",  vector<string> = {}, vector<Item> = {});
+        Search(Character*, string, Room*, map<string, string> = {},  vector<string> = {}, vector<Item> = {});
         virtual ~Search();
 
         virtual bool execute();
@@ -14,7 +14,9 @@ class Search : public RoomAction
         virtual bool execute(vector<string>);
 
     private:
-        string responseText;
+        const string conditionsNotMetKey = "conditions_not_met";
+        const string conditionsMetKey = "conditions_met";
+        const string searchedKey = "searched";
 };
 
 #endif // SEARCH_H
