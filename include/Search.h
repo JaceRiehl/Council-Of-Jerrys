@@ -1,24 +1,20 @@
 #ifndef SEARCH_H
 #define SEARCH_H
 
-#include "CharacterAction.h"
+#include "RoomAction.h"
 
-class Search : public CharacterAction
+class Search : public RoomAction
 {
     public:
-        Search();
-        Search(string);
-        Search(string, string);
-        Search(string, string, string);
-        Search(string, string, string, string);
+        Search(Character*, string, Room*, string = "",  vector<string> = {}, vector<Item> = {});
         virtual ~Search();
 
         virtual bool execute();
 
+        virtual bool execute(vector<string>);
+
     private:
         string responseText;
-        //Item* item;
-
 };
 
 #endif // SEARCH_H
