@@ -28,8 +28,8 @@ void Window::print(ostream& os)
     os<<text;
     os<<endl;
     os<<pList;
-    if(pList.isEmpty())
-        os<<"Press ENTER to continue";
+    //if(pList.isEmpty())
+      //  os<<"Press ENTER to continue";
 }
 
 ostream& operator<<(ostream& os, Window& win)
