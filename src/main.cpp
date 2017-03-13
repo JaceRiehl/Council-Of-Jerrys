@@ -1,3 +1,24 @@
+#include <vector>
+#include <string>
+#include "SaveData.h"
+#include "XMLSaveDataTest.h"
+
+int main()
+{
+    SaveData data;
+    vector<string> inv = {"axe", "sword", "book"};
+    vector<string> act = {"talked to...", "Searched..."};
+    char* room = "garage";
+    char* level = "01";
+
+    data.inventoryItems = inv;
+    data.playerActions = act;
+    data.room = room;
+    data.level = level;
+    XMLSaveData saveFile;
+    saveFile.saveData(data);
+}
+/*
 #include <cppunit/CompilerOutputter.h>
 #include <cppunit/extensions/TestFactoryRegistry.h>
 #include <cppunit/ui/text/TestRunner.h>
@@ -22,3 +43,4 @@ int main()
   // Return error code 1 if the one of test failed.
   return wasSucessful ? 0 : 1;
 }
+*/
