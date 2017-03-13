@@ -24,6 +24,7 @@ bool Search::execute(vector<string> playerActions)
     else if(!conditionsMet(playerActions))
     {
         window.display(context[conditionsNotMetKey], cout);
+        return false;
     }
 
     else

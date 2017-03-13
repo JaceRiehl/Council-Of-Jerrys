@@ -5,7 +5,7 @@ CPPUNIT_TEST_SUITE_REGISTRATION(SearchTest);
 void SearchTest::testConditionsNotMet()
 {
     PlayableCharacter* mainChar = new PlayableCharacter("Jerry");
-    Room* roomToSearch = new Room(*mainChar);
+    Room* roomToSearch = new Room(mainChar);
 
     map<string, string> searchContext;
     searchContext["conditions_not_met"] = "cnm";
@@ -24,7 +24,7 @@ void SearchTest::testConditionsNotMet()
 void SearchTest::testConditionsMet()
 {
     PlayableCharacter* mainChar = new PlayableCharacter("Jerry");
-    Room* roomToSearch = new Room(*mainChar);
+    Room* roomToSearch = new Room(mainChar);
 
     map<string, string> searchContext;
     searchContext["conditions_not_met"] = "cnm";
@@ -43,7 +43,7 @@ void SearchTest::testConditionsMet()
 void SearchTest::testSearched()
 {
     PlayableCharacter* mainChar = new PlayableCharacter("Jerry");
-    Room* roomToSearch = new Room(*mainChar);
+    Room* roomToSearch = new Room(mainChar);
 
     map<string, string> searchContext;
     searchContext["conditions_not_met"] = "SEARCHTEST: CONDITIONS NOT MET";
