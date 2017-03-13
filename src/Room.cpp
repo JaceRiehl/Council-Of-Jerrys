@@ -1,7 +1,7 @@
 #include "Room.h"
 
 
-    Room::Room()
+    Room::Room(PlayableCharacter& j) : jerry(j)
     {
         GameWindow.display(intro, cout);
         state = running;
@@ -47,7 +47,7 @@
         jerry.setActions(actions);
     }
 
-    string Room::run(PlayableCharacter& j) : jerry = j;
+    string Room::run()
     {
         string finishedScenario = "continue";
 
