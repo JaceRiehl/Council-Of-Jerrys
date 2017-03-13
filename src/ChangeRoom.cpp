@@ -16,6 +16,17 @@ bool ChangeRoom::execute(vector<string> playerActions)
     if(!subject)
         throw invalid_action("Subject is null!");
 
-    subject->exit(context[changeRoomKey]);
-    return true;
+    Window window;
+    if(!conditionsMet(playerActions))
+    {
+        window.display(context[conditionsNotMetKey], cout);
+    }
+
+    else
+    {
+        window.display(context[changeRoomKey], cout);
+        subject->exit(context[changeRoomKey]);
+    }
+
+    return false;
 }

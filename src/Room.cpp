@@ -1,7 +1,10 @@
 #include "Room.h"
 
+Room::Room(string roomKey, string roomIntro, map<string, NPC*> roomCharacters, map<string, Menu*> roomMenus)
+    : key(roomKey), intro(roomIntro), characters(roomCharacters), menus(roomMenus)
+    {}
 
-    Room::Room(PlayableCharacter& j) : jerry(j)
+    Room::Room(PlayableCharacter* j) : jerry(j)
     {
         state = running;
 
@@ -61,12 +64,12 @@
         characters["Summer"]->setDialog(summerDialog);
 
         map<string,Action*> actions;
-        Action* rickTalkAction = new Talk(&jerry, "talk_rick", characters["Rick"]);
+        Action* rickTalkAction = new Talk(jerry, "talk_rick", characters["Rick"]);
         actions["talk_rick"] = rickTalkAction;
-        Action* summerTalkAction = new Talk(&jerry, "talk_summer", characters["Summer"]);
+        Action* summerTalkAction = new Talk(jerry, "talk_summer", characters["Summer"]);
         actions["talk_summer"] = summerTalkAction;
 
-        jerry.setActions(actions);
+        jerry->setActions(actions);
     }
 
     string Room::run()
@@ -106,7 +109,7 @@
 
             try
             {
-                jerry.takeAction(choice);
+                jerry->takeAction(choice);
             }
 
             catch(keyDoesNotExist e)
@@ -126,12 +129,12 @@
 
 string Room::getCharacterName()
 {
-    return jerry.getName();
+    return jerry->getName();
 }
 
 const Inventory* Room::getCharacterInv()
 {
-    return jerry.getInventory();
+    return jerry->getInventory();
 }
 
 void Room::exit(string destination)

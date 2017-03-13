@@ -12,8 +12,8 @@ void LevelTest::testRun()
 
     map<string, Room*> rooms;
 
-    Room* room1 = new Room(*jerry);
-    Room* room2 = new Room(*jerry);
+    Room* room1 = new Room(jerry);
+    Room* room2 = new Room(jerry);
 
     map<string, string> changeToBarContext;
     changeToBarContext["change_room"] = "bar";

@@ -19,11 +19,13 @@
 class Room
 {
 public:
+
+    Room(string, string, map<string, NPC*>, map<string, Menu*>);
     /**
     *Constructor for Room
     *@param PlayableCharacter jerry
     */
-    Room(PlayableCharacter&);
+    Room(PlayableCharacter*);
 
     /**
     *Used to take over until the level is complete
@@ -36,16 +38,21 @@ public:
     */
     void exit(string);
 
+    const string getKey() const { return key; }
 
+    void setActions(map<string, Action*> roomActions) { actions = roomActions; }
 private:
+    string key;
     /**
     *The jerry that room will make adjustments to
     */
-    PlayableCharacter& jerry;
+    PlayableCharacter* jerry;
     /**
     *The map of NPC characters, maps the string with the characters name to the instance of the object for that character
     */
     map<string, NPC*> characters;
+
+    map<string, Action*> actions;
     /**
     *An instance of the ConsoleInterface used to input from the user
     */
