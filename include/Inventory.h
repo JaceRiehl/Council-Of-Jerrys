@@ -52,7 +52,6 @@ class Inventory
             @return bool.
         */
         bool searchName(string name) const;
-
         /**
             @brief searchItem takes an item and searches the item vector for the given item.
             @pre An item object is given.

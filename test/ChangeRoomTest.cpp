@@ -12,7 +12,7 @@ void ChangeRoomTest::testExecute()
     window.display("*** THIS IS THE CHANGE ROOM TEST ***", cout);
     PlayableCharacter* playChar = new PlayableCharacter("Jerry");
     Room* testRoom = new Room(*playChar);
-    Action* changeRoom = new ChangeRoom(playChar, testRoom, "exit");
+    Action* changeRoom = new ChangeRoom(playChar, "change_room_exit_level", testRoom, "exit");
 
     playChar->addAction("change_room_exit_level", changeRoom);
 

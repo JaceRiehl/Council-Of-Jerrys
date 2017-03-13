@@ -5,12 +5,11 @@
 using std::cout;
 using std::endl;
 
-Talk::Talk(Character* actionOwner, NPC* actionSubject, Item* item) : CharacterAction(actionOwner, actionSubject), item(item) {}
+Talk::Talk(Character* actionOwner, string key, NPC* actionSubject, vector<string> actionConditions, vector<Item> actionItems)
+                                        : CharacterAction(actionOwner, key, actionSubject, actionConditions, actionItems) {}
 
 Talk::~Talk()
 {
-    if(item != nullptr)
-        delete item;
 }
 
 bool Talk::execute()
@@ -19,10 +18,27 @@ bool Talk::execute()
         throw invalid_action("** Subject has not been set **");
 
     Window window;
-    window.display(subject->getDialog(dialogKey), cout);
-
-    if(item != nullptr)
-        owner->addItem(*item);
+    window.display(subject->getDialog(defaultKey), cout);
 
     return true;
 }
+
+bool Talk::execute(vector<string> characterActions)
+{
+    if(!subject)
+        throw invalid_action("** Subject has not been set **");
+
+    string conditionsNotMetErrorMessage = subject->getName() + " will not talk to you.";
+
+    if(!conditionsMet(characterActions))
+        throw invalid_action(conditionsNotMetErrorMessage.c_str());
+
+    Window window;
+    window.display(subject->getDialog(defaultKey), cout);
+
+    giveItems(characterActions);
+
+    return true;
+}
+
+
