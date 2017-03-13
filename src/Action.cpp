@@ -41,14 +41,17 @@ bool Action::conditionsMet(vector<string> playerActions) const
             {
                 const Inventory* inv = owner->getInventory();
 
-                vector<Item> items = inv->getInventory();
-
-                for(const auto& it : items)
+                if(inv)
                 {
-                    if(str1 == it.getName())
+                    vector<Item> items = inv->getInventory();
+
+                    for(const auto& it : items)
                     {
-                        found = true;
-                        break;
+                        if(str1 == it.getName())
+                        {
+                            found = true;
+                            break;
+                        }
                     }
                 }
             }
@@ -97,7 +100,7 @@ void Action::giveItems(vector<string> playerActions)
 
     // DO I EXIST IN THE PLAYERS LIST OF ACTIONS
 
-    if(beenTaken(playerActions))
+    if(!beenTaken(playerActions))
     {
         for(const auto& item : items)
         {
