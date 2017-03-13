@@ -83,6 +83,7 @@ class PlayableCharacter : public Character, IAgent
 
     private:
         map<string, Action*> actions;
+        vector<string> actionsTaken;
 };
 
 #endif // PLAYABLECHARACTER_H

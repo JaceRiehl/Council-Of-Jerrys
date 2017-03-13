@@ -15,9 +15,9 @@ void LevelTest::testRun()
     Room* room1 = new Room(*jerry);
     Room* room2 = new Room(*jerry);
 
-    Action* changeToBar = new ChangeRoom(jerry, room1, "bar");
-    Action* changeToTown = new ChangeRoom(jerry, room2, "town");
-    Action* exitLevel1 = new ChangeRoom(jerry, room1, "exit_level");
+    Action* changeToBar = new ChangeRoom(jerry, "change_room_bar", room1, "bar");
+    Action* changeToTown = new ChangeRoom(jerry, "change_room_town", room2, "town");
+    Action* exitLevel1 = new ChangeRoom(jerry, "change_room_exit_level", room1, "exit_level");
 
     actions["change_room_bar"] = changeToBar;
     actions["change_room_town"] = changeToTown;

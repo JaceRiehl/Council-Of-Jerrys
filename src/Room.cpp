@@ -5,23 +5,31 @@
     {
         state = running;
 
+        map<char, string> output;
+
         output['1'] = "Talk: ";
         output['2'] = "Search: ";
         output['3'] = "Exit Room: ";
         output['4'] = "Print inventory: ";
 
-        choices['1'] = "talk";
-        choices['2'] = "search";
-        choices['3'] = "change_room";
-        choices['4'] = "print";
-        Menu* topMenu = new Menu(intro, output, choices);
+        map<char, string> input;
 
+        input['1'] = "talk";
+        input['2'] = "search";
+        input['3'] = "change_room";
+        input['4'] = "print";
+        Menu* topMenu = new Menu(intro, output, input);
+
+        map<char, string> submenuTalkOutput;
         submenuTalkOutput['1'] = "Rick";
         submenuTalkOutput['2'] = "Summer";
 
-        string talkMenuText = "Who would you like to talk to?: ";
+        map<char, string> submenuTalkInput;
         submenuTalkInput['1'] = "rick";
         submenuTalkInput['2'] = "summer";
+
+        string talkMenuText = "Who would you like to talk to?: ";
+
         Menu* talkSubMenu = new Menu(talkMenuText, submenuTalkOutput, submenuTalkInput);
         menus["top"] = topMenu;
         menus["talk"] = talkSubMenu;
@@ -53,9 +61,9 @@
         characters["Summer"]->setDialog(summerDialog);
 
         map<string,Action*> actions;
-        Action* rickTalkAction = new Talk(&jerry, characters["Rick"]);
+        Action* rickTalkAction = new Talk(&jerry, "talk_rick", characters["Rick"]);
         actions["talk_rick"] = rickTalkAction;
-        Action* summerTalkAction = new Talk(&jerry, characters["Summer"]);
+        Action* summerTalkAction = new Talk(&jerry, "talk_summer", characters["Summer"]);
         actions["talk_summer"] = summerTalkAction;
 
         jerry.setActions(actions);
@@ -105,25 +113,14 @@
             {
                 GameWindow.display(e.what(), cout);
             }
+
+            catch(invalid_action inv)
+            {
+                GameWindow.display(inv.what(), cout);
+            }
         }while(state == running);
         cout << "RETURNING: " + nextRoom << endl;
         return nextRoom;
-    }
-
-    string Room::inputExecution(char input)
-    {
-        firstInput = input;
-
-    }
-
-    bool Room::checkStatus(char input)
-    {
-        if(choices.find(input) == choices.end())
-            {
-                if(input == 'q')
-                    return false;
-            }
-        return true;
     }
 
 
