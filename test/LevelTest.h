@@ -12,7 +12,7 @@ using std::cout;
 class LevelTest : public CppUnit::TestFixture
 {
     CPPUNIT_TEST_SUITE(LevelTest);
-    CPPUNIT_TEST(testRun);
+    //CPPUNIT_TEST(testRun);
     CPPUNIT_TEST_SUITE_END();
 
     public:

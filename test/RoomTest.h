@@ -11,7 +11,7 @@
 class RoomTest : public CppUnit::TestFixture
 {
     CPPUNIT_TEST_SUITE(RoomTest);
-    CPPUNIT_TEST(testRun);
+    //CPPUNIT_TEST(testRun);
     CPPUNIT_TEST_SUITE_END();
 
     public:
