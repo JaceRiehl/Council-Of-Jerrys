@@ -7,10 +7,12 @@
 class RoomAction : public Action
 {
     public:
-        RoomAction(Character*, Room*, string = 0);
+        RoomAction(Character*, string, Room*, string = "", vector<string> = {}, vector<Item> = {});
         virtual ~RoomAction();
 
         virtual bool execute() = 0;
+
+        virtual bool execute(vector<string>) = 0;
 
         string getContext() const;
         void setContext(string);

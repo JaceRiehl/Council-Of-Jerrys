@@ -5,6 +5,7 @@
 #include "ChangeRoom.h"
 #include "Exceptions.h"
 #include "PlayableCharacter.h"
+#include "Window.h"
 
 class ChangeRoomTest : public CppUnit::TestFixture
 {

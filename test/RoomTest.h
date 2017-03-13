@@ -6,7 +6,7 @@
 #include "Inventory.h"
 #include "PlayableCharacter.h"
 #include "Talk.h"
-
+#include "Window.h"
 
 class RoomTest : public CppUnit::TestFixture
 {

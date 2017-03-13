@@ -1,13 +1,9 @@
 #include "CharacterAction.h"
 
-CharacterAction::CharacterAction(Character* actionOwner) : Action(actionOwner), subject(nullptr) {}
-
-CharacterAction::CharacterAction(Character* actionOwner, NPC* actionSubject) : Action(actionOwner), subject(actionSubject){}
+CharacterAction::CharacterAction(Character* actionOwner, string key, NPC* actionSubject, vector<string> actionConditions, vector<Item> actionItems)
+                                        : Action(actionOwner, key, actionConditions, actionItems), subject(actionSubject){}
 CharacterAction::~CharacterAction()
-{
-    if(subject != nullptr)
-        delete subject;
-}
+{}
 
 void CharacterAction::setSubject(NPC* actionSubject)
 {

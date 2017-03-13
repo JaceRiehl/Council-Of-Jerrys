@@ -27,7 +27,8 @@ void PlayableCharacter::takeAction(string action)
         throw keyDoesNotExist(errorMessage.c_str());
     }
 
-    actions[action]->execute();
+    if(actions[action]->execute(actionsTaken))
+        actionsTaken.push_back(action);
 }
 
 void PlayableCharacter::addAction(string key, Action* value)
