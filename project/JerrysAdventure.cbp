@@ -67,9 +67,11 @@
 		<Unit filename="../include/RoomAction.h" />
 		<Unit filename="../include/RoomData.h" />
 		<Unit filename="../include/RoomXMLParser.h" />
+		<Unit filename="../include/SaveData.h" />
 		<Unit filename="../include/Talk.h" />
 		<Unit filename="../include/TextBox.h" />
 		<Unit filename="../include/Window.h" />
+		<Unit filename="../include/XMLSaveData.h" />
 		<Unit filename="../src/Action.cpp" />
 		<Unit filename="../src/ChangeRoom.cpp" />
 		<Unit filename="../src/Character.cpp" />
@@ -92,6 +94,7 @@
 		<Unit filename="../src/Talk.cpp" />
 		<Unit filename="../src/TextBox.cpp" />
 		<Unit filename="../src/Window.cpp" />
+		<Unit filename="../src/XMLSaveData.cpp" />
 		<Unit filename="../src/main.cpp" />
 		<Unit filename="../src/tinyxml2.cpp" />
 		<Unit filename="../test/ActionTest.cpp" />
