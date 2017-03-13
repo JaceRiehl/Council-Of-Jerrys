@@ -1,24 +1,36 @@
 #include "Search.h"
 
-Search::Search() : CharacterAction() {}
-
-Search::Search(string name) : CharacterAction(name) {}
-
-Search::Search(string name, string owner) : CharacterAction(name, owner) {}
-
-Search::Search(string name, string owner, string subject) : CharacterAction(name, owner, subject) {}
-
-Search::Search(string name, string owner, string subject, string responseText) : CharacterAction(name, owner, subject)
+Search::Search(Character* actionOwner, string key, Room* room, map<string, string> responseText, vector<string> actionConditions, vector<Item> actionItems)
+        : RoomAction(actionOwner, key, room, responseText, actionConditions, actionItems)
 {
-    this->responseText = responseText;
+    this->context = responseText;
 }
 
 Search::~Search() {}
 
 bool Search::execute()
 {
-    // If PlayableCharacter
 
-    // Give the PlayableCharacter an Item if item is not empty.
-    // Print off response text.
+}
+
+bool Search::execute(vector<string> playerActions)
+{
+    Window window;
+    if(beenTaken(playerActions))
+    {
+        window.display(context[searchedKey], cout);
+    }
+
+    else if(!conditionsMet(playerActions))
+    {
+        window.display(context[conditionsNotMetKey], cout);
+    }
+
+    else
+    {
+        window.display(context[conditionsMetKey], cout);
+    }
+
+    giveItems(playerActions);
+    return true;
 }

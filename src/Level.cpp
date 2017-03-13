@@ -12,11 +12,11 @@ string Level::run()
     state = RUNNING;
 
     Window window;
-    window.display(openingMessage, cout);
+    //window.display(openingMessage, cout);
 
     while(nextRoom != terminatingString)
     {
-        window.display("Going into " + nextRoom, cout);
+        //window.display("Going into " + nextRoom, cout);
         Room* currentRoom = rooms[nextRoom];
         nextRoom = currentRoom->run();
     }

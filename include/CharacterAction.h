@@ -19,8 +19,6 @@ class CharacterAction : public Action
         CharacterAction(Character*, string, NPC*, vector<string> = {}, vector<Item> = {});
         virtual ~CharacterAction();
 
-        virtual bool execute() = 0;
-
         /**
             @brief Sets the subject of the Action.
             @pre None.
