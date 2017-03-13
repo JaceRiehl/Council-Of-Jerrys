@@ -55,6 +55,7 @@
 		<Unit filename="../include/ConsoleInterface.h" />
 		<Unit filename="../include/CouncilXMLParser.h" />
 		<Unit filename="../include/Exceptions.h" />
+		<Unit filename="../include/FakeDataLoader.h" />
 		<Unit filename="../include/IAgent.h" />
 		<Unit filename="../include/Inventory.h" />
 		<Unit filename="../include/Item.h" />
@@ -78,6 +79,7 @@
 		<Unit filename="../src/CharacterDataParser.cpp" />
 		<Unit filename="../src/ConsoleInterface.cpp" />
 		<Unit filename="../src/CouncilXMLParser.cpp" />
+		<Unit filename="../src/FakeDataLoader.cpp" />
 		<Unit filename="../src/Inventory.cpp" />
 		<Unit filename="../src/InventoryTest.cpp" />
 		<Unit filename="../src/Item.cpp" />

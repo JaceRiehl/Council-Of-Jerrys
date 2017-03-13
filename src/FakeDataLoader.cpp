@@ -55,28 +55,29 @@ map<string, Level> FakeDataLoader::LoadLevels()
 
     Action* crateSearch = new Search(mainChar, crateSearchKey, room1, crateSearchContext, crateSearchConditions, scmekles);
 
-    room1Actions["search_crate"] = crateSearch;
+    room1Actions[crateSearch->getKey()] = crateSearch;
 
-    string crateSearchKey = "search_crate";
-    map<string, string> crateSearchContext;
-    crateSearchContext["conditions_met"] = "You’ve found a pile of coins of what seems like a foreign currency. A crown bearing jellybean is "
-                                           "portrayed on each side of the coins with the word ‘Smeckmle’ engraved at the bottom. Wow, what a "
-                                           "score this’ll make in your coin collection!";
+    string shelfSearchKey = "search_shelf";
+    map<string, string> shelfSearchContext;
+    shelfSearchContext["conditions_met"] = "As you wrap your arms around the shelving unit, a diary topples over. You don’t think you should read "
+                                           "someone else’s personal diary, but having to clean someone else’s mess as made you feel somewhat "
+                                           "rebellious, so you open it. Most of its content is filled with gibberish mathematical equations but the "
+                                           "last entry stands out, it reads - “These posers discovered the combination to my safe, I HAD to make "
+                                           "them pay. Anyway, time to change it now; maybe I’ll use the year Doc Brown took Marty back in time. "
+                                           "God, Back to the Future is such a great movie!”. This seems like an odd man, you think to yourself. "
+                                           "Anyhow, you finish moving the shelving unit and discard the diary.";
 
     crateSearchContext["searched"] = "There doesn't seem to be anything here.";
 
-    unsigned int numberOfShmekles = 25;
+    vector<Item> items;
 
-    vector<Item> scmekles;
+    vector<string> shelfSearchConditions;
 
-    for(unsigned int i = 0; i < numberOfShmekles; ++i)
-    {
-        scmekles.push_back(Item("smeckle"));
-    }
+    Action* shelfSearch = new Search(mainChar, shelfSearchKey, room1, shelfSearchContext, shelfSearchConditions, items);
 
-    vector<string> crateSearchConditions;
+    room1Actions[shelfSearch->getKey()] = shelfSearch;
 
-
+    string changeRoomCarpetKey = "change_room_under_garage";
 
     //Level level1;
 }
