@@ -6,10 +6,10 @@
 class ChangeRoom : public RoomAction
 {
     public:
-        ChangeRoom(Character*, Room*, string = "");
+        ChangeRoom(Character*, string, Room*, string = "", vector<string> = {}, vector<Item> = {});
 
         bool execute();
-
+        bool execute(vector<string>);
 };
 
 #endif // CHANGEROOM_H

@@ -2,7 +2,12 @@
 #define LEVELTEST_H
 
 #include <cppunit/extensions/HelperMacros.h>
+#include <iostream>
 #include "Level.h"
+#include "ChangeRoom.h"
+#include "Talk.h"
+
+using std::cout;
 
 class LevelTest : public CppUnit::TestFixture
 {

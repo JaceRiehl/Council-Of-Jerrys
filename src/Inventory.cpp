@@ -60,6 +60,7 @@ void Inventory::removeItem(Item item)
 
 bool Inventory::searchName(string name) const
 {
+
     transform(name.begin(), name.end(), name.begin(), ::tolower);
     for (unsigned int i = 0; i < items.size(); i++)
     {
