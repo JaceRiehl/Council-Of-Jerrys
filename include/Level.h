@@ -4,7 +4,11 @@
 #include<string>
 #include<vector>
 #include<map>
+#include<iostream>
 #include "Room.h"
+#include "Window.h"
+
+using std::cout;
 
 /**
 *This is for building each of the levels and enacting on situations

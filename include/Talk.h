@@ -3,6 +3,7 @@
 
 #include "CharacterAction.h"
 #include "NPC.h"
+#include "Window.h"
 #include "Exceptions.h"
 /**
     @file Talk.h
