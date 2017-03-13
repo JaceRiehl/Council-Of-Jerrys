@@ -15,9 +15,18 @@ void LevelTest::testRun()
     Room* room1 = new Room(*jerry);
     Room* room2 = new Room(*jerry);
 
-    Action* changeToBar = new ChangeRoom(jerry, "change_room_bar", room1, "bar");
-    Action* changeToTown = new ChangeRoom(jerry, "change_room_town", room2, "town");
-    Action* exitLevel1 = new ChangeRoom(jerry, "change_room_exit_level", room1, "exit_level");
+    map<string, string> changeToBarContext;
+    changeToBarContext["change_room"] = "bar";
+
+    map<string, string> changeToTownContext;
+    changeToTownContext["change_room"] = "town";
+
+    map<string, string> exitLevelContext;
+    exitLevelContext["change_room"] = "exit_level";
+
+    Action* changeToBar = new ChangeRoom(jerry, "change_room_bar", room1, changeToBarContext);
+    Action* changeToTown = new ChangeRoom(jerry, "change_room_town", room2, changeToTownContext);
+    Action* exitLevel1 = new ChangeRoom(jerry, "change_room_exit_level", room1, exitLevelContext);
 
     actions["change_room_bar"] = changeToBar;
     actions["change_room_town"] = changeToTown;

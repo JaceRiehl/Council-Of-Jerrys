@@ -6,10 +6,13 @@
 class ChangeRoom : public RoomAction
 {
     public:
-        ChangeRoom(Character*, string, Room*, string = "", vector<string> = {}, vector<Item> = {});
+        ChangeRoom(Character*, string, Room*, map<string, string> = {}, vector<string> = {}, vector<Item> = {});
 
         bool execute();
         bool execute(vector<string>);
+
+    private:
+        const string changeRoomKey = "change_room";
 };
 
 #endif // CHANGEROOM_H

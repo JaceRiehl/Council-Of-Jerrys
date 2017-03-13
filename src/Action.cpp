@@ -19,7 +19,7 @@ const Character* Action::getOwner() const
     return owner;
 }
 
-bool Action::conditionsMet(vector<string> playerActions)
+bool Action::conditionsMet(vector<string> playerActions) const
 {
     if(conditionsEmpty())
         return true;
@@ -78,6 +78,17 @@ bool Action::itemsEmpty() const
     return false;
 }
 
+bool Action::beenTaken(vector<string> playerActions) const
+{
+    for(const auto& str : playerActions)
+    {
+        if(str == key)
+            return true;
+    }
+
+    return false;
+}
+
 void Action::giveItems(vector<string> playerActions)
 {
     // RETURN IF ITEMS IS EMPTY
@@ -85,15 +96,12 @@ void Action::giveItems(vector<string> playerActions)
         return;
 
     // DO I EXIST IN THE PLAYERS LIST OF ACTIONS
-    for(const auto& str : playerActions)
-    {
-        // IF SO, DONT GIVE ITEMS AGAIN!
-        if(str == key)
-            return;
-    }
 
-    for(const auto& item : items)
+    if(beenTaken(playerActions))
     {
-        owner->addItem(item);
+        for(const auto& item : items)
+        {
+            owner->addItem(item);
+        }
     }
 }
