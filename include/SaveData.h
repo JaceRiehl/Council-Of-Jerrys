@@ -8,8 +8,8 @@ struct SaveData
 {
     vector<string> inventoryItems;
     vector<string> playerActions;
-    char* level;
-    char* room;
+    string level;
+    string room;
 };
 
 #endif // SAVEDATA_H

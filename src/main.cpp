@@ -1,10 +1,12 @@
-#include <vector>
+/*#include <vector>
 #include <string>
 #include "SaveData.h"
 #include "XMLSaveDataTest.h"
+#include "XMLLoadData.h"
 
 int main()
 {
+
     SaveData data;
     vector<string> inv = {"axe", "sword", "book"};
     vector<string> act = {"talked to...", "Searched..."};
@@ -17,8 +19,12 @@ int main()
     data.level = level;
     XMLSaveData saveFile;
     saveFile.saveData(data);
-}
-/*
+
+    SaveData data;
+    XMLLoadData loadTest;
+    loadTest.loadData(data);
+}*/
+
 #include <cppunit/CompilerOutputter.h>
 #include <cppunit/extensions/TestFactoryRegistry.h>
 #include <cppunit/ui/text/TestRunner.h>
@@ -43,4 +49,5 @@ int main()
   // Return error code 1 if the one of test failed.
   return wasSucessful ? 0 : 1;
 }
-*/
+
+
