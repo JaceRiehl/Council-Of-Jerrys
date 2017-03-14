@@ -11,8 +11,7 @@
 class FakeDataLoader
 {
     public:
-        map<string, Level*> LoadLevels();
-        PlayableCharacter* mainChar;
+        void LoadLevels(PlayableCharacter*, map<string, Level*>);
 };
 
 #endif // FAKEDATALOADER_H

@@ -1,7 +1,7 @@
 #include <iostream>
 #include <vector>
 #include <map>
-//#include "FakeDataLoader.h"
+#include "FakeDataLoader.h"
 #include "Window.h"
 #include "PlayableCharacter.h"
 
@@ -9,6 +9,9 @@ using namespace std;
 
 int main()
 {
+    PlayableCharacter* mainCharacter;
+    map<string, Level*> levels;
+    FakeDataLoader levelData;
     int choice;
     bool validInput = false;
     string title = "                    Jerry's Adventures!";
@@ -34,12 +37,9 @@ int main()
     }
 
     if(choice == 1)
-        cout<<"New game"<<endl;
-    PlayableCharacter* mainCharacter;
-    //FakeDataLoader levelData;
-    //map<string, Level> levels;
-    //levels = levelData.LoadLevels();
-    //mainCharacter = levelData.mainChar;
+    {
+        levelData.LoadLevels(mainCharacter, levels);
+    }
 
 }
 
