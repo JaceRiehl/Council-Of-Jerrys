@@ -72,9 +72,11 @@ Room::Room(string roomKey, string roomIntro, map<string, NPC*> roomCharacters, m
         jerry->setActions(actions);
     }
 
-    string Room::run()
+    string Room::run(PlayableCharacter* player)
     {
-        GameWindow.display(roomIntro,cout);
+        setPlayerActions(player);
+
+        GameWindow.display(intro,cout);
         Inputting.getEnterKey(cin);
 
         do
@@ -110,7 +112,7 @@ Room::Room(string roomKey, string roomIntro, map<string, NPC*> roomCharacters, m
 
             try
             {
-                jerry->takeAction(choice);
+                player->takeAction(choice);
             }
 
             catch(keyDoesNotExist e)
@@ -127,6 +129,11 @@ Room::Room(string roomKey, string roomIntro, map<string, NPC*> roomCharacters, m
         return nextRoom;
     }
 
+
+void Room::setPlayerActions(PlayableCharacter* player)
+{
+    player->setActions(actions);
+}
 
 string Room::getCharacterName()
 {

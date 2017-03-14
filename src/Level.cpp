@@ -7,7 +7,7 @@ Level::Level(string n, PlayableCharacter* pc, map<string, Room*> levelRooms, str
 
 Level::Level(string levelKey, string startingRoom, map<string, Room*> levelRooms) : key(levelKey), nextRoom(startingRoom), rooms(levelRooms) {}
 
-string Level::run()
+string Level::run(PlayableCharacter* player)
 {
     state = RUNNING;
 
@@ -19,7 +19,7 @@ string Level::run()
         if(rooms.find(nextRoom) == rooms.end())
             break;
         Room* currentRoom = rooms[nextRoom];
-        nextRoom = currentRoom->run();
+        nextRoom = currentRoom->run(player);
     }
 
     return nextRoom;

@@ -43,7 +43,7 @@ void LevelTest::testRun()
 
     Level* level = new Level(levelName, jerry, rooms, openingLevelMessage);
 
-    string output = level->run();
+    string output = level->run(jerry);
 
     CPPUNIT_ASSERT(output == "mini_earth");
 }

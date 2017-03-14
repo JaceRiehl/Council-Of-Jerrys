@@ -15,7 +15,7 @@ void ChangeRoomTest::testExecute()
     Action* changeRoom = new ChangeRoom(playChar, "change_room_exit_level", testRoom, { {"change_room", "exit"} });
     playChar->addAction("change_room_exit_level", changeRoom);
 
-    string roomOutput = testRoom->run();
+    string roomOutput = testRoom->run(playChar);
 
     CPPUNIT_ASSERT(roomOutput == "exit");
 }
