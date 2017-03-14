@@ -74,7 +74,8 @@ Room::Room(string roomKey, string roomIntro, map<string, NPC*> roomCharacters, m
 
     string Room::run()
     {
-        string finishedScenario = "continue";
+        GameWindow.display(roomIntro,cout);
+        Inputting.getEnterKey(cin);
 
         do
         {
