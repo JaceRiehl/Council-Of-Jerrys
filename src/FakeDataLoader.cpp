@@ -62,9 +62,9 @@ void FakeDataLoader::LoadLevels(PlayableCharacter* mainChar, map<string, Level*>
     shelfSearchContext["conditions_met"] = "As you wrap your arms around the shelving unit, a diary topples over. You don’t think you should read "
                                            "someone else’s personal diary, but having to clean someone else’s mess as made you feel somewhat "
                                            "rebellious, so you open it. Most of its content is filled with gibberish mathematical equations but the "
-                                           "last entry stands out, it reads - “These posers discovered the combination to my safe, I HAD to make "
+                                           "last entry stands out, it reads - \“These posers discovered the combination to my safe, I HAD to make "
                                            "them pay. Anyway, time to change it now; maybe I’ll use the year Doc Brown took Marty back in time. "
-                                           "God, Back to the Future is such a great movie!”. This seems like an odd man, you think to yourself. "
+                                           "God, Back to the Future is such a great movie!\”. This seems like an odd man, you think to yourself. "
                                            "Anyhow, you finish moving the shelving unit and discard the diary.";
 
     crateSearchContext["searched"] = "There doesn't seem to be anything here.";
@@ -100,6 +100,40 @@ void FakeDataLoader::LoadLevels(PlayableCharacter* mainChar, map<string, Level*>
     string levelKey = "intro";
     string startingLevelKey = "jerrys_garage";
     Level* level1 = new Level(levelKey, startingLevelKey, rooms);
+
+    string room3Key = "medieval_village";
+    string room3Intro = "You hear a ‘click’ - You’ve cracked the code! You proceed to turn the handle on the safe and open the "
+                        "safe’s door. Inside is what seems like a futuristic toy gun. You think this would make a great toy for "
+                        "your nephew. Better check if it still works. You aim the gun at the cement wall in front of you and with "
+                        "stumble on the kennel behind you, flipping it over and making the bottom floor come apart – liberating "
+                        "Snowballs. The dog slowly approaches you with a menacing look on its face. You slowly back away "
+                        "while suddenly – you find yourself in a medieval town – No portal. No dog. No garage. You start"
+                        "inspecting your surroundings – to each of your sides seems to be a variety of buildings; each of them"
+                        "decorated with their own storefront sign – There’s a store which you’re not sure what is being sold,"
+                        "another store labeled ‘general store’ and a castle can be seen far in the distance. People are coming and going.";
+    map<string, NPC*> room3Characters;
+    NPC* villager = new NPC("villager");
+
+    map<string, Action*> room3Actions;
+
+    string room3TopMenuMessage = "What would you like to do?: ";
+
+    map<char, string> room3TopMenuOutput;
+    room3TopMenuOutput['1'] = "Move crates";
+    room3TopMenuOutput['2'] = "Move shelving unit";
+    room3TopMenuOutput['3'] = "Move carpet";
+
+    map<char, string> room3TopMenuInput;
+    room3TopMenuInput['1'] = "search_crate";
+    room3TopMenuInput['2'] = "search_shelf";
+    room3TopMenuInput['3'] = "change_room_under_garage";
+
+    Menu* room3TopMenu = new Menu(menuOutput, room1TopMenuOutput, room1TopMenuInput);
+
+    map<string, Menu*> room3Menus;
+    room3Menus["top"] = room3TopMenu;
+
+    Room* room3 = new Room(room3Key, room3Intro, room3Characters, room3Menus);
 
     levels[level1->getKey()] = level1;
 }
