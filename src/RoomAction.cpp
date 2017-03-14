@@ -1,6 +1,7 @@
 #include "RoomAction.h"
 
-RoomAction::RoomAction(Character* charOwner, Room* actionSubject, string actionContext) : Action(charOwner)
+RoomAction::RoomAction(Character* charOwner, string key, Room* actionSubject, map<string, string> actionContext, vector<string> actionConditions, vector<Item> actionItems)
+        : Action(charOwner, key, actionConditions, actionItems)
 {
     subject = actionSubject;
     context = actionContext;
@@ -12,13 +13,8 @@ RoomAction::~RoomAction()
         delete subject;
 }
 
-string RoomAction::getContext() const
+const map<string, string> RoomAction::getContext() const
 {
     return context;
-}
-
-void RoomAction::setContext(string actionContext)
-{
-    context = actionContext;
 }
 

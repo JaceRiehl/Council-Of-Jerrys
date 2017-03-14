@@ -6,12 +6,12 @@
 #include "Inventory.h"
 #include "PlayableCharacter.h"
 #include "Talk.h"
-
+#include "Window.h"
 
 class RoomTest : public CppUnit::TestFixture
 {
     CPPUNIT_TEST_SUITE(RoomTest);
-    CPPUNIT_TEST(testRun);
+    //CPPUNIT_TEST(testRun);
     CPPUNIT_TEST_SUITE_END();
 
     public:

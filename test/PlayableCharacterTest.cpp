@@ -12,7 +12,10 @@ void PlayableCharacterTest::testTakeAction()
     dialog["talk"] = "FUCK YOU RICK!";
     subject->setDialog(dialog);
 
-    Talk* talkAction = new Talk(playChar, subject, item);
+    vector<string> conditions;
+    vector<Item> items = { *item };
+
+    Talk* talkAction = new Talk(playChar, "talk", subject, conditions, items);
 
     map<string, Action*> actions;
 

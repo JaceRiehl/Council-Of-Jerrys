@@ -3,6 +3,7 @@
 
 #include "CharacterAction.h"
 #include "NPC.h"
+#include "Window.h"
 #include "Exceptions.h"
 /**
     @file Talk.h
@@ -24,7 +25,7 @@ class Talk : public CharacterAction
             @param Item to give to the owner.
             @return None.
         */
-        Talk(Character*, NPC*, Item* = nullptr);
+        Talk(Character*, string, NPC*, vector<string> = {}, vector<Item> = {});
         virtual ~Talk();
 
         /**
@@ -37,9 +38,10 @@ class Talk : public CharacterAction
         */
         bool execute();
 
+        bool execute(vector<string>);
+
     private:
-        Item* item;
-        const string dialogKey = "talk";
+        const string defaultKey = "talk";
 };
 
 #endif // TALK_H

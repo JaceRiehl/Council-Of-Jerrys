@@ -1,12 +1,18 @@
 #include "RoomTest.h"
 
+#include <iostream>
+
+using std::cout;
+
 CPPUNIT_TEST_SUITE_REGISTRATION(RoomTest);
 
 void RoomTest::setUp()
 {
+    Window window;
+    window.display("*** THIS IS THE ROOMTEST ***", cout);
     inventory = new Inventory({Item("Used toothbrush"), Item("shovel")});
     J = new PlayableCharacter("Jerry", {Item("shovel"), Item("Used toothbrush")});
-    roomTest = new Room(*J);
+    roomTest = new Room(J);
 }
 void RoomTest::tearDown()
 {

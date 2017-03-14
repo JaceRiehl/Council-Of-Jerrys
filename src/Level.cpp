@@ -1,23 +1,28 @@
 #include "Level.h"
 
-Level::Level(string n, PlayableCharacter& pc, map<string, Room*> levelRooms, string openingText) : name(n), jerry(pc), rooms(levelRooms), openingMessage(openingText)
+Level::Level(string n, PlayableCharacter* pc, map<string, Room*> levelRooms, string openingText) : key(n), jerry(pc), rooms(levelRooms), openingMessage(openingText)
 {
-    nextRoom = "Jerry's Garage";
+    nextRoom = "town";
 }
+
+Level::Level(string levelKey, string startingRoom, map<string, Room*> levelRooms) : key(levelKey), nextRoom(startingRoom), rooms(levelRooms) {}
 
 string Level::run()
 {
-    string returned = "Level finished";
     state = RUNNING;
 
+    Window window;
+    //window.display(openingMessage, cout);
 
-    while(nextRoom != terminatingString)
+    while(true)
     {
+        if(rooms.find(nextRoom) == rooms.end())
+            break;
         Room* currentRoom = rooms[nextRoom];
         nextRoom = currentRoom->run();
     }
 
-    return returned;
+    return nextRoom;
 }
 
 int Level::returnState()
@@ -25,7 +30,7 @@ int Level::returnState()
     return state;
 }
 
-string Level::getName()
+const string Level::getKey() const
 {
-    return name;
+    return key;
 }

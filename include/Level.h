@@ -4,7 +4,11 @@
 #include<string>
 #include<vector>
 #include<map>
+#include<iostream>
 #include "Room.h"
+#include "Window.h"
+
+using std::cout;
 
 /**
 *This is for building each of the levels and enacting on situations
@@ -21,7 +25,9 @@ public:
      *@param vector of the Rooms in the level
      *@param opening message for the level
      */
-    Level(string, PlayableCharacter&, map<string,Room*>, string = "");
+    Level(string, PlayableCharacter*, map<string,Room*>, string = "");
+
+    Level(string, string, map<string, Room*>);
 
     /**
      *Takes over the execution from the main until the situation is over
@@ -44,7 +50,7 @@ public:
      *Getter for the name of the level
      *@return Level name
      */
-     string getName();
+     const string getKey() const;
 
 
 
@@ -53,11 +59,11 @@ private:
     /**
      *Name of the level
      */
-    string name;
+    string key;
     /**
      *Reference to Jerry
      */
-     PlayableCharacter& jerry;
+     PlayableCharacter* jerry;
     /**
      *Vector of the situations that will be contained within the level
      */

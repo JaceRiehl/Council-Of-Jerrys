@@ -2,6 +2,9 @@
 #define ACTION_H
 #include "Character.h"
 #include "Exceptions.h"
+#include <vector>
+
+using std::vector;
 
 class Action
 {
@@ -13,7 +16,7 @@ class Action
             @param The Character who will be the owner of the Action.
             @return None.
         */
-        Action(Character*);
+        Action(Character*, string, vector<string> = {}, vector<Item> = {});
         virtual ~Action();
 
         /**
@@ -26,6 +29,11 @@ class Action
         virtual bool execute() = 0;
 
         /**
+            @brief execute to allow for a list of player conditions to be passed
+        */
+        virtual bool execute(vector<string>) = 0;
+
+        /**
             @brief Accessor method for the owner of the Action.
             @pre None.
             @post The owner of the Action is returned.
@@ -34,8 +42,21 @@ class Action
         */
         const Character* getOwner() const;
 
+        const string getKey() const { return key; }
+
     protected:
+        bool conditionsMet(vector<string>) const;
+        void giveItems(vector<string>);
+        bool beenTaken(vector<string>) const;
+
         Character* owner;
+        vector<string> conditions;
+        vector<Item> items;
+
+    private:
+        bool conditionsEmpty() const;
+        bool itemsEmpty() const;
+        string key;
 
 };
 

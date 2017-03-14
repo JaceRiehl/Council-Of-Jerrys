@@ -7,16 +7,13 @@
 class RoomAction : public Action
 {
     public:
-        RoomAction(Character*, Room*, string = 0);
+        RoomAction(Character*, string, Room*, map<string, string> = {}, vector<string> = {}, vector<Item> = {});
         virtual ~RoomAction();
 
-        virtual bool execute() = 0;
-
-        string getContext() const;
-        void setContext(string);
+        const map<string,string> getContext() const;
 
     protected:
-        string context;
+        map<string, string> context;
         Room* subject;
 
 };
