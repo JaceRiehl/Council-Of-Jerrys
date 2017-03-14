@@ -1,0 +1,28 @@
+<ROOMS>
+  <ROOM>
+    <NAME>Jerry's Garage</NAME>
+    <CHARACTERS>
+      <KEY>rick</KEY>
+      <KEY>summer</KEY>
+      <KEY>morty</KEY>
+    </CHARACTERS>
+    <ACTIONS>
+      <KEY>search_fridge</KEY>
+      <KEY>pickup_tool</KEY>
+      <KEY>search_hole</KEY>
+    </ACTIONS>
+  </ROOM>
+  <ROOM>
+    <NAME>Jerry's Garage</NAME>
+    <CHARACTERS>
+      <KEY>rick</KEY>
+      <KEY>summer</KEY>
+      <KEY>morty</KEY>
+    </CHARACTERS>
+    <ACTIONS>
+      <KEY>search_fridge</KEY>
+      <KEY>pickup_tool</KEY>
+      <KEY>search_hole</KEY>
+    </ACTIONS>
+  </ROOM>
+</ROOMS>
