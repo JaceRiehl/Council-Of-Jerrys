@@ -31,7 +31,7 @@ void RoomTest::testRun()
 {
 
     string output;
-    output = roomTest->run();
+    output = roomTest->run(J);
     //assert that the string is equal to the desired room
     //CPPUNIT_ASSERT_EQUAL();
 

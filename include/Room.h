@@ -31,7 +31,7 @@ public:
     *Used to take over until the level is complete
     *@return string nextRoom that corresponds to the next level to deploy
     */
-    string run();
+    string run(PlayableCharacter*);
     /**
     *Called by RoomAction when the character wants to change rooms
     *@param string - the string used to set nextRoom
@@ -100,6 +100,7 @@ private:
     */
     map<string,Menu*> menus;
 
+    void setPlayerActions(PlayableCharacter*);
 
 };
 
