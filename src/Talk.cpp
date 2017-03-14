@@ -18,7 +18,7 @@ bool Talk::execute()
         throw invalid_action("** Subject has not been set **");
 
     Window window;
-    window.display(subject->getDialog(defaultKey), cout);
+    window.display(subject->getDialog(conditionsMetKey), cout);
 
     return true;
 }
@@ -28,13 +28,21 @@ bool Talk::execute(vector<string> characterActions)
     if(!subject)
         throw invalid_action("** Subject has not been set **");
 
-    string conditionsNotMetErrorMessage = subject->getName() + " will not talk to you.";
-
-    if(!conditionsMet(characterActions))
-        throw invalid_action(conditionsNotMetErrorMessage.c_str());
-
     Window window;
-    window.display(subject->getDialog(defaultKey), cout);
+    if(beenTaken(characterActions))
+    {
+        window.display(subject->getDialog(talkedKey), cout);
+    }
+
+    else if(!conditionsMet(characterActions))
+    {
+        window.display(subject->getDialog(conditionsNotMetKey), cout);
+    }
+
+    else if(conditionsMet(characterActions))
+    {
+        window.display(subject->getDialog(conditionsMetKey), cout);
+    }
 
     giveItems(characterActions);
 
