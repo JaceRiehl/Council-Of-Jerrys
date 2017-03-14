@@ -1,8 +1,11 @@
 #include "FakeDataLoader.h"
 
-map<string, Level> FakeDataLoader::LoadLevels()
+map<string, Level*> FakeDataLoader::LoadLevels()
 {
+    map<string, Level*> output;
+
     mainChar = new PlayableCharacter("Jerry");
+    map<string, Room*> rooms;
 
     string room1Key = "jerrys_garage";
     string room1Intro = "On a summer day in the hot August heat, you’ve finally reached the back of the moving truck. There’s "
@@ -69,15 +72,37 @@ map<string, Level> FakeDataLoader::LoadLevels()
 
     crateSearchContext["searched"] = "There doesn't seem to be anything here.";
 
-    vector<Item> items;
+    vector<Item> crateSearchItems;
 
     vector<string> shelfSearchConditions;
 
-    Action* shelfSearch = new Search(mainChar, shelfSearchKey, room1, shelfSearchContext, shelfSearchConditions, items);
+    Action* shelfSearch = new Search(mainChar, shelfSearchKey, room1, shelfSearchContext, shelfSearchConditions, crateSearchItems);
 
     room1Actions[shelfSearch->getKey()] = shelfSearch;
 
     string changeRoomCarpetKey = "change_room_under_garage";
 
-    //Level level1;
+    map<string, string> changeRoomCarpetContext;
+    changeRoomCarpetContext["conditions_met"] = "You’ve discarded the carpet and uncovered a trap door. Da na na naaaaaaaaa! ";
+
+    changeRoomCarpetContext["conditions_not_met"] = "You have back pain and weak knees. You can’t move the carpet with the shelving unit on. This reminds "
+                                                    "you of how weak and all alone you are and you start to feel sad.";
+
+    vector<Item> changeRoomCarpetItems;
+
+    vector<string> changeRoomCarpetConditions = { "search_shelf" };
+
+    Action* changeRoomCarpet = new ChangeRoom(mainChar, changeRoomCarpetKey, room1, changeRoomCarpetContext, changeRoomCarpetConditions, changeRoomCarpetItems);
+
+    room1Actions[changeRoomCarpet->getKey()] = changeRoomCarpet;
+
+    room1->setActions(room1Actions);
+
+    rooms[room1->getKey()] = room1;
+
+    string levelKey = "intro";
+    string startingLevelKey = "jerrys_garage";
+    Level* level1 = new Level(levelKey, startingLevelKey, rooms);
+
+    output[level1->getKey()] = level1;
 }

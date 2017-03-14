@@ -42,7 +42,7 @@ class Action
         */
         const Character* getOwner() const;
 
-        const string getKey() const;
+        const string getKey() const { return key; }
 
     protected:
         bool conditionsMet(vector<string>) const;
