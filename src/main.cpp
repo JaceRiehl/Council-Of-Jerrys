@@ -9,9 +9,10 @@ using namespace std;
 
 int main()
 {
-    PlayableCharacter* mainCharacter;
+    PlayableCharacter* mainCharacter = new PlayableCharacter("jerry");
     map<string, Level*> levels;
     FakeDataLoader levelData;
+    string nextLevel = "intro";
     int choice;
     bool validInput = false;
     string title = "                    Jerry's Adventures!";
@@ -41,51 +42,11 @@ int main()
         levelData.LoadLevels(mainCharacter, levels);
     }
 
-
-
+    while(true)
+    {
+        if(levels.find(nextLevel) == levels.end())
+            break;
+        Level * currentLevel = levels[nextLevel];
+        nextLevel = currentLevel->run(mainCharacter);
+    }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*
-#include <cppunit/CompilerOutputter.h>
-#include <cppunit/extensions/TestFactoryRegistry.h>
-#include <cppunit/ui/text/TestRunner.h>
-
-using namespace std;
-
-int main()
-{
-   // Get the top level suite from the registry
-  CppUnit::Test *suite = CppUnit::TestFactoryRegistry::getRegistry().makeTest();
-
-  // Adds the test to the list of test to run
-  CppUnit::TextUi::TestRunner runner;
-  runner.addTest( suite );
-
-  // Change the default outputter to a compiler error format outputter
-  runner.setOutputter( new CppUnit::CompilerOutputter( &runner.result(),
-                                                       std::cerr ) );
-  // Run the tests.
-  bool wasSucessful = runner.run();
-
-  // Return error code 1 if the one of test failed.
-  return wasSucessful ? 0 : 1;
-}
-*/

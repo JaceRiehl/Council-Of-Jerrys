@@ -62,9 +62,9 @@ void FakeDataLoader::LoadLevels(PlayableCharacter* mainChar, map<string, Level*>
     shelfSearchContext["conditions_met"] = "As you wrap your arms around the shelving unit, a diary topples over. You don’t think you should read "
                                            "someone else’s personal diary, but having to clean someone else’s mess as made you feel somewhat "
                                            "rebellious, so you open it. Most of its content is filled with gibberish mathematical equations but the "
-                                           "last entry stands out, it reads - “These posers discovered the combination to my safe, I HAD to make "
+                                           "last entry stands out, it reads - \“These posers discovered the combination to my safe, I HAD to make "
                                            "them pay. Anyway, time to change it now; maybe I’ll use the year Doc Brown took Marty back in time. "
-                                           "God, Back to the Future is such a great movie!”. This seems like an odd man, you think to yourself. "
+                                           "God, Back to the Future is such a great movie!\”. This seems like an odd man, you think to yourself. "
                                            "Anyhow, you finish moving the shelving unit and discard the diary.";
 
     crateSearchContext["searched"] = "There doesn't seem to be anything here.";

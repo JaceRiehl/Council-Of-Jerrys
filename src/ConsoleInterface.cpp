@@ -17,6 +17,7 @@ char ConsoleInterface::getChar(istream& is)
 void ConsoleInterface::getEnterKey(istream & is)
 {
     cout<<"Hit the ENTER key to continue."<<endl;
+    is.ignore();
     is.get();
 }
 

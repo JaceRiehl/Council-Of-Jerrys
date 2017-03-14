@@ -7,7 +7,7 @@ using namespace tinyxml2;
 class XMLLoadData
 {
 public:
-    static bool loadData(SaveData);
+    static bool loadData(SaveData&);
 
 };
 

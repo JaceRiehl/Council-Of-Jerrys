@@ -68,6 +68,7 @@
 		<Unit filename="../include/RoomAction.h" />
 		<Unit filename="../include/RoomData.h" />
 		<Unit filename="../include/RoomXMLParser.h" />
+		<Unit filename="../include/SaveData.h" />
 		<Unit filename="../include/Search.h" />
 		<Unit filename="../include/Talk.h" />
 		<Unit filename="../include/TextBox.h" />
