@@ -84,6 +84,7 @@ void FakeDataLoader::LoadLevels(PlayableCharacter* mainChar, map<string, Level*>
 
     changeRoomCarpetContext["conditions_not_met"] = "You have back pain and weak knees. You can’t move the carpet with the shelving unit on. This reminds "
                                                     "you of how weak and all alone you are and you start to feel sad.";
+    changeRoomCarpetContext["change_room"] = "under_garage";
 
     vector<Item> changeRoomCarpetItems;
 
@@ -111,6 +112,7 @@ void FakeDataLoader::LoadLevels(PlayableCharacter* mainChar, map<string, Level*>
                         "inspecting your surroundings – to each of your sides seems to be a variety of buildings; each of them"
                         "decorated with their own storefront sign – There’s a store which you’re not sure what is being sold,"
                         "another store labeled ‘general store’ and a castle can be seen far in the distance. People are coming and going.";
+
     map<string, NPC*> room3Characters;
     NPC* villager = new NPC("villager");
 
@@ -119,21 +121,56 @@ void FakeDataLoader::LoadLevels(PlayableCharacter* mainChar, map<string, Level*>
     string room3TopMenuMessage = "What would you like to do?: ";
 
     map<char, string> room3TopMenuOutput;
-    room3TopMenuOutput['1'] = "Move crates";
+    room3TopMenuOutput['1'] = "Talk to villager";
     room3TopMenuOutput['2'] = "Move shelving unit";
     room3TopMenuOutput['3'] = "Move carpet";
 
     map<char, string> room3TopMenuInput;
-    room3TopMenuInput['1'] = "search_crate";
+    room3TopMenuInput['1'] = "talk_villager";
     room3TopMenuInput['2'] = "search_shelf";
     room3TopMenuInput['3'] = "change_room_under_garage";
 
     Menu* room3TopMenu = new Menu(menuOutput, room1TopMenuOutput, room1TopMenuInput);
 
+    string room3TalkMenuMessage =   "\"Oh, good day kind sir. I can tell by the clothes you’re wearing that you are not from here. Want my "
+                                    "advice – turn back and return to where you’ve come from. King Jelly Bean is using all of the food "
+                                    "supplies and we’re all slowly dying. But before you leave, would you have any food to spare?\"";
+
+    map<char, string> room3TalkMenuOutput;
+    room3TalkMenuOutput['1'] = "Give the villager some food.";
+    room3TalkMenuOutput['2'] = "Ignore the hungry villager.";
+
+    map<char, string> room3TalkMenuInput;
+    room3TalkMenuInput['1'] = "give_food";
+    room3TalkMenuInput['2'] = "ignore";
+
+    Menu* room3TalkMenu = new Menu(room3TalkMenuMessage, room3TalkMenuOutput, room3TalkMenuInput);
+
     map<string, Menu*> room3Menus;
     room3Menus["top"] = room3TopMenu;
 
+
     Room* room3 = new Room(room3Key, room3Intro, room3Characters, room3Menus);
+
+    string talkToVillagerKey = "talk_villager_give_food";
+    vector<string> talkVillagerConditions = { "bread" };
+    vector<Item> talkVillagerItems = { Item("invitation") };
+
+    Action* talkToVillagerAction = new Talk(mainChar, talkToVillagerKey, villager, talkVillagerConditions, talkVillagerItems);
+
+    room1Actions[talkToVillagerAction->getKey()]= talkToVillagerAction;
+
+    string searchDoor1Key = "search_door1";
+    map<string, string> searchDoor1Context;
+    searchDoor1Context["conditions_met"] = "\“Oh boy – that’s a fake door. Better luck next time pal!\”";
+
+    vector<Item> searchDoor1Items;
+
+    vector<string> searchDoor1Conditions;
+
+    Action* searchDoor1 = new Search(mainChar, shelfSearchKey, room1, shelfSearchContext, shelfSearchConditions, crateSearchItems);
+
+    room1Actions[shelfSearch->getKey()] = shelfSearch;
 
     levels[level1->getKey()] = level1;
 }
