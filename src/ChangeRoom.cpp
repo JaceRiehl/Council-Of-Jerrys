@@ -24,7 +24,7 @@ bool ChangeRoom::execute(vector<string> playerActions)
 
     else
     {
-        window.display(context[changeRoomKey], cout);
+        window.display(context[conditionsMetKey], cout);
         subject->exit(context[changeRoomKey]);
     }
 
