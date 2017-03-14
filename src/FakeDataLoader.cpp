@@ -25,7 +25,7 @@ void FakeDataLoader::LoadLevels(PlayableCharacter* mainChar, map<string, Level*>
     map<char, string> room1TopMenuInput;
     room1TopMenuInput['1'] = "search_crate";
     room1TopMenuInput['2'] = "search_shelf";
-    room1TopMenuInput['3'] = "move_carpet";
+    room1TopMenuInput['3'] = "change_room_under_garage";
 
     Menu* topMenu = new Menu(menuOutput, room1TopMenuOutput, room1TopMenuInput);
 
