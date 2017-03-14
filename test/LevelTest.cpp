@@ -41,7 +41,7 @@ void LevelTest::testRun()
 
     window.display("*** THIS IS THE LEVEL TEST!! *** ", cout);
 
-    Level* level = new Level(levelName, *jerry, rooms, openingLevelMessage);
+    Level* level = new Level(levelName, jerry, rooms, openingLevelMessage);
 
     string output = level->run();
 

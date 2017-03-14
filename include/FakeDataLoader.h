@@ -5,11 +5,13 @@
 #include "NPC.h"
 #include "Menu.h"
 #include "Search.h"
+#include "ChangeRoom.h"
+#include "Talk.h"
 
 class FakeDataLoader
 {
     public:
-        map<string, Level> LoadLevels();
+        map<string, Level*> LoadLevels();
         PlayableCharacter* mainChar;
 };
 
