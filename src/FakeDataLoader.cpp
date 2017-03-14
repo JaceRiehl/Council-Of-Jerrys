@@ -105,4 +105,6 @@ map<string, Level*> FakeDataLoader::LoadLevels()
     Level* level1 = new Level(levelKey, startingLevelKey, rooms);
 
     output[level1->getKey()] = level1;
+
+    return output;
 }
