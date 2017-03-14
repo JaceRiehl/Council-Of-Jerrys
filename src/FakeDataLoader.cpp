@@ -1,6 +1,6 @@
 #include "FakeDataLoader.h"
 
-void FakeDataLoader::LoadLevels(PlayableCharacter* mainChar, map<string, Level*> levels)
+void FakeDataLoader::LoadLevels(PlayableCharacter* mainChar, map<string, Level*> &levels)
 {
     map<string, Room*> rooms;
 
