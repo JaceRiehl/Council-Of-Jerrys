@@ -1,4 +1,4 @@
-/*#ifndef XMLLOADDATA_H
+#ifndef XMLLOADDATA_H
 #define XMLLOADDATA_H
 #include "tinyxml2.h"
 #include "SaveData.h"
@@ -12,4 +12,3 @@ public:
 };
 
 #endif // XMLLOADDATA_H
-*/

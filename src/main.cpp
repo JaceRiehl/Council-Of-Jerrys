@@ -1,4 +1,4 @@
-/*#include <vector>
+#include <vector>
 #include <string>
 #include "SaveData.h"
 #include "XMLSaveDataTest.h"
@@ -20,11 +20,11 @@ int main()
     XMLSaveData saveFile;
     saveFile.saveData(data);
 
-    SaveData data;
+    SaveData inData;
     XMLLoadData loadTest;
-    loadTest.loadData(data);
-}*/
-
+    loadTest.loadData(inData);
+}
+/*
 #include <cppunit/CompilerOutputter.h>
 #include <cppunit/extensions/TestFactoryRegistry.h>
 #include <cppunit/ui/text/TestRunner.h>
@@ -51,3 +51,4 @@ int main()
 }
 
 
+*/
