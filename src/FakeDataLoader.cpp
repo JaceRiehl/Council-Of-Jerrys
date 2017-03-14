@@ -98,10 +98,6 @@ void FakeDataLoader::LoadLevels(PlayableCharacter* mainChar, map<string, Level*>
 
     rooms[room1->getKey()] = room1;
 
-    string levelKey = "intro";
-    string startingLevelKey = "jerrys_garage";
-    Level* level1 = new Level(levelKey, startingLevelKey, rooms);
-
     //room 2 **********************************************************************
     string room2Key = "under_garage";
     string room2Intro = "You pull the rope attached to the trap door and lift it. A stairway is unveiled, and a set of straight tube halogen lights are engaged in series – lighting your way down. You decide you're brave today and make your way downstairs. A quick inspection of the room reveals a workbench with various common tools, a large box covered with a blanket, a lab coat hanging on a hook and a safe.";
@@ -223,24 +219,27 @@ void FakeDataLoader::LoadLevels(PlayableCharacter* mainChar, map<string, Level*>
 
      Action* changeRoomSafe = new ChangeRoom(mainChar, changeRoomSafeKey, room1, changeRoomSafeContext, changeRoomSafeConditions, changeRoomSafeItems);
 
+     room2Actions[changeRoomSafe->getKey()] = changeRoomSafe;
+
+     rooms[room2->getKey()]= room2;
 
      //**************************************ROOM 4***********************************************************************
 
-    String room2Key = "castle";
-    string room2Intro = "\“Hahaha! I have made millions for the past five years reselling the food the villagers produced, the best part is I haven’t even had to pay taxes to the legion of kings. At this rate, I will be the richest king of all time in no time. Oh I hope no one is hearing me speak out loud about my crimes. One could not only put my life in jeopardy with this information, but this person could also overtake my position as King.\""
-
-    "Finally wrapping up your business in the bathroom, you make your way to the throne room. "
-
-    "\"A yes, Mr. slippery stairs I’ve been expecting you.\"";
-
-    map<char,string> room2TopMenuOutput;
-    room2TopMenuOutput['1'] = "Kill King JellyBean";
-    room2TopMenuOutput['2'] = "Blackmail the king about his tax evasions";
-
-
-    map<char,string> room2TopMenuInput;
-    room2TopMenuInput['1'] = "talk_king";
-    room2TopMenuInput['2'] = "talk_jelly";
+//    string room2Key = "castle";
+//    string room2Intro = "\“Hahaha! I have made millions for the past five years reselling the food the villagers produced, the best part is I haven’t even had to pay taxes to the legion of kings. At this rate, I will be the richest king of all time in no time. Oh I hope no one is hearing me speak out loud about my crimes. One could not only put my life in jeopardy with this information, but this person could also overtake my position as King.\""
+//
+//    "Finally wrapping up your business in the bathroom, you make your way to the throne room. "
+//
+//    "\"A yes, Mr. slippery stairs I’ve been expecting you.\"";
+//
+//    map<char,string> room2TopMenuOutput;
+//    room2TopMenuOutput['1'] = "Kill King JellyBean";
+//    room2TopMenuOutput['2'] = "Blackmail the king about his tax evasions";
+//
+//
+//    map<char,string> room2TopMenuInput;
+//    room2TopMenuInput['1'] = "talk_king";
+//    room2TopMenuInput['2'] = "talk_jelly";
 
 
 
@@ -318,6 +317,10 @@ void FakeDataLoader::LoadLevels(PlayableCharacter* mainChar, map<string, Level*>
     Action* searchDoor1 = new Search(mainChar, shelfSearchKey, room1, shelfSearchContext, shelfSearchConditions, crateSearchItems);
 
     room1Actions[shelfSearch->getKey()] = shelfSearch;
+
+    string levelKey = "intro";
+    string startingLevelKey = "jerrys_garage";
+    Level* level1 = new Level(levelKey, startingLevelKey, rooms);
 
     levels[level1->getKey()] = level1;
 }

@@ -28,6 +28,7 @@ bool Talk::execute(vector<string> characterActions)
     if(!subject)
         throw invalid_action("** Subject has not been set **");
 
+
     Window window;
     if(beenTaken(characterActions))
     {
