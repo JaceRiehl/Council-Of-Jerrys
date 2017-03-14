@@ -79,6 +79,8 @@ Room::Room(string roomKey, string roomIntro, map<string, NPC*> roomCharacters, m
         GameWindow.display(intro,cout);
         Inputting.getEnterKey(cin);
 
+        state = running;
+
         do
         {
             choice = "";
@@ -125,7 +127,6 @@ Room::Room(string roomKey, string roomIntro, map<string, NPC*> roomCharacters, m
                 GameWindow.display(inv.what(), cout);
             }
         }while(state == running);
-        cout << "RETURNING: " + nextRoom << endl;
         return nextRoom;
     }
 
