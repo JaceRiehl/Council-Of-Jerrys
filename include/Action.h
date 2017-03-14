@@ -49,6 +49,8 @@ class Action
         void giveItems(vector<string>);
         bool beenTaken(vector<string>) const;
 
+        string defaultKey = "default";
+
         Character* owner;
         vector<string> conditions;
         vector<Item> items;

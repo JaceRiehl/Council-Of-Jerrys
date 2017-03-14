@@ -24,14 +24,19 @@ bool Search::execute(vector<string> playerActions)
     else if(!conditionsMet(playerActions))
     {
         window.display(context[conditionsNotMetKey], cout);
-        return false;
+    }
+
+    else if(conditionsMet(playerActions))
+    {
+        window.display(context[conditionsMetKey], cout);
+        giveItems(playerActions);
+        return true;
     }
 
     else
     {
-        window.display(context[conditionsMetKey], cout);
+        window.display(context[defaultKey], cout);
     }
 
-    giveItems(playerActions);
-    return true;
+    return false;
 }
