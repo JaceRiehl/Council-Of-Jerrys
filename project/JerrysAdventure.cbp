@@ -72,6 +72,8 @@
 		<Unit filename="../include/Talk.h" />
 		<Unit filename="../include/TextBox.h" />
 		<Unit filename="../include/Window.h" />
+		<Unit filename="../include/XMLLoadData.h" />
+		<Unit filename="../include/XMLSaveData.h" />
 		<Unit filename="../src/Action.cpp" />
 		<Unit filename="../src/ChangeRoom.cpp" />
 		<Unit filename="../src/Character.cpp" />
@@ -96,6 +98,8 @@
 		<Unit filename="../src/Talk.cpp" />
 		<Unit filename="../src/TextBox.cpp" />
 		<Unit filename="../src/Window.cpp" />
+		<Unit filename="../src/XMLLoadData.cpp" />
+		<Unit filename="../src/XMLSaveData.cpp" />
 		<Unit filename="../src/main.cpp" />
 		<Unit filename="../src/tinyxml2.cpp" />
 		<Unit filename="../test/ActionTest.cpp" />
@@ -128,6 +132,8 @@
 		<Unit filename="../test/TextBoxTest.h" />
 		<Unit filename="../test/WindowTest.cpp" />
 		<Unit filename="../test/WindowTest.h" />
+		<Unit filename="../test/XMLSaveDataTest.cpp" />
+		<Unit filename="../test/XMLSaveDataTest.h" />
 		<Extensions>
 			<code_completion />
 			<envvars />

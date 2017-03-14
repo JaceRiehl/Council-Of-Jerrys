@@ -1,3 +1,67 @@
+#include <iostream>
+#include <vector>
+#include <map>
+//#include "FakeDataLoader.h"
+#include "Window.h"
+#include "PlayableCharacter.h"
+
+using namespace std;
+
+int main()
+{
+    int choice;
+    bool validInput = false;
+    string title = "                    Jerry's Adventures!";
+    vector<string> startMenu = {"New Game", "Continue", "Exit"};
+    Window splashScreen;
+    splashScreen.display(title, startMenu, cout);
+    cout<<endl<<"Enter your choice: ";
+    while(!validInput)
+    {
+        cin>>choice;
+        if(choice == 1 || choice == 2 || choice ==3)
+            validInput = true;
+        else
+            validInput = false;
+        if(!validInput)
+            cout<<"Invalid input, try again: ";
+    }
+    switch (choice)
+    {
+        case 1 : /*new game*/;break;
+        case 2 : /*load data*/;break;
+        case 3 : system("clear");exit(0);
+    }
+
+    if(choice == 1)
+        cout<<"New game"<<endl;
+    PlayableCharacter* mainCharacter;
+    //FakeDataLoader levelData;
+    //map<string, Level> levels;
+    //levels = levelData.LoadLevels();
+    //mainCharacter = levelData.mainChar;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
 #include <cppunit/CompilerOutputter.h>
 #include <cppunit/extensions/TestFactoryRegistry.h>
 #include <cppunit/ui/text/TestRunner.h>
@@ -22,3 +86,4 @@ int main()
   // Return error code 1 if the one of test failed.
   return wasSucessful ? 0 : 1;
 }
+*/
