@@ -1,10 +1,7 @@
 #include "FakeDataLoader.h"
 
-map<string, Level*> FakeDataLoader::LoadLevels()
+void FakeDataLoader::LoadLevels(PlayableCharacter* mainChar, map<string, Level*> levels)
 {
-    map<string, Level*> output;
-
-    mainChar = new PlayableCharacter("Jerry");
     map<string, Room*> rooms;
 
     string room1Key = "jerrys_garage";
@@ -104,5 +101,5 @@ map<string, Level*> FakeDataLoader::LoadLevels()
     string startingLevelKey = "jerrys_garage";
     Level* level1 = new Level(levelKey, startingLevelKey, rooms);
 
-    output[level1->getKey()] = level1;
+    levels[level1->getKey()] = level1;
 }
