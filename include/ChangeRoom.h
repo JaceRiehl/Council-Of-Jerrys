@@ -14,6 +14,7 @@ class ChangeRoom : public RoomAction
     private:
         const string changeRoomKey = "change_room";
         const string conditionsNotMetKey = "conditions_not_met";
+        const string conditionsMetKey = "conditions_met";
 };
 
 #endif // CHANGEROOM_H
