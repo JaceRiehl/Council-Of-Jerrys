@@ -19,6 +19,7 @@ const Character* Action::getOwner() const
     return owner;
 }
 
+
 bool Action::conditionsMet(vector<string> playerActions) const
 {
     if(conditionsEmpty())

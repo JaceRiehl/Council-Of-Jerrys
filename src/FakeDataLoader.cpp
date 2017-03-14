@@ -102,7 +102,8 @@ void FakeDataLoader::LoadLevels(PlayableCharacter* mainChar, map<string, Level*>
     string room2Key = "under_garage";
     string room2Intro = "You pull the rope attached to the trap door and lift it. A stairway is unveiled, and a set of straight tube halogen lights are engaged in series – lighting your way down. You decide you're brave today and make your way downstairs. A quick inspection of the room reveals a workbench with various common tools, a large box covered with a blanket, a lab coat hanging on a hook and a safe.";
     map<string, NPC*> room2Characters;
-    NPC* Snowball = new NPC("Snowball");
+    NPC* Snowball = new NPC("snowball");
+
     room2Characters["snowball"] = Snowball;
     map <string, Action*> room2Actions;
 
@@ -127,17 +128,23 @@ void FakeDataLoader::LoadLevels(PlayableCharacter* mainChar, map<string, Level*>
 
     map<char,string> room2SubMenuInput;
     room2SubMenuInput['1'] ="talk_snowball";
-    room2SubMenuInput['2'] = "search_cage";
+    room2SubMenuInput['2'] = "cage";
     room2SubMenuInput['3'] = "leave";
 
 
+    string subMenuText = "You remove the blanket off the box and it reveals a kennel with a cute fluffy white dog inside. \'What "
+                        "kind of human being would leave their dog behind?\’ you think to yourself. You decide animal control "
+                        "would probably be the best people to handle this situation, so you pick up your phone and start dialing "
+                        "when suddenly a voice comes from what seems to be the dog collar - \“Greetings fellow human. My "
+                        "name is \‘Snowballs\’ I have been locked in this cage and forgotten by my owner. Would you be so kind "
+                        "as to liberate me?\”";
 
 
     Menu* topMenu2 = new Menu(menuOutput, room2TopMenuOutput, room2TopMenuInput);
-    Menu* subMenu2 = new Menu(menuOutput, room2SubMenuOutput, room2SubMenuInput);
+    Menu* subMenu2 = new Menu(subMenuText, room2SubMenuOutput, room2SubMenuInput);
     map<string, Menu*> room2Menus;
     room2Menus["top"] = topMenu2;
-    room2Menus["sub"] = subMenu2;
+    room2Menus["search_box"] = subMenu2;
 
     Room* room2 = new Room(room2Key, room2Intro, room2Characters, room2Menus);
     //make action parameters
@@ -146,43 +153,45 @@ void FakeDataLoader::LoadLevels(PlayableCharacter* mainChar, map<string, Level*>
 
 
     //talk to snowball
-    string snowballTalkKey = "talk_snowball";
-    map<string,string> snowballTalkContext;
-    snowballTalkContext["conditions_met"] = "Perhaps the key could be found somewhere around this room. Your cooperation in this matter is greatly appreciated.";
+    string snowballTalkKey = "search_box_talk_snowball";
+    map<string,string> snowballDialog;
+    snowballDialog["conditions_met"] = "Perhaps the key could be found somewhere around this room. Your cooperation in this matter is greatly appreciated.";
 
+    Snowball->setDialog(snowballDialog);
 
     vector<string> snowballTalkConditions;
     vector<Item> snowballItems;
 
-    Action* Talk1 = new Talk(mainChar, "talk_snowball", Snowball, snowballTalkConditions, snowballItems);
+    Action* Talk1 = new Talk(mainChar, snowballTalkKey, Snowball, snowballTalkConditions, snowballItems);
 
-    room2Actions["talk_snowball"] = Talk1;
+    room2Actions[Talk1->getKey()] = Talk1;
 
 
     //open cage
-    string cageSearchKey = "search_cage";
+    string cageSearchKey = "search_box_cage";
     map<string,string> cageSearchContext;
     cageSearchContext["conditions_met"] = "\"You saved my life 'Jerry'. Your actions will not be forgotten. However, no humans can be allowed to live, and your species must be extinct. Good bye Jerry.\" - GAME OVER";
 
     cageSearchContext["conditions_not_met"] = "The cage is locked.";
+    cageSearchContext["default"] = "Ignore the cute fluffy white dog begging for help.";
 
-    vector<Item> noItems;
+    vector<Item> room2Items;
 
-    vector<string> cageSearchConditions = {"search_workbench"};
+    vector<string> cageSearchConditions = {"sledgehammer"};
 
-    Action* cageSearch = new Search(mainChar, cageSearchKey, room2, cageSearchContext, cageSearchConditions, noItems);
+    Action* cageSearch = new Search(mainChar, cageSearchKey, room2, cageSearchContext, cageSearchConditions, room2Items);
 
-    room2Actions["search_cage"] = cageSearch;
+    room2Actions[cageSearch->getKey()] = cageSearch;
 
 
     //workbench
     string workbenchSearchKey = "search_workbench";
     map<string,string> workbenchSearchContext;
-    workbenchSearchContext["conditions_met"] = "ust your basic small electronics tool set: an arrangement of screwdrivers, a soldering kit and a sledgehammer. Well, they’re yours now, better add these to your inventory!";
+    workbenchSearchContext["conditions_met"] = "Just your basic small electronics tool set: an arrangement of screwdrivers, a soldering kit and a sledgehammer. Well, they’re yours now, better add these to your inventory!";
 
     workbenchSearchContext["searched"] = "There doesn't seem to be anything here.";
 
-    vector<Item> tools = {Item("Screwdriver"), Item("Soldering Kit"), Item("Sledgehammer")};
+    vector<Item> tools = {Item("screwdriver"), Item("soldering_kit"), Item("sledgehammer")};
 
     vector<string> workbenchSearchConditions;
 
@@ -197,7 +206,7 @@ void FakeDataLoader::LoadLevels(PlayableCharacter* mainChar, map<string, Level*>
 
     coatSearchContext["searched"] = "There doesn't seem to be anything here.";
 
-    vector<Item> keys = {Item("safe key"), Item("kennel key")};
+    vector<Item> keys = {Item("safe_key"), Item("kennel_key")};
 
     vector<string> coatSearchConditions;
 
@@ -213,13 +222,17 @@ void FakeDataLoader::LoadLevels(PlayableCharacter* mainChar, map<string, Level*>
 
     changeRoomSafeContext["conditions_not_met"] = "The door still seems stuck and won't open";
 
+    changeRoomSafeContext["change_room"] = "medieval_village";
+
      vector<Item> changeRoomSafeItems;
 
-     vector<string> changeRoomSafeConditions = { "search_coat" };
+     vector<string> changeRoomSafeConditions = { "safe_key" };
 
-     Action* changeRoomSafe = new ChangeRoom(mainChar, changeRoomSafeKey, room1, changeRoomSafeContext, changeRoomSafeConditions, changeRoomSafeItems);
+     Action* changeRoomSafe = new ChangeRoom(mainChar, changeRoomSafeKey, room2, changeRoomSafeContext, changeRoomSafeConditions, changeRoomSafeItems);
 
      room2Actions[changeRoomSafe->getKey()] = changeRoomSafe;
+
+     room2->setActions(room2Actions);
 
      rooms[room2->getKey()]= room2;
 
@@ -276,7 +289,7 @@ void FakeDataLoader::LoadLevels(PlayableCharacter* mainChar, map<string, Level*>
     room3TopMenuInput['2'] = "search_shelf";
     room3TopMenuInput['3'] = "change_room_under_garage";
 
-    Menu* room3TopMenu = new Menu(menuOutput, room1TopMenuOutput, room1TopMenuInput);
+    Menu* room3TopMenu = new Menu(menuOutput, room3TopMenuOutput, room3TopMenuInput);
 
     string room3TalkMenuMessage =   "\"Oh, good day kind sir. I can tell by the clothes you’re wearing that you are not from here. Want my "
                                     "advice – turn back and return to where you’ve come from. King Jelly Bean is using all of the food "
@@ -314,9 +327,13 @@ void FakeDataLoader::LoadLevels(PlayableCharacter* mainChar, map<string, Level*>
 
     vector<string> searchDoor1Conditions;
 
-    Action* searchDoor1 = new Search(mainChar, shelfSearchKey, room1, shelfSearchContext, shelfSearchConditions, crateSearchItems);
+    Action* searchDoor1 = new Search(mainChar, shelfSearchKey, room3, shelfSearchContext, shelfSearchConditions, crateSearchItems);
 
-    room1Actions[shelfSearch->getKey()] = shelfSearch;
+    room3Actions[shelfSearch->getKey()] = shelfSearch;
+
+    room3->setActions(room3Actions);
+
+    rooms[room3->getKey()] = room3;
 
     string levelKey = "intro";
     string startingLevelKey = "jerrys_garage";

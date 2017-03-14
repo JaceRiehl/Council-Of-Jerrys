@@ -30,6 +30,8 @@ bool Talk::execute(vector<string> characterActions)
 
 
     Window window;
+
+
     if(beenTaken(characterActions))
     {
         window.display(subject->getDialog(talkedKey), cout);
@@ -43,11 +45,16 @@ bool Talk::execute(vector<string> characterActions)
     else if(conditionsMet(characterActions))
     {
         window.display(subject->getDialog(conditionsMetKey), cout);
+        giveItems(characterActions);
+        return true;
     }
 
-    giveItems(characterActions);
+    else
+    {
+        window.display(subject->getDialog(defaultKey), cout);
+    }
 
-    return true;
+    return false;
 }
 
 
