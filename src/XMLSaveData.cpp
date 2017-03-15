@@ -15,10 +15,10 @@ bool XMLSaveData::saveData(SaveData data)
     }
     pRoot->InsertEndChild(pElement);
     XMLElement * lElement = saveFile.NewElement("LEVEL");
-    lElement->SetText((data.level).c_str());
+    lElement->SetText((data.level));
     pRoot->InsertEndChild(lElement);
     XMLElement * rElement = saveFile.NewElement("ROOM");
-    rElement->SetText((data.room).c_str());
+    rElement->SetText(data.room);
     pRoot->InsertEndChild(rElement);
     XMLElement * aElement = saveFile.NewElement("PLAYER_ACTIONS");
     for(const auto& str : data.playerActions)
