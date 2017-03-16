@@ -148,6 +148,9 @@ const Inventory* Room::getCharacterInv()
 
 void Room::exit(string destination)
 {
+    if(destination == key)
+        return;
+
     nextRoom = destination;
     state = done;
 }

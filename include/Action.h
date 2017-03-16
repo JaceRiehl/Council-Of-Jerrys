@@ -54,11 +54,11 @@ class Action
         Character* owner;
         vector<string> conditions;
         vector<Item> items;
+        string key;
 
     private:
         bool conditionsEmpty() const;
         bool itemsEmpty() const;
-        string key;
 
 };
 
