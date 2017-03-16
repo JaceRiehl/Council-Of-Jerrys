@@ -274,19 +274,27 @@ void FakeDataLoader::LoadLevels(PlayableCharacter* mainChar, map<string, Level*>
                         "another store labeled 'general store' and a castle can be seen far in the distance. People are coming and going.";
     map<string, NPC*> room3Characters;
     NPC* villager = new NPC("villager");
+    map<string, string> villagerDialog;
+    villagerDialog["conditions_met"] = "\“Oh bless you kind sir. I do not have much to offer, but please accept this invitation"
+                                        "to the king castle for the ball.\”";
+    villagerDialog["conditions_not_met"] = "\“Well thanks for nothing. Wow, what a tease.\”";
+    villagerDialog["talked"] = "“Your generosity is greatly appreciated - kind sir. If only we could have a king as generous as you.”";
+
+    villager->setDialog(villagerDialog);
 
     map<string, Action*> room3Actions;
 
+    // MENUS
     string room3TopMenuMessage = "What would you like to do?: ";
 
     map<char, string> room3TopMenuOutput;
     room3TopMenuOutput['1'] = "Talk to villager";
-    room3TopMenuOutput['2'] = "Move shelving unit";
+    room3TopMenuOutput['2'] = "Go to Unknown Store";
     room3TopMenuOutput['3'] = "Move carpet";
 
     map<char, string> room3TopMenuInput;
     room3TopMenuInput['1'] = "talk_villager";
-    room3TopMenuInput['2'] = "search_shelf";
+    room3TopMenuInput['2'] = "unknown_store";
     room3TopMenuInput['3'] = "change_room_under_garage";
 
     Menu* room3TopMenu = new Menu(menuOutput, room3TopMenuOutput, room3TopMenuInput);
@@ -305,32 +313,153 @@ void FakeDataLoader::LoadLevels(PlayableCharacter* mainChar, map<string, Level*>
 
     Menu* room3TalkMenu = new Menu(room3TalkMenuMessage, room3TalkMenuOutput, room3TalkMenuInput);
 
+    string room3UnknownStoreMenuMessage =    "“Hey, are you tired of real doors, cluttering up your house, where you open 'em, and they actually go"
+                                            "somewhere? And you go in another room? Well welcome to \"Real Fake Doors\"! That's us. We’ve filled"
+                                            "a whole room with them. Tell you what, if you can find the one real door in this store, I’ll give you 30"
+                                            "Smeckles.\"";
+
+    map<char, string> room3UnknownStoreMenuOutput;
+    room3UnknownStoreMenuOutput['1'] = "Choose Door 1";
+    room3UnknownStoreMenuOutput['2'] = "Choose Door 2";
+    room3UnknownStoreMenuOutput['3'] = "Choose Door 3";
+    room3UnknownStoreMenuOutput['4'] = "Choose Door 4";
+    room3UnknownStoreMenuOutput['5'] = "Choose Door 5";
+
+    map<char, string> room3UnknownStoreMenuInput;
+    room3UnknownStoreMenuInput['1'] = "search_door_1";
+    room3UnknownStoreMenuInput['2'] = "search_door_2";
+    room3UnknownStoreMenuInput['3'] = "search_door_3";
+    room3UnknownStoreMenuInput['4'] = "search_door_4";
+    room3UnknownStoreMenuInput['5'] = "search_door_5";
+
+    Menu* room3UnknownStoreMenu = new Menu(room3UnknownStoreMenuMessage, room3UnknownStoreMenuOutput, room3UnknownStoreMenuInput);
+
     map<string, Menu*> room3Menus;
     room3Menus["top"] = room3TopMenu;
+    room3Menus["talk_villager"] = room3TalkMenu;
+    room3Menus["unknown_store"] = room3UnknownStoreMenu;
 
 
+    // ***********************************************************************************************************
     Room* room3 = new Room(room3Key, room3Intro, room3Characters, room3Menus);
 
+    // ACTIONS
+
+    // TALK TO VILLAGER ACTION
     string talkToVillagerKey = "talk_villager_give_food";
     vector<string> talkVillagerConditions = { "bread" };
     vector<Item> talkVillagerItems = { Item("invitation") };
 
     Action* talkToVillagerAction = new Talk(mainChar, talkToVillagerKey, villager, talkVillagerConditions, talkVillagerItems);
 
-    room1Actions[talkToVillagerAction->getKey()]= talkToVillagerAction;
+    room3Actions[talkToVillagerAction->getKey()]= talkToVillagerAction;
 
-    string searchDoor1Key = "search_door1";
+    // ***********************************************************************************************************
+    // Ignore Villager
+
+    string ignoreTalkToVillagerKey = "talk_villager_ignore";
+
+    vector<Item> ignoreTalkToVillagerItems;
+    vector<string> ignoreTalkToVillagerConditions;
+
+    map<string, string> ignoreTalkToVillagerContext;
+
+    ignoreTalkToVillagerContext["change_room"] = room3->getKey();
+
+    Action* ignoreTalkToVillager = new ChangeRoom(mainChar, ignoreTalkToVillagerKey, room3, ignoreTalkToVillagerContext,
+                                                  ignoreTalkToVillagerConditions, ignoreTalkToVillagerItems);
+
+    room3Actions[ignoreTalkToVillager->getKey()] = ignoreTalkToVillager;
+
+    // ************************************************************************************************************
+
+    // Door1
+    string searchDoor1Key = "unknown_store_search_door_1";
     map<string, string> searchDoor1Context;
-    searchDoor1Context["conditions_met"] = "\“Oh boy – that’s a fake door. Better luck next time pal!\”";
+    searchDoor1Context["conditions_not_met"] = "\“Oh boy – that’s a fake door. Better luck next time pal!\”";
+    searchDoor1Context["conditions_met"] = "\"Get out of here. I already gave you my damn smeckles!\"";
 
     vector<Item> searchDoor1Items;
 
-    vector<string> searchDoor1Conditions;
+    vector<string> searchDoor1Conditions = { "unknown_store_search_door_2" };
 
-    Action* searchDoor1 = new Search(mainChar, shelfSearchKey, room3, shelfSearchContext, shelfSearchConditions, crateSearchItems);
+    Action* searchDoor1 = new Search(mainChar, searchDoor1Key, room3, searchDoor1Context, searchDoor1Conditions, searchDoor1Items);
 
-    room3Actions[shelfSearch->getKey()] = shelfSearch;
+    room3Actions[searchDoor1->getKey()] = searchDoor1;
 
+    // **************************************************************************************************************
+
+    // Door2
+    string searchDoor2Key = "unknown_store_search_door_2";
+    map<string, string> searchDoor2Context;
+    searchDoor2Context["conditions_met"] = "“Wow, you really know your fake doors – a real connoisseur. Here are your thirty Smeckles kind sir. I"
+                                            "don’t know I am still in business doing that - This game is full of plot holes.\”";
+
+    searchDoor2Context["searched"] = "“Hey, I know you. You’re that fake door master who cost me 30 Smeckles. Get out of here!”";
+
+    unsigned int door2Smekles = 30;
+    vector<Item> searchDoor2Items;
+
+    for(unsigned int i = 0; i < door2Smekles; ++i)
+    {
+        searchDoor2Items.push_back(Item("smeckle"));
+    }
+
+    vector<string> searchDoor2Conditions;
+
+    Action* searchDoor2 = new Search(mainChar, searchDoor2Key, room3, searchDoor2Context, searchDoor2Conditions, searchDoor2Items);
+
+    room3Actions[searchDoor2->getKey()] = searchDoor2;
+
+    // **************************************************************************************************************
+
+    // Door3
+    string searchDoor3Key = "unknown_store_search_door_3";
+    map<string, string> searchDoor3Context;
+    searchDoor3Context["conditions_not_met"] = "\“Oh boy – that’s a fake door. Better luck next time pal!\”";
+    searchDoor3Context["conditions_met"] = "\"Get out of here. I already gave you my damn smeckles!\"";
+
+    vector<Item> searchDoor3Items;
+
+    vector<string> searchDoor3Conditions = { "unknown_store_search_door_2" };
+
+    Action* searchDoor3 = new Search(mainChar, searchDoor3Key, room3, searchDoor3Context, searchDoor3Conditions, searchDoor3Items);
+
+    room3Actions[searchDoor3->getKey()] = searchDoor3;
+
+    // **************************************************************************************************************
+
+    // Door4
+    string searchDoor4Key = "unknown_store_search_door_4";
+    map<string, string> searchDoor4Context;
+    searchDoor4Context["conditions_not_met"] = "\“Oh boy – that’s a fake door. Better luck next time pal!\”";
+    searchDoor4Context["conditions_met"] = "\"Get out of here. I already gave you my damn smeckles!\"";
+
+    vector<Item> searchDoor4Items;
+
+    vector<string> searchDoor4Conditions = { "unknown_store_search_door_2" };
+
+    Action* searchDoor4 = new Search(mainChar, searchDoor4Key, room3, searchDoor4Context, searchDoor4Conditions, searchDoor4Items);
+
+    room3Actions[searchDoor4->getKey()] = searchDoor4;
+
+    // **************************************************************************************************************
+
+    // Door5
+    string searchDoor5Key = "unknown_store_search_door_5";
+    map<string, string> searchDoor5Context;
+    searchDoor5Context["conditions_not_met"] = "\“Oh boy – that’s a fake door. Better luck next time pal!\”";
+    searchDoor5Context["conditions_met"] = "\"Get out of here. I already gave you my damn smeckles!\"";
+
+    vector<Item> searchDoor5Items;
+
+    vector<string> searchDoor5Conditions = { "unknown_store_search_door_2" };
+
+    Action* searchDoor5 = new Search(mainChar, searchDoor5Key, room3, searchDoor5Context, searchDoor5Conditions, searchDoor5Items);
+
+    room3Actions[searchDoor5->getKey()] = searchDoor5;
+
+    // **************************************************************************************************************
     room3->setActions(room3Actions);
 
     rooms[room3->getKey()] = room3;

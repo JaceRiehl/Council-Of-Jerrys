@@ -19,13 +19,21 @@ bool ChangeRoom::execute(vector<string> playerActions)
     Window window;
     if(!conditionsMet(playerActions))
     {
-        window.display(context[conditionsNotMetKey], cout);
+        if(context.find(conditionsMetKey) != context.end())
+            window.display(context[conditionsNotMetKey], cout);
     }
 
     else
     {
-        window.display(context[conditionsMetKey], cout);
-        subject->exit(context[changeRoomKey]);
+        if(context.find(conditionsMetKey) != context.end())
+            window.display(context[conditionsMetKey], cout);
+        if(context.find(changeRoomKey) != context.end())
+            subject->exit(context[changeRoomKey]);
+        else
+        {
+            string errorMessage = "change_room context not set in room: " + key;
+            throw invalid_action(errorMessage.c_str());
+        }
     }
 
     return false;
