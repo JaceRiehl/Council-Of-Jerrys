@@ -10,6 +10,7 @@ using namespace std;
 int main()
 {
     PlayableCharacter* mainCharacter = new PlayableCharacter("jerry");
+    string gameOverKey;
     map<string, Level*> levels;
     FakeDataLoader levelData;
     string nextLevel = "intro";
@@ -45,8 +46,23 @@ int main()
     while(true)
     {
         if(levels.find(nextLevel) == levels.end())
+        {
+            gameOverKey = nextLevel;
             break;
+        }
         Level * currentLevel = levels[nextLevel];
         nextLevel = currentLevel->run(mainCharacter);
+    }
+
+    if(gameOverKey == "sneak_death")
+    {
+        string endOfGameMessage = "You decide to wait till nighttime and scale the castle walls to sneak-in without the guard noticing. You "
+                                    "start climbing. Everything is going great, you’ve almost cleared the wall when you suddenly lose your "
+                                    "grip and fall to the ground. You break both your legs. The guards come rushing to investigate the "
+                                    "commotion  - “Castle scalars will not be tolerated in King Jelly Bean’s land. Off with your head! ”. - "
+                                    "GAME OVER!";
+
+        Window window;
+        window.display(endOfGameMessage, cout);
     }
 }

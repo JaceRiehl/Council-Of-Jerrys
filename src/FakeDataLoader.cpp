@@ -288,14 +288,16 @@ void FakeDataLoader::LoadLevels(PlayableCharacter* mainChar, map<string, Level*>
     string room3TopMenuMessage = "What would you like to do?: ";
 
     map<char, string> room3TopMenuOutput;
-    room3TopMenuOutput['1'] = "Talk to villager";
+    room3TopMenuOutput['1'] = "Talk to Villager";
     room3TopMenuOutput['2'] = "Go to Unknown Store";
     room3TopMenuOutput['3'] = "Go to General Store";
+    room3TopMenuOutput['4'] = "Go to Castle";
 
     map<char, string> room3TopMenuInput;
     room3TopMenuInput['1'] = "talk_villager";
     room3TopMenuInput['2'] = "unknown_store";
     room3TopMenuInput['3'] = "general_store";
+    room3TopMenuInput['4'] = "castle";
 
     Menu* room3TopMenu = new Menu(menuOutput, room3TopMenuOutput, room3TopMenuInput);
 
@@ -324,6 +326,7 @@ void FakeDataLoader::LoadLevels(PlayableCharacter* mainChar, map<string, Level*>
     room3UnknownStoreMenuOutput['3'] = "Choose Door 3";
     room3UnknownStoreMenuOutput['4'] = "Choose Door 4";
     room3UnknownStoreMenuOutput['5'] = "Choose Door 5";
+    room3UnknownStoreMenuOutput['6'] = "Leave";
 
     map<char, string> room3UnknownStoreMenuInput;
     room3UnknownStoreMenuInput['1'] = "search_door_1";
@@ -331,6 +334,7 @@ void FakeDataLoader::LoadLevels(PlayableCharacter* mainChar, map<string, Level*>
     room3UnknownStoreMenuInput['3'] = "search_door_3";
     room3UnknownStoreMenuInput['4'] = "search_door_4";
     room3UnknownStoreMenuInput['5'] = "search_door_5";
+    room3UnknownStoreMenuInput['6'] = "leave";
 
     Menu* room3UnknownStoreMenu = new Menu(room3UnknownStoreMenuMessage, room3UnknownStoreMenuOutput, room3UnknownStoreMenuInput);
 
@@ -341,18 +345,35 @@ void FakeDataLoader::LoadLevels(PlayableCharacter* mainChar, map<string, Level*>
     room3GeneralStoreMenuOutput['2'] = "Go back to the village.";
     room3GeneralStoreMenuOutput['3'] = "Print inventory.";
 
-    map<char, string> room3GeneralStoreInput;
+    map<char, string> room3GeneralStoreMenuInput;
     room3GeneralStoreMenuInput['1'] = "buy_bread";
-    room3GeneralStoreMenuInput['2'] = "village";
+    room3GeneralStoreMenuInput['2'] = "leave";
     room3GeneralStoreMenuInput['3'] = "print_inventory";
 
-    Menu* room3GeneralStoreMenu = new Menu(room3GeneralStoreMenuMessage, room3GeneralStoreMenuOutput, room3GeneralStoreInput);
+    Menu* room3GeneralStoreMenu = new Menu(room3GeneralStoreMenuMessage, room3GeneralStoreMenuOutput, room3GeneralStoreMenuInput);
+
+    string room3CastleMenuMessage = "Upon arriving to the castle wall, you are confronted by two guards. \"Halt! What business do you have with King Jelly Bean?\"";
+
+    map<char, string> room3CastleOutput;
+    room3CastleOutput['1'] = "I have an invitation";
+    room3CastleOutput['2'] = "Try to sneak pass the guards.";
+    room3CastleOutput['3'] = "Ask them to let you in with an assertive tone.";
+    room3CastleOutput['4'] = "Go back to the village";
+
+    map<char, string> room3CastleInput;
+    room3CastleInput['1'] = "present_invitation";
+    room3CastleInput['2'] = "sneak";
+    room3CastleInput['3'] = "assertive";
+    room3CastleInput['4'] = "leave";
+
+    Menu* room3CastleMenu = new Menu(room3CastleMenuMessage, room3CastleOutput, room3CastleInput);
 
     map<string, Menu*> room3Menus;
     room3Menus["top"] = room3TopMenu;
     room3Menus["talk_villager"] = room3TalkMenu;
     room3Menus["unknown_store"] = room3UnknownStoreMenu;
     room3Menus["general_store"] = room3GeneralStoreMenu;
+    room3Menus["castle"] = room3CastleMenu;
 
 
     // ***********************************************************************************************************
@@ -372,19 +393,19 @@ void FakeDataLoader::LoadLevels(PlayableCharacter* mainChar, map<string, Level*>
     // ***********************************************************************************************************
     // Ignore Villager
 
-    string ignoreTalkToVillagerKey = "talk_villager_ignore";
+    string ignoreVillagerKey = "talk_villager_ignore";
 
-    vector<Item> ignoreTalkToVillagerItems;
-    vector<string> ignoreTalkToVillagerConditions;
+    vector<Item> ignoreVillagerItems;
+    vector<string> ignoreVillagerConditions;
 
-    map<string, string> ignoreTalkToVillagerContext;
+    map<string, string> ignoreVillagerContext;
 
-    ignoreTalkToVillagerContext["change_room"] = room3->getKey();
+    ignoreVillagerContext["change_room"] = room3->getKey();
 
-    Action* ignoreTalkToVillager = new ChangeRoom(mainChar, ignoreTalkToVillagerKey, room3, ignoreTalkToVillagerContext,
-                                                  ignoreTalkToVillagerConditions, ignoreTalkToVillagerItems);
+    Action* ignoreVillager = new ChangeRoom(mainChar, ignoreVillagerKey, room3, ignoreVillagerContext,
+                                                  ignoreVillagerConditions, ignoreVillagerItems);
 
-    room3Actions[ignoreTalkToVillager->getKey()] = ignoreTalkToVillager;
+    room3Actions[ignoreVillager->getKey()] = ignoreVillager;
 
     // ************************************************************************************************************
 
@@ -433,6 +454,7 @@ void FakeDataLoader::LoadLevels(PlayableCharacter* mainChar, map<string, Level*>
     map<string, string> searchDoor3Context;
     searchDoor3Context["conditions_not_met"] = "\“Oh boy – that’s a fake door. Better luck next time pal!\”";
     searchDoor3Context["conditions_met"] = "\"Get out of here. I already gave you my damn smeckles!\"";
+    searchDoor3Context["searched"] = "\"Sorry, No more food – store closed\".";
 
     vector<Item> searchDoor3Items;
 
@@ -473,6 +495,25 @@ void FakeDataLoader::LoadLevels(PlayableCharacter* mainChar, map<string, Level*>
     Action* searchDoor5 = new Search(mainChar, searchDoor5Key, room3, searchDoor5Context, searchDoor5Conditions, searchDoor5Items);
 
     room3Actions[searchDoor5->getKey()] = searchDoor5;
+    //***************************************************************************************************************
+
+    // Leave Unknown Store
+
+    string leaveUnknownStoreKey = "unknown_store_leave";
+
+    vector<Item> leaveUnknownStoreItems;
+    vector<string> leaveUnknownStoreConditions;
+
+    map<string, string> leaveUnknownStoreContext;
+
+    leaveUnknownStoreContext["change_room"] = room3->getKey();
+
+    Action* leaveUnknownStore = new ChangeRoom(mainChar, leaveUnknownStoreKey, room3, leaveUnknownStoreContext,
+                                                  leaveUnknownStoreConditions, leaveUnknownStoreItems);
+
+    room3Actions[leaveUnknownStore->getKey()] = leaveUnknownStore;
+
+    //***************************************************************************************************************
 
     // **************************************************************************************************************
 
@@ -480,8 +521,107 @@ void FakeDataLoader::LoadLevels(PlayableCharacter* mainChar, map<string, Level*>
 
     string buyBreadKey = "general_store_buy_bread";
 
+    map<string, string> buyBreadContext;
+    buyBreadContext["conditions_met"] = "“Enjoy! You know, not many people get to eat around here. I hope you really enjoy every bite of that loaf you just bought while someone else out there doesn’t.”";
+    buyBreadContext["conditions_not_met"] = "“You don’t have enough Smeckles. No Smeckles, no food.”";
+
+    vector<Item> buyBreadItems = { Item("bread") };
+    vector<string> buyBreadConditions = { "smeckle" };
+
+    Action* buyBread = new Search(mainChar, buyBreadKey, room3, buyBreadContext, buyBreadConditions, buyBreadItems);
+
+    room3Actions[buyBread->getKey()] = buyBread;
+
+    //***************************************************************************************************************
+
+    // Leave General Store
+
+
+    string leaveGeneralStoreKey = "general_store_leave";
+
+    vector<Item> leaveGeneralStoreItems;
+    vector<string> leaveGeneralStoreConditions;
+
+    map<string, string> leaveGeneralStoreContext;
+
+    leaveGeneralStoreContext["change_room"] = room3->getKey();
+
+    Action* leaveGeneralStore = new ChangeRoom(mainChar, leaveGeneralStoreKey, room3, leaveGeneralStoreContext,
+                                                  leaveGeneralStoreConditions, leaveGeneralStoreItems);
+
+    room3Actions[leaveGeneralStore->getKey()] = leaveGeneralStore;
+
+    //***************************************************************************************************************
+
+    // Invitation
+    string presentInvitationKey = "castle_present_invitation";
+
+    vector<Item> presentInvitationItems;
+    vector<string> presentInvitationConditions = {"invitation"};
+
+    map<string, string> presentInvitationContext;
+
+    presentInvitationContext["conditions_not_met"] = "Oh yeah? Well where is it? HUH? Get your ass outta here!";
+    presentInvitationContext["change_room"] = "final_room";
+
+    Action* presentInvitation = new ChangeRoom(mainChar, presentInvitationKey, room3, presentInvitationContext,
+                                                  presentInvitationConditions, presentInvitationItems);
+
+    room3Actions[presentInvitation->getKey()] = presentInvitation;
+    //***************************************************************************************************************
+
+    //Sneak
+    string sneakPastKey = "castle_sneak";
+
+    vector<Item> sneakPastItems;
+    vector<string> sneakPastConditions;
+
+    map<string, string> sneakPastContext;
+
+    sneakPastContext["change_room"] = "sneak_death";
+
+    Action* sneakPast = new ChangeRoom(mainChar, sneakPastKey, room3, sneakPastContext,
+                                                  sneakPastConditions, sneakPastItems);
+
+    room3Actions[sneakPast->getKey()] = sneakPast;
 
     // **************************************************************************************************************
+
+    // Assertive
+    string beAssertiveKey = "castle_assertive";
+
+    vector<Item> beAssertiveItems;
+    vector<string> beAssertiveConditions;
+
+    map<string, string> beAssertiveContext;
+
+    beAssertiveContext["change_room"] = "assertive_death";
+
+    Action* beAssertive = new ChangeRoom(mainChar, beAssertiveKey, room3, beAssertiveContext,
+                                                  beAssertiveConditions, beAssertiveItems);
+
+    room3Actions[beAssertive->getKey()] = beAssertive;
+
+    // *************************************************************************************************************
+
+    // Go back to village
+
+    string leaveCastleKey = "castle_leave";
+
+    vector<Item> leaveCastleItems;
+    vector<string> leaveCastleConditions;
+
+    map<string, string> leaveCastleContext;
+
+    leaveCastleContext["change_room"] = room3->getKey();
+
+    Action* leaveCastle = new ChangeRoom(mainChar, leaveCastleKey, room3, leaveCastleContext,
+                                                  leaveCastleConditions, leaveCastleItems);
+
+    room3Actions[leaveCastle->getKey()] = leaveCastle;
+
+    // *************************************************************************************************************
+
     room3->setActions(room3Actions);
 
     rooms[room3->getKey()] = room3;
