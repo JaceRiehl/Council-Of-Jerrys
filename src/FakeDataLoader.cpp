@@ -290,12 +290,12 @@ void FakeDataLoader::LoadLevels(PlayableCharacter* mainChar, map<string, Level*>
     map<char, string> room3TopMenuOutput;
     room3TopMenuOutput['1'] = "Talk to villager";
     room3TopMenuOutput['2'] = "Go to Unknown Store";
-    room3TopMenuOutput['3'] = "Move carpet";
+    room3TopMenuOutput['3'] = "Go to General Store";
 
     map<char, string> room3TopMenuInput;
     room3TopMenuInput['1'] = "talk_villager";
     room3TopMenuInput['2'] = "unknown_store";
-    room3TopMenuInput['3'] = "change_room_under_garage";
+    room3TopMenuInput['3'] = "general_store";
 
     Menu* room3TopMenu = new Menu(menuOutput, room3TopMenuOutput, room3TopMenuInput);
 
@@ -334,10 +334,25 @@ void FakeDataLoader::LoadLevels(PlayableCharacter* mainChar, map<string, Level*>
 
     Menu* room3UnknownStoreMenu = new Menu(room3UnknownStoreMenuMessage, room3UnknownStoreMenuOutput, room3UnknownStoreMenuInput);
 
+    string room3GeneralStoreMenuMessage = "\"Welcome to the General store what would you like to buy? We have a loaf of bread for 30 Smeckles. That’s it.\"";
+
+    map<char, string> room3GeneralStoreMenuOutput;
+    room3GeneralStoreMenuOutput['1'] = "Buy a loaf of bread.";
+    room3GeneralStoreMenuOutput['2'] = "Go back to the village.";
+    room3GeneralStoreMenuOutput['3'] = "Print inventory.";
+
+    map<char, string> room3GeneralStoreInput;
+    room3GeneralStoreMenuInput['1'] = "buy_bread";
+    room3GeneralStoreMenuInput['2'] = "village";
+    room3GeneralStoreMenuInput['3'] = "print_inventory";
+
+    Menu* room3GeneralStoreMenu = new Menu(room3GeneralStoreMenuMessage, room3GeneralStoreMenuOutput, room3GeneralStoreInput);
+
     map<string, Menu*> room3Menus;
     room3Menus["top"] = room3TopMenu;
     room3Menus["talk_villager"] = room3TalkMenu;
     room3Menus["unknown_store"] = room3UnknownStoreMenu;
+    room3Menus["general_store"] = room3GeneralStoreMenu;
 
 
     // ***********************************************************************************************************
@@ -458,6 +473,13 @@ void FakeDataLoader::LoadLevels(PlayableCharacter* mainChar, map<string, Level*>
     Action* searchDoor5 = new Search(mainChar, searchDoor5Key, room3, searchDoor5Context, searchDoor5Conditions, searchDoor5Items);
 
     room3Actions[searchDoor5->getKey()] = searchDoor5;
+
+    // **************************************************************************************************************
+
+    // Buy Bread
+
+    string buyBreadKey = "general_store_buy_bread";
+
 
     // **************************************************************************************************************
     room3->setActions(room3Actions);
