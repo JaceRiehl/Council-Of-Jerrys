@@ -83,6 +83,9 @@ private:
     *Variable returned by run
     */
     string nextRoom;
+
+    string currentMenuKey;
+    string lastMenuKey;
     /**
     *Declaring the possible states of the room
     */

@@ -7,6 +7,7 @@
 #include "Search.h"
 #include "ChangeRoom.h"
 #include "Talk.h"
+#include "PrintInventory.h"
 
 class FakeDataLoader
 {
