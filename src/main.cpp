@@ -10,6 +10,7 @@ using namespace std;
 int main()
 {
     PlayableCharacter* mainCharacter = new PlayableCharacter("jerry");
+    string gameOverKey;
     map<string, Level*> levels;
     FakeDataLoader levelData;
     string nextLevel = "intro";
@@ -45,8 +46,53 @@ int main()
     while(true)
     {
         if(levels.find(nextLevel) == levels.end())
+        {
+            gameOverKey = nextLevel;
             break;
+        }
         Level * currentLevel = levels[nextLevel];
         nextLevel = currentLevel->run(mainCharacter);
     }
+
+    string endOfGameMessage;
+
+    if(gameOverKey == "sneak_death")
+    {
+        endOfGameMessage = "You decide to wait till nighttime and scale the castle walls to sneak-in without the guard noticing. You "
+                                    "start climbing. Everything is going great, you’ve almost cleared the wall when you suddenly lose your "
+                                    "grip and fall to the ground. You break both your legs. The guards come rushing to investigate the "
+                                    "commotion  - “Castle scalars will not be tolerated in King Jelly Bean’s land. Off with your head! \". - "
+                                    "GAME OVER!";
+    }
+
+    else if(gameOverKey == "death_by_snowball")
+    {
+        endOfGameMessage ="\"You saved my life 'Jerry'. Your actions will not be forgotten. However, no humans can be allowe d"
+                            "to live, and your species must be extinct. Good bye Jerry.\" - GAME OVER";
+    }
+
+    else if(gameOverKey == "assertive_death")
+    {
+        endOfGameMessage = "\"Rudeness will not be tolerated in king Jelly Bean’s land. Off with your head!\" - GAME OVER";
+    }
+
+    else if(gameOverKey == "failed_assassination")
+    {
+        endOfGameMessage = "\"Your reign is over King Jelly Bean – hand the crown over or die fighting for it! I will not let these "
+                            "villagers I’ve just met die for nothing at your hand.”. The king snaps his fingers and ten guards rush to "
+                            "the throne room. \"Bravery will not be tolerated in King Jelly Bean’s land. Off with your head!\" - GAME OVER";
+    }
+
+    else if(gameOverKey == "king_jerry")
+    {
+        endOfGameMessage = "\"Your reign is over King Jelly Bean – hand the crown over or I will expose you for tax evasion! I will "
+                            "not let these villagers I’ve just met die for nothing at your hand.\" You spoke with a new found confidence."
+                            "\"Who are you?! How have you heard of this information I’ve loudly spoken about five minutes ago?!\""
+                            "\"What will you do of me? The Legion of Kings cannot find of this treason – I will be eaten alive! Have "
+                            "mercy for an old Jellybean.\""
+                            "\"The name’s Jerry. King Jerry. Now leave this land and never return.\""
+                            "\"As you wish... my King.” the jellybean grudgingly spoke.\""
+                            "And so begins the reign of... KING... JERRY!";
+    }
+    splashScreen.display(endOfGameMessage, cout);
 }

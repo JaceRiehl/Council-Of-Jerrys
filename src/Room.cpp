@@ -81,14 +81,20 @@ Room::Room(string roomKey, string roomIntro, map<string, NPC*> roomCharacters, m
 
         state = running;
 
+        currentMenuKey = "top";
+        lastMenuKey = "none";
         do
         {
             choice = "";
-            Menu* currentMenu = menus["top"];
+            Menu* currentMenu = menus[currentMenuKey];
 
             while(true)
             {
-                currentMenu->print();
+                if(lastMenuKey != currentMenuKey || currentMenuKey == "top")
+                {
+                    currentMenu->print();
+                    lastMenuKey = currentMenuKey;
+                }
                 char input = Inputting.getChar(cin);
 
                 if(!currentMenu->validInput(input))
@@ -103,13 +109,14 @@ Room::Room(string roomKey, string roomIntro, map<string, NPC*> roomCharacters, m
                     }
 
 
-                choice += currentMenu->input[input];
+                choice = currentMenu->input[input];
 
                 if(menus.find(currentMenu->input[input]) == menus.end())
                     break;
 
                 choice += "_";
-                currentMenu = menus[currentMenu->input[input]];
+                currentMenuKey = currentMenu->input[input];
+                currentMenu = menus[currentMenuKey];
             }
 
             try
@@ -148,6 +155,12 @@ const Inventory* Room::getCharacterInv()
 
 void Room::exit(string destination)
 {
+    if(destination == key)
+    {
+        currentMenuKey = "top";
+        return;
+    }
+
     nextRoom = destination;
     state = done;
 }
