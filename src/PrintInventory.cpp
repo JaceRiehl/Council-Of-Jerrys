@@ -1,0 +1,26 @@
+#include "PrintInventory.h"
+
+#include <iostream>
+
+PrintInventory::PrintInventory(Character* actionOwner, string key, vector<string> actionConditions, vector<Item> actionItems) :
+    Action(actionOwner, key, actionConditions, actionItems) {}
+
+bool PrintInventory::execute() {}
+
+bool PrintInventory::execute(vector<string> playerActions)
+{
+    const Inventory* inventory = owner->getInventory();
+
+    if(inventory)
+    {
+        // TODO: Make printItems use window!
+        std::cout << std::endl;
+        inventory->printItems();
+        std::cout << std::endl;
+    }
+    else
+    {
+        Window window;
+        window.display("Empty",cout);
+    }
+}
