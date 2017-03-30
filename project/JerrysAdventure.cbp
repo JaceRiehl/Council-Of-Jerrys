@@ -63,6 +63,7 @@
 		<Unit filename="../include/Menu.h" />
 		<Unit filename="../include/NPC.h" />
 		<Unit filename="../include/PlayableCharacter.h" />
+		<Unit filename="../include/PrintInventory.h" />
 		<Unit filename="../include/PrintList.h" />
 		<Unit filename="../include/Room.h" />
 		<Unit filename="../include/RoomAction.h" />
@@ -91,6 +92,7 @@
 		<Unit filename="../src/Menu.cpp" />
 		<Unit filename="../src/NPC.cpp" />
 		<Unit filename="../src/PlayableCharacter.cpp" />
+		<Unit filename="../src/PrintInventory.cpp" />
 		<Unit filename="../src/PrintList.cpp" />
 		<Unit filename="../src/Room.cpp" />
 		<Unit filename="../src/RoomAction.cpp" />
