@@ -21,14 +21,14 @@ void TalkTest::testExecute()
     Item* item = new Item("meeseek_box");
 
     map<string, string> dialog;
-    dialog["talk"] = "FUCK YOU MORTY!";
+    dialog["conditions_met"] = "FUCK YOU MORTY!";
 
     subject->setDialog(dialog);
 
     vector<string> conditions;
     vector<Item> items = { *item };
 
-    Talk* talk2 = new Talk(owner, "talk_morty", subject, conditions, items);
+    Talk* talk2 = new Talk(owner, "talk", subject, conditions, items);
 
     vector<string> playerActions;
 
