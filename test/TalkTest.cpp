@@ -7,7 +7,7 @@ void TalkTest::testConstructor()
     Character* owner = new Character("Rick");
     NPC* subject = new NPC("Morty");
 
-    Talk* talk = new Talk(owner, "talk_morty", subject);
+    Talk* talk = new Talk(owner, "talk", subject);
 
     CPPUNIT_ASSERT(owner == talk->getOwner());
 
@@ -21,7 +21,7 @@ void TalkTest::testExecute()
     Item* item = new Item("meeseek_box");
 
     map<string, string> dialog;
-    dialog["conditions_met"] = "FUCK YOU MORTY!";
+    dialog["talk"] = "FUCK YOU MORTY!";
 
     subject->setDialog(dialog);
 
@@ -50,10 +50,11 @@ void TalkTest::testExecuteException()
 
     vector<string> conditions;
     vector<Item> items = { *item };
+    vector<string> playerActions { "sex_bot" };
 
-    Talk* talk2 = new Talk(owner, "talk_null", subject, conditions, items);
+    Talk* talk2 = new Talk(owner, "talk", subject, conditions, items);
 
-    CPPUNIT_ASSERT_THROW(talk2->execute(), invalid_action);
+    CPPUNIT_ASSERT_THROW(talk2->execute(playerActions), invalid_action);
 
     delete talk2;
 }
@@ -70,7 +71,7 @@ void TalkTest::testPlayerActionConditions()
     vector<string> playerActions { "sex_bot" };
 
     map<string, string> dialog;
-    dialog["talk"] = "FUCK YOU MORTY!";
+    dialog["talk"] = "FUCK YOU JERRY!";
 
     subject->setDialog(dialog);
 

@@ -184,7 +184,8 @@ void FakeDataLoader::LoadLevels(PlayableCharacter* mainChar, map<string, Level*>
     //talk to snowball
     string snowballTalkKey = "talk_snowball";
     map<string,string> snowballDialog;
-    snowballDialog["conditions_met"] = "Perhaps the key could be found somewhere around this room. Your cooperation in this matter is greatly appreciated.";
+    snowballDialog["talk"] = "Perhaps the key could be found somewhere around this room. Your cooperation in this matter is greatly appreciated.";
+    snowballDialog["talked"] = "I told you Jerry, the key must be somewhere in this room. Please located it.";
 
     Snowball->setDialog(snowballDialog);
 
@@ -303,9 +304,9 @@ void FakeDataLoader::LoadLevels(PlayableCharacter* mainChar, map<string, Level*>
     map<string, NPC*> room3Characters;
     NPC* villager = new NPC("villager");
     map<string, string> villagerDialog;
-    villagerDialog["conditions_met"] = "\“Oh bless you kind sir. I do not have much to offer, but please accept this invitation"
+    villagerDialog["talk"] = "\“Oh bless you kind sir. I do not have much to offer, but please accept this invitation"
                                         "to the king castle for the ball.\”";
-    villagerDialog["conditions_not_met"] = "\“Well thanks for nothing. Wow, what a tease.\”";
+    villagerDialog["rejected"] = "\“Well thanks for nothing. Wow, what a tease.\”";
     villagerDialog["talked"] = "“Your generosity is greatly appreciated - kind sir. If only we could have a king as generous as you.”";
 
     villager->setDialog(villagerDialog);

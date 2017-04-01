@@ -4,6 +4,7 @@
 #include "FakeDataLoader.h"
 #include "Window.h"
 #include "PlayableCharacter.h"
+#include "XMLSaveData.h"
 
 #include <cppunit/CompilerOutputter.h>
 #include <cppunit/extensions/TestFactoryRegistry.h>
@@ -55,6 +56,8 @@ int main()
                 gameOverKey = nextLevel;
                 break;
             }
+
+            XMLSaveData::Data.level = nextLevel.c_str();
             Level * currentLevel = levels[nextLevel];
             nextLevel = currentLevel->run(mainCharacter);
         }

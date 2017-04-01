@@ -19,6 +19,7 @@ string Level::run(PlayableCharacter* player)
         if(rooms.find(nextRoom) == rooms.end())
             break;
         Room* currentRoom = rooms[nextRoom];
+        XMLSaveData::Data.room = nextRoom.c_str();
         nextRoom = currentRoom->run(player);
     }
 

@@ -41,8 +41,8 @@ class Talk : public CharacterAction
         bool execute(vector<string>);
 
     private:
-        const string conditionsMetKey = "conditions_met";
-        const string conditionsNotMetKey = "conditions_not_met";
+        const string conditionsMetKey = "talk";
+        const string conditionsNotMetKey = "rejected";
         const string talkedKey = "talked";
 };
 
