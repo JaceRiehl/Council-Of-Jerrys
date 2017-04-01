@@ -22,6 +22,5 @@ public:
     void tearDown();
 
     void saveDataTest();
-    SaveData data;
 };
 #endif // XMLSAVEDATATEST_H

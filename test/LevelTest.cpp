@@ -37,10 +37,6 @@ void LevelTest::testRun()
     rooms["town"] = room1;
     rooms["bar"] = room2;
 
-    Window window;
-
-    window.display("*** THIS IS THE LEVEL TEST!! *** ", cout);
-
     Level* level = new Level(levelName, jerry, rooms, openingLevelMessage);
 
     string output = level->run(jerry);

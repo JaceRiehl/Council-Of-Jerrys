@@ -5,6 +5,7 @@
 #include "IAgent.h"
 #include "Exceptions.h"
 #include "Action.h"
+#include "XMLSaveData.h"
 #include <map>
 #include <string>
 #include <cstring>

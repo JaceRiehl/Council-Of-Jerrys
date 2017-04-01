@@ -28,7 +28,10 @@ void PlayableCharacter::takeAction(string action)
     }
 
     if(actions[action]->execute(actionsTaken))
+    {
         actionsTaken.push_back(action);
+        XMLSaveData::Data.playerActions = actionsTaken;
+    }
 }
 
 void PlayableCharacter::addAction(string key, Action* value)

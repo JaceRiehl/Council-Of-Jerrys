@@ -14,11 +14,7 @@ Talk::~Talk()
 
 bool Talk::execute()
 {
-    if(subject == nullptr)
-        throw invalid_action("** Subject has not been set **");
 
-    Window window;
-    window.display(subject->getDialog(conditionsMetKey), cout);
 
     return true;
 }
