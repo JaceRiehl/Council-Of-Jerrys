@@ -4,6 +4,7 @@
 #include <Item.h>
 #include <string>
 #include <vector>
+#include "XMLSaveData.h"
 
 /**
     @file Inventory.h
@@ -105,6 +106,8 @@ class Inventory
         bool operator!=(Inventory inv);
 
         unsigned int getSize() const;
+
+        void saveItems();
 
     private:
         unsigned int numberOfItems;

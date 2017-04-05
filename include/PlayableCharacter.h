@@ -82,6 +82,8 @@ class PlayableCharacter : public Character, IAgent
 
         void addAction(map<string, Action*>);
 
+        void setActionsTaken(vector<string>);
+
     private:
         map<string, Action*> actions;
         vector<string> actionsTaken;

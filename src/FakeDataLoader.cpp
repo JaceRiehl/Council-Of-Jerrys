@@ -1,5 +1,17 @@
 #include "FakeDataLoader.h"
 
+FakeDataLoader* FakeDataLoader::_instance = nullptr;
+
+FakeDataLoader::FakeDataLoader() {}
+
+FakeDataLoader* FakeDataLoader::Instance()
+{
+    if(!_instance)
+        _instance = new FakeDataLoader();
+
+    return _instance;
+}
+
 void FakeDataLoader::LoadLevels(PlayableCharacter* mainChar, map<string, Level*> &levels)
 {
     map<string, Room*> rooms;

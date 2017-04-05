@@ -12,7 +12,12 @@
 class FakeDataLoader
 {
     public:
+        static FakeDataLoader* Instance();
         void LoadLevels(PlayableCharacter*, map<string, Level*>&);
+    protected:
+        FakeDataLoader();
+    private:
+        static FakeDataLoader* _instance;
 };
 
 #endif // FAKEDATALOADER_H

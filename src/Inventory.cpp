@@ -35,10 +35,12 @@ void Inventory::addItem(Item item)
         if (items[i].getName() == item.getName())
        {
             items.insert(items.begin() + i, item);
+            saveItems();
             numberOfItems++;
             return;
        }
     }
+    saveItems();
     items.push_back(item);
     sort(items.begin(), items.end());
     numberOfItems++;
@@ -51,6 +53,7 @@ void Inventory::removeItem(Item item)
         if (items[i].getName() == item.getName())
         {
               items.erase(items.begin()+i);
+              saveItems();
               numberOfItems--;
               return;
         }
@@ -172,4 +175,15 @@ bool Inventory::operator!=(Inventory inv)
 unsigned int Inventory::getSize() const
 {
     return numberOfItems;
+}
+
+void Inventory::saveItems()
+{
+    vector<string> itemNames;
+    for(const auto& itm : items)
+    {
+        itemNames.push_back(itm.getName());
+    }
+
+    XMLSaveData::Data.inventoryItems = itemNames;
 }

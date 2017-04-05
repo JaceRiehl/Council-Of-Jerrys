@@ -1,0 +1,12 @@
+<SAVEDATA>
+    <INVENTORY>
+        <KEY>screwdriver</KEY>
+        <KEY>soldering_kit</KEY>
+    </INVENTORY>
+    <LEVEL>intro</LEVEL>
+    <ROOM>under_garage</ROOM>
+    <ACTIONS>
+        <KEY>search_workbench</KEY>
+        <KEY>print_inventory</KEY>
+    </ACTIONS>
+</SAVEDATA>

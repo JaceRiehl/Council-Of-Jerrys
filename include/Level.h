@@ -53,8 +53,7 @@ public:
      */
      const string getKey() const;
 
-
-
+    void setStartingRoom(string roomKey) { nextRoom = roomKey; }
 private:
 
     /**
