@@ -28,7 +28,7 @@ bool XMLSaveData::saveData()
         XMLElement * rElement = saveFile.NewElement("ROOM");
         rElement->SetText(Data.room);
         pRoot->InsertEndChild(rElement);
-        XMLElement * aElement = saveFile.NewElement("PLAYER_ACTIONS");
+        XMLElement * aElement = saveFile.NewElement("ACTIONS");
         for(const auto& str : Data.playerActions)
         {
             XMLElement * p2ListElement = saveFile.NewElement("KEY");

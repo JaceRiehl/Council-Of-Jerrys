@@ -46,3 +46,8 @@ void PlayableCharacter::addAction(map<string, Action*> actionsToAdd)
         actions[kv.first] = kv.second;
     }
 }
+
+void PlayableCharacter::setActionsTaken(vector<string> vActions)
+{
+    actionsTaken = vActions;
+}

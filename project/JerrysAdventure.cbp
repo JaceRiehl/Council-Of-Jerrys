@@ -56,6 +56,7 @@
 		<Unit filename="../include/CouncilXMLParser.h" />
 		<Unit filename="../include/Exceptions.h" />
 		<Unit filename="../include/FakeDataLoader.h" />
+		<Unit filename="../include/GameRunner.h" />
 		<Unit filename="../include/IAgent.h" />
 		<Unit filename="../include/Inventory.h" />
 		<Unit filename="../include/Item.h" />
