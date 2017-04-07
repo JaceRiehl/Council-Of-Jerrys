@@ -85,6 +85,7 @@ void TextBox::assignText(string body)
                     else if(body[s] == ' ')
                         lastSpace = s;
                 }
+
         for(int j = 0; j < COLUMN; j++)
         {
             if(j == 0 && body[counter] == ' ')
