@@ -125,7 +125,7 @@ void FakeDataLoader::LoadLevels(PlayableCharacter* mainChar, map<string, Level*>
 
     //room 2 **********************************************************************
     string room2Key = "under_garage";
-    string room2Intro = "You pull the rope attached to the trap door and lift it. A stairway is unveiled, and a set of straight tube halogen lights are engaged in series – lighting your way down. You decide you're brave today and make your way downstairs. A quick inspection of the room reveals a workbench with various common tools, a large box covered with a blanket, a lab coat hanging on a hook and a safe.";
+    string room2Intro = "You pull the rope attached to the trap door and lift it. A stairway is unveiled, and a set of straight tube halogen lights are engaged in series - lighting your way down. You decide you're brave today and make your way downstairs. A quick inspection of the room reveals a workbench with various common tools, a large box covered with a blanket, a lab coat hanging on a hook and a safe.";
     map<string, NPC*> room2Characters;
     NPC* Snowball = new NPC("snowball");
 
@@ -162,11 +162,11 @@ void FakeDataLoader::LoadLevels(PlayableCharacter* mainChar, map<string, Level*>
 
 
     string subMenuText = "You remove the blanket off the box and it reveals a kennel with a cute fluffy white dog inside. \'What "
-                        "kind of human being would leave their dog behind?\’ you think to yourself. You decide animal control "
+                        "kind of human being would leave their dog behind?\' you think to yourself. You decide animal control "
                         "would probably be the best people to handle this situation, so you pick up your phone and start dialing "
-                        "when suddenly a voice comes from what seems to be the dog collar - \“Greetings fellow human. My "
-                        "name is \‘Snowballs\’ I have been locked in this cage and forgotten by my owner. Would you be so kind "
-                        "as to liberate me?\”";
+                        "when suddenly a voice comes from what seems to be the dog collar  \"Greetings fellow human. My "
+                        "name is \'Snowballs\' I have been locked in this cage and forgotten by my owner. Would you be so kind "
+                        "as to liberate me?\"";
 
 
     Menu* topMenu2 = new Menu(menuOutput, room2TopMenuOutput, room2TopMenuInput);
@@ -239,7 +239,7 @@ void FakeDataLoader::LoadLevels(PlayableCharacter* mainChar, map<string, Level*>
     //workbench
     string workbenchSearchKey = "search_workbench";
     map<string,string> workbenchSearchContext;
-    workbenchSearchContext["conditions_met"] = "Just your basic small electronics tool set: an arrangement of screwdrivers, a soldering kit and a sledgehammer. Well, they’re yours now, better add these to your inventory!";
+    workbenchSearchContext["conditions_met"] = "Just your basic small electronics tool set: an arrangement of screwdrivers, a soldering kit and a sledgehammer. Well, they're yours now, better add these to your inventory!";
 
     workbenchSearchContext["searched"] = "There doesn't seem to be anything here.";
 
@@ -270,7 +270,7 @@ void FakeDataLoader::LoadLevels(PlayableCharacter* mainChar, map<string, Level*>
     //open safe leave room 2
     string changeRoomSafeKey = "open_safe";
     map<string,string> changeRoomSafeContext;
-    changeRoomSafeContext["conditions_met"] = "You hear a 'click' - You've cracked the code! You proceed to turn the safe's handle and pull the heavy door outwards - revealing its contents. Inside is nothing else other than what looks like a futuristic toy gun. You're slightly disappointed, but realize the gun would make a great toy for your nephew. Better check if it still works. You aim the gun at the cement wall in front of you and with your best Schwarzenegger accent, you deliver your totally original line - \"Hasta la vista, baby\". You press the trigger. A large portal opens up on the wall. Startled, you drop the gun and take a step back which causes you to stumble on the kennel behind you, flipping it over and making the kennel's bottom floor come loose – liberating Snowballs. The dog slowly approaches you with a menacing look on its face. You slowly back away while suddenly – you find yourself in a medieval town – No portal. No dog. No garage. You start inspecting your surroundings – to each of your sides seems to be a variety of buildings; each of them decorated with their own storefront sign – There's a store which you're not sure what is being sold, another store labeled 'general store' and a castle can be seen far in the distance. People are coming and going.";
+    changeRoomSafeContext["conditions_met"] = "You hear a \'click\' - You've cracked the code! You proceed to turn the safe's handle and pull the heavy door outwards - revealing its contents. Inside is nothing else other than what looks like a futuristic toy gun. You're slightly disappointed, but realize the gun would make a great toy for your nephew. Better check if it still works. You aim the gun at the cement wall in front of you and with your best Schwarzenegger accent, you deliver your totally original line - \"Hasta la vista, baby\". You press the trigger. A large portal opens up on the wall. Startled, you drop the gun and take a step back which causes you to stumble on the kennel behind you, flipping it over and making the kennel's bottom floor come loose - liberating Snowballs. The dog slowly approaches you with a menacing look on its face. You slowly back away while suddenly - you find yourself in a medieval town - No portal. No dog. No garage. You start inspecting your surroundings - to each of your sides seems to be a variety of buildings; each of them decorated with their own storefront sign - There's a store which you're not sure what is being sold, another store labeled \'general store\' and a castle can be seen far in the distance. People are coming and going.";
 
     changeRoomSafeContext["conditions_not_met"] = "The door still seems stuck and won't open";
 
@@ -294,19 +294,19 @@ void FakeDataLoader::LoadLevels(PlayableCharacter* mainChar, map<string, Level*>
     string room3Intro = "You hear a 'click' - You've cracked the code! You proceed to turn the handle on the safe and open the "
                         "safe's door. Inside is what seems like a futuristic toy gun. You think this would make a great toy for "
                         "your nephew. Better check if it still works. You aim the gun at the cement wall in front of you and with "
-                        "stumble on the kennel behind you, flipping it over and making the bottom floor come apart – liberating "
+                        "stumble on the kennel behind you, flipping it over and making the bottom floor come apart - liberating "
                         "Snowballs. The dog slowly approaches you with a menacing look on its face. You slowly back away "
-                        "while suddenly – you find yourself in a medieval town – No portal. No dog. No garage. You start"
-                        "inspecting your surroundings – to each of your sides seems to be a variety of buildings; each of them"
-                        "decorated with their own storefront sign – There's a store which you're not sure what is being sold,"
+                        "while suddenly - you find yourself in a medieval town - No portal. No dog. No garage. You start"
+                        "inspecting your surroundings - to each of your sides seems to be a variety of buildings; each of them"
+                        "decorated with their own storefront sign - There's a store which you're not sure what is being sold,"
                         "another store labeled 'general store' and a castle can be seen far in the distance. People are coming and going.";
     map<string, NPC*> room3Characters;
     NPC* villager = new NPC("villager");
     map<string, string> villagerDialog;
-    villagerDialog["conditions_met"] = "\“Oh bless you kind sir. I do not have much to offer, but please accept this invitation"
-                                        "to the king castle for the ball.\”";
-    villagerDialog["conditions_not_met"] = "\“Well thanks for nothing. Wow, what a tease.\”";
-    villagerDialog["talked"] = "“Your generosity is greatly appreciated - kind sir. If only we could have a king as generous as you.”";
+    villagerDialog["conditions_met"] = "\"Oh bless you kind sir. I do not have much to offer, but please accept this invitation"
+                                        "to the king castle for the ball.\"";
+    villagerDialog["conditions_not_met"] = "\"Well thanks for nothing. Wow, what a tease.\"";
+    villagerDialog["talked"] = "\"Your generosity is greatly appreciated - kind sir. If only we could have a king as generous as you.\"";
 
     villager->setDialog(villagerDialog);
 
@@ -331,9 +331,9 @@ void FakeDataLoader::LoadLevels(PlayableCharacter* mainChar, map<string, Level*>
 
     Menu* room3TopMenu = new Menu(menuOutput, room3TopMenuOutput, room3TopMenuInput);
 
-    string room3TalkMenuMessage =   "\"Oh, good day kind sir. I can tell by the clothes you’re wearing that you are not from here. Want my "
-                                    "advice – turn back and return to where you’ve come from. King Jelly Bean is using all of the food "
-                                    "supplies and we’re all slowly dying. But before you leave, would you have any food to spare?\"";
+    string room3TalkMenuMessage =   "\"Oh, good day kind sir. I can tell by the clothes you're wearing that you are not from here. Want my "
+                                    "advice - turn back and return to where you've come from. King Jelly Bean is using all of the food "
+                                    "supplies and we're all slowly dying. But before you leave, would you have any food to spare?\"";
 
     map<char, string> room3TalkMenuOutput;
     room3TalkMenuOutput['1'] = "Give the villager some food.";
@@ -347,10 +347,10 @@ void FakeDataLoader::LoadLevels(PlayableCharacter* mainChar, map<string, Level*>
 
     Menu* room3TalkMenu = new Menu(room3TalkMenuMessage, room3TalkMenuOutput, room3TalkMenuInput);
 
-    string room3UnknownStoreMenuMessage =    "“Hey, are you tired of real doors, cluttering up your house, where you open 'em, and they actually go"
-                                            "somewhere? And you go in another room? Well welcome to \"Real Fake Doors\"! That's us. We’ve filled"
-                                            "a whole room with them. Tell you what, if you can find the one real door in this store, I’ll give you 30"
-                                            "Smeckles.\"";
+    string room3UnknownStoreMenuMessage =    "\"Hey, are you tired of real doors, cluttering up your house, where you open 'em, and they actually go"
+                                            " somewhere? And you go in another room? Well welcome to \"Real Fake Doors\"! That's us. We've filled"
+                                            "a whole room with them. Tell you what, if you can find the one real door in this store, I'll give you 30"
+                                            " Smeckles.\"";
 
     map<char, string> room3UnknownStoreMenuOutput;
     room3UnknownStoreMenuOutput['1'] = "Choose Door 1";
@@ -372,7 +372,7 @@ void FakeDataLoader::LoadLevels(PlayableCharacter* mainChar, map<string, Level*>
 
     Menu* room3UnknownStoreMenu = new Menu(room3UnknownStoreMenuMessage, room3UnknownStoreMenuOutput, room3UnknownStoreMenuInput);
 
-    string room3GeneralStoreMenuMessage = "\"Welcome to the General store what would you like to buy? We have a loaf of bread for 30 Smeckles. That’s it.\"";
+    string room3GeneralStoreMenuMessage = "\"Welcome to the General store what would you like to buy? We have a loaf of bread for 30 Smeckles. That's it.\"";
 
     map<char, string> room3GeneralStoreMenuOutput;
     room3GeneralStoreMenuOutput['1'] = "Buy a loaf of bread.";
@@ -461,7 +461,7 @@ void FakeDataLoader::LoadLevels(PlayableCharacter* mainChar, map<string, Level*>
     // Door1
     string searchDoor1Key = "search_door_1";
     map<string, string> searchDoor1Context;
-    searchDoor1Context["conditions_not_met"] = "\“Oh boy – that’s a fake door. Better luck next time pal!\”";
+    searchDoor1Context["conditions_not_met"] = "\"Oh boy - that's a fake door. Better luck next time pal!\"";
     searchDoor1Context["conditions_met"] = "\"Get out of here. I already gave you my damn smeckles!\"";
 
     vector<Item> searchDoor1Items;
@@ -477,8 +477,8 @@ void FakeDataLoader::LoadLevels(PlayableCharacter* mainChar, map<string, Level*>
     // Door2
     string searchDoor2Key = "search_door_2";
     map<string, string> searchDoor2Context;
-    searchDoor2Context["conditions_met"] = "“Wow, you really know your fake doors – a real connoisseur. Here are your thirty Smeckles kind sir. I"
-                                            "don’t know I am still in business doing that - This game is full of plot holes.\”";
+    searchDoor2Context["conditions_met"] = "\"Wow, you really know your fake doors - a real connoisseur. Here are your thirty Smeckles kind sir. I"
+                                            " don't know I am still in business doing that - This game is full of plot holes.\"";
 
     searchDoor2Context["searched"] = "“Hey, I know you. You’re that fake door master who cost me 30 Smeckles. Get out of here!”";
 
@@ -501,9 +501,9 @@ void FakeDataLoader::LoadLevels(PlayableCharacter* mainChar, map<string, Level*>
     // Door3
     string searchDoor3Key = "search_door_3";
     map<string, string> searchDoor3Context;
-    searchDoor3Context["conditions_not_met"] = "\“Oh boy – that’s a fake door. Better luck next time pal!\”";
+    searchDoor3Context["conditions_not_met"] = "\“Oh boy - that's a fake door. Better luck next time pal!\”";
     searchDoor3Context["conditions_met"] = "\"Get out of here. I already gave you my damn smeckles!\"";
-    searchDoor3Context["searched"] = "\"Sorry, No more food – store closed\".";
+    searchDoor3Context["searched"] = "\"Sorry, No more food - store closed\".";
 
     vector<Item> searchDoor3Items;
 
@@ -518,7 +518,7 @@ void FakeDataLoader::LoadLevels(PlayableCharacter* mainChar, map<string, Level*>
     // Door4
     string searchDoor4Key = "search_door_4";
     map<string, string> searchDoor4Context;
-    searchDoor4Context["conditions_not_met"] = "\“Oh boy – that’s a fake door. Better luck next time pal!\”";
+    searchDoor4Context["conditions_not_met"] = "\“Oh boy - that's a fake door. Better luck next time pal!\”";
     searchDoor4Context["conditions_met"] = "\"Get out of here. I already gave you my damn smeckles!\"";
 
     vector<Item> searchDoor4Items;
@@ -534,7 +534,7 @@ void FakeDataLoader::LoadLevels(PlayableCharacter* mainChar, map<string, Level*>
     // Door5
     string searchDoor5Key = "search_door_5";
     map<string, string> searchDoor5Context;
-    searchDoor5Context["conditions_not_met"] = "\“Oh boy – that’s a fake door. Better luck next time pal!\”";
+    searchDoor5Context["conditions_not_met"] = "\“Oh boy - that's a fake door. Better luck next time pal!\”";
     searchDoor5Context["conditions_met"] = "\"Get out of here. I already gave you my damn smeckles!\"";
 
     vector<Item> searchDoor5Items;
@@ -571,8 +571,8 @@ void FakeDataLoader::LoadLevels(PlayableCharacter* mainChar, map<string, Level*>
     string buyBreadKey = "buy_bread";
 
     map<string, string> buyBreadContext;
-    buyBreadContext["conditions_met"] = "“Enjoy! You know, not many people get to eat around here. I hope you really enjoy every bite of that loaf you just bought while someone else out there doesn’t.”";
-    buyBreadContext["conditions_not_met"] = "“You don’t have enough Smeckles. No Smeckles, no food.”";
+    buyBreadContext["conditions_met"] = "\"Enjoy! You know, not many people get to eat around here. I hope you really enjoy every bite of that loaf you just bought while someone else out there doesn't.\"";
+    buyBreadContext["conditions_not_met"] = "\"You don't have enough Smeckles. No Smeckles, no food.\"";
 
     vector<Item> buyBreadItems = { Item("bread") };
     vector<string> buyBreadConditions = { "smeckle" };
@@ -681,14 +681,14 @@ void FakeDataLoader::LoadLevels(PlayableCharacter* mainChar, map<string, Level*>
     // ***************************************** ROOM 4 ************************************************************
     string room4Key = "castle";
     string room4Intro = "After entering the castle, an urge to pee overtakes you. In a panic, you make haste to the closest "
-                        "bathroom. While you’re doing your thing you notice sound coming from the wall to your left. You can "
+                        "bathroom. While you're doing your thing you notice sound coming from the wall to your left. You can "
                         "hear everything coming from the throne room. " // ADD AN ACTUAL PARAGRAPH WHEN TEXTBOX IS FIXED
                         "\"Hahaha! I have made millions for the past five years reselling the food the villagers produced, the best"
-                        "part is I haven’t even had to pay taxes to the legion of kings. At this rate, I will be the richest king of all"
+                        "part is I haven't even had to pay taxes to the legion of kings. At this rate, I will be the richest king of all"
                         "time in no time. Oh I hope no one is hearing me speak out loud about my crimes. One could not only"
-                        "put my life in jeopardy with this information, but this person could also overtake my position as King.\""
+                        " put my life in jeopardy with this information, but this person could also overtake my position as King.\""
                         "Finally wrapping up your business in the bathroom, you make your way to the throne room."
-                        "\"A yes, Mr. slippery stairs I’ve been expecting you.\"";
+                        " \"A yes, Mr. slippery stairs I’ve been expecting you.\"";
 
     map<string, NPC*> room4Characters;
 
