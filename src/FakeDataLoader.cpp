@@ -501,7 +501,7 @@ void FakeDataLoader::LoadLevels(PlayableCharacter* mainChar, map<string, Level*>
     // Door3
     string searchDoor3Key = "search_door_3";
     map<string, string> searchDoor3Context;
-    searchDoor3Context["conditions_not_met"] = "\“Oh boy - that's a fake door. Better luck next time pal!\”";
+    searchDoor3Context["conditions_not_met"] = "\"Oh boy - that's a fake door. Better luck next time pal!\"";
     searchDoor3Context["conditions_met"] = "\"Get out of here. I already gave you my damn smeckles!\"";
     searchDoor3Context["searched"] = "\"Sorry, No more food - store closed\".";
 
@@ -518,7 +518,7 @@ void FakeDataLoader::LoadLevels(PlayableCharacter* mainChar, map<string, Level*>
     // Door4
     string searchDoor4Key = "search_door_4";
     map<string, string> searchDoor4Context;
-    searchDoor4Context["conditions_not_met"] = "\“Oh boy - that's a fake door. Better luck next time pal!\”";
+    searchDoor4Context["conditions_not_met"] = "\"Oh boy - that's a fake door. Better luck next time pal!\"";
     searchDoor4Context["conditions_met"] = "\"Get out of here. I already gave you my damn smeckles!\"";
 
     vector<Item> searchDoor4Items;
@@ -534,7 +534,7 @@ void FakeDataLoader::LoadLevels(PlayableCharacter* mainChar, map<string, Level*>
     // Door5
     string searchDoor5Key = "search_door_5";
     map<string, string> searchDoor5Context;
-    searchDoor5Context["conditions_not_met"] = "\“Oh boy - that's a fake door. Better luck next time pal!\”";
+    searchDoor5Context["conditions_not_met"] = "\"Oh boy - that's a fake door. Better luck next time pal!\"";
     searchDoor5Context["conditions_met"] = "\"Get out of here. I already gave you my damn smeckles!\"";
 
     vector<Item> searchDoor5Items;
