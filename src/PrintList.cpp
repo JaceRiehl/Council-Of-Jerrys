@@ -38,7 +38,7 @@ bool PrintList::isEmpty()
     if(stringToPrint == "")
         return true;
     else
-        false;
+        return false;
 }
 
 void PrintList::operator=(PrintList& pL)

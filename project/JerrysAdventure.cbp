@@ -76,6 +76,7 @@
 		<Unit filename="../include/Window.h" />
 		<Unit filename="../include/XMLLoadData.h" />
 		<Unit filename="../include/XMLSaveData.h" />
+		<Unit filename="../main.cpp" />
 		<Unit filename="../src/Action.cpp" />
 		<Unit filename="../src/ChangeRoom.cpp" />
 		<Unit filename="../src/Character.cpp" />
@@ -85,9 +86,7 @@
 		<Unit filename="../src/CouncilXMLParser.cpp" />
 		<Unit filename="../src/FakeDataLoader.cpp" />
 		<Unit filename="../src/Inventory.cpp" />
-		<Unit filename="../src/InventoryTest.cpp" />
 		<Unit filename="../src/Item.cpp" />
-		<Unit filename="../src/ItemsTest.cpp" />
 		<Unit filename="../src/Level.cpp" />
 		<Unit filename="../src/Menu.cpp" />
 		<Unit filename="../src/NPC.cpp" />
@@ -103,7 +102,6 @@
 		<Unit filename="../src/Window.cpp" />
 		<Unit filename="../src/XMLLoadData.cpp" />
 		<Unit filename="../src/XMLSaveData.cpp" />
-		<Unit filename="../src/main.cpp" />
 		<Unit filename="../src/tinyxml2.cpp" />
 		<Unit filename="../test/ActionTest.cpp" />
 		<Unit filename="../test/ActionTest.h" />
@@ -113,7 +111,9 @@
 		<Unit filename="../test/CharacterTest.h" />
 		<Unit filename="../test/ConsoleInterfaceTest.cpp" />
 		<Unit filename="../test/ConsoleInterfaceTest.h" />
+		<Unit filename="../test/InventoryTest.cpp" />
 		<Unit filename="../test/InventoryTest.h" />
+		<Unit filename="../test/ItemsTest.cpp" />
 		<Unit filename="../test/ItemsTest.h" />
 		<Unit filename="../test/LevelTest.cpp" />
 		<Unit filename="../test/LevelTest.h" />
