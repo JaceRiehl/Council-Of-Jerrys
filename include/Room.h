@@ -39,7 +39,6 @@ public:
     void exit(string);
 
     const string getKey() const { return key; }
-
     void setActions(map<string, Action*> roomActions) { actions = roomActions; }
 private:
     string key;
@@ -104,7 +103,6 @@ private:
     map<string,Menu*> menus;
 
     void setPlayerActions(PlayableCharacter*);
-
 };
 
 #endif

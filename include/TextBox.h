@@ -6,7 +6,6 @@
 #include <ostream>
 using namespace std;
 
-const int COLUMN = 60;
 /**
 *Formats a string into a text box with borders
 */
@@ -66,6 +65,7 @@ private:
 
     char ** textBody = nullptr;
     int rows;
+    const int WIDTH = 60;
 };
 
 #endif

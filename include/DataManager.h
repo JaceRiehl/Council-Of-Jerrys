@@ -15,15 +15,14 @@ class DataManager
         bool loadSaveData(PlayableCharacter*);
 
         map<string, Level*> loadGameData(PlayableCharacter*);
+        map<string, string> loadEndGameText();
+
     protected:
         DataManager();
     private:
         static DataManager* _instance;
         FakeDataLoader* dataLoader;
         static void loadCharacter(PlayableCharacter*);
-        static void setStartingArea();
-        bool gameDataLoaded = false;
-        static map<string, Level*> gameData;
 };
 
 #endif // DATAMANAGER_H

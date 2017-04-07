@@ -23,8 +23,8 @@ void TextBox::copy(const TextBox& c)
     textBody = new char*[rows];
     for(int i = 0; i < rows; i++)
     {
-        textBody[i] = new char[COLUMN];
-        for(int j = 0; j < COLUMN; j++)
+        textBody[i] = new char[WIDTH];
+        for(int j = 0; j < WIDTH; j++)
             this->textBody[i][j] = c.textBody[i][j];
     }
 }
@@ -48,7 +48,7 @@ void TextBox::print(ostream& os) const
     {
         os<<ch;
         fillChar(9, ' ', os);
-        for(int j = 0; j < COLUMN; j++)
+        for(int j = 0; j < WIDTH; j++)
             os<<textBody[i][j];
         fillChar(9, ' ', os);
         os<<ch<<endl;
@@ -70,29 +70,57 @@ void TextBox::fillChar(int howMany, char ch, ostream& os) const
 void TextBox::assignText(string body)
 {
     this->deallocateMem();
-    rows = static_cast<int>(body.size()/COLUMN)+1;
+    rows = static_cast<int>(body.size()/WIDTH);
+    if(((int)(body.size()) % WIDTH) != 0)
+        rows += 2;
+
     textBody = new char*[rows];
-    int lastSpace = 0;
-    int counter = 0;
+    int k = 0;
 
     for(int i = 0; i < rows; i++)
     {
-        textBody[i] = new char[COLUMN];
-            for(int s = counter; s < counter+COLUMN; s++)
-                {
-                    if(i == rows-1)
-                        lastSpace = body.size();
-                    else if(body[s] == ' ')
-                        lastSpace = s;
-                }
-        for(int j = 0; j < COLUMN; j++)
+        textBody[i] = new char[WIDTH];
+        int j = 0;
+        while(j < WIDTH)
         {
-            if(j == 0 && body[counter] == ' ')
-                counter++;
-            if(counter >= lastSpace)
-                textBody[i][j] = ' ';
+            if(body[k] == ' ' && j == 0)
+            {
+                ++k;
+                continue;
+            }
+
+            if(k < body.size())
+            {
+                int wordLength = 1;
+                int currentBodyIndex = k;
+                while(body[++currentBodyIndex] != ' ' && currentBodyIndex < body.size())
+                    wordLength++;
+
+                if(wordLength >= WIDTH)
+                    while(j < WIDTH)
+                        textBody[i][j++] = body[k++];
+
+                else if(j+wordLength >= WIDTH)
+                    while(j < WIDTH)
+                        textBody[i][j++] = ' ';
+
+                else if(j+wordLength < WIDTH)
+                {
+                    int currentPosition = j;
+                    while(j < currentPosition + wordLength)
+                        textBody[i][j++]= body[k++];
+                }
+
+                else
+                {
+                    textBody[i][j++] = body[k++];
+                }
+            }
+
             else
-                textBody[i][j] = body[counter++];
+                while(j < WIDTH)
+                    textBody[i][j++] = ' ';
+
         }
     }
 }
@@ -113,3 +141,5 @@ ostream& operator<<(ostream& os, const TextBox& x)
     x.print(os);
     return os;
 }
+
+

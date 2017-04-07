@@ -37,8 +37,8 @@ bool PrintList::isEmpty()
 {
     if(stringToPrint == "")
         return true;
-    else
-        false;
+
+    return false;
 }
 
 void PrintList::operator=(PrintList& pL)
@@ -56,7 +56,7 @@ ostream& operator<<(ostream& os, PrintList& pl)
 string PrintList::convert(vector<string> vec)
 {
     stringstream str;
-    for(int i = 0; i < vec.size(); i++)
+    for(unsigned int i = 0; i < vec.size(); i++)
     {
         str<<i+1<<')'<<vec[i]<<endl;
     }

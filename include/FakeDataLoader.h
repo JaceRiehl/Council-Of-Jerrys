@@ -8,12 +8,14 @@
 #include "ChangeRoom.h"
 #include "Talk.h"
 #include "PrintInventory.h"
+#include "SaveAndExit.h"
 
 class FakeDataLoader
 {
     public:
         static FakeDataLoader* Instance();
         void LoadLevels(PlayableCharacter*, map<string, Level*>&);
+        void LoadEndOfGameText(map<string, string>&);
     protected:
         FakeDataLoader();
     private:

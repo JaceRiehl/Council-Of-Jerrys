@@ -45,6 +45,9 @@ bool XMLLoadData::loadData(string filePath)
 
     XMLElement* pActions = pRoot->FirstChildElement("ACTIONS");
 
+    if(!pActions)
+        return XML_ERROR_PARSING_ELEMENT;
+
     const XMLNode * actionsNode = pActions->FirstChild();
 
     vector<string> actions;
@@ -57,7 +60,7 @@ bool XMLLoadData::loadData(string filePath)
             if(!keyElement)
                 return XML_ERROR_MISMATCHED_ELEMENT;
 
-            inv.push_back(keyElement->GetText());
+            actions.push_back(keyElement->GetText());
         } while((actionsNode = actionsNode->NextSibling()));
     }
 

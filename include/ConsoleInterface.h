@@ -2,6 +2,7 @@
 #define CONSOLEINTERFACE_H
 #include <string>
 #include <istream>
+#include <limits>
 using namespace std;
 /**
 *Promps user for inputs

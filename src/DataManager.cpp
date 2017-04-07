@@ -1,7 +1,6 @@
 #include "DataManager.h"
 
 DataManager* DataManager::_instance = nullptr;
-map<string, Level*> DataManager::gameData;
 
 DataManager* DataManager::Instance()
 {
@@ -37,8 +36,6 @@ bool DataManager::loadSaveData(PlayableCharacter* mainChar)
     if(XMLLoadData::loadData(XMLLoadData::SAVED_DATA_PATH))
     {
         loadCharacter(mainChar);
-        if(gameDataLoaded)
-            setStartingArea();
         return true;
     }
 
@@ -47,9 +44,20 @@ bool DataManager::loadSaveData(PlayableCharacter* mainChar)
 
 map<string, Level*> DataManager::loadGameData(PlayableCharacter* mainChar)
 {
+    map<string, Level*> gameData;
+
     dataLoader->LoadLevels(mainChar, gameData);
 
     return gameData;
+}
+
+map<string, string> DataManager::loadEndGameText()
+{
+    map<string, string> endGameText;
+
+    dataLoader->LoadEndOfGameText(endGameText);
+
+    return endGameText;
 }
 
 void DataManager::loadCharacter(PlayableCharacter* mainChar)
@@ -66,9 +74,4 @@ void DataManager::loadCharacter(PlayableCharacter* mainChar)
     }
 
     mainChar->setActionsTaken(XMLSaveData::Data.playerActions);
-}
-
-void DataManager::setStartingArea()
-{
-    gameData[XMLSaveData::Data.level]->setStartingRoom(XMLSaveData::Data.room);
 }

@@ -76,9 +76,11 @@ Room::Room(string roomKey, string roomIntro, map<string, NPC*> roomCharacters, m
     {
         setPlayerActions(player);
 
+        #ifdef DEBUG
         GameWindow.display(intro,cout);
         Inputting.getEnterKey(cin);
 
+        #endif
         state = running;
 
         currentMenuKey = "top";

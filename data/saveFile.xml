@@ -1,12 +1,41 @@
 <SAVEDATA>
     <INVENTORY>
+        <KEY>safe_key</KEY>
         <KEY>screwdriver</KEY>
+        <KEY>sledgehammer</KEY>
+        <KEY>smeckle</KEY>
+        <KEY>smeckle</KEY>
+        <KEY>smeckle</KEY>
+        <KEY>smeckle</KEY>
+        <KEY>smeckle</KEY>
+        <KEY>smeckle</KEY>
+        <KEY>smeckle</KEY>
+        <KEY>smeckle</KEY>
+        <KEY>smeckle</KEY>
+        <KEY>smeckle</KEY>
+        <KEY>smeckle</KEY>
+        <KEY>smeckle</KEY>
+        <KEY>smeckle</KEY>
+        <KEY>smeckle</KEY>
+        <KEY>smeckle</KEY>
+        <KEY>smeckle</KEY>
+        <KEY>smeckle</KEY>
+        <KEY>smeckle</KEY>
+        <KEY>smeckle</KEY>
+        <KEY>smeckle</KEY>
+        <KEY>smeckle</KEY>
+        <KEY>smeckle</KEY>
+        <KEY>smeckle</KEY>
+        <KEY>smeckle</KEY>
+        <KEY>smeckle</KEY>
         <KEY>soldering_kit</KEY>
     </INVENTORY>
     <LEVEL>intro</LEVEL>
     <ROOM>under_garage</ROOM>
     <ACTIONS>
+        <KEY>search_crate</KEY>
+        <KEY>search_shelf</KEY>
         <KEY>search_workbench</KEY>
-        <KEY>print_inventory</KEY>
+        <KEY>search_coat</KEY>
     </ACTIONS>
 </SAVEDATA>

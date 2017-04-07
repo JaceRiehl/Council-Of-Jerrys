@@ -9,21 +9,24 @@ ConsoleInterface::~ConsoleInterface() {}
 
 char ConsoleInterface::getChar(istream& is)
 {
-    cout<<"Enter your choice: ";
-    is>>userChar;
-    return userChar;
+    string choice;
+    cout << endl << "Please enter your choice: ";
+    is.sync();
+    getline(is, choice);
+    return choice[0];
 }
 
 void ConsoleInterface::getEnterKey(istream & is)
 {
     cout<<"Hit the ENTER key to continue."<<endl;
     is.ignore();
-    is.get();
 }
 
 string ConsoleInterface::getString(istream& is)
 {
-    cout<<"Enter your answer: ";
-    getline(is,userString);
-    return userString;
+    string choice;
+    cout << endl << "Please enter your choice: ";
+    is.sync();
+    getline(is, choice);
+    return choice;
 }

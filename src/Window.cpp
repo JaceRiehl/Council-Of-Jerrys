@@ -24,12 +24,9 @@ void Window::setPlayerChoice(PrintList setList)
 
 void Window::print(ostream& os)
 {
-    //system("clear");
     os<<text;
     os<<endl;
     os<<pList;
-    //if(pList.isEmpty())
-      //  os<<"Press ENTER to continue";
 }
 
 ostream& operator<<(ostream& os, Window& win)

@@ -3,6 +3,7 @@
 #include "TextBox.h"
 #include "PrintList.h"
 #include <ostream>
+
 /**
 *Prints a TextBox object with the option of printing a list below
 */
