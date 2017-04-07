@@ -45,11 +45,11 @@ void FakeDataLoader::LoadLevels(PlayableCharacter* mainChar, map<string, Level*>
     map<string, Room*> rooms;
 
     string room1Key = "jerrys_garage";
-    string room1Intro = "On a summer day in the hot August heat, you've finally reached the back of the moving truck. There's "
-                        "not much room left in the house, so you decide to bring the last remaining boxes to the garage. Upon "
-                        "entering the garage, you notice that the previous owners didn't bother to clean the garage from their "
-                        "belongings. Looks like you'll have to clean this mess up yourself. There's a broken down shelving unit "
-                        "sitting on top of a worn out carpet to the far right of the room, and a few crates are sitting collecting "
+    string room1Intro = "On a summer day in the hot August heat, you've finally reached the back of the moving truck. There's"
+                        "not much room left in the house, so you decide to bring the last remaining boxes to the garage. Upon"
+                        "entering the garage, you notice that the previous owners didn't bother to clean the garage from their"
+                        "belongings. Looks like you'll have to clean this mess up yourself. There's a broken down shelving unit"
+                        "sitting on top of a worn out carpet to the far right of the room, and a few crates are sitting collecting"
                         "dust in the left corner of the room.";
     map<string, NPC*> room1Characters;
 
