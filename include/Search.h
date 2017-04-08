@@ -9,8 +9,6 @@ class Search : public RoomAction
         Search(Character*, string, Room*, map<string, string> = {},  vector<string> = {}, vector<Item> = {});
         virtual ~Search();
 
-        virtual bool execute();
-
         virtual bool execute(vector<string>);
 
     private:

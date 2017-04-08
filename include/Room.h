@@ -78,7 +78,6 @@ private:
     */
     string getCharacterName();
     /**
-    /**
     *Variable returned by run
     */
     string nextRoom;

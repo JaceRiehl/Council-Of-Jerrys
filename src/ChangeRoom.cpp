@@ -10,14 +10,6 @@ ChangeRoom::ChangeRoom(Character* charOwner, string key, Room* actionSubject, ma
     #endif // DEBUG
 }
 
-bool ChangeRoom::execute()
-{
-    if(!subject)
-        throw invalid_action("Subject is null!");
-
-    subject->exit(context[changeRoomKey]);
-}
-
 bool ChangeRoom::execute(vector<string> playerActions)
 {
     if(!subject)

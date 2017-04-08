@@ -40,8 +40,6 @@ class Talk : public CharacterAction
             @param None.
             @return If successful.
         */
-        bool execute();
-
         bool execute(vector<string>);
 
     private:

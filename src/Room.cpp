@@ -9,7 +9,7 @@ Room::Room(string roomKey, string roomIntro, map<string, NPC*> roomCharacters, m
 
     #else
 
-    ioInfo = new IOInfo("../data/roomTestOutput", "../data/roomTestInput");
+    ioInfo = new IOInfo("../data/roomTestOutput", "../data/roomTestInput.txt");
 
     #endif // DEBUG
 
@@ -107,11 +107,13 @@ string Room::getCharacterName()
 
 void Room::exit(string destination)
 {
+    #ifdef RELEASE
     if(destination == key)
     {
         currentMenuKey = "top";
         return;
     }
+    #endif // RELEASE
 
     nextRoom = destination;
     state = done;

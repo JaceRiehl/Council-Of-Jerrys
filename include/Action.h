@@ -20,15 +20,6 @@ class Action
         virtual ~Action();
 
         /**
-            @brief execute allows all derived classes of Action to implement their own execute behaviour.
-            @pre None.
-            @post None.
-            @param None.
-            @return None.
-        */
-        virtual bool execute() = 0;
-
-        /**
             @brief execute to allow for a list of player conditions to be passed
         */
         virtual bool execute(vector<string>) = 0;

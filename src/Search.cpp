@@ -14,11 +14,6 @@ Search::Search(Character* actionOwner, string key, Room* room, map<string, strin
 
 Search::~Search() {}
 
-bool Search::execute()
-{
-
-}
-
 bool Search::execute(vector<string> playerActions)
 {
     Window window;
