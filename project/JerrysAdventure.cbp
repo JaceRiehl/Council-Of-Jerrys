@@ -51,7 +51,6 @@
 		<Unit filename="../include/Character.h" />
 		<Unit filename="../include/CharacterAction.h" />
 		<Unit filename="../include/CharacterData.h" />
-		<Unit filename="../include/CharacterDataParser.h" />
 		<Unit filename="../include/ConsoleInterface.h" />
 		<Unit filename="../include/CouncilXMLParser.h" />
 		<Unit filename="../include/DataManager.h" />
