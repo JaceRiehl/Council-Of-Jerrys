@@ -2,16 +2,13 @@
 #define _ROOMTEST_H
 
 #include <cppunit/extensions/HelperMacros.h>
-#include "Room.h"
-#include "Inventory.h"
-#include "PlayableCharacter.h"
-#include "Talk.h"
-#include "Window.h"
+#include "FakeDataLoader.h"
+
 
 class RoomTest : public CppUnit::TestFixture
 {
     CPPUNIT_TEST_SUITE(RoomTest);
-    //CPPUNIT_TEST(testRun);
+    CPPUNIT_TEST(testRun);
     CPPUNIT_TEST_SUITE_END();
 
     public:
@@ -20,8 +17,7 @@ class RoomTest : public CppUnit::TestFixture
         void testRun();
 
     private:
-        PlayableCharacter *J;
-        Inventory* inventory;
+        PlayableCharacter *mainChar;
         Room* roomTest;
 };
 

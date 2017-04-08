@@ -3,11 +3,14 @@
 #include <iostream>
 using namespace std;
 
-const char ch = '*';
+char ch = '*';
 
 TextBox::TextBox(std::string body)
 {
-    this->assignText(body);
+    if(body == "")
+        deallocateMem();
+    else
+        this->assignText(body);
 }
 TextBox::~TextBox()
 {
@@ -38,28 +41,31 @@ void TextBox::operator=(const TextBox& t)
 }
 void TextBox::print(ostream& os) const
 {
-    fillChar(80, ch, os);
-    os<<endl<<ch;
-    fillChar(78, ' ', os);
-    os<<ch<<endl<<ch;
-    fillChar(78, ' ', os);
-    os<<ch<<endl;
-    for(int i = 0; i < rows; i++)
+    if(textBody)
     {
-        os<<ch;
-        fillChar(9, ' ', os);
-        for(int j = 0; j < WIDTH; j++)
-            os<<textBody[i][j];
-        fillChar(9, ' ', os);
+        fillChar(80, ch, os);
+        os<<'\n'<<ch;
+        fillChar(78, ' ', os);
+        os<<ch<<endl<<ch;
+        fillChar(78, ' ', os);
         os<<ch<<endl;
+        for(int i = 0; i < rows; i++)
+        {
+            os<<ch;
+            fillChar(9, ' ', os);
+            for(int j = 0; j < WIDTH; j++)
+                os<<textBody[i][j];
+            fillChar(9, ' ', os);
+            os<<ch<<endl;
+        }
+        os<<ch;
+        fillChar(78, ' ', os);
+        os<<ch<<endl<<ch;
+        fillChar(78, ' ', os);
+        os<<ch<<endl;
+        fillChar(80, ch, os);
+        os<<endl;
     }
-    os<<ch;
-    fillChar(78, ' ', os);
-    os<<ch<<endl<<ch;
-    fillChar(78, ' ', os);
-    os<<ch<<endl;
-    fillChar(80, ch, os);
-    os<<endl;
 }
 void TextBox::fillChar(int howMany, char ch, ostream& os) const
 {
@@ -134,6 +140,11 @@ void TextBox::deallocateMem()
         delete [] textBody;
         textBody = nullptr;
     }
+}
+
+bool TextBox::isEmpty() const
+{
+    return (textBody == nullptr);
 }
 
 ostream& operator<<(ostream& os, const TextBox& x)

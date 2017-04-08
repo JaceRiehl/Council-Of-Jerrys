@@ -11,7 +11,10 @@
 #include "PlayableCharacter.h"
 #include "NPC.h"
 #include "Menu.h"
-#include "Talk.h"
+#include "IOInfo.h"
+
+using std::cin;
+using std::cout;
 
 /**
 *Used to run the different rooms that the user will encounter
@@ -27,6 +30,7 @@ public:
     */
     Room(PlayableCharacter*);
 
+    ~Room();
     /**
     *Used to take over until the level is complete
     *@return string nextRoom that corresponds to the next level to deploy
@@ -74,10 +78,6 @@ private:
     */
     string getCharacterName();
     /**
-    *Getter for Jerry's inventory
-    *@return the Inventory of the playable character in the level
-    */
-    const Inventory* getCharacterInv();
     /**
     *Variable returned by run
     */
@@ -103,6 +103,8 @@ private:
     map<string,Menu*> menus;
 
     void setPlayerActions(PlayableCharacter*);
+
+    IOInfo* ioInfo;
 };
 
 #endif

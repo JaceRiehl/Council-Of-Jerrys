@@ -11,6 +11,16 @@ using namespace std;
 Inventory::Inventory()
 {
     numberOfItems = 0;
+
+    #ifdef RELEASE
+
+    ioInfo = new IOInfo();
+
+    #else
+
+    ioInfo = new IOInfo("../data/inventoryTestOutput", "");
+
+    #endif // RELEASE
 }
 
 Inventory::Inventory(vector<Item> invItems)
@@ -26,6 +36,16 @@ Inventory::Inventory(vector<Item> invItems)
     }
     else
         throw inventoryEmpty("Your inventory is lonely without any items. Add some items.");
+
+    #ifdef RELEASE
+
+    ioInfo = new IOInfo();
+
+    #else
+
+    ioInfo = new IOInfo("../data/inventoryTestOutput", "");
+
+    #endif // RELEAS
 }
 
 void Inventory::addItem(Item item)
@@ -102,6 +122,12 @@ void Inventory::printItems() const
     unsigned int k = 0;
     unsigned int m = 1;
     unsigned int counter = 1;
+
+    stringstream sstream;
+    string clearString = "";
+    Window window;
+    vector<string> formattedItems;
+
     do
     {
         for(unsigned int j = m; j < items.size(); j++)
@@ -109,17 +135,24 @@ void Inventory::printItems() const
             if (items[k] == items[j])
                 counter += 1;
         }
-        cout << counter << "X " << items[k].getName() << endl;
+
+        sstream.str(clearString);
+        sstream << counter << " X " << items[k].getName() << "  ";
+        formattedItems.push_back(sstream.str());
         k = k + counter;
         m = m + counter;
         if(m > items.size() && k < items.size())
         {
             counter = 1;
-            cout << counter << "X " << items[k].getName() << endl;
+            sstream.str(clearString);
+            sstream << counter << "X " << items[k].getName() << "  ";
+            formattedItems.push_back(sstream.str());
             break;
         }
         counter = 1;
     }while(k < items.size());
+
+    window.display(formattedItems, ioInfo->getOutputStream());
 }
 
 bool Inventory::operator==(const Inventory inv) const

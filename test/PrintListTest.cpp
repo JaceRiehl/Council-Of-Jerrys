@@ -34,7 +34,7 @@ void PrintListTest::emptyConstructorTest()
 void PrintListTest::vectorConstructorTest()
 {
     str1 << *pl2;
-    str2 << "1)one" << endl << "2)two" << endl;
+    str2 << "1) one" << endl << "2) two" << endl;
     CPPUNIT_ASSERT(str1.str() == str2.str());
 }
 

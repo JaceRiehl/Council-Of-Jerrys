@@ -14,12 +14,14 @@ class FakeDataLoader
 {
     public:
         static FakeDataLoader* Instance();
+        static Room* buildFakeRoom(PlayableCharacter*);
         void LoadLevels(PlayableCharacter*, map<string, Level*>&);
         void LoadEndOfGameText(map<string, string>&);
     protected:
         FakeDataLoader();
     private:
         static FakeDataLoader* _instance;
+        static Room* fakeRoom;
 };
 
 #endif // FAKEDATALOADER_H

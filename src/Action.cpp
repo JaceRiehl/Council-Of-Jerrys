@@ -9,6 +9,12 @@ Action::Action(Character* actionOwner, string actionKey, vector<string> actionCo
     key = actionKey;
     conditions = actionConditions;
     items = actionItems;
+
+    #ifdef RELEASE
+
+    ioInfo = new IOInfo();
+
+    #endif
 }
 
 Action::~Action()

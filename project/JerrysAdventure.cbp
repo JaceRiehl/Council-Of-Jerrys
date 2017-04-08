@@ -59,6 +59,7 @@
 		<Unit filename="../include/FakeDataLoader.h" />
 		<Unit filename="../include/GameRunner.h" />
 		<Unit filename="../include/IAgent.h" />
+		<Unit filename="../include/IOInfo.h" />
 		<Unit filename="../include/Inventory.h" />
 		<Unit filename="../include/Item.h" />
 		<Unit filename="../include/Level.h" />
@@ -89,6 +90,7 @@
 		<Unit filename="../src/DataManager.cpp" />
 		<Unit filename="../src/FakeDataLoader.cpp" />
 		<Unit filename="../src/GameRunner.cpp" />
+		<Unit filename="../src/IOInfo.cpp" />
 		<Unit filename="../src/Inventory.cpp" />
 		<Unit filename="../src/InventoryTest.cpp" />
 		<Unit filename="../src/Item.cpp" />

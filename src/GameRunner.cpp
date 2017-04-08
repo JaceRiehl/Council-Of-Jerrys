@@ -74,7 +74,6 @@ void GameRunner::run()
         } while(!validInput);
 
         nextLevel = XMLSaveData::Data.level;
-        gameData[nextLevel]->setStartingRoom(XMLSaveData::Data.room);
 
         runGame();
 

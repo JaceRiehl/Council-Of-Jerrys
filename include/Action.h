@@ -56,6 +56,8 @@ class Action
         vector<Item> items;
         string key;
 
+        IOInfo* ioInfo;
+
     private:
         bool conditionsEmpty() const;
         bool itemsEmpty() const;

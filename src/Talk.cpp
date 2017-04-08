@@ -6,11 +6,16 @@ using std::cout;
 using std::endl;
 
 Talk::Talk(Character* actionOwner, string key, NPC* actionSubject, vector<string> actionConditions, vector<Item> actionItems)
-                                        : CharacterAction(actionOwner, key, actionSubject, actionConditions, actionItems) {}
-
-Talk::~Talk()
+                                        : CharacterAction(actionOwner, key, actionSubject, actionConditions, actionItems)
 {
+    #ifdef DEBUG
+
+    ioInfo = new IOInfo("../data/talkTestOutput", "");
+
+    #endif
 }
+
+Talk::~Talk() {}
 
 bool Talk::execute()
 {
@@ -30,24 +35,24 @@ bool Talk::execute(vector<string> characterActions)
 
     if(beenTaken(characterActions))
     {
-        window.display(subject->getDialog(talkedKey), cout);
+        window.display(subject->getDialog(talkedKey), ioInfo->getOutputStream());
     }
 
     else if(!conditionsMet(characterActions))
     {
-        window.display(subject->getDialog(conditionsNotMetKey), cout);
+        window.display(subject->getDialog(conditionsNotMetKey), ioInfo->getOutputStream());
     }
 
     else if(conditionsMet(characterActions))
     {
-        window.display(subject->getDialog(conditionsMetKey), cout);
+        window.display(subject->getDialog(conditionsMetKey), ioInfo->getOutputStream());
         giveItems(characterActions);
         return true;
     }
 
     else
     {
-        window.display(subject->getDialog(defaultKey), cout);
+        window.display(subject->getDialog(defaultKey), ioInfo->getOutputStream());
     }
 
     return false;
