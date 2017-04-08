@@ -13,6 +13,7 @@ void TextBoxTest::setUp()
     tb2 = new TextBox(testStr1);
     tb3 = new TextBox("Hello");
     tb4 = new TextBox;
+    testFile = new ofstream("../data/textboxTestOutput");
 }
 
 void TextBoxTest::tearDown()
@@ -25,10 +26,7 @@ void TextBoxTest::tearDown()
 
 void TextBoxTest::defaultConstructorTest()
 {
-    tb1->assignText("");
-    str1 << *tb1;
-    str2 << *tb4;
-    CPPUNIT_ASSERT(str1.str() == str2.str());
+    CPPUNIT_ASSERT(tb4->isEmpty());
 }
 
 void TextBoxTest::extractionOpTest()
@@ -55,5 +53,5 @@ void TextBoxTest::assignTextTest()
 }
 void TextBoxTest::visualTest()
 {
-    cout<<endl<<*tb1;
+    *testFile<<endl<<*tb1;
 }

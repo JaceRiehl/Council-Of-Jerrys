@@ -10,7 +10,6 @@ ConsoleInterface::~ConsoleInterface() {}
 char ConsoleInterface::getChar(istream& is)
 {
     string choice;
-    cout << endl << "Please enter your choice: ";
     is.sync();
     getline(is, choice);
     return choice[0];
@@ -18,14 +17,12 @@ char ConsoleInterface::getChar(istream& is)
 
 void ConsoleInterface::getEnterKey(istream & is)
 {
-    cout<<"Hit the ENTER key to continue."<<endl;
     is.ignore();
 }
 
 string ConsoleInterface::getString(istream& is)
 {
     string choice;
-    cout << endl << "Please enter your choice: ";
     is.sync();
     getline(is, choice);
     return choice;

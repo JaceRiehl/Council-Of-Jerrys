@@ -8,7 +8,7 @@ using namespace std;
 
 int main()
 {
-    #ifdef DEBUG
+    #ifdef RELEASE
     GameRunner* runner = new GameRunner();
 
     runner->run();

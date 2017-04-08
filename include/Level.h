@@ -5,11 +5,13 @@
 #include<vector>
 #include<map>
 #include<iostream>
+#include <algorithm>
 #include "Room.h"
 #include "Window.h"
 #include "XMLSaveData.h"
 
 using std::cout;
+using std::endl;
 
 /**
 *This is for building each of the levels and enacting on situations
@@ -53,8 +55,11 @@ public:
      */
      const string getKey() const;
 
-    void setStartingRoom(string roomKey) { nextRoom = roomKey; }
+    void setStartingRoom(string room);
 private:
+
+    bool isNotAscii(int);
+    bool isAllAscii(string);
 
     /**
      *Name of the level
@@ -77,7 +82,9 @@ private:
 
     string openingMessage;
     string nextRoom;
-    const string terminatingString = "exit_level";
-};
 
+    const string terminatingString = "exit_level";
+
+    IOInfo* ioInfo;
+};
 #endif

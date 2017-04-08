@@ -17,7 +17,7 @@ class WindowTest : public CppUnit::TestFixture
     CPPUNIT_TEST(displayStringTest);
     CPPUNIT_TEST(displayWithVectorTest);
     CPPUNIT_TEST(displayWithMapTest);
-    CPPUNIT_TEST(visualTest);
+    //CPPUNIT_TEST(visualTest);
     CPPUNIT_TEST_SUITE_END();
 
 public:

@@ -2,12 +2,14 @@
 #define _MENU_H
 #include<map>
 #include<string>
+#include "IOInfo.h"
 #include "ConsoleInterface.h"
 #include "Window.h"
 
 using std::string;
 using std::map;
 using std::cout;
+using std::ofstream;
 
 class Menu
 {
@@ -30,6 +32,7 @@ private:
     */
     Window GameWindow;
     string text;
+    IOInfo* ioInfo;
 
 };
 #endif // _MENU_H

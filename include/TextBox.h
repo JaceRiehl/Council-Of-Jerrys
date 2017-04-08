@@ -48,6 +48,9 @@ public:
     *Helper function to deallocate any leftover memory, used in the deconstructor
     *@param None
     */
+
+    bool isEmpty() const;
+
     void deallocateMem();
     /**
     *Overloaded insertion operator, uses print for format

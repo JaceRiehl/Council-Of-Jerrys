@@ -29,7 +29,7 @@ void Window::print(ostream& os)
     os<<pList;
 }
 
-ostream& operator<<(ostream& os, Window& win)
+const ostream& operator<<(ostream& os, Window& win)
 {
     win.print(os);
     return os;
@@ -55,3 +55,18 @@ void Window::display(string str, map<char,string> ma, ostream& os)
     pList.setList(ma);
     this->print(os);
 }
+
+void Window::display(vector<string> vec, ostream& os)
+{
+    text.assignText("");
+    pList.setList(vec);
+    this->print(os);
+}
+
+void Window::display(map<char, string> mList, ostream& os)
+{
+    text.assignText("");
+    pList.setList(mList);
+    this->print(os);
+}
+

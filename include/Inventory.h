@@ -4,7 +4,12 @@
 #include <Item.h>
 #include <string>
 #include <vector>
+#include <sstream>
 #include "XMLSaveData.h"
+#include "IOInfo.h"
+#include "Window.h"
+
+using std::stringstream;
 
 /**
     @file Inventory.h
@@ -112,6 +117,7 @@ class Inventory
     private:
         unsigned int numberOfItems;
         vector<Item> items;
+        IOInfo* ioInfo;
 };
 
 #endif // INVENTORY_H

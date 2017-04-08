@@ -58,7 +58,7 @@ string PrintList::convert(vector<string> vec)
     stringstream str;
     for(unsigned int i = 0; i < vec.size(); i++)
     {
-        str<<i+1<<')'<<vec[i]<<endl;
+        str<<i+1 <<')'<< " " << vec[i]<<endl;
     }
     stringToPrint = str.str();
     return stringToPrint;

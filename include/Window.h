@@ -48,13 +48,18 @@ public:
     /**
     *Overloaded insertion operator, uses the print function
     */
-    friend ostream& operator<<(ostream&, Window&);
+    friend const ostream& operator<<(ostream&, Window&);
     /**
     *Displayes the string as a TextBox to the desired ostream
     *@param string to display in TextBox
     *@param desired ostream
     */
     void display(string, ostream&);
+
+    void display(vector<string>, ostream&);
+
+    void display(map<char, string>, ostream&);
+
     /**
     *Displayes the string as a TextBox and a vector list of string to the desired ostream
     *@param string to display in TextBox

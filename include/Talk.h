@@ -1,10 +1,14 @@
 #ifndef TALK_H
 #define TALK_H
 
+#include "IOInfo.h"
 #include "CharacterAction.h"
 #include "NPC.h"
 #include "Window.h"
 #include "Exceptions.h"
+
+using std::ofstream;
+
 /**
     @file Talk.h
     @author Nathan Tipper

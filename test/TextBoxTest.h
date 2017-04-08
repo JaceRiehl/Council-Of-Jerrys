@@ -4,6 +4,8 @@
 #include <cppunit/extensions/HelperMacros.h>
 #include "TextBox.h"
 #include <string>
+#include <fstream>
+
 /**
 *Testing functions for the TextBox class
 */
@@ -50,6 +52,7 @@ class TextBoxTest : public CppUnit::TestFixture
         std::string testStr1;
         std:: stringstream str1, str2;
         TextBox *tb1, *tb2, *tb3, *tb4;
+        ofstream* testFile;
 
 };
 #endif  //TEXTBOXTEST_H

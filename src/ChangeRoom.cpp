@@ -1,7 +1,14 @@
 #include "ChangeRoom.h"
 
 ChangeRoom::ChangeRoom(Character* charOwner, string key, Room* actionSubject, map<string, string> actionContext, vector<string> actionConditions, vector<Item> actionItems)
-        : RoomAction(charOwner, key, actionSubject, actionContext, actionConditions, actionItems) {}
+        : RoomAction(charOwner, key, actionSubject, actionContext, actionConditions, actionItems)
+{
+    #ifdef DEBUG
+
+    ioInfo = new IOInfo("../data/searchChangeRoomOutput", "");
+
+    #endif // DEBUG
+}
 
 bool ChangeRoom::execute()
 {
@@ -20,13 +27,13 @@ bool ChangeRoom::execute(vector<string> playerActions)
     if(!conditionsMet(playerActions))
     {
         if(context.find(conditionsMetKey) != context.end())
-            window.display(context[conditionsNotMetKey], cout);
+            window.display(context[conditionsNotMetKey], ioInfo->getOutputStream());
     }
 
     else
     {
         if(context.find(conditionsMetKey) != context.end())
-            window.display(context[conditionsMetKey], cout);
+            window.display(context[conditionsMetKey], ioInfo->getOutputStream());
         if(context.find(changeRoomKey) != context.end())
             subject->exit(context[changeRoomKey]);
         else
