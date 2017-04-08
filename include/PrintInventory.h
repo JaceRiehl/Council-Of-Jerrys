@@ -9,7 +9,6 @@ class PrintInventory : public Action
     public:
         PrintInventory(Character*, string key, vector<string> = {}, vector<Item> = {});
 
-        bool execute();
         bool execute(vector<string>);
 };
 

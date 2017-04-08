@@ -12,8 +12,6 @@ PrintInventory::PrintInventory(Character* actionOwner, string key, vector<string
     #endif // DEBUG
 }
 
-bool PrintInventory::execute() {}
-
 bool PrintInventory::execute(vector<string> playerActions)
 {
     const Inventory* inventory = owner->getInventory();

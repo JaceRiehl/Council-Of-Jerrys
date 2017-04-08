@@ -17,13 +17,6 @@ Talk::Talk(Character* actionOwner, string key, NPC* actionSubject, vector<string
 
 Talk::~Talk() {}
 
-bool Talk::execute()
-{
-
-
-    return true;
-}
-
 bool Talk::execute(vector<string> characterActions)
 {
     if(!subject)

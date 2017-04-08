@@ -69,19 +69,18 @@ private:
      *Reference to Jerry
      */
      PlayableCharacter* jerry;
-    /**
-     *Vector of the situations that will be contained within the level
-     */
-     map<string, Room*> rooms;
 
     /**
      *State of the level
      */
     State state;
 
-
-    string openingMessage;
     string nextRoom;
+    string openingMessage;
+     /**
+     *Vector of the situations that will be contained within the level
+     */
+     map<string, Room*> rooms;
 
     const string terminatingString = "exit_level";
 

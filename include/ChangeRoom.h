@@ -8,7 +8,6 @@ class ChangeRoom : public RoomAction
     public:
         ChangeRoom(Character*, string, Room*, map<string, string> = {}, vector<string> = {}, vector<Item> = {});
 
-        bool execute();
         bool execute(vector<string>);
 
     private:

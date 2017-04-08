@@ -20,7 +20,7 @@ IOInfo::IOInfo(string outputFile, string inputFile)
 
     if(!outputFile.empty())
     {
-        if(outputBuffer->open(outputFile, std::ios::out))
+        if(outputBuffer->open(outputFile, std::ios::out | std::ios::trunc))
             outputStream = new ostream(outputBuffer);
         else
             cerr << "COULD NOT OPEN OUTPUT BUFFER" << endl;

@@ -10,11 +10,14 @@
 class ChangeRoomTest : public CppUnit::TestFixture
 {
     CPPUNIT_TEST_SUITE(ChangeRoomTest);
-    //CPPUNIT_TEST(testExecute);
+    CPPUNIT_TEST(testExecute);
+    CPPUNIT_TEST(testConditionsNotMet);
     CPPUNIT_TEST_SUITE_END();
 
     public:
         void testExecute();
+        void testConditionsNotMet();
+        void
 };
 
 #endif // CHANGEROOMTEST_H
