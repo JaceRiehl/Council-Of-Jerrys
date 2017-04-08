@@ -51,9 +51,7 @@
 		<Unit filename="../include/Character.h" />
 		<Unit filename="../include/CharacterAction.h" />
 		<Unit filename="../include/CharacterData.h" />
-		<Unit filename="../include/CharacterDataParser.h" />
 		<Unit filename="../include/ConsoleInterface.h" />
-		<Unit filename="../include/CouncilXMLParser.h" />
 		<Unit filename="../include/Exceptions.h" />
 		<Unit filename="../include/FakeDataLoader.h" />
 		<Unit filename="../include/IAgent.h" />
@@ -68,7 +66,6 @@
 		<Unit filename="../include/Room.h" />
 		<Unit filename="../include/RoomAction.h" />
 		<Unit filename="../include/RoomData.h" />
-		<Unit filename="../include/RoomXMLParser.h" />
 		<Unit filename="../include/SaveData.h" />
 		<Unit filename="../include/Search.h" />
 		<Unit filename="../include/Talk.h" />
