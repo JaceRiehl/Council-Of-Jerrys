@@ -40,4 +40,4 @@ coverage: $(PROGRAM_TEST)
 	rm -f $(SRC)/*.gc* $(SRC)/$(COVERAGE_RESULTS) $(SRC)/$(PROGRAM_TEST)_base.info
 	firefox $(COVERAGE_REPORT_DIR)/index.html&
 
-mem: valgrind ./JerrysAdventure
+mem: valgrind $(project)/$(bin)/$(Debug)/JerrysAdventure
