@@ -11,7 +11,7 @@ Menu::Menu(string menuText, map<char,string> out, map<char,string> in)
 
     #else
 
-    ioInfo = new IOInfo("../data/menuTestOutput", "");
+    ioInfo = new IOInfo("./data/menuTestOutput.txt", "");
 
     #endif // RELEASE
 }

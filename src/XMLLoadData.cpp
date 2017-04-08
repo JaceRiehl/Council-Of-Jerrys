@@ -1,8 +1,8 @@
 #include "XMLLoadData.h"
 #include <iostream>
 
-const string XMLLoadData::SAVED_DATA_PATH= "../data/saveFile.xml";
-const string XMLLoadData::NEW_DATA_PATH = "../data/newGame.xml";
+const string XMLLoadData::SAVED_DATA_PATH= "./data/saveFile.xml";
+const string XMLLoadData::NEW_DATA_PATH = "./data/newGame.xml";
 
 bool XMLLoadData::loadData(string filePath)
 {

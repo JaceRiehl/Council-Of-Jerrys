@@ -6,7 +6,7 @@ bool XMLSaveData::saveData()
 {
     FILE* fileToWriteTo;
 
-    fileToWriteTo = fopen("../data/saveFile.xml", "w+");
+    fileToWriteTo = fopen("./data/saveFile.xml", "w+");
 
     if(fileToWriteTo)
     {

@@ -10,7 +10,7 @@ Talk::Talk(Character* actionOwner, string key, NPC* actionSubject, vector<string
 {
     #ifdef DEBUG
 
-    ioInfo = new IOInfo("../data/talkTestOutput", "");
+    ioInfo = new IOInfo("./data/talkTestOutput.txt", "");
 
     #endif
 }

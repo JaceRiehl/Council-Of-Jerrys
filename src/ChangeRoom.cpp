@@ -5,7 +5,7 @@ ChangeRoom::ChangeRoom(Character* charOwner, string key, Room* actionSubject, ma
 {
     #ifdef DEBUG
 
-    ioInfo = new IOInfo("../data/searchChangeRoomOutput", "");
+    ioInfo = new IOInfo("./data/searchChangeRoomOutput.txt", "");
 
     #endif // DEBUG
 }

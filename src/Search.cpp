@@ -7,7 +7,7 @@ Search::Search(Character* actionOwner, string key, Room* room, map<string, strin
 
     #ifdef DEBUG
 
-    ioInfo = new IOInfo("../data/searchTestOutput", "");
+    ioInfo = new IOInfo("./data/searchTestOutput.txt", "");
 
     #endif // DEBUG
 }

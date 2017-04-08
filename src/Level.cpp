@@ -13,7 +13,7 @@ Level::Level(string levelKey, string startingRoom, map<string, Room*> levelRooms
 
     #else
 
-    ioInfo = new IOInfo("../data/levelTestOutput", "");
+    ioInfo = new IOInfo("./data/levelTestOutput.txt", "");
 
     #endif // RELEASE
 }

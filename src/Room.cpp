@@ -9,7 +9,7 @@ Room::Room(string roomKey, string roomIntro, map<string, NPC*> roomCharacters, m
 
     #else
 
-    ioInfo = new IOInfo("../data/roomTestOutput", "../data/roomTestInput.txt");
+    ioInfo = new IOInfo("./data/roomTestOutput.txt", "./data/roomTestInput.txt");
 
     #endif // DEBUG
 
