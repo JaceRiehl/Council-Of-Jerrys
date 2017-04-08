@@ -18,7 +18,7 @@ Inventory::Inventory()
 
     #else
 
-    ioInfo = new IOInfo("../data/inventoryTestOutput", "");
+    ioInfo = new IOInfo("./data/inventoryTestOutput.txt", "");
 
     #endif // RELEASE
 }
@@ -43,7 +43,7 @@ Inventory::Inventory(vector<Item> invItems)
 
     #else
 
-    ioInfo = new IOInfo("../data/inventoryTestOutput", "");
+    ioInfo = new IOInfo("./data/inventoryTestOutput.txt", "");
 
     #endif // RELEAS
 }

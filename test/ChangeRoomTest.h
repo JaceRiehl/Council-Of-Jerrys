@@ -17,7 +17,6 @@ class ChangeRoomTest : public CppUnit::TestFixture
     public:
         void testExecute();
         void testConditionsNotMet();
-        void
 };
 
 #endif // CHANGEROOMTEST_H

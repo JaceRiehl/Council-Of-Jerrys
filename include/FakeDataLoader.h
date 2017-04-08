@@ -13,6 +13,7 @@
 class FakeDataLoader
 {
     public:
+        ~FakeDataLoader();
         static FakeDataLoader* Instance();
         static Room* buildFakeRoom(PlayableCharacter*);
         void LoadLevels(PlayableCharacter*, map<string, Level*>&);

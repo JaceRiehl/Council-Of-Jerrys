@@ -6,7 +6,9 @@ syntax: glob
 ./project/JerrysAdventure.depend
 ./project/JerrysAdventure.layout
 ./project/ValgrindOut.xml
+./coverage
 *.layout
 *.depend
 *~
 *.o
+*.gcno

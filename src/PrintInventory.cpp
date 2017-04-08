@@ -7,7 +7,7 @@ PrintInventory::PrintInventory(Character* actionOwner, string key, vector<string
 {
     #ifdef DEBUG
 
-    ioInfo = new IOInfo("../data/printInventoryTestOutput", "");
+    ioInfo = new IOInfo("./data/printInventoryTestOutput.txt", "");
 
     #endif // DEBUG
 }
